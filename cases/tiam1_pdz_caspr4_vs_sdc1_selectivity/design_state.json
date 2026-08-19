@@ -1,0 +1,682 @@
+{
+  "version": "tiam1_pdz_caspr4_vs_sdc1_global_dual_ast_energy_v2",
+  "case_id": "tiam1_pdz_caspr4_vs_sdc1_selectivity",
+  "task_name": "Tiam1_PDZ_Caspr4_positive_SDC1_negative_design",
+  "task_type": "multistate_positive_and_negative_design",
+  "case_sheet_path": "case_sheet.json",
+  "memory_path": "memory.yaml",
+  "case_energy_protocol": {
+    "schema_version": "tiam1.proxy_energy.v2",
+    "direction": "minimize",
+    "claim_scope": "provider-derived structure-confidence proxy; not physical energy or binding free energy",
+    "interface_q": {
+      "clash_free": true,
+      "contact_target": 400.0,
+      "residue_pair_target": 40.0,
+      "weights": {
+        "log_contact": 0.35,
+        "log_residue_pair": 0.20,
+        "interface_plddt": 0.30
+      },
+      "weight_sum": 0.85,
+      "preclip": false
+    },
+    "smooth_selectivity": {
+      "iptm": {"tau": 0.08, "sigma": 0.04},
+      "gpde": {"tau": 0.04, "sigma": 0.02},
+      "interface_q": {"tau": 0.03, "sigma": 0.02}
+    },
+    "soft_energy": {
+      "formula": "0.50*(1-S_i)+0.20*(1-S_g)+0.20*(1-S_q)+0.10*(1-S_A)",
+      "active_terms": {
+        "tiam1_v2_iptm_margin": 0.50,
+        "tiam1_v2_gpde_margin": 0.20,
+        "tiam1_v2_interface_q_margin": 0.20,
+        "tiam1_v2_positive_interface_q": 0.10
+      },
+      "generic_outer_terms_weight": 0.0,
+      "generic_evaluator_terms_weight": 0.0,
+      "legacy_v1_terms_weight": 0.0,
+      "clash_weight": 0.0
+    },
+    "locked_positive_target_baseline": {
+      "provider": "protenix_mini_esm_v0.5.0",
+      "protocol": "complex_cycle=1,complex_step=20,complex_sample=1,seed=101",
+      "apo_plddt": 87.3060073852539,
+      "A_complex_plddt": 92.97100067138672,
+      "A_iptm": 0.9367565512657166,
+      "A_interface_q": 0.9429525830682546,
+      "A_terminal_anchor_observed": true,
+      "A_interface_clash_count": 0
+    },
+    "noninferiority_bands": {
+      "apo_plddt": -5.0,
+      "A_complex_plddt": -3.0,
+      "A_iptm": -0.03,
+      "A_interface_q": -0.05,
+      "A_terminal_anchor_required": true,
+      "A_interface_clash_count_required": 0
+    },
+    "clash_policy": {
+      "search_hard_gate": {"A_interface_clash_count": 0},
+      "final_validation_hard_gate": {
+        "A_interface_clash_count": 0,
+        "B_interface_clash_count": 0
+      },
+      "soft_energy_contribution": 0.0
+    },
+    "missing_or_nonfinite_evidence": "hard_gate_fail_and_worst_soft_residual"
+  },
+  "binder": {
+    "name": "Natural human Tiam1 PDZ Q13009 residues 841-930",
+    "chain_id": "P",
+    "architecture": "single_extended_pdz_domain",
+    "domain_segment_keys": {
+      "pdz_domain": "pdz_segments"
+    },
+    "domain_order": [
+      "pdz_domain"
+    ],
+    "pdz_segments": [
+      ["S01_Ncap", "cap", "KV"],
+      ["S02_beta1", "beta_strand", "TQSIHIE"],
+      ["S03_carboxylate_loop", "loop", "KSDTAADTYG"],
+      ["S04_beta2_ligand_strand", "beta_strand", "FSLSSV"],
+      ["S05_beta2_beta3_loop", "loop", "EEDGIR"],
+      ["S06_beta3", "beta_strand", "RLYVNSV"],
+      ["S07_beta3_alpha1_connector", "loop", "KET"],
+      ["S08_alpha1", "alpha_helix", "GLASKK"],
+      ["S09_alpha1_beta4_connector", "loop", "GLKAGD"],
+      ["S10_beta4", "beta_strand", "EILEI"],
+      ["S11_beta4_beta5_loop", "loop", "NN"],
+      ["S12_beta5", "beta_strand", "RA"],
+      ["S13_beta5_alpha2_connector", "turn", "ADAL"],
+      ["S14_alpha2_specificity_helix", "alpha_helix", "NSSMLKDFLSQ"],
+      ["S15_alpha2_beta6_turn", "turn", "P"],
+      ["S16_beta6", "beta_strand", "SLGLLVR"],
+      ["S17_C_tail", "tail", "TYPEL"]
+    ]
+  },
+  "target": {
+    "chain_id": "A",
+    "name": "Caspr4 C-terminal peptide",
+    "sequence": "ENQKEYFF",
+    "feature_kind": "target_peptide",
+    "epitope_name": "Caspr4_free_C_terminal_octapeptide",
+    "epitope_source": "Q9C0A0 residues 1301-1308",
+    "epitope_spans": [
+      [0, 8]
+    ],
+    "terminus": "free_C_terminal_carboxylate"
+  },
+  "counter_target": {
+    "chain_id": "B",
+    "name": "Syndecan-1 C-terminal peptide",
+    "sequence": "TKQEEFYA",
+    "role": "negative_countertarget",
+    "terminus": "free_C_terminal_carboxylate"
+  },
+  "mutation_policy": {
+    "preferred_edit_order": [
+      "S14_alpha2_specificity_helix",
+      "S16_beta6"
+    ],
+    "always_open_segments": [],
+    "conditionally_open_segments": [],
+    "fixed_linker_segments": [],
+    "generally_frozen": [
+      "only_case_owned_hard_protection_spans; effective_writes_are_selected_by_global_Dual_AST_v2"
+    ]
+  },
+  "design_points": {
+    "schema_version": "ast_design_points_v1",
+    "design_intent": "Whole-construct adaptive Dual-AST v2 search starting from the natural human Q13009 residues 841-930 sequence; the outer LLM may create, delete, migrate, resize, and rewire an expanded active node set while paired A-on/B-off objectives and deterministic safety guardrails remain fixed.",
+    "primary_design_nodes": [
+      "S14_alpha2_specificity_helix",
+      "S16_beta6"
+    ],
+    "secondary_design_nodes": [
+      "S01_Ncap",
+      "S02_beta1",
+      "S05_beta2_beta3_loop",
+      "S06_beta3",
+      "S07_beta3_alpha1_connector",
+      "S08_alpha1",
+      "S09_alpha1_beta4_connector",
+      "S10_beta4",
+      "S11_beta4_beta5_loop",
+      "S12_beta5",
+      "S13_beta5_alpha2_connector",
+      "S17_C_tail"
+    ],
+    "default_open_nodes": [],
+    "preserved_nodes": [
+      "S03_carboxylate_loop",
+      "S04_beta2_ligand_strand",
+      "S15_alpha2_beta6_turn"
+    ]
+  },
+  "design_constraints": {
+    "schema_version": "ast_case_constraints_v1",
+    "indexing": "zero_based_end_exclusive",
+    "mutable_nodes": [],
+    "frozen_nodes": [],
+    "mutable_residue_spans": [],
+    "frozen_residue_spans": [
+      {
+        "chain_id": "A",
+        "node": "positive_target_fixed",
+        "spans": [
+          [0, 8]
+        ]
+      }
+    ],
+    "target_epitopes": [
+      {
+        "name": "Caspr4_free_C_terminal_octapeptide",
+        "entity": "Caspr4_A",
+        "chain_id": "A",
+        "spans": [
+          [0, 8]
+        ],
+        "zero_based": true,
+        "role": "fixed_positive_target"
+      }
+    ],
+    "fast_constraint_specs": [
+      {
+        "kind": "ss_proxy",
+        "weight": 0.75,
+        "params": {
+          "target_map": {
+            "P:S14_alpha2_specificity_helix": "H",
+            "P:S16_beta6": "E"
+          }
+        }
+      }
+    ]
+  },
+  "complex_states": [
+    {
+      "name": "candidate_apo",
+      "role": "preserve_apo_fold",
+      "metric": "plddt",
+      "entities": [
+        {
+          "type": "protein",
+          "id": "PDZ",
+          "source_chain": "P"
+        }
+      ]
+    },
+    {
+      "name": "candidate_plus_A_Caspr4",
+      "role": "positive_target",
+      "metric": "plddt",
+      "entities": [
+        {
+          "type": "protein",
+          "id": "PDZ",
+          "source_chain": "P"
+        },
+        {
+          "type": "protein",
+          "id": "A_peptide",
+          "source_chain": "A"
+        }
+      ]
+    },
+    {
+      "name": "candidate_plus_B_Syndecan1",
+      "role": "negative_countertarget",
+      "metric": "plddt",
+      "entities": [
+        {
+          "type": "protein",
+          "id": "PDZ",
+          "source_chain": "P"
+        },
+        {
+          "type": "protein",
+          "id": "B_peptide",
+          "sequence": "TKQEEFYA"
+        }
+      ]
+    }
+  ],
+  "multistate_objectives": [
+    {
+      "name": "apo_fold_confidence",
+      "type": "confidence",
+      "state": "candidate_apo",
+      "metric": "plddt",
+      "weight": 1.5
+    },
+    {
+      "name": "A_canonical_interface",
+      "type": "interface_on",
+      "state": "candidate_plus_A_Caspr4",
+      "pair": ["PDZ", "A_peptide"],
+      "contact_target": 28,
+      "residue_pair_target": 8,
+      "clash_tolerance": 3,
+      "weight": 2.0
+    },
+    {
+      "name": "B_interface_weakening",
+      "type": "interface_off",
+      "state": "candidate_plus_B_Syndecan1",
+      "pair": ["PDZ", "B_peptide"],
+      "contact_target": 28,
+      "residue_pair_target": 8,
+      "clash_tolerance": 3,
+      "weight": 1.0
+    },
+    {
+      "name": "A_over_B_interface_delta",
+      "type": "interface_delta",
+      "positive_state": "candidate_plus_A_Caspr4",
+      "negative_state": "candidate_plus_B_Syndecan1",
+      "positive_pair": ["PDZ", "A_peptide"],
+      "negative_pair": ["PDZ", "B_peptide"],
+      "positive_contact_target": 28,
+      "negative_contact_target": 28,
+      "positive_residue_pair_target": 8,
+      "negative_residue_pair_target": 8,
+      "min_delta": 0.02,
+      "target_delta": 0.25,
+      "contact_delta_target": 8,
+      "direction": "decrease",
+      "weight": 4.0
+    },
+    {
+      "name": "PDZ_node_confidence_floor",
+      "type": "region_confidence_floor",
+      "states": [
+        "candidate_apo",
+        "candidate_plus_A_Caspr4"
+      ],
+      "nodes": [
+        "S03_carboxylate_loop",
+        "S04_beta2_ligand_strand",
+        "S14_alpha2_specificity_helix",
+        "S16_beta6"
+      ],
+      "metric": "plddt_min",
+      "target": 70.0,
+      "hard_floor": 45.0,
+      "aggregate": "min",
+      "weight": 1.5
+    }
+  ],
+  "evaluator_plugins": [
+    "tiam1_selectivity"
+  ],
+  "evaluator_capabilities": {
+    "tiam1_selectivity": [
+      "tiam1_state_evidence_complete",
+      "tiam1_apo_fold_integrity",
+      "tiam1_A_complex_integrity",
+      "tiam1_A_terminal_anchor",
+      "tiam1_A_iptm_noninferiority",
+      "tiam1_A_interface_q_noninferiority",
+      "tiam1_A_clash_free",
+      "tiam1_B_clash_free_final",
+      "tiam1_A_interface_quality",
+      "tiam1_B_interface_weakening",
+      "tiam1_A_over_B_margin",
+      "tiam1_A_over_B_iptm_margin",
+      "tiam1_A_over_B_gpde_margin",
+      "tiam1_v2_iptm_margin",
+      "tiam1_v2_gpde_margin",
+      "tiam1_v2_interface_q_margin",
+      "tiam1_v2_positive_interface_q",
+      "tiam1_interface_clash_guard",
+      "tiam1_mutation_budget_integrity",
+      "tiam1_no_new_alpha2_proline"
+    ]
+  },
+  "residue_evidence_catalog": "data/residue_evidence_catalog.json",
+  "residue_evidence_prompt_max_bytes": 32768,
+  "global_ast_evolution_policy": {
+    "schema_version": "astevolve.ast_evolution_policy.v2",
+    "enabled": true,
+    "allowed_chain_spans": {
+      "P": [[0, 90]]
+    },
+    "protected_chain_spans": {
+      "P": [
+        [3, 4],
+        [6, 7],
+        [9, 25],
+        [32, 33],
+        [41, 42],
+        [54, 55],
+        [60, 61],
+        [66, 67],
+        [77, 79],
+        [82, 83]
+      ]
+    },
+    "min_total_editable_positions": 8,
+    "max_total_editable_positions": 24,
+    "min_active_structural_nodes": 1,
+    "max_active_structural_nodes": 6,
+    "max_positions_per_node": 10,
+    "max_spans_per_node": 6,
+    "max_mapping_edges": 12,
+    "immutable_structural_node_ids": ["positive_peptide_guard"],
+    "allowed_functional_node_ids": [
+      "bind_A_Caspr4",
+      "A_over_B_selectivity"
+    ],
+    "action_profiles": {
+      "point_resample_1": {
+        "allowed_actions": [
+          {"operator": "point", "budget": {"min": 1, "max": 1}},
+          {"operator": "site_resample", "budget": {"min": 1, "max": 1}}
+        ]
+      },
+      "point_resample_2": {
+        "allowed_actions": [
+          {"operator": "point", "budget": {"min": 1, "max": 2}},
+          {"operator": "site_resample", "budget": {"min": 1, "max": 2}}
+        ]
+      },
+      "point_resample_3": {
+        "allowed_actions": [
+          {"operator": "point", "budget": {"min": 1, "max": 3}},
+          {"operator": "site_resample", "budget": {"min": 1, "max": 3}}
+        ]
+      },
+      "point_resample": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+              "budget": {"min": 1, "max": 4}
+          },
+          {
+            "operator": "site_resample",
+              "budget": {"min": 1, "max": 4}
+          }
+        ]
+      },
+      "point_only": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+              "budget": {"min": 1, "max": 4}
+          }
+        ]
+      }
+    },
+    "require_catalog_eligibility": true,
+    "require_position_evidence_refs": true,
+    "min_position_safety_score": 0.6,
+    "node_id_pattern": "llm_[a-z0-9_]{3,80}",
+    "edge_id_pattern": "llm_[a-z0-9_]{3,80}"
+  },
+  "ast_evolution_policy": {
+    "schema_version": "astevolve.ast_evolution_policy.v1",
+    "enabled": true,
+    "max_structural_node_edits": 6,
+    "max_mapping_edge_edits": 12,
+    "max_added_positions": 18,
+    "max_removed_positions": 10,
+    "max_total_editable_positions": 24,
+    "structural_node_envelopes": {
+      "alpha2_edit": {
+        "chain_id": "P",
+        "allowed_spans": [[68, 69], [70, 76]],
+        "min_positions": 2,
+        "max_positions": 5
+      },
+      "beta6_edit": {
+        "chain_id": "P",
+        "allowed_spans": [[79, 81], [82, 83]],
+        "min_positions": 1,
+        "max_positions": 2
+      }
+    },
+    "mapping_edge_allowlist": {
+      "margin_Sminus2_point": {
+        "structural_node_ids": ["alpha2_edit", "beta6_edit"],
+        "action_operators": ["point"],
+        "allow_disable": true
+      },
+      "margin_S0_point": {
+        "structural_node_ids": ["alpha2_edit", "beta6_edit"],
+        "action_operators": ["point"],
+        "allow_disable": true
+      },
+      "A_alpha2_resample": {
+        "structural_node_ids": ["alpha2_edit", "beta6_edit"],
+        "action_operators": ["site_resample"],
+        "allow_disable": true
+      },
+      "A_beta6_resample": {
+        "structural_node_ids": ["alpha2_edit", "beta6_edit"],
+        "action_operators": ["site_resample"],
+        "allow_disable": true
+      }
+    }
+  },
+  "executable_dual_ast": {
+    "schema_version": "astevolve.executable_dual_ast.v1",
+    "ast_id": "tiam1_pdz_adaptive_l2_dual_ast",
+    "revision": 1,
+    "structural_nodes": [
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "alpha2_edit",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "P",
+          "spans": [
+            [70, 72],
+            [74, 75]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {"min": 1, "max": 2}
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {"min": 1, "max": 2}
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "beta6_edit",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "P",
+          "spans": [
+            [79, 80]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {"min": 1, "max": 1}
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {"min": 1, "max": 1}
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "positive_peptide_guard",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [0, 8]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      }
+    ],
+    "functional_nodes": [
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "bind_A_Caspr4",
+        "kind": "hard_constraint",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "tiam1_selectivity",
+          "term_name": "tiam1_v2_positive_interface_q"
+        },
+        "threshold": 0.8929525830682546,
+        "missing_policy": "fail",
+        "evidence_refs": ["case_ast:multistate:A"]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "A_over_B_selectivity",
+        "kind": "objective",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "tiam1_selectivity",
+          "term_name": "tiam1_v2_interface_q_margin"
+        },
+        "threshold": 0.5,
+        "missing_policy": "fail",
+        "evidence_refs": ["case_ast:paired_A_over_B_margin"]
+      }
+    ],
+    "mapping_edges": [
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "margin_Sminus2_point",
+        "relation": "realizes",
+        "functional_node_id": "A_over_B_selectivity",
+        "structural_node_id": "alpha2_edit",
+        "action_operator": "point",
+        "evidence_refs": ["case_ast:paired_selectivity"]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "margin_S0_point",
+        "relation": "realizes",
+        "functional_node_id": "A_over_B_selectivity",
+        "structural_node_id": "beta6_edit",
+        "action_operator": "point",
+        "evidence_refs": ["case_ast:paired_selectivity"]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "A_alpha2_resample",
+        "relation": "realizes",
+        "functional_node_id": "bind_A_Caspr4",
+        "structural_node_id": "alpha2_edit",
+        "action_operator": "site_resample",
+        "evidence_refs": ["case_ast:A_specificity_pocket"]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "A_beta6_resample",
+        "relation": "realizes",
+        "functional_node_id": "bind_A_Caspr4",
+        "structural_node_id": "beta6_edit",
+        "action_operator": "site_resample",
+        "evidence_refs": ["case_ast:A_terminal_pocket"]
+      }
+    ]
+  },
+  "semantic_graph": {
+    "schema_version": "protein_semantic_graph_v1",
+    "description": "Tiam1 PDZ L1 closed-book structural and functional graph.",
+    "structural_graph": {
+      "nodes": {
+        "alpha2_edit": {
+          "id": "alpha2_edit",
+          "kind": "specificity_pocket",
+          "chain_id": "P",
+          "spans": [[70, 72], [74, 75]],
+          "role": "paired A/B discrimination"
+        },
+        "beta6_edit": {
+          "id": "beta6_edit",
+          "kind": "terminal_pocket",
+          "chain_id": "P",
+          "spans": [[79, 80]],
+          "role": "terminal side-chain discrimination"
+        },
+        "shared_anchor_guard": {
+          "id": "shared_anchor_guard",
+          "kind": "frozen_anchor",
+          "chain_id": "P",
+          "spans": [[9, 25], [77, 78]],
+          "role": "preserve free-carboxylate anchor and beta2 register"
+        }
+      },
+      "edges": [
+        {"source": "alpha2_edit", "target": "beta6_edit", "relation": "cooperative"},
+        {"source": "shared_anchor_guard", "target": "alpha2_edit", "relation": "constrains"},
+        {"source": "shared_anchor_guard", "target": "beta6_edit", "relation": "constrains"}
+      ]
+    },
+    "functional_graph": {
+      "nodes": {
+        "bind_A_Caspr4": {
+          "id": "bind_A_Caspr4",
+          "kind": "objective",
+          "state": "positive",
+          "direction": "maximize",
+          "evaluator_binding": "typed_multistate_objectives",
+          "maps_to": ["alpha2_edit", "beta6_edit"]
+        },
+        "reject_B_Syndecan1": {
+          "id": "reject_B_Syndecan1",
+          "kind": "objective",
+          "state": "negative",
+          "direction": "maximize",
+          "evaluator_binding": "typed_multistate_objectives",
+          "maps_to": ["alpha2_edit", "beta6_edit"]
+        },
+        "PDZ_fold_guardrail": {
+          "id": "PDZ_fold_guardrail",
+          "kind": "guardrail",
+          "state": "preserve",
+          "direction": "maximize",
+          "evaluator_binding": "state_confidence_min",
+          "maps_to": ["shared_anchor_guard"]
+        }
+      },
+      "edges": [
+        {"source": "bind_A_Caspr4", "target": "reject_B_Syndecan1", "relation": "paired_objective"},
+        {"source": "PDZ_fold_guardrail", "target": "bind_A_Caspr4", "relation": "gates"}
+      ]
+    },
+    "mappings": {
+      "bind_A_Caspr4": ["alpha2_edit", "beta6_edit"],
+      "reject_B_Syndecan1": ["alpha2_edit", "beta6_edit"],
+      "PDZ_fold_guardrail": ["shared_anchor_guard"]
+    }
+  }
+}

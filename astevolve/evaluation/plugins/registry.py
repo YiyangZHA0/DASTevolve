@@ -1,0 +1,43 @@
+
+
+from .external_registry import (
+    EvaluatorPluginSpec,
+    PLUGIN_ALIASES,
+    PLUGIN_REGISTRY,
+    PLUGIN_REGISTRY_VERSION,
+    PLUGIN_RESOLUTION_VERSION,
+    PluginConfigError,
+    PluginConfigField,
+    PluginLoadError,
+    canonical_plugin_name,
+    load_plugin,
+    normalize_plugin_config,
+    normalize_plugin_requests,
+    preflight_evaluator_plugins,
+    plugin_registry_manifest,
+    plugin_runtime_score_config,
+    register_plugin,
+    resolve_plugin_plan,
+    unregister_plugin,
+)
+
+__all__ = [
+    "EvaluatorPluginSpec",
+    "PLUGIN_ALIASES",
+    "PLUGIN_REGISTRY",
+    "PLUGIN_REGISTRY_VERSION",
+    "PLUGIN_RESOLUTION_VERSION",
+    "PluginConfigError",
+    "PluginConfigField",
+    "PluginLoadError",
+    "canonical_plugin_name",
+    "load_plugin",
+    "normalize_plugin_config",
+    "normalize_plugin_requests",
+    "preflight_evaluator_plugins",
+    "plugin_registry_manifest",
+    "plugin_runtime_score_config",
+    "register_plugin",
+    "resolve_plugin_plan",
+    "unregister_plugin",
+]

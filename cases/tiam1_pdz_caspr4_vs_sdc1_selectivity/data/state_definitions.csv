@@ -1,0 +1,9 @@
+state_id,protein_variant,ligand,role,experimental_kd_available,experimental_structure,required_for_ast_score,notes
+S00_WT_apo,TIAM1_experimental_WT,none,fold_reference,false,3KZD,true,Q844H_background
+S01_WT_A,TIAM1_experimental_WT,Caspr4_A,positive_baseline,true,none,true,Kd_19.0_uM_but_no_matched_crystal
+S02_WT_B,TIAM1_experimental_WT,Syndecan1_B,negative_baseline,true,4GVD,true,Kd_26.9_uM
+S03_QM_apo,TIAM1_QM,none,fold_positive_control,false,4NXP,false,reference_only_during_blind_search
+S04_QM_A,TIAM1_QM,Caspr4_A,designed_positive_control,true,4NXQ,false,Kd_18.3_uM_reference_only_during_blind_search
+S05_QM_B,TIAM1_QM,Syndecan1_B,designed_negative_control,true,none,false,Kd_122_uM_but_no_matched_crystal
+S06_TIAM2_A,TIAM2_mouse_WT_Q6ZPF3,Caspr4_A,natural_upper_positive,true,none,false,Kd_3.4_uM
+S07_TIAM2_B,TIAM2_mouse_WT_Q6ZPF3,Syndecan1_B,natural_upper_negative,true,none,false,Kd_approximately_200_uM

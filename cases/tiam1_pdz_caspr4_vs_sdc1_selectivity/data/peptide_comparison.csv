@@ -1,0 +1,9 @@
+pdz_ligand_position,A_position_1based,A_aa,A_chemistry,B_position_1based,B_aa,B_chemistry,same_aa,design_relevance
+P-7,1,E,acidic_negative,1,T,polar_uncharged,false,mostly_solvent_exposed_context
+P-6,2,N,polar_uncharged,2,K,basic_positive,false,upstream_electrostatic_context
+P-5,3,Q,polar_uncharged,3,Q,polar_uncharged,true,shared_context
+P-4,4,K,basic_positive,4,E,acidic_negative,false,charge_reversal_read_by_extended_surface
+P-3,5,E,acidic_negative,5,E,acidic_negative,true,shared_context
+P-2,6,Y,aromatic_polar,6,F,aromatic_hydrophobic,false,S_minus2_pocket
+P-1,7,F,aromatic_hydrophobic,7,Y,aromatic_polar,false,sidechain_and_solvent_network
+P0,8,F,bulky_aromatic_hydrophobic,8,A,small_aliphatic_hydrophobic,false,S0_terminal_pocket_major_size_change

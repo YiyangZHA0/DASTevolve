@@ -1,0 +1,307 @@
+# Current Objective
+- Primary objective: {fitness_score}
+- Current metrics: {metrics}
+- Focus areas: {improvement_areas}
+
+{artifacts}
+
+{optimizer_memory}
+
+{hierarchical_design}
+
+# Comparative Evolution Context
+{evolution_history}
+
+{structured_design_action_context}
+
+# Required Response Boundary
+Return exactly one `{structured_design_action_proposal_version}` JSON object.
+It must have exactly these five top-level fields and no others:
+
+1. `schema_version`: exactly `{structured_design_action_proposal_version}`.
+2. `parent_evolve_hash`: copy `parent_evolve_hash` from the controller context
+   exactly.
+3. `controls`: copy `required_controls` from the controller context exactly.
+   Its canonical value is `{structured_design_action_controls}`.
+4. `edit_contract_response`: if `contract_handoff.required_response` is true,
+   this value itself must be exactly one four-field JSON object containing only
+   `schema_version`, `contract_id`, `decision`, and `reason`. Copy
+   `contract_handoff.response_schema.schema_version` and its exact
+   `contract_id`; set `decision` to exactly `"accept"` or `"reject"`; and use a
+   non-empty string for `reason`. Do not wrap this object in
+   `last_contract_response`, `response`, `accepted`, or `rejected`. If no
+   contract is offered, return JSON `null`.
+5. `design_action`: one closed `{design_action_version}` payload as specified
+   below. Do not emit `design_action_hash`; the trusted controller computes it.
+
+# Closed DesignAction v1 Payload
+`design_action` must contain exactly these fourteen fields and no others:
+
+- `schema_version`
+- `parent`
+- `coordinate_system`
+- `ast_revision_plan`
+- `position_distributions`
+- `lineage_actions`
+- `mutation_modules`
+- `sequence_seeds`
+- `candidate_portfolio`
+- `mutation_count_range`
+- `minimum_hamming_distance`
+- `hypothesis`
+- `falsification_predicates`
+- `rollback_actions`
+
+`parent` must contain exactly six fields: `case_id`, `parent_program_id`,
+`parent_candidate_id`, `parent_sequence_bundle_hash`,
+`parent_effective_contract_hash`, and `parent_evolve_hash`. Copy all six values
+from `parent_binding` in the controller context byte-for-byte. Never invent a
+parent, candidate, sequence hash, contract hash, or EVOLVE hash.
+
+`coordinate_system` must contain exactly `chain_id_scheme`,
+`residue_numbering`, and `index_base`. Use controller/runtime chain IDs,
+`residue_numbering: "one_based"`, and `index_base: 1`. Every public residue
+reference must contain exactly `chain_id` and one-based `residue_number`.
+
+`ast_revision_plan` must be the complete desired
+`astevolve.ast_revision_plan.v2`, with exactly `schema_version`,
+`structural_nodes`, `mapping_edges`, and `decision_record`. It is a complete
+replacement plan, not a patch. Preserve all unrelated valid nodes and edges.
+`decision_record.action` must be exactly one of `keep`, `create`, `delete`,
+`migrate`, `resize`, `revise`, `rewire`, `mixed`, or `revert`; lineage action
+names such as `retain`, `replace`, and `revert_to_wt` are not valid here.
+The controller applies precisely this canonical plan and no other source edit.
+For all three AST evidence_refs surfaces—structural nodes, mapping edges, and
+the decision record—use only IDs listed in
+residue_evidence_contract.allowed_ast_evidence_ids. Never copy program:*,
+island:*, objective-vector, measurement, or other audit artifact IDs into the
+AST. Those are feedback provenance, not residue-catalog evidence.
+
+# Mandatory Parent-Mutation Ownership Accounting
+For every parent residue that differs from the immutable reference, emit
+exactly one `lineage_actions` entry. Do not omit, duplicate, or silently inherit
+any parent non-WT residue. Each entry contains exactly:
+
+- `lineage_action_id`
+- `residue`
+- `action`
+- `expected_parent_residue`
+- `replacement_residue`
+- `source_node_id`
+- `target_node_id`
+- `rationale`
+
+The only legal actions and conditional rules are:
+
+- `retain`: preserve the parent residue; `source_node_id` and
+  `target_node_id` must be identical; `replacement_residue` is null.
+- `reassign_node`: preserve the residue but move ownership;
+  `source_node_id` and `target_node_id` must differ;
+  `replacement_residue` is null.
+- `replace`: replace `expected_parent_residue` with a different canonical amino
+  acid in `replacement_residue`; `source_node_id` is the compiled parent owner
+  and `target_node_id` is the intended current owner.
+- `revert_to_wt`: restore the immutable reference residue;
+  `replacement_residue` and `target_node_id` are null, while
+  `source_node_id` is the compiled parent owner.
+
+Use only parent mutations and compiled source owners explicitly published in
+the controller context. WT-to-new mutations do not belong in lineage actions.
+Protected residues, fixed residues, hard alphabets, mutation scope, ownership,
+and budgets are case-owned and cannot be weakened by this response.
+
+# Executable Capability Gate
+Treat the booleans in `step1_execution_capabilities` and
+`step3_execution_capabilities` plus `step4_frozen_wave_capabilities` as
+controller-owned capability gates. Lineage
+ownership and exact per-position amino-acid distributions are executable. If
+the Step 3 capability flag for `mutation_modules`, `sequence_seeds`, or
+`candidate_portfolio` is false, that field must be an empty JSON array. If the
+flag is true, satisfy every published Step 3 quota below. Unsupported or
+underfilled capabilities are rejected before MCTS or GPU evaluation; they are
+never ignored, clipped, or partially applied.
+
+`position_distributions` may be non-empty. Each item has exactly `residue`,
+`enabled_residues`, `forbidden_residues`, `probabilities`,
+`required_mutation`, `wt_revert_weight`, and `temperature`.
+
+- Select residues only from `active_position_catalog` or
+  `prospective_position_catalog` and use its one-based public residue reference
+  exactly. A prospective position must be selected by exactly one Node in the
+  proposed AST; its owner is derived from that proposed selector.
+- `enabled_residues` must be a non-empty subset of the published
+  `hard_allowed_residues`; `forbidden_residues` must also remain inside that
+  hard alphabet and must not overlap enabled residues. The LLM can narrow or
+  reweight the case alphabet but can never widen it.
+- `probabilities` must contain exactly the enabled residue keys, use finite
+  non-negative values, and sum to 1 within 1e-8. A zero probability is a real
+  prohibition and is never floored by the runtime.
+- After applying any lineage action at the same site, exclude the reconciled
+  root residue and do not give positive probability to more remaining residues
+  than
+  `step1_execution_capabilities.max_positive_substitution_support_per_position`;
+  otherwise the optimizer would have to truncate the exact distribution. The
+  controller derives this root from its sealed parent catalog plus your
+  lineage action and rejects an oversized policy before search.
+- `wt_revert_weight` is a finite non-negative multiplier applied only to the
+  immutable WT residue before normalization. Use 1.0 when no extra WT bias is
+  intended. If WT is not enabled, it must be 1.0.
+- `temperature` is finite and strictly positive. It is applied exactly once by
+  the case-owned compiler; MCTS must consume the resulting distribution as an
+  override, not combine it with favored/disfavored or model priors.
+- `required_mutation` is null for a soft distribution. To count toward a
+  controller soft quota, at least two enabled residues must have positive
+  probability; a one-positive-residue entry is a hard assignment and is
+  rejected as soft-quota underfill. Otherwise `required_mutation` must be a
+  positive-probability enabled non-WT residue; the compiler writes it into the
+  reconciled root and every generated descendant must retain it. At a parent
+  non-WT residue, it must agree with that residue's explicit lineage result:
+  use the retained residue for `retain`/`reassign_node`, or the exact
+  `replacement_residue` for `replace`. It cannot silently override a lineage
+  action. At a parent WT residue, it directly creates the required mutation.
+
+If `step1_execution_capabilities.minimum_position_distribution_count` is
+non-zero, meet that total quota and its separate soft and required quotas.
+Otherwise distributions are optional but are encouraged when evidence supports
+a specific position-level policy.
+If the proposal creates, migrates, or resizes a Node while a required-position
+quota is active, place at least one non-null `required_mutation` on a position
+owned by a changed Node. This makes the Node edit affect the downstream search
+rather than only changing AST text.
+
+Copy `step1_execution_capabilities.required_mutation_count_range` from the
+controller context exactly into `mutation_count_range`, and copy
+`required_minimum_hamming_distance` into `minimum_hamming_distance`. The range
+uses the absolute non-WT count against the immutable reference, so `[0, 0]`
+would incorrectly reject a retained non-WT parent.
+
+If `step1_execution_capabilities.required_sequence_reconciliation` is true,
+this is an explicit controller-owned acceptance run: at least one
+`lineage_actions` entry must use `replace` or `revert_to_wt`, so the compiled
+reconciled root genuinely differs from the selected parent. In normal runs the
+flag is false and an evidence-supported all-retain/reassign action remains
+legal.
+
+When `step3_execution_capabilities.enabled` is false, the following three
+closed item arrays remain reserved and must be empty. When it is true, they are
+executable and must use exactly these schemas:
+
+- A mutation module has exactly `module_id`, `operation`, `atomic`, `mutations`,
+  and `rationale`; each mutation has exactly `residue`, `from_residue`, and
+  `to_residue`.
+- A sequence seed has exactly `seed_id`, `sequences`, `refinement_positions`,
+  and `rationale`.
+- A portfolio entry has exactly `portfolio_id`, `role`, `count`,
+  `generation_mode`, `source_refs`, and `required`.
+
+For an executable mutation module:
+
+- `operation` is a closed enum: `module_insert`, `module_replace`,
+  `module_revert`, or `matched_module_ablation`. In the bounded Step 3
+  acceptance use `module_insert` for the treatment and
+  `matched_module_ablation` for the ablation; never invent `substitution`,
+  `point`, or `apply_mutations`.
+- Every residue must come from `active_position_catalog`; only when
+  `step4_frozen_wave_capabilities.enabled` is true may a module/seed additionally
+  use `prospective_position_catalog` coordinates selected by the proposed AST.
+  Case-owned scope, owner, alphabet, protected/fixed residues, and total budget
+  remain binding.
+- `from_residue` is the residue in the input background consumed by that
+  operation and `to_residue` is its exact output. Never emit a no-op.
+- An atomic module is all-or-nothing. The compiler rejects one invalid member;
+  it never retains a legal subset.
+- At least one required non-ablation atomic module must span at least two
+  different published `owner_node_id` values when the corresponding Step 3
+  cross-Node quota is non-zero.
+- In the Step 3 acceptance surface, every portfolio residue must remain covered
+  by its published `owner_node_id` in the proposed complete AST plan. Preserve
+  those Node IDs/selectors while testing module/seed execution; Node migration
+  can be tested in a separate matched wave instead of confounding this one.
+- A `matched_module_ablation` module declares the treatment residues removed in
+  its matched control. Its mutation rows describe treatment residue to
+  reconciled-root residue. It must be referenced together with exactly one
+  non-ablation treatment module by a `generation_mode: "matched_ablation"`
+  portfolio entry. `source_refs` are a canonical unordered set; distinguish the
+  two references by module operation, never by list order.
+
+For an executable sequence seed:
+
+- Copy the exact full chain set and lengths from `step3_sequence_context`.
+  `sequences` is a complete chain-to-sequence bundle, not a sparse mutation map.
+- Change only active catalog positions and obey their hard alphabets. The seed
+  must differ from the reconciled root and from the module/matched candidates
+  so exact-sequence deduplication does not erase a required portfolio role.
+- `refinement_positions` lists only active positions at which MCTS may refine
+  this seed; it must be non-empty and include at least one position with a
+  legal enabled residue different from the seed residue. The exact seed itself
+  must first enter the candidate pool unchanged.
+
+For an executable candidate portfolio:
+
+- A `generation_mode: "module"` entry references exactly one non-ablation
+  module; `strict_sequence_seed` references exactly one seed; and
+  `matched_ablation` references exactly one treatment module plus exactly one
+  matched-ablation module.
+- Use `count: 1` for strict module, exact-seed, and matched-pair hypotheses in
+  this acceptance surface unless the controller explicitly publishes a larger
+  count. Set required scientific entries to `required: true`; an unfilled
+  required entry is a stable pre-GPU failure, not an invitation to substitute
+  another role.
+- Satisfy all minimum counts in `step3_execution_capabilities`. Portfolio IDs,
+  module IDs, and seed IDs are globally unique and every `source_refs` value
+  must resolve exactly.
+- When `step3_execution_capabilities.acceptance_quota_semantics` is `"exact"`,
+  the published exact counts are hard upper and lower bounds, not merely
+  minimums. Emit exactly two atomic modules (one non-ablation cross-Node
+  treatment and one proper-subset matched ablation), exactly one full sequence
+  seed, and exactly three required portfolio entries (one `module`, one
+  `strict_sequence_seed`, and one `matched_ablation`), each with `count: 1`.
+  Set their roles exactly to `primary`, `repair`, and `matched_ablation`,
+  respectively.
+  Do not emit optional, `mcts`, or `control` portfolio entries in this surface.
+  The seed must be sequence-distinct from both the treatment and matched
+  control, yielding exactly four compiled slots and three unique sequences.
+
+- When `step3_execution_capabilities.acceptance_quota_semantics` is
+  `"frozen_wave"`, follow `step4_frozen_wave_capabilities` instead of the
+  Step 3 exact shape. Emit exactly three atomic modules: one primary
+  non-ablation module, one distinct matched-treatment module, and one non-empty
+  proper-subset `matched_module_ablation`. Emit exactly one novel full-chain
+  sequence seed and exactly seven required entries: primary `module` count 1,
+  primary `mcts` count 1, repair `strict_sequence_seed` count 1, repair `mcts`
+  count 1, matched_ablation `matched_ablation` count 1, novelty `mcts` count 1,
+  and control `control` count 1. These compile to eight physical roles with the
+  exact published histogram. The four exact sequences (module, seed, matched
+  treatment, matched control) must be pairwise distinct and non-root.
+- In that frozen-wave mode, create, migrate, resize, or shift at least one live
+  structural Node so its proposed selector gains at least one coordinate from
+  `prospective_position_catalog`. The proposed AST—not the incumbent owner—is
+  authoritative for that coordinate. At least two exact candidates must contain
+  a real mutation owned by every changed live Node. Free-slot roles and forced
+  proposal tiers are fixed by `step4_frozen_wave_capabilities`; do not relabel or
+  substitute them. Any underfill fails before the parent or a mutant reaches a
+  structure provider.
+
+`hypothesis` contains exactly `hypothesis_id`, `statement`, `rationale`,
+`evidence_refs`, and `expected_effects`. Cite only evidence IDs present in the
+controller context; the record is a concise public scientific rationale, not
+private chain-of-thought.
+
+Each `falsification_predicates` item contains exactly `predicate_id`, `metric`,
+`provider`, `aggregation`, `operator`, and finite `threshold`. Each
+`aggregation` must be exactly one of `single`, `median`, `worst_seed`, or
+`mean` (never synonyms such as `minimum`, `maximum`, `min`, or `max`). Each
+`operator` must be exactly one of `<`, `<=`, `>`, `>=`, or `==`. Each
+`rollback_actions` item contains exactly `rollback_action_id`, `predicate_id`,
+`action`, `target_ref`, and `rationale`; every predicate reference must resolve.
+Empty predicate and rollback arrays are valid when the context supplies no
+executable metric binding.
+
+Before returning, verify that the envelope and every nested object are closed,
+all parent fields and controls are copied exactly, all parent non-WT residues
+have exactly one lineage action, every capability-gated array is either empty
+or satisfies its published executable quota, every position distribution and
+module/seed residue is inside the active catalog or the explicitly enabled
+Step4 prospective catalog, all numbers are finite,
+and the AST plan is complete. Return JSON only—no Markdown fence, comments,
+SEARCH/REPLACE text, Python, or prose outside the object.

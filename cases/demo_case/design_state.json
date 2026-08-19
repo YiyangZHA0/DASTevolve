@@ -1,0 +1,355 @@
+{
+  "version": "synthetic_demo_case_v1",
+  "task_name": "Synthetic_Demo_Case",
+  "task_type": "synthetic_contract_test",
+  "case_sheet_path": "case_sheet.json",
+  "memory_path": "memory.yaml",
+  "binder": {
+    "name": "Synthetic binder",
+    "chain_id": "B",
+    "architecture": "two_node_test_scaffold",
+    "domain_segment_keys": {
+      "binder_domain": "binder_segments"
+    },
+    "domain_order": [
+      "binder_domain"
+    ],
+    "binder_segments": [
+      [
+        "edit_loop",
+        "loop",
+        "NQSTGA"
+      ],
+      [
+        "support_helix",
+        "support",
+        "EAAKAA"
+      ]
+    ]
+  },
+  "target": {
+    "chain_id": "T",
+    "name": "Synthetic fixed target",
+    "sequence": "GGHGGG",
+    "feature_kind": "target_patch",
+    "epitope_name": "target_patch",
+    "epitope_source": "synthetic fixture",
+    "epitope_spans": [
+      [
+        1,
+        5
+      ]
+    ]
+  },
+  "mutation_policy": {
+    "preferred_edit_order": [
+      "edit_loop",
+      "support_helix"
+    ],
+    "always_open_segments": [
+      "edit_loop"
+    ],
+    "conditionally_open_segments": [
+      "support_helix"
+    ],
+    "fixed_linker_segments": [],
+    "generally_frozen": []
+  },
+  "design_points": {
+    "schema_version": "ast_design_points_v1",
+    "design_intent": "Exercise generic compilation and search contracts.",
+    "primary_design_nodes": [
+      "edit_loop"
+    ],
+    "secondary_design_nodes": [
+      "support_helix"
+    ],
+    "default_open_nodes": [
+      "edit_loop",
+      "support_helix"
+    ],
+    "preserved_nodes": []
+  },
+  "design_constraints": {
+    "schema_version": "ast_case_constraints_v1",
+    "indexing": "zero_based_end_exclusive",
+    "mutable_nodes": [
+      "edit_loop",
+      "support_helix"
+    ],
+    "frozen_nodes": [],
+    "mutable_residue_spans": [
+      {
+        "chain_id": "B",
+        "node": "edit_loop",
+        "spans": [
+          [
+            0,
+            6
+          ]
+        ]
+      },
+      {
+        "chain_id": "B",
+        "node": "support_helix",
+        "spans": [
+          [
+            6,
+            12
+          ]
+        ]
+      }
+    ],
+    "frozen_residue_spans": [
+      {
+        "chain_id": "B",
+        "node": "support_helix_guard",
+        "spans": [
+          [
+            7,
+            9
+          ]
+        ]
+      }
+    ],
+    "target_epitopes": [
+      {
+        "name": "target_patch",
+        "entity": "synthetic_target",
+        "spans": [
+          [
+            1,
+            5
+          ]
+        ],
+        "zero_based": true,
+        "role": "fixed_positive_target"
+      }
+    ]
+  },
+  "evaluator_capabilities": {
+    "demo_gpu": [
+      "synthetic_goal_match",
+      "fixed_residue_integrity"
+    ]
+  },
+  "executable_dual_ast": {
+    "schema_version": "astevolve.executable_dual_ast.v1",
+    "ast_id": "synthetic_minimal_dual_ast",
+    "revision": 1,
+    "structural_nodes": [
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "editable_region_contract",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "B",
+          "spans": [[0, 6]]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {"min": 1, "max": 4}
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {"min": 1, "max": 4}
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "block",
+            "budget": {"min": 1, "max": 3}
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "support_region_contract",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "B",
+          "spans": [[6, 12]]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {"min": 1, "max": 2}
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "block",
+            "budget": {"min": 1, "max": 2}
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "target_feature_guard",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "T",
+          "spans": [[1, 5]]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      }
+    ],
+    "functional_nodes": [
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "target_response_intent",
+        "kind": "objective",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "demo_gpu",
+          "term_name": "synthetic_goal_match"
+        },
+        "threshold": null,
+        "missing_policy": "abstain",
+        "evidence_refs": ["fixture:deterministic_goal"]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "integrity_guard_intent",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "demo_gpu",
+          "term_name": "fixed_residue_integrity"
+        },
+        "threshold": 1.0,
+        "missing_policy": "fail",
+        "evidence_refs": ["fixture:fixed_residue_check"]
+      }
+    ],
+    "mapping_edges": [
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "target_response_realization",
+        "relation": "realizes",
+        "functional_node_id": "target_response_intent",
+        "structural_node_id": "editable_region_contract",
+        "action_operator": "point",
+        "evidence_refs": ["fixture:target_response_mapping"]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "target_response_block_realization",
+        "relation": "realizes",
+        "functional_node_id": "target_response_intent",
+        "structural_node_id": "editable_region_contract",
+        "action_operator": "block",
+        "evidence_refs": ["fixture:target_response_block_mapping"]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "integrity_guard_realization",
+        "relation": "realizes",
+        "functional_node_id": "integrity_guard_intent",
+        "structural_node_id": "support_region_contract",
+        "action_operator": "point",
+        "evidence_refs": ["fixture:integrity_guard_mapping"]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "integrity_guard_block_realization",
+        "relation": "realizes",
+        "functional_node_id": "integrity_guard_intent",
+        "structural_node_id": "support_region_contract",
+        "action_operator": "block",
+        "evidence_refs": ["fixture:integrity_guard_block_mapping"]
+      }
+    ]
+  },
+  "semantic_graph": {
+    "schema_version": "protein_semantic_graph_v1",
+    "description": "Generic two-node semantic graph for contract tests.",
+    "structural_graph": {
+      "nodes": {
+        "edit_loop": {
+          "id": "edit_loop",
+          "kind": "loop",
+          "chain_id": "B",
+          "spans": [
+            [
+              0,
+              6
+            ]
+          ],
+          "role": "primary editable region"
+        },
+        "support_helix": {
+          "id": "support_helix",
+          "kind": "helix",
+          "chain_id": "B",
+          "spans": [
+            [
+              6,
+              12
+            ]
+          ],
+          "role": "support region with a local frozen span"
+        }
+      },
+      "edges": []
+    },
+    "functional_graph": {
+      "nodes": {
+        "target_response": {
+          "id": "target_response",
+          "kind": "objective",
+          "state": "positive",
+          "direction": "maximize",
+          "evaluator_binding": "synthetic_goal_match",
+          "maps_to": [
+            "edit_loop"
+          ]
+        },
+        "scaffold_guard": {
+          "id": "scaffold_guard",
+          "kind": "guardrail",
+          "state": "preserve",
+          "direction": "maximize",
+          "evaluator_binding": "fixed_residue_integrity",
+          "maps_to": [
+            "support_helix"
+          ]
+        }
+      },
+      "edges": []
+    },
+    "mappings": {
+      "target_response": [
+        "edit_loop"
+      ],
+      "scaffold_guard": [
+        "support_helix"
+      ]
+    }
+  },
+  "synthetic_evaluator": {
+    "schema_version": "synthetic_demo_evaluator.v1",
+    "binder_chain_id": "B",
+    "desired_residues": {
+      "1": "Y",
+      "4": "W"
+    }
+  }
+}

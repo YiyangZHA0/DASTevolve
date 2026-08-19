@@ -1,0 +1,62 @@
+{
+  "schema_version": "dastevolve.external_tools.v1",
+  "policy": {
+    "checkout_root_env": "ASTEVOLVE_TOOL_ROOT",
+    "repository_submodules": false,
+    "automatic_install": false,
+    "notes": [
+      "Clone only the tools needed by a selected case.",
+      "Verify the checked-out commit before recording a scientific run.",
+      "Each tool retains its own license and installation requirements."
+    ]
+  },
+  "tools": [
+    {
+      "name": "IPSAE",
+      "repository": "https://github.com/DunbrackLab/IPSAE.git",
+      "revision": "6174cf9e71cb1bd660cc805856a18c4871a6dec3",
+      "target": "IPSAE",
+      "required": false,
+      "environment": {
+        "root": "ASTEVOLVE_IPSAE_ROOT"
+      }
+    },
+    {
+      "name": "getcontacts",
+      "repository": "https://github.com/getcontacts/getcontacts.git",
+      "revision": "da14deb263635e1e555519e5f208c61e83148eef",
+      "target": "getcontacts",
+      "required": false,
+      "environment": {
+        "root": "ASTEVOLVE_GETCONTACTS_ROOT",
+        "executable": "ASTEVOLVE_GETCONTACTS_BIN",
+        "static_executable": "ASTEVOLVE_GET_STATIC_CONTACTS_BIN"
+      }
+    },
+    {
+      "name": "pyrosetta",
+      "distribution": "licensed external Python environment",
+      "required": false,
+      "automatic_install": false,
+      "environment": {
+        "python": "ASTEVOLVE_PYROSETTA_PYTHON",
+        "interface": "ASTEVOLVE_PYROSETTA_INTERFACE"
+      },
+      "license_note": "Obtain PyRosetta directly from its official distributor and comply with its license; it is not redistributed here."
+    },
+    {
+      "name": "alphafold3",
+      "repository": "https://github.com/google-deepmind/alphafold3.git",
+      "revision": "7b197fe859790fc3e04d03ea70dd0b9ba48881c9",
+      "upstream_version": "v3.0.3",
+      "target": "alphafold3",
+      "required": false,
+      "environment": {
+        "root": "ASTEVOLVE_AF3_ROOT",
+        "model_dir": "ASTEVOLVE_AF3_MODEL_DIR",
+        "database_dir": "ASTEVOLVE_AF3_DB_DIR"
+      },
+      "license_note": "Source, databases, and model parameters have separate upstream terms. Model parameters are not redistributable through this repository."
+    }
+  ]
+}

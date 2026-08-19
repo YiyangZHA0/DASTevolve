@@ -1,0 +1,56 @@
+{
+  "schema_version": "astevolve.case_manifest.v2",
+  "case_id": "tiam1_pdz_caspr4_vs_sdc1_selectivity",
+  "name": "Tiam1 PDZ selectivity for Caspr4 over Syndecan-1",
+  "task_type": "multistate_positive_and_negative_design",
+  "design_state_path": "design_state.json",
+  "memory_path": "memory.yaml",
+  "entry_program": "initial_program.py",
+  "test_evaluator_path": "tiam1_evaluator.py",
+  "recorded_evidence_path": "recorded_evidence.json",
+  "config_path": "config.yaml",
+  "lifecycle": {
+    "schema_version": "astevolve.case_lifecycle.v1",
+    "status": "active",
+    "default_eligible": true,
+    "smoke_eligible": true,
+    "formal_eligible": true,
+    "explicit_run_only": true
+  },
+  "launcher_defaults": {
+    "inner_iterations": 100,
+    "progen_weight": 0.05
+  },
+  "preflight": {
+    "schema_version": "astevolve.case_preflight_manifest.v2",
+    "required_checks": [
+      "case.evaluator_ast_wiring",
+      "case.hard_gate_boundary",
+      "case.manifest_schema",
+      "case.mask_explanation",
+      "case.operator_execution",
+      "case.recorded_evidence",
+      "case.state_schema_compile",
+      "engine.causal_identity_history",
+      "engine.dual_ast_runtime",
+      "engine.evaluator_registry",
+      "engine.generator_contract",
+      "engine.memory_isolation",
+      "engine.operator_registry",
+      "engine.outer_effective_phenotype",
+      "engine.parent_comparison",
+      "engine.recorded_evidence_parser"
+    ],
+    "check_registry_hash": "876179f5b7495725b6697473dcc9e5fc1fbd53aeb8edc8a2d491dd78db8d6751",
+    "recorded_evidence_sha256": "9fc6a5c8b1339ef42286acf51c09cf30e063e33f8ac3f642d4831052b859017e",
+    "timeout_seconds": 20.0,
+    "intended_stage": "cpu_contract_smoke",
+    "claims": {
+      "cpu_only": true,
+      "gpu_executed": false,
+      "biological_success": false
+    }
+  },
+  "scientific_spec": "case_ast.json",
+  "notes": "Whole-construct Dual-AST design with immutable Caspr4-positive and Syndecan-1-negative objectives. Each outer proposal creates a fresh MCTS tree; provider scores are computational proxies rather than affinity measurements."
+}

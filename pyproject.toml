@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dastevolve"
+version = "0.1.0"
+description = "Executable Dual-AST protein-design search and evolution framework"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = { file = "LICENSE" }
+keywords = ["protein-design", "search", "evolution", "dual-ast"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+  "dacite>=1.8,<2",
+  "numpy>=1.26,<3",
+  "openai>=1,<3",
+  "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+gpu = [
+  "tokenizers>=0.13,<1",
+  "torch>=2.6",
+  "transformers>=4.28,<5",
+]
+
+[project.scripts]
+dastevolve-native = "astevolve.evolution.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-dir]
+outerloop = "outerloop/outerloop"
+
+[tool.setuptools.packages.find]
+where = [".", "outerloop"]
+include = [
+  "astevolve*",
+  "engine*",
+  "outerloop*",
+  "cases*",
+]
+exclude = ["tests*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+outerloop = [
+  "prompts/**/*.json",
+  "prompts/**/*.txt",
+  "prompts/**/*.yaml",
+  "prompts/**/*.yml",
+]
+"cases.demo_case" = ["*.json", "*.yaml"]
+"cases.tiam1_pdz_caspr4_vs_sdc1_selectivity" = [
+  "*.json",
+  "*.yaml",
+  "data/*.csv",
+  "data/*.json",
+]

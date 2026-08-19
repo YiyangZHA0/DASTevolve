@@ -1,0 +1,105 @@
+{
+  "schema_version": "dastevolve.model_assets.v1",
+  "deployment_id": "replace-with-local-deployment-name",
+  "runtime_root": "../DASTevolve_runtime",
+  "policy": {
+    "commit_this_example_only": true,
+    "allow_implicit_downloads": false,
+    "verify_before_formal_run": true,
+    "notes": [
+      "Copy this file to a private deployment manifest.",
+      "Replace null digests with locally verified SHA-256 values.",
+      "Never commit checkpoints, access URLs, credentials, or license-gated model parameters."
+    ]
+  },
+  "assets": [
+    {
+      "name": "classic-esmfold-runtime",
+      "provider": "esmfold",
+      "required": false,
+      "source_id": "external-bagel-compatible-runtime",
+      "relative_path": "tools/bagel",
+      "revision": null,
+      "sha256": null,
+      "required_files": [],
+      "environment": "ASTEVOLVE_BAGEL_ROOT",
+      "notes": "Configure ASTEVOLVE_ESMFOLD_PYTHON and ASTEVOLVE_ESMFOLD_MODEL; no source or checkpoint is bundled."
+    },
+    {
+      "name": "progen2-small",
+      "provider": "progen",
+      "required": false,
+      "source_id": "huggingface:hugohrban/progen2-small",
+      "relative_path": "models/progen2-small",
+      "revision": null,
+      "sha256": null,
+      "required_files": [
+        "config.json",
+        "configuration_progen.py",
+        "generation_config.json",
+        "modeling_progen.py",
+        "tokenizer.json",
+        "model.safetensors"
+      ],
+      "environment": "ASTEVOLVE_PROGEN_MODEL_DIR"
+    },
+    {
+      "name": "esm2-t6-8m-ur50d",
+      "provider": "masked_lm",
+      "required": false,
+      "source_id": "modelscope:facebook/esm2_t6_8M_UR50D",
+      "relative_path": "models/esm2_t6_8M_UR50D",
+      "revision": null,
+      "sha256": null,
+      "required_files": [
+        "config.json",
+        "tokenizer_config.json",
+        "vocab.txt",
+        "model.safetensors"
+      ],
+      "environment": "ASTEVOLVE_MASKED_LM_MODEL_DIR",
+      "notes": "Optional residue-level proposal prior; it is not a task-fitness evaluator."
+    },
+    {
+      "name": "protenix-checkpoints",
+      "provider": "protenix",
+      "required": false,
+      "source_id": "upstream-protenix-release",
+      "relative_path": "models/protenix",
+      "revision": null,
+      "sha256": null,
+      "required_files": [],
+      "environment": "ASTEVOLVE_PROTENIX_ROOT",
+      "notes": "Checkpoint filenames are tied to the installed Protenix release; record them in the private manifest."
+    },
+    {
+      "name": "esmfold2-fast",
+      "provider": "esmfold2",
+      "required": false,
+      "source_id": "biohub:ESMFold2-Fast",
+      "relative_path": "models/biohub/ESMFold2-Fast",
+      "revision": null,
+      "sha256": null,
+      "required_files": [
+        "config.json",
+        "model.safetensors"
+      ],
+      "environment": "ASTEVOLVE_ESMFOLD2_MODEL"
+    },
+    {
+      "name": "alphafold3-v3-parameters",
+      "provider": "alphafold3",
+      "required": false,
+      "source_id": "google-authorized-parameter-delivery",
+      "relative_path": "models/alphafold3",
+      "revision": "v3.0.3",
+      "sha256": null,
+      "required_files": [
+        "af3.bin.zst"
+      ],
+      "expected_size_bytes": 1020548524,
+      "environment": "ASTEVOLVE_AF3_MODEL_DIR",
+      "license_note": "Available only to authorized users under the AlphaFold 3 Model Parameters Terms of Use; do not redistribute."
+    }
+  ]
+}

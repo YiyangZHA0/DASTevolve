@@ -1,0 +1,7 @@
+protein_variant,background,peptide_role,peptide_name,peptide_sequence,kd_uM,kd_error_uM,kd_qualifier,selectivity_kd_B_over_A,experimental_method,source
+Tiam1_WT_construct,Q844H,A,Caspr4,ENQKEYFF,19.0,0.4,measured,1.416,fluorescence_anisotropy,Shepherd_et_al_Biochemistry_2011_Table_5
+Tiam1_WT_construct,Q844H,B,Syndecan1,TKQEEFYA,26.9,0.9,measured,1.416,fluorescence_anisotropy,Shepherd_et_al_Biochemistry_2011_Table_5
+Tiam1_QM,Q844H_L911M_K912E_L915F_L920V,A,Caspr4,ENQKEYFF,18.3,0.3,measured,6.667,fluorescence_anisotropy,Shepherd_et_al_Biochemistry_2011_Table_5
+Tiam1_QM,Q844H_L911M_K912E_L915F_L920V,B,Syndecan1,TKQEEFYA,122,8,measured,6.667,fluorescence_anisotropy,Shepherd_et_al_Biochemistry_2011_Table_5
+Tiam2_mouse_WT,natural,A,Caspr4,ENQKEYFF,3.4,0.3,measured,58.824,fluorescence_anisotropy,Shepherd_et_al_Biochemistry_2011_Table_3
+Tiam2_mouse_WT,natural,B,Syndecan1,TKQEEFYA,200,20,approximate,58.824,fluorescence_anisotropy,Shepherd_et_al_Biochemistry_2011_Table_3

@@ -1,0 +1,114 @@
+{
+  "schema_version": "astevolve.recorded_evidence_pack.v1",
+  "case_id": "tiam1_pdz_caspr4_vs_sdc1_selectivity",
+  "source": "deterministic_case_contract_and_failure_injection",
+  "provenance": {
+    "schema_version": "astevolve.recorded_tool_provenance.v1",
+    "provenance_id": "tiam1_case_contract_20260814",
+    "artifact_kind": "tiam1_case_cpu_contract_validation",
+    "historical_execution": "cpu",
+    "replay_mode": "frozen_values_no_tool_execution",
+    "source_files": [
+      {
+        "role": "case_design_and_claim_boundary",
+        "relative_path": "cases/tiam1_pdz_caspr4_vs_sdc1_selectivity/case_sheet.json",
+        "sha256": "ee1da5e4a854a0f9ec319943a90b94e16d73b7340e62897e4e745913e288cc80"
+      }
+    ],
+    "observed_metrics": [
+      {
+        "tool": "case_contract_validator",
+        "metric": "sequence_contract_integrity",
+        "value": 1.0
+      },
+      {
+        "tool": "case_contract_validator",
+        "metric": "multistate_definition_integrity",
+        "value": 1.0
+      }
+    ]
+  },
+  "records": [
+    {
+      "record_id": "recorded_contract_agreement",
+      "evidence_kind": "recorded_tool_smoke",
+      "provenance_ref": "tiam1_case_contract_20260814",
+      "injection": null,
+      "evaluator_states": [
+        {
+          "tool": "case_contract_validator",
+          "metric": "sequence_contract_integrity",
+          "state": "preserve",
+          "score": 1.0,
+          "available": true
+        },
+        {
+          "tool": "case_contract_validator",
+          "metric": "multistate_definition_integrity",
+          "state": "preserve",
+          "score": 1.0,
+          "available": true
+        }
+      ],
+      "expected_decision": "accept",
+      "reason": "The deterministic CPU contract preserves sequence and multistate definitions; this is not a binding or selectivity claim."
+    },
+    {
+      "record_id": "cross_tool_conflict",
+      "evidence_kind": "deterministic_failure_injection",
+      "provenance_ref": "failure_injection:cross_tool_conflict_v1",
+      "injection": {
+        "schema_version": "astevolve.deterministic_failure_injection.v1",
+        "injection_id": "cross_tool_conflict_v1",
+        "kind": "score_conflict",
+        "deterministic": true
+      },
+      "evaluator_states": [
+        {
+          "tool": "fixture_positive_state",
+          "metric": "normalized_confidence",
+          "state": "positive",
+          "score": 0.91,
+          "available": true
+        },
+        {
+          "tool": "fixture_negative_state",
+          "metric": "normalized_confidence",
+          "state": "positive",
+          "score": 0.08,
+          "available": true
+        }
+      ],
+      "expected_decision": "abstain",
+      "reason": "Deterministic failure injection: paired-state evaluator scores conflict."
+    },
+    {
+      "record_id": "missing_evidence",
+      "evidence_kind": "deterministic_failure_injection",
+      "provenance_ref": "failure_injection:missing_evidence_v1",
+      "injection": {
+        "schema_version": "astevolve.deterministic_failure_injection.v1",
+        "injection_id": "missing_evidence_v1",
+        "kind": "missing_evidence",
+        "deterministic": true
+      },
+      "evaluator_states": [
+        {
+          "tool": "fixture_structure_provider",
+          "metric": "positive_state_iptm",
+          "state": "positive",
+          "score": null,
+          "available": false
+        }
+      ],
+      "expected_decision": "abstain",
+      "reason": "Deterministic failure injection: required positive-state structure evidence is unavailable."
+    }
+  ],
+  "claims": {
+    "preflight_execution_cpu_only": true,
+    "historical_gpu_artifact_replayed": false,
+    "current_gpu_executed": false,
+    "biological_success": false
+  }
+}

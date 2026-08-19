@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0",
+  "case_id": "tiam1_pdz_caspr4_vs_sdc1_selectivity",
+  "title": "Tiam1 PDZ selectivity for Caspr4 A over Syndecan-1 B",
+  "task_type": "multistate_positive_and_negative_design",
+  "claim_boundary": "The known Tiam1 QM has moderate 6.67-fold A-over-B selectivity, not absolute B non-binding.",
+  "scaffold": {
+    "source_protein": "Human TIAM1",
+    "uniprot_accession": "Q13009",
+    "canonical_range": "841-930",
+    "uniprot_annotated_pdz_range": "845-908",
+    "canonical_sequence": "KVTQSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLKDFLSQPSLGLLVRTYPEL",
+    "benchmark_start_name": "Natural human TIAM1 Q13009 residues 841-930",
+    "benchmark_start_sequence": "KVTQSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLKDFLSQPSLGLLVRTYPEL",
+    "fixed_background_difference": "none",
+    "length": 90,
+    "numbering": {
+      "ast_1based_to_uniprot": "uniprot_position = ast_position + 840",
+      "ast_0based_to_uniprot": "uniprot_position = ast_index + 841"
+    }
+  },
+  "ligands": {
+    "A": {
+      "name": "Caspr4 C-terminal peptide",
+      "source_protein": "Human CNTNAP4",
+      "uniprot_accession": "Q9C0A0",
+      "source_range": "1301-1308",
+      "sequence": "ENQKEYFF",
+      "terminus": "free_C_terminal_carboxylate",
+      "role": "positive_target"
+    },
+    "B": {
+      "name": "Syndecan-1 C-terminal peptide",
+      "source_protein": "Human SDC1",
+      "uniprot_accession": "P18827",
+      "source_range": "303-310",
+      "sequence": "TKQEEFYA",
+      "terminus": "free_C_terminal_carboxylate",
+      "role": "counter_target"
+    },
+    "difference_summary": {
+      "different_positions": 6,
+      "length": 8,
+      "major_features": [
+        "P-4 Lys versus Glu charge reversal",
+        "P0 Phe versus Ala aromatic size change",
+        "P-2 and P-1 Tyr/Phe polarity relocation",
+        "P-7 and P-6 charge or polarity differences"
+      ]
+    }
+  },
+  "known_engineered_reference": {
+    "name": "Tiam1 QM",
+    "background": "Q844H",
+    "specificity_mutations": [
+      "L911M",
+      "K912E",
+      "L915F",
+      "L920V"
+    ],
+    "sequence": "KVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMMEDFFSQPSVGLLVRTYPEL",
+    "ast_1based_sites": [71, 72, 75, 80],
+    "ast_0based_sites": [70, 71, 74, 79],
+    "experimental_kd_uM": {
+      "A_Caspr4": {
+        "value": 18.3,
+        "error": 0.3
+      },
+      "B_Syndecan1": {
+        "value": 122.0,
+        "error": 8.0
+      }
+    },
+    "selectivity_kd_B_over_A": 6.667,
+    "role": "hidden_answer_for_closed_book_recovery"
+  },
+  "experimental_baselines": {
+    "Tiam1_WT_construct": {
+      "A_Caspr4_kd_uM": 19.0,
+      "B_Syndecan1_kd_uM": 26.9,
+      "selectivity_kd_B_over_A": 1.416
+    },
+    "mouse_Tiam2_WT": {
+      "uniprot_accession": "Q6ZPF3",
+      "annotated_pdz_range": "911-997",
+      "pdz_sequence": "DVQLTKTGDMTDFGFAVTVQVDEHQHLNRIFISDVLPDSLAYGGGLRKGNEITSLNGEPVSDLDIQQMEALFSEKSVGLTLVARPVT",
+      "A_Caspr4_kd_uM": 3.4,
+      "B_Syndecan1_kd_uM_approximate": 200.0,
+      "selectivity_kd_B_over_A_approximate": 58.824,
+      "role": "natural_functional_upper_reference_not_a_Tiam1_mutant"
+    }
+  },
+  "structure_ast": {
+    "node_table": "data/structural_nodes.csv",
+    "residue_mapping": "data/residue_mapping.csv",
+    "historical_L1_open_sites_uniprot": [911, 912, 915, 920],
+    "hard_frozen_ranges_uniprot": [
+      "850-859",
+      "860-865",
+      "918"
+    ],
+    "default_policy": "formal_runtime_uses_global_Dual_AST_v2_with_24_evidence_backed_editable_positions_and_at_most_10_mutations_per_candidate",
+    "historical_benchmark_scope_is_not_a_runtime_gate": true
+  },
+  "function_ast": {
+    "node_table": "data/functional_nodes.csv",
+    "required_nodes": [
+      "bind_A_Caspr4",
+      "reject_B_Syndecan1",
+      "shared_terminal_carboxylate_anchor",
+      "S_minus2_specificity_pocket",
+      "S0_terminal_sidechain_pocket",
+      "P_minus4_charge_discrimination",
+      "known_QM_epistatic_set",
+      "PDZ_fold_guardrail",
+      "A_over_B_selectivity"
+    ]
+  },
+  "states": {
+    "table": "data/state_definitions.csv",
+    "required_candidate_states": [
+      "candidate_apo",
+      "candidate_plus_A_Caspr4",
+      "candidate_plus_B_Syndecan1"
+    ],
+    "experimental_structure_matrix_is_incomplete": true,
+    "missing_experimental_cross_structures": [
+      "WT_plus_A_Caspr4",
+      "QM_plus_B_Syndecan1"
+    ]
+  },
+  "reference_structures": {
+    "table": "data/reference_structures.csv",
+    "core": {
+      "WT_apo": "3KZD",
+      "WT_plus_B": "4GVD",
+      "QM_apo": "4NXP",
+      "QM_plus_A": "4NXQ"
+    }
+  },
+  "benchmark_stages": {
+    "L0_oracle_calibration": {
+      "purpose": "Check that one protocol treats WT and QM across apo, A, and B without state-specific shortcuts.",
+      "reference_access": "allowed_for_evaluator_calibration_only"
+    },
+    "L1_closed_book_recovery": {
+      "role": "historical benchmark definition; not the formal adaptive runtime mutation gate",
+      "start_sequence": "scaffold.benchmark_start_sequence",
+      "open_sites_uniprot": [911, 912, 915, 920],
+      "maximum_mutations": 4,
+      "hide_from_generator_and_ranker": [
+        "known_engineered_reference.sequence",
+        "4NXP",
+        "4NXQ",
+        "QM affinity rows"
+      ],
+      "goal": "Rank the known QM or an experimentally equivalent sequence near the top."
+    },
+    "L2_exceed_QM": {
+      "role": "historical benchmark definition; superseded by global Dual-AST v2 for formal adaptive runs",
+      "maximum_mutations": 6,
+      "additional_sites": "At most one or two structurally reviewed solvent-rim positions near alpha2 or beta6.",
+      "new_ast_idea": "Exploit the A Lys versus B Glu difference at P-4 while retaining shared PDZ anchoring.",
+      "claim_boundary": "Any sequence without measured Kd remains a computational candidate."
+    }
+  },
+  "success_criteria": {
+    "known_QM_recovery_line": {
+      "A_kd_uM_max": 25.0,
+      "B_kd_uM_min": 100.0,
+      "selectivity_kd_B_over_A_min": 5.0,
+      "folded_PDZ_required": true
+    },
+    "strong_showcase_line": {
+      "A_kd_uM_max": 10.0,
+      "B_kd_uM_min": 100.0,
+      "selectivity_kd_B_over_A_min": 10.0,
+      "aspirational_reference_selectivity": 58.824,
+      "folded_PDZ_required": true
+    }
+  },
+  "evaluation_policy": {
+    "hard_geometry_gates": [
+      "apo PDZ fold retained",
+      "free peptide C-terminal carboxylate retained",
+      "canonical PDZ peptide register retained for A",
+      "beta2 backbone zipper retained",
+      "no severe interface or core clashes"
+    ],
+    "soft_structure_signals": [
+      "multi-seed chain-pair ipTM distribution",
+      "interface PAE distribution",
+      "canonical-pose occupancy",
+      "M911 to A P-2 Tyr sulfur-pi-compatible geometry",
+      "F915 to A P0 Phe aromatic contact",
+      "E912 state-specific rotamer and electrostatics"
+    ],
+    "selectivity_oracles": [
+      "same-protocol A versus B energy margin",
+      "paired competition sampling",
+      "optional explicit-solvent MD and free-energy rescoring"
+    ],
+    "final_validation": [
+      "fluorescence polarization or ITC Kd matrix",
+      "CD or DSF folding and stability check"
+    ],
+    "af3_boundary": "AF3 confidence is a structural confidence signal, not a Kd or non-binding measurement."
+  },
+  "files": {
+    "proteins_fasta": "sequences/proteins.fasta",
+    "peptides_fasta": "sequences/peptides.fasta",
+    "affinity_panel": "data/affinity_panel.csv",
+    "peptide_comparison": "data/peptide_comparison.csv",
+    "structural_nodes": "data/structural_nodes.csv",
+    "functional_nodes": "data/functional_nodes.csv",
+    "states": "data/state_definitions.csv",
+    "structures": "data/reference_structures.csv",
+    "residue_mapping": "data/residue_mapping.csv",
+    "sequence_checks": "data/structure_sequence_checks.csv",
+    "contacts": "data/ligand_contacts_4A.csv"
+  },
+  "primary_sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3059893/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5488749/",
+    "https://www.uniprot.org/uniprotkb/Q13009/entry",
+    "https://www.uniprot.org/uniprotkb/Q9C0A0/entry",
+    "https://www.uniprot.org/uniprotkb/P18827/entry",
+    "https://www.uniprot.org/uniprotkb/Q6ZPF3/entry"
+  ]
+}

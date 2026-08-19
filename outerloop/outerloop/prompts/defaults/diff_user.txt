@@ -1,0 +1,61 @@
+# Current Program Information
+- Primary objective: {fitness_score}
+- Feature coordinates: {feature_coords}
+- Focus areas: {improvement_areas}
+
+{artifacts}
+
+{optimizer_memory}
+
+# Program Evolution History
+{evolution_history}
+
+# Current Program
+```{language}
+{current_program}
+```
+
+# Task
+Suggest improvements to the program that improve the primary objective in the direction stated above.
+The system maintains diversity across these dimensions: {feature_dimensions}
+Different solutions with similar fitness but different features are valuable.
+
+If the current program exposes an `astevolve.ast_revision_plan.v2`, treat it as
+the COMPLETE desired editable Dual-AST for the next generation, not a delta.
+You may create, delete, migrate, resize, or retain structural nodes; rewire the
+complete functional-to-structural edge set; and change node- or position-level
+amino-acid soft preferences.  Every decision must include a concrete diagnosis,
+testable hypothesis, cited residue evidence IDs, expected effects, an explicit
+failure condition, confidence, and an honest keep/revise/revert action.  Cite
+the supplied full-construct residue digest for every selected position.  The
+deterministic compiler enforces the case-owned allowed/protected spans, fixed
+scientific objectives, valid mappings, and the small active-position budget.
+Never edit those locked controls or `resume_template_seqs`, and never claim a
+scope/preference change without changing the corresponding executable v2 plan.
+
+You MUST use the exact SEARCH/REPLACE diff format shown below to indicate changes:
+
+<<<<<<< SEARCH
+# Original code to find and replace (must match exactly)
+=======
+# New replacement code
+>>>>>>> REPLACE
+
+Example of valid diff format:
+<<<<<<< SEARCH
+for i in range(m):
+    for j in range(p):
+        for k in range(n):
+            C[i, j] += A[i, k] * B[k, j]
+=======
+# Reorder loops for better memory access pattern
+for i in range(m):
+    for k in range(n):
+        for j in range(p):
+            C[i, j] += A[i, k] * B[k, j]
+>>>>>>> REPLACE
+
+You can suggest multiple changes. Each SEARCH section must exactly match code in the current program.
+Return only complete SEARCH/REPLACE blocks with literal marker lines. Do not use Markdown fences or prose outside the blocks.
+
+IMPORTANT: Do not rewrite the entire program - focus on targeted improvements.
