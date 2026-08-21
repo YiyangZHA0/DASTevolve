@@ -46,6 +46,8 @@ def _print_error_files(out_dir: Path) -> None:
 
 
 def _default_params(model_name: str, cycle: int, step: int, use_msa: bool) -> tuple[int, int, bool]:
+    if model_name == "protenix-v2":
+        return 10, 200, True
     if model_name in {"protenix_base_default_v0.5.0", "protenix_base_constraint_v0.5.0"}:
         return 10, 200, use_msa
     if model_name in {

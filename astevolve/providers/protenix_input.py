@@ -132,7 +132,17 @@ def _normalise_entity(
         if not sequence:
             raise ValueError(f"Protein entity '{label}' needs a sequence")
         payload: Dict[str, Any] = {"sequence": sequence, "count": count}
-        _copy_optional(payload, entity, ["modifications", "msa"])
+        _copy_optional(
+            payload,
+            entity,
+            [
+                "modifications",
+                "msa",
+                "unpairedMsaPath",
+                "pairedMsaPath",
+                "templatesPath",
+            ],
+        )
         return {"proteinChain": payload}, _entity_info("proteinChain", payload, label, count)
 
     if kind in {"dna", "dnasequence", "dna_sequence"}:

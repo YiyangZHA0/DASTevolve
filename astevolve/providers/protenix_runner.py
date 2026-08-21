@@ -18,6 +18,7 @@ from .protenix_input import (
     write_protenix_complex_batch_input_json,
     write_protenix_complex_input_json,
 )
+from .protenix_msa_reuse import attach_reused_remote_msa
 
 
 _DEFAULT_PROTENIX_ROOT = Path(
@@ -186,6 +187,8 @@ def _run_protenix_complex(
     out_dir = run_dir / "output"
     run_dir.mkdir(parents=True, exist_ok=True)
     out_dir.mkdir(parents=True, exist_ok=True)
+    if use_msa and str(os.environ.get("ASTEVOLVE_PROTENIX_MSA_TEMPLATE_ROOT") or "").strip():
+        entities = attach_reused_remote_msa(entities, run_dir=run_dir)
     preview = write_protenix_complex_input_json(
         input_json_path,
         pred_name,
@@ -324,6 +327,16 @@ def _run_protenix_complex_batch(
     out_dir = run_dir / "output"
     run_dir.mkdir(parents=True, exist_ok=False)
     out_dir.mkdir(parents=True, exist_ok=True)
+    if use_msa and str(os.environ.get("ASTEVOLVE_PROTENIX_MSA_TEMPLATE_ROOT") or "").strip():
+        prepared_jobs = []
+        for index, raw_job in enumerate(jobs, start=1):
+            job = dict(raw_job)
+            job["entities"] = attach_reused_remote_msa(
+                list(job.get("entities") or []),
+                run_dir=run_dir / f"job_{index:04d}",
+            )
+            prepared_jobs.append(job)
+        jobs = prepared_jobs
     input_preview = write_protenix_complex_batch_input_json(input_json_path, jobs)
     job_previews = list(input_preview["jobs"])
     status_path = run_dir / "protenix_status.json"

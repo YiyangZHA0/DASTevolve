@@ -28,19 +28,79 @@ export ASTEVOLVE_LLM_API_KEY="your-key"
 export ASTEVOLVE_LLM_MODEL="your-model"
 ```
 
-Configure external model and tool paths. Keep every installation outside the
-repository:
+Configure shared external roots in `.env.local`. Keep model weights, tools,
+datasets, credentials, temporary files, and run outputs outside the repository.
+`configs/env.example` is the complete configuration reference; enable only the
+backends required by the selected case.
 
 ```bash
-export ASTEVOLVE_RUNTIME_ROOT="${PWD}/../DASTevolve_runtime"
+export ASTEVOLVE_PROJECT_ROOT="${PWD}"
+export ASTEVOLVE_RUNTIME_ROOT="${ASTEVOLVE_PROJECT_ROOT}/../DASTevolve_runtime"
+export ASTEVOLVE_DATA_ROOT="${ASTEVOLVE_RUNTIME_ROOT}/datasets"
 export ASTEVOLVE_MODEL_ROOT="${ASTEVOLVE_RUNTIME_ROOT}/models"
 export ASTEVOLVE_TOOL_ROOT="${ASTEVOLVE_RUNTIME_ROOT}/tools"
+export ASTEVOLVE_ARTIFACT_ROOT="${ASTEVOLVE_RUNTIME_ROOT}/runs"
+export ASTEVOLVE_RUN_ROOT="${ASTEVOLVE_ARTIFACT_ROOT}"
+export ASTEVOLVE_TMP_ROOT="${ASTEVOLVE_RUNTIME_ROOT}/tmp"
+
 export ASTEVOLVE_PROGEN_MODEL_DIR="${ASTEVOLVE_MODEL_ROOT}/progen2-small"
-export ASTEVOLVE_BAGEL_ROOT="${ASTEVOLVE_TOOL_ROOT}/bagel"
-export ASTEVOLVE_ESMFOLD_PYTHON="${ASTEVOLVE_BAGEL_ROOT}/.venv-local/bin/python"
-export ASTEVOLVE_ESMFOLD_MODEL="${ASTEVOLVE_MODEL_ROOT}/esmfold_v1"
-export ASTEVOLVE_PROTENIX_ROOT="${ASTEVOLVE_MODEL_ROOT}/protenix"
+export ASTEVOLVE_PROGEN_DEVICE="cuda"
+export ASTEVOLVE_MASKED_LM_MODEL_DIR="${ASTEVOLVE_MODEL_ROOT}/esm2_t6_8M_UR50D"
+```
+
+### ESMFold2 with MSA (optional)
+
+MSA input requires the full ESMFold2 model; ESMFold2-Fast does not contain an
+enabled MSA encoder. Remote mode sends protein sequences to the configured
+third-party MSA service and caches the resulting A3M files.
+
+```bash
+export ASTEVOLVE_ESMFOLD2_MODE="local"
+export ASTEVOLVE_ESMFOLD2_CONDA_ENV="esmfold2"
+export ASTEVOLVE_ESMFOLD2_MODEL="${ASTEVOLVE_MODEL_ROOT}/biohub/ESMFold2"
+export ASTEVOLVE_ESMFOLD2_ESMC_MODEL="${ASTEVOLVE_MODEL_ROOT}/biohub/ESMC-6B"
+export ESMCFOLD_CCD_PATH="${ASTEVOLVE_MODEL_ROOT}/biohub/ESMFold2/ccd.pkl"
+export ASTEVOLVE_ESMFOLD2_TMP="${ASTEVOLVE_TMP_ROOT}/esmfold2"
+export ASTEVOLVE_ESMFOLD2_ALLOW_DOWNLOAD=0
+
+export ASTEVOLVE_ESMFOLD2_MSA_MODE="remote"
+export ASTEVOLVE_ESMFOLD2_MSA_URL="https://api.colabfold.com"
+export ASTEVOLVE_ESMFOLD2_MSA_CACHE="${ASTEVOLVE_DATA_ROOT}/msa_cache"
+export ASTEVOLVE_ESMFOLD2_MSA_MAX_SEQUENCES=""
+```
+
+To use prepared local A3Ms instead, set `ASTEVOLVE_ESMFOLD2_MSA_MODE=file` and
+provide a chain-to-path JSON mapping in `ASTEVOLVE_ESMFOLD2_MSA_PATHS`, for
+example `{"A":"/absolute/path/A.a3m","L":"/absolute/path/L.a3m"}`.
+
+### Protenix-v2 with MSA (optional)
+
+```bash
+export ASTEVOLVE_PROTENIX_ROOT="${ASTEVOLVE_MODEL_ROOT}/protenix-v2"
+export PROTENIX_ROOT_DIR="${ASTEVOLVE_PROTENIX_ROOT}"
+export ASTEVOLVE_PROTENIX_TMP="${ASTEVOLVE_TMP_ROOT}/protenix"
+export ASTEVOLVE_PROTENIX_CONDA_ENV="protenix-v2"
+export ASTEVOLVE_PROTENIX_MODEL_NAME="protenix-v2"
 export ASTEVOLVE_ENABLE_PROTENIX=1
+
+export ASTEVOLVE_INNER_STRUCTURE_ENABLED=1
+export ASTEVOLVE_INNER_STRUCTURE_MODEL="protenix"
+export ASTEVOLVE_INNER_STRUCTURE_MODEL_NAME="protenix-v2"
+
+export ASTEVOLVE_PROTENIX_COMPLEX_USE_MSA=1
+export ASTEVOLVE_PROTENIX_COMPLEX_CYCLE=10
+export ASTEVOLVE_PROTENIX_COMPLEX_STEP=200
+export ASTEVOLVE_PROTENIX_COMPLEX_SAMPLE=1
+export ASTEVOLVE_PROTENIX_COMPLEX_USE_DEFAULT_PARAMS=1
+export ASTEVOLVE_PROTENIX_NUM_WORKERS=1
+export ASTEVOLVE_PROTENIX_NEED_ATOM_CONFIDENCE=1
+export ASTEVOLVE_PROTENIX_TIMEOUT=1800
+```
+
+For fixed-length searches, frozen template MSA reuse can be enabled separately:
+
+```bash
+export ASTEVOLVE_PROTENIX_MSA_TEMPLATE_ROOT="${ASTEVOLVE_DATA_ROOT}/your_case/protenix_msa_templates"
 ```
 
 Run the packaged-case validation policy without executing a model:

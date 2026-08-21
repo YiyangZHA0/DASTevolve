@@ -73,6 +73,18 @@
       "notes": "Checkpoint filenames are tied to the installed Protenix release; record them in the private manifest."
     },
     {
+      "name": "protenix-v2-checkpoints",
+      "provider": "protenix",
+      "required": false,
+      "source_id": "upstream-protenix-v2-release",
+      "relative_path": "models/protenix-v2",
+      "revision": null,
+      "sha256": null,
+      "required_files": [],
+      "environment": "ASTEVOLVE_PROTENIX_ROOT",
+      "notes": "Use with ASTEVOLVE_PROTENIX_MODEL_NAME=protenix-v2 and the matching conda environment."
+    },
+    {
       "name": "esmfold2-fast",
       "provider": "esmfold2",
       "required": false,
@@ -85,6 +97,36 @@
         "model.safetensors"
       ],
       "environment": "ASTEVOLVE_ESMFOLD2_MODEL"
+    },
+    {
+      "name": "esmfold2-full-msa",
+      "provider": "esmfold2",
+      "required": false,
+      "source_id": "biohub:ESMFold2",
+      "relative_path": "models/biohub/ESMFold2",
+      "revision": null,
+      "sha256": null,
+      "required_files": [
+        "config.json",
+        "model.safetensors",
+        "ccd.pkl"
+      ],
+      "environment": "ASTEVOLVE_ESMFOLD2_MODEL",
+      "notes": "Use the full model, not ESMFold2-Fast, when MSA input is enabled."
+    },
+    {
+      "name": "esmfold2-esmc",
+      "provider": "esmfold2",
+      "required": false,
+      "source_id": "biohub:ESMC-6B",
+      "relative_path": "models/biohub/ESMC-6B",
+      "revision": null,
+      "sha256": null,
+      "required_files": [
+        "config.json",
+        "model.safetensors"
+      ],
+      "environment": "ASTEVOLVE_ESMFOLD2_ESMC_MODEL"
     },
     {
       "name": "alphafold3-v3-parameters",

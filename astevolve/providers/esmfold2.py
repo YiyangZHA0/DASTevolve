@@ -131,11 +131,42 @@ def _cache_key(
     num_loops: int,
     num_sampling_steps: int,
     num_diffusion_samples: int,
+    msa_signature: str = "",
 ) -> str:
     seq_key = "|".join(f"{cid}:{seq}" for cid, seq in chains)
     return (
         f"{pred_name}|{seq_key}|{mode}|{model_name}|{metric}|{seed}|"
-        f"{num_loops}|{num_sampling_steps}|{num_diffusion_samples}"
+        f"{num_loops}|{num_sampling_steps}|{num_diffusion_samples}|msa={msa_signature}"
+    )
+
+
+def _msa_max_sequences(value: Optional[int]) -> Optional[int]:
+    if value is not None:
+        selected = int(value)
+    else:
+        raw = str(os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_MAX_SEQUENCES") or "").strip()
+        if not raw:
+            return None
+        selected = int(raw)
+    if selected < 1:
+        raise ValueError("ESMFold2 MSA max_sequences must be positive")
+    return selected
+
+
+def _msa_signature(
+    msa_mode: Optional[str],
+    msa_paths: Optional[Dict[str, str]],
+    msa_cache_dir: Optional[str],
+    msa_max_sequences: Optional[int],
+) -> str:
+    return json.dumps(
+        {
+            "mode": str(msa_mode or os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_MODE", "off")).lower(),
+            "paths": msa_paths if msa_paths is not None else os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_PATHS", ""),
+            "cache_dir": msa_cache_dir or os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_CACHE", ""),
+            "max_sequences": _msa_max_sequences(msa_max_sequences),
+        },
+        sort_keys=True,
     )
 
 
@@ -232,6 +263,7 @@ def _result_to_confidence(
     out_dir: Path,
     pred_name: str,
     write_cif: bool,
+    msa_metadata: Optional[Dict[str, Dict[str, Any]]] = None,
 ) -> Dict[str, Any]:
     normalized_plddt = _normalized_residue_plddt(result, chains)
     residue_values = _split_residue_values(normalized_plddt, chains)
@@ -266,6 +298,7 @@ def _result_to_confidence(
         "residue_plddt": residue_values,
         "out_dir": str(out_dir),
         "cif_path": cif_path,
+        "msa": msa_metadata or {},
     }
     (out_dir / f"{pred_name}_summary.json").write_text(
         json.dumps(summary, indent=2),
@@ -286,6 +319,10 @@ def _run_local_esmfold2(
     num_sampling_steps: int,
     num_diffusion_samples: int,
     write_cif: bool,
+    msa_mode: Optional[str] = None,
+    msa_paths: Optional[Dict[str, str]] = None,
+    msa_cache_dir: Optional[str] = None,
+    msa_max_sequences: Optional[int] = None,
 ) -> Dict[str, Any]:
     allow_download = _as_bool_env("ASTEVOLVE_ESMFOLD2_ALLOW_DOWNLOAD", False)
     local_files_only = not allow_download
@@ -353,12 +390,38 @@ def _run_local_esmfold2(
     except Exception as exc:
         raise RuntimeError("ESMFold2 local inference requires torch") from exc
 
-    spi = structure_input_cls(
-        sequences=[
-            protein_input_cls(id=cid, sequence=seq)
-            for cid, seq in chains
-        ]
+    from .remote_msa import resolve_chain_msa_paths
+
+    configured_msa_paths = bool(str(os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_PATHS") or "").strip())
+    msa_requested = (
+        bool(msa_paths)
+        or configured_msa_paths
+        or str(msa_mode or "off").lower() in {"remote", "file", "local"}
     )
+    msa_encoder = getattr(getattr(model, "config", None), "msa_encoder", None)
+    if msa_requested and not bool(getattr(msa_encoder, "enabled", False)):
+        raise ValueError(
+            f"Model {model_name!r} has no enabled MSA encoder; use full biohub/ESMFold2, "
+            "not ESMFold2-Fast, when MSA input is enabled."
+        )
+    resolved_msa, msa_metadata = resolve_chain_msa_paths(
+        chains,
+        msa_mode=msa_mode,
+        msa_paths=msa_paths,
+        cache_dir=msa_cache_dir,
+    )
+    if resolved_msa:
+        from esm.utils.msa import MSA
+
+    protein_inputs = []
+    for cid, seq in chains:
+        protein_kwargs: Dict[str, Any] = {"id": cid, "sequence": seq}
+        if cid in resolved_msa:
+            msa = MSA.from_a3m(resolved_msa[cid], max_sequences=msa_max_sequences)
+            msa_metadata[cid]["loaded_depth"] = int(msa.depth)
+            protein_kwargs["msa"] = msa
+        protein_inputs.append(protein_input_cls(**protein_kwargs))
+    spi = structure_input_cls(sequences=protein_inputs)
 
 
     with _MODEL_INFERENCE_LOCK:
@@ -382,6 +445,7 @@ def _run_local_esmfold2(
         out_dir=out_dir,
         pred_name=pred_name,
         write_cif=write_cif,
+        msa_metadata=msa_metadata,
     )
 
 
@@ -395,6 +459,10 @@ def _run_biohub_esmfold2(
     num_sampling_steps: int,
     num_diffusion_samples: int,
     write_cif: bool,
+    msa_mode: Optional[str] = None,
+    msa_paths: Optional[Dict[str, str]] = None,
+    msa_cache_dir: Optional[str] = None,
+    msa_max_sequences: Optional[int] = None,
 ) -> Dict[str, Any]:
     token = os.environ.get("ASTEVOLVE_ESMFOLD2_TOKEN") or os.environ.get("BIOHUB_API_TOKEN")
     if not token:
@@ -414,13 +482,42 @@ def _run_biohub_esmfold2(
 
     url = os.environ.get("ASTEVOLVE_ESMFOLD2_URL", DEFAULT_API_URL)
     client = SequenceStructureForgeInferenceClient(model=model_name, url=url, token=token)
+    configured_msa_paths = bool(str(os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_PATHS") or "").strip())
+    msa_requested = (
+        bool(msa_paths)
+        or configured_msa_paths
+        or str(msa_mode or "off").lower() in {"remote", "file", "local"}
+    )
+    if msa_requested and "fast" in model_name.lower():
+        raise ValueError("Biohub ESMFold2-Fast does not support MSA input; select esmfold2-2026-05")
+
+    resolved_msa: Dict[str, str] = {}
+    msa_metadata: Dict[str, Dict[str, Any]] = {}
+    if msa_requested:
+        from .remote_msa import resolve_chain_msa_paths
+
+        resolved_msa, msa_metadata = resolve_chain_msa_paths(
+            chains,
+            msa_mode=msa_mode,
+            msa_paths=msa_paths,
+            cache_dir=msa_cache_dir,
+        )
+    if resolved_msa:
+        from esm.utils.msa import MSA
 
     sequences = []
     for cid, seq in chains:
         protein_cls = getattr(input_builder, "ProteinInput", None)
         if protein_cls is not None:
-            sequences.append(protein_cls(id=cid, sequence=seq))
+            protein_kwargs: Dict[str, Any] = {"id": cid, "sequence": seq}
+            if cid in resolved_msa:
+                msa = MSA.from_a3m(resolved_msa[cid], max_sequences=msa_max_sequences)
+                msa_metadata[cid]["loaded_depth"] = int(msa.depth)
+                protein_kwargs["msa"] = msa
+            sequences.append(protein_cls(**protein_kwargs))
         else:
+            if cid in resolved_msa:
+                raise RuntimeError("Installed Biohub API client cannot attach an MSA to ProteinInput")
             sequences.append(seq)
 
     spi = input_builder.StructurePredictionInput(sequences=sequences)
@@ -449,6 +546,7 @@ def _run_biohub_esmfold2(
         out_dir=out_dir,
         pred_name=pred_name,
         write_cif=write_cif,
+        msa_metadata=msa_metadata,
     )
 
 
@@ -465,10 +563,28 @@ def _run_esmfold2_in_conda_env(
     num_sampling_steps: int,
     num_diffusion_samples: int,
     write_cif: bool,
+    msa_mode: Optional[str] = None,
+    msa_paths: Optional[Dict[str, str]] = None,
+    msa_cache_dir: Optional[str] = None,
+    msa_max_sequences: Optional[int] = None,
 ) -> Dict[str, Any]:
     run_dir = _tmp_root() / "subprocess"
     run_dir.mkdir(parents=True, exist_ok=True)
-    key = abs(hash((pred_name, tuple(chains), metric, seed, model_name, mode)))
+    key = abs(
+        hash(
+            (
+                pred_name,
+                tuple(chains),
+                metric,
+                seed,
+                model_name,
+                mode,
+                msa_mode,
+                json.dumps(msa_paths or {}, sort_keys=True),
+                msa_max_sequences,
+            )
+        )
+    )
     request_path = run_dir / f"esmfold2_request_{key}.json"
     response_path = run_dir / f"esmfold2_response_{key}.json"
 
@@ -484,6 +600,10 @@ def _run_esmfold2_in_conda_env(
         "num_sampling_steps": int(num_sampling_steps),
         "num_diffusion_samples": int(num_diffusion_samples),
         "write_cif": bool(write_cif),
+        "msa_mode": msa_mode,
+        "msa_paths": msa_paths,
+        "msa_cache_dir": msa_cache_dir,
+        "msa_max_sequences": msa_max_sequences,
     }
     request_path.write_text(json.dumps(request), encoding="utf-8")
 
@@ -545,6 +665,10 @@ def run_esmfold2_confidence_multichain(
     num_sampling_steps: int = 32,
     num_diffusion_samples: int = 1,
     write_cif: bool = True,
+    msa_mode: Optional[str] = None,
+    msa_paths: Optional[Dict[str, str]] = None,
+    msa_cache_dir: Optional[str] = None,
+    msa_max_sequences: Optional[int] = None,
     **_: Any,
 ) -> Dict[str, Any]:
 
@@ -565,6 +689,14 @@ def run_esmfold2_confidence_multichain(
         or os.environ.get("ASTEVOLVE_ESMFOLD2_MODEL")
         or (DEFAULT_API_MODEL if selected_mode == "biohub" else DEFAULT_LOCAL_MODEL)
     )
+    selected_msa_mode = str(
+        msa_mode or os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_MODE", "off")
+    ).strip().lower()
+    selected_msa_cache_dir = msa_cache_dir or os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_CACHE")
+    selected_msa_max_sequences = _msa_max_sequences(msa_max_sequences)
+    msa_signature = _msa_signature(
+        selected_msa_mode, msa_paths, selected_msa_cache_dir, selected_msa_max_sequences
+    )
     key = _cache_key(
         pred_name,
         chains,
@@ -575,6 +707,7 @@ def run_esmfold2_confidence_multichain(
         int(num_loops),
         int(num_sampling_steps),
         int(num_diffusion_samples),
+        msa_signature,
     )
     if key in _CONF_CACHE:
         return _CONF_CACHE[key]
@@ -594,6 +727,10 @@ def run_esmfold2_confidence_multichain(
             num_sampling_steps=int(num_sampling_steps),
             num_diffusion_samples=int(num_diffusion_samples),
             write_cif=write_cif,
+            msa_mode=selected_msa_mode,
+            msa_paths=msa_paths,
+            msa_cache_dir=selected_msa_cache_dir,
+            msa_max_sequences=selected_msa_max_sequences,
         )
         _CONF_CACHE[key] = out
         return out
@@ -609,6 +746,10 @@ def run_esmfold2_confidence_multichain(
             num_sampling_steps=int(num_sampling_steps),
             num_diffusion_samples=int(num_diffusion_samples),
             write_cif=write_cif,
+            msa_mode=selected_msa_mode,
+            msa_paths=msa_paths,
+            msa_cache_dir=selected_msa_cache_dir,
+            msa_max_sequences=selected_msa_max_sequences,
         )
     elif selected_mode == "local":
         out = _run_local_esmfold2(
@@ -622,6 +763,10 @@ def run_esmfold2_confidence_multichain(
             num_sampling_steps=int(num_sampling_steps),
             num_diffusion_samples=int(num_diffusion_samples),
             write_cif=write_cif,
+            msa_mode=selected_msa_mode,
+            msa_paths=msa_paths,
+            msa_cache_dir=selected_msa_cache_dir,
+            msa_max_sequences=selected_msa_max_sequences,
         )
     else:
         raise ValueError(f"Unknown ESMFold2 mode: {selected_mode}")
@@ -652,6 +797,12 @@ def run_esmfold2_plddt_multichain(
         int(kwargs.get("num_loops", 3)),
         int(kwargs.get("num_sampling_steps", 32)),
         int(kwargs.get("num_diffusion_samples", 1)),
+        _msa_signature(
+            kwargs.get("msa_mode"),
+            kwargs.get("msa_paths"),
+            kwargs.get("msa_cache_dir"),
+            kwargs.get("msa_max_sequences"),
+        ),
     )
     if key in _SCALAR_CACHE:
         return _SCALAR_CACHE[key]
@@ -710,4 +861,7 @@ def describe_esmfold2_setup() -> Dict[str, Any]:
         "allow_download": _as_bool_env("ASTEVOLVE_ESMFOLD2_ALLOW_DOWNLOAD", False),
         "has_biohub_token": bool(os.environ.get("ASTEVOLVE_ESMFOLD2_TOKEN") or os.environ.get("BIOHUB_API_TOKEN")),
         "tmp_root": str(_tmp_root()),
+        "msa_mode": os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_MODE", "off"),
+        "msa_url": os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_URL", "https://api.colabfold.com"),
+        "msa_cache": os.environ.get("ASTEVOLVE_ESMFOLD2_MSA_CACHE"),
     }
