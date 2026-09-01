@@ -1,6 +1,8 @@
 # DASTevolve
 
-![DASTevolve framework overview](configs/fig.png)
+<p align="center">
+  <img src="configs/fig.png" alt="DASTevolve framework overview" width="60%">
+</p>
 
 DASTevolve is a Dual Abstract Syntax Tree (Dual-AST) protein-design framework with an LLM-guided outer loop and a MCTS inner search loop.
 This repository contains the core runtime, a teaching demo, case studies, and a practical guide for configuring a new case.
