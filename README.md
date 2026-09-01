@@ -1,23 +1,41 @@
 # DASTevolve
 
+![DASTevolve framework overview](configs/fig.png)
+
 DASTevolve is a Dual Abstract Syntax Tree (Dual-AST) protein-design framework with an LLM-guided outer loop and a MCTS inner search loop.
 This repository contains the core runtime, a teaching demo, case studies, and a practical guide for configuring a new case.
 
 ## Requirements
 
 - Linux
-- Python 3.10-3.13
-- A CUDA-capable GPU
+- Mamba (the environment file is also Conda-compatible)
+- An NVIDIA CUDA-capable GPU with a driver compatible with CUDA 12.8 for
+  GPU-backed model execution
 - An OpenAI-compatible LLM endpoint
 - External model installations required by the selected case
 
-## Quick start
+The environment file installs Python 3.12 and the official PyTorch 2.9.1
+CUDA 12.8 wheel.
+
+The installation and dry-run checks do not execute an LLM, sequence model, or
+structure model. A GPU is required only when a configured case invokes a
+GPU-backed model.
+
+## Install with Mamba
 
 ```bash
 git clone https://github.com/YiyangZHA0/DASTevolve.git
 cd DASTevolve
-bash scripts/bootstrap_linux.sh --extras gpu
+mamba env create -f environment.yml
+mamba activate DASTevolve
 cp configs/env.example .env.local
+```
+
+To update an existing `DASTevolve` environment after pulling code changes:
+
+```bash
+mamba env update -n DASTevolve -f environment.yml
+mamba activate DASTevolve
 ```
 
 Configure the LLM in `.env.local`:
@@ -44,13 +62,24 @@ export ASTEVOLVE_RUN_ROOT="${ASTEVOLVE_ARTIFACT_ROOT}"
 export ASTEVOLVE_TMP_ROOT="${ASTEVOLVE_RUNTIME_ROOT}/tmp"
 ```
 
-Run the packaged-case validation policy without executing a model:
+## Validate installation
+
+Verify dependency consistency, CUDA visibility, and the packaged cases:
 
 ```bash
-source .venv/bin/activate
+python -m pip check
+python -c "import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())"
 bash scripts/check_install.sh
 bash scripts/run_case.sh tiam1 --iterations 2 --dry-run
 ```
+
+`pip check` should report no broken requirements, and
+`torch.cuda.is_available()` should print `True` on a configured GPU machine.
+The packaged check validates the demo and Tiam1 manifests, launchers, and Tiam1
+strict preflight without calling an LLM, sequence model, or structure model.
+
+This installation path has been validated with Python 3.12.13,
+PyTorch 2.9.1+cu128, CUDA 12.8, and an NVIDIA A100 GPU.
 
 Run the teaching demo or the Tiam1 case used in our case study:
 
@@ -93,7 +122,7 @@ python scripts/run_outer.py \
   --output "${ASTEVOLVE_RUNTIME_ROOT}/runs/your_case_validation"
 ```
 
-For a formal case that should meet the same readiness policy as Tiam1, also
+For a formal case that should meet the same readiness policy, also
 declare `recorded_evidence_path` and `preflight` in `case.json`, then run:
 
 ```bash
