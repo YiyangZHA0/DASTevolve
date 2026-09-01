@@ -1,4 +1,4 @@
-<h1 align="center">DASTevolve</h1>
+<h1 align="center">DASTevolve: Evolving Executable Programs for Protein Engineering</h1>
 
 <p align="center">
   <img src="configs/fig.png" alt="DASTevolve framework overview" width="60%">
