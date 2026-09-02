@@ -5,7 +5,7 @@
 </p>
 
 DASTevolve is a Dual Abstract Syntax Tree (Dual-AST) protein-design framework with an LLM-guided outer loop and a MCTS inner search loop.
-This repository contains the core runtime, a teaching demo, case studies, and a practical guide for configuring a new case.
+This repository contains a teaching demo, case studies, and a practical guide for configuring a new case.
 
 ## Requirements
 
@@ -74,11 +74,6 @@ python -c "import torch; print(torch.__version__, torch.version.cuda, torch.cuda
 bash scripts/check_install.sh
 bash scripts/run_case.sh tiam1 --iterations 2 --dry-run
 ```
-
-`pip check` should report no broken requirements, and
-`torch.cuda.is_available()` should print `True` on a configured GPU machine.
-The packaged check validates the demo and Tiam1 manifests, launchers, and Tiam1
-strict preflight without calling an LLM, sequence model, or structure model.
 
 This installation path has been validated with Python 3.12.13,
 PyTorch 2.9.1+cu128, CUDA 12.8, and an NVIDIA A100 GPU.
