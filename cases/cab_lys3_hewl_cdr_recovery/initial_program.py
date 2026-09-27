@@ -110,7 +110,7 @@ def propose_strategy() -> Dict[str, Any]:
                             ],
                             "disfavored_residues": ["C"],
                             "position_residue_rules": {},
-                            "policy_weight": 0.35,
+                            "policy_weight": 1.0,
                         },
                     },
                     {
@@ -134,7 +134,7 @@ def propose_strategy() -> Dict[str, Any]:
                             ],
                             "disfavored_residues": ["C"],
                             "position_residue_rules": {},
-                            "policy_weight": 0.30,
+                            "policy_weight": 1.0,
                         },
                     },
                     {
@@ -158,7 +158,7 @@ def propose_strategy() -> Dict[str, Any]:
                             ],
                             "disfavored_residues": ["C"],
                             "position_residue_rules": {},
-                            "policy_weight": 0.30,
+                            "policy_weight": 1.0,
                         },
                     },
                 ],
@@ -276,9 +276,9 @@ def propose_strategy() -> Dict[str, Any]:
                     },
                 ],
                 "decision_record": {
-                    "action": "migrate",
-                    "diagnosis": "The 28 recovery sites need seven additional evidence-backed CDR1/CDR2 exploration positions.",
-                    "hypothesis": "A 35-position CDR envelope lets the outer LLM resize and repartition Nodes while immutable L0/L1/L2 measurements remain comparable.",
+                    "action": "create",
+                    "diagnosis": "Define the initial 35-position all-alanine CDR search with fixed L0/L1/L2 recovery measurements.",
+                    "hypothesis": "Search the three reviewed CDR windows under the cysteine and HEWL preservation constraints.",
                     "evidence_refs": [
                         "cab:A:25",
                         "cab:A:26",
@@ -317,14 +317,14 @@ def propose_strategy() -> Dict[str, Any]:
                         "cab:A:121",
                     ],
                     "expected_effects": [
-                        "compile exactly 35 editable CDR positions around 28 typed recovery sites",
+                        "compile 35 editable CDR positions and 28 fixed recovery measurement sites",
                         "make every reviewed CDR position immediately reachable by MCTS",
                         "permit high-entropy multi-residue jumps away from the all-alanine parent",
                         "attribute each mutation action to one staged recovery objective",
                         "preserve the VHH disulfide cysteines and fixed HEWL chain",
                     ],
                     "failure_condition": "Reject if the mask is not exactly 35 positions, a protected cysteine becomes editable, or a staged evaluator term is missing.",
-                    "confidence": 0.95,
+                    "confidence": 0.0,
                 },
             }
         }

@@ -7,6 +7,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+import yaml
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,6 +15,7 @@ sys.path[:0] = [str(ROOT), str(ROOT / "outerloop")]
 
 from cases.cab_lys3_hewl_cdr_recovery import cab_lys3_sequence_gate as gate
 from outerloop.config import Config
+from outerloop.structured_ast_proposal import extract_current_ast_revision_plan
 
 
 class CaseConfigurationTests(unittest.TestCase):
@@ -37,6 +39,46 @@ class CaseConfigurationTests(unittest.TestCase):
             preview = module.preview_case()
         self.assertEqual(preview["mask_true_counts"], {"B": 10, "T": 0})
         self.assertEqual(preview["fixed_residue_counts"], {"B": 2, "T": 6})
+
+
+class FreshCaseInitializationTests(unittest.TestCase):
+    def test_initial_programs_are_editable_without_preloaded_feedback_rules(self):
+        for path in sorted((ROOT / "cases").glob("*/initial_program.py")):
+            if path.parent.name == "demo_case":
+                continue
+            with self.subTest(case=path.parent.name):
+                # Use the real outer-loop parser: generated/nonliteral plans
+                # would compile locally but fail before the first LLM revision.
+                plan = extract_current_ast_revision_plan(path.read_text(encoding="utf-8"))
+                self.assertEqual(plan["decision_record"]["action"], "create")
+                self.assertEqual(plan["decision_record"]["confidence"], 0.0)
+                for node in plan["structural_nodes"]:
+                    policy = node["residue_policy"]
+                    self.assertEqual(policy.get("position_residue_rules", {}), {})
+                    self.assertEqual(policy.get("policy_weight", 1.0), 1.0)
+
+    def test_initial_adaptive_memory_contains_no_observations(self):
+        def empty_tree(value):
+            if isinstance(value, dict):
+                return all(empty_tree(item) for item in value.values())
+            if isinstance(value, list):
+                return not value
+            return value is None
+
+        for path in sorted((ROOT / "cases").glob("*/memory.yaml")):
+            with self.subTest(case=path.parent.name):
+                memory = yaml.safe_load(path.read_text(encoding="utf-8"))
+                self.assertTrue(empty_tree(memory.get("adaptive_memory", {})))
+                self.assertFalse(memory.get("entries"))
+
+    def test_asyn_prompt_does_not_transfer_previous_search_observations(self):
+        prompt = (ROOT / "cases/asyn_c_terminal_hotspot_binder/prompts/system_message.txt").read_text(encoding="utf-8")
+        for leaked_context in (
+            "CONTROLLER-SUPPLIED TRANSFERRED HELIX-BRIDGE PRIOR",
+            "separate completed Full DAST continuation",
+            "saved ESMFold/P-SEA analysis",
+        ):
+            self.assertNotIn(leaked_context, prompt)
 
 
 class CABBootstrapContractTests(unittest.TestCase):

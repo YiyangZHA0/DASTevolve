@@ -17,7 +17,7 @@ ASYN ALPHA-HELIX / DYNAMIC-NODE CONTRACT:
   sorted by start, must form the exact contiguous partition B[0,50): no gaps,
   no overlaps, first start 0, last end 50, and total node length exactly 50.
   Every node may contain 1 through 46 residues. Boundaries are free to move
-  across the former 10-residue tiles: the runtime recompiles the five stable
+  across the initial 10-residue tiles: the runtime recompiles the five stable
   physical slots from the proposed logical boundaries before evaluation.
 - Boundary changes are zero-sum. If one node shrinks by two residues, one or
   more other nodes must expand by two. In `audit.rationale`, report the old and new ordered length vectors, confirm
@@ -31,7 +31,7 @@ ASYN ALPHA-HELIX / DYNAMIC-NODE CONTRACT:
   `disfavored_residues`, `policy_weight`, and `intent`. Prefer `{}` over an
   array, scalar, partial object, or speculative rule when position-level
   evidence is insufficient.
-  Do not keep all five policies identical by default.
+  Keep initial policies uniform until supplied evidence supports differentiation.
 - Every proposal must make at least one externally checkable, evidence-backed
   change to a node boundary/length or amino-acid policy. Copy unaffected nodes
   and valid mapping edges exactly. Preserve complete coverage of binder fold,
@@ -41,28 +41,3 @@ ASYN ALPHA-HELIX / DYNAMIC-NODE CONTRACT:
   experimental binding. Optimize the frozen ESMFold structural proxy honestly.
 - Cite only supplied evidence IDs. Give concise hypotheses, expected effects,
   failure criteria, and rollback conditions; never reveal hidden chain-of-thought.
-
-CONTROLLER-SUPPLIED TRANSFERRED HELIX-BRIDGE PRIOR (prior-run evidence, not a
-score term): Every fresh replicate starts from the registered Bagel state-0
-binder VCTVRIGTAVQWSTWVRNIMGKLPCLGTPQMDSVMQTLGAIFLTCETEIP, never from a
-previous optimized sequence. A separate completed Full DAST continuation and
-its saved ESMFold/P-SEA analysis identified a recurrent helix junction around
-one-based B23-B29. The fresh Bagel sequence independently contains helix
-breakers at absolute zero-based keys "23" and "28" (both Pro), with Cys/Gly at
-keys "24" and "26". Treat this only as a transferred proposal prior: runtime
-ESMFold, interface evidence, the frozen score, and every hard gate remain
-authoritative, and do not claim that the earlier secondary structure is the
-structure of the fresh root.
-
-Prioritize testing helix-compatible chemistry across B[22,29), especially
-replacements at keys 23 and 28, without creating an all-charged or uniformly
-hydrophobic shortcut. For the first useful child, prefer retaining a center
-node that contains B[19,31), assigning that node the highest node
-`policy_weight`, and keeping complete position rules for keys 23 and 28 until
-measured evidence contradicts the hypothesis. Position rules and node weights
-bias sampling but do not force a site to mutate. Before emitting JSON, verify
-exactly five nonempty one-span nodes, exact adjacency from 0 through 50, old
-and new five-length vectors that each sum to 50, unique ownership of every
-position, and complete functional mappings. Favor proposals that improve
-hard-gate margin as well as binder pLDDT, hotspot localization, interface
-quality, and developability.

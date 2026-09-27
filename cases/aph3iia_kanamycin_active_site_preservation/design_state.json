@@ -116,24 +116,66 @@
     ],
     "initial_seed_runtime_positions": [
       13,
+      15,
+      16,
+      19,
+      30,
+      31,
+      32,
+      33,
       71,
-      121,
+      73,
+      84,
+      86,
+      87,
+      124,
+      126,
+      128,
+      129,
+      163,
+      171,
+      174,
+      175,
       177,
-      237
+      237,
+      238,
+      251,
+      254
     ],
     "initial_seed_scientific_positions": [
       14,
+      16,
+      17,
+      20,
+      31,
+      32,
+      33,
+      34,
       72,
-      122,
+      74,
+      85,
+      87,
+      88,
+      125,
+      127,
+      129,
+      130,
+      164,
+      172,
+      175,
+      176,
       178,
-      238
+      238,
+      239,
+      252,
+      255
     ]
   },
   "seed_provenance": {
     "sequence": "UniProt P00552 canonical full-length 264-aa WT",
     "starting_point": "WT",
     "sequence_path": "data://aph3iia_kanamycin_active_site_preservation/sequences/P00552_wild_type.fasta",
-    "reason": "The fixed 32-sequence Level-1 benchmark is defined relative to WT; no non-WT combination has a measured kanamycin phenotype.",
+    "reason": "Initialize the fixed-length preservation task from the canonical WT reference.",
     "minimum_candidate_hamming": 1
   },
   "binder": {
@@ -326,30 +368,28 @@
   },
   "mutation_policy": {
     "allow_cysteine": false,
-    "preferred_edit_order": [
-      "S03_EDIT_SITE14",
-      "S07_EDIT_SITE72",
-      "S10_EDIT_SITE122",
-      "S14_EDIT_SITE178",
-      "S28_EDIT_SITE238"
-    ],
+    "preferred_edit_order": [],
     "always_open_segments": [],
     "conditionally_open_segments": [],
     "fixed_linker_segments": [],
     "generally_frozen": [
-      "All residues outside the five controller-authorized runtime positions are closed.",
-      "The outer LLM may alter the active Node subset and mappings but cannot broaden the case-owned position or amino-acid support."
+      "Residues outside the compiled active selector are closed.",
+      "The outer LLM may revise node topology and mappings within catalog eligibility, protected spans, and case-owned hard amino-acid support."
     ]
   },
   "design_points": {
     "schema_version": "ast_design_points_v1",
-    "design_intent": "Adaptive Dual-AST v2 search over five independently compiled, DMS-supported conservative sites while verified D157/D190/N195/D208 geometry, the crystallographic KAN shell, the unresolved N terminus, and the provisional donor-context region remain controller-owned guardrails.",
+    "design_intent": "Initialize nine segment-bounded nodes over 26 catalog-eligible positions while preserving the verified core, KAN contact shell, unresolved N terminus, and donor-context guard.",
     "primary_design_nodes": [
       "S03_EDIT_SITE14",
+      "S04_NLOBE_PRE_DONOR",
       "S07_EDIT_SITE72",
-      "S10_EDIT_SITE122",
+      "S08_NLOBE_REMAINDER",
+      "S11_CLOBE_PRE_KAN_SHELL",
+      "S13_CLOBE_PRE_SITE178",
       "S14_EDIT_SITE178",
-      "S28_EDIT_SITE238"
+      "S28_EDIT_SITE238",
+      "S29_CLOBE_PRE_CTERM_SHELL"
     ],
     "secondary_design_nodes": [],
     "default_open_nodes": [],
@@ -374,7 +414,7 @@
     "mutable_residue_spans": [
       {
         "chain_id": "A",
-        "node": "site14",
+        "node": "llm_site14",
         "spans": [
           [
             13,
@@ -384,7 +424,25 @@
       },
       {
         "chain_id": "A",
-        "node": "site72",
+        "node": "llm_nlobe_s04_surface_network",
+        "spans": [
+          [
+            15,
+            17
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            30,
+            34
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "llm_site72",
         "spans": [
           [
             71,
@@ -394,17 +452,61 @@
       },
       {
         "chain_id": "A",
-        "node": "site122",
+        "node": "llm_nlobe_support",
         "spans": [
           [
-            121,
-            122
+            73,
+            74
+          ],
+          [
+            84,
+            85
+          ],
+          [
+            86,
+            88
           ]
         ]
       },
       {
         "chain_id": "A",
-        "node": "site178",
+        "node": "llm_clobe_hinge_support",
+        "spans": [
+          [
+            124,
+            125
+          ],
+          [
+            126,
+            127
+          ],
+          [
+            128,
+            130
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "llm_clobe_support",
+        "spans": [
+          [
+            163,
+            164
+          ],
+          [
+            171,
+            172
+          ],
+          [
+            174,
+            176
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "llm_site178",
         "spans": [
           [
             177,
@@ -414,11 +516,29 @@
       },
       {
         "chain_id": "A",
-        "node": "site238",
+        "node": "llm_site238",
         "spans": [
           [
             237,
             238
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "llm_cterm_support",
+        "spans": [
+          [
+            238,
+            239
+          ],
+          [
+            251,
+            252
+          ],
+          [
+            254,
+            255
           ]
         ]
       }
@@ -3115,6 +3235,64 @@
       },
       {
         "schema_version": "astevolve.structural_node.v1",
+        "node_id": "llm_nlobe_s04_surface_network",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              15,
+              17
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              30,
+              34
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
         "node_id": "llm_site72",
         "kind": "editable",
         "selector": {
@@ -3165,15 +3343,23 @@
       },
       {
         "schema_version": "astevolve.structural_node.v1",
-        "node_id": "llm_site122",
+        "node_id": "llm_nlobe_support",
         "kind": "editable",
         "selector": {
           "schema_version": "astevolve.residue_selector.v1",
           "chain_id": "A",
           "spans": [
             [
-              121,
-              122
+              73,
+              74
+            ],
+            [
+              84,
+              85
+            ],
+            [
+              86,
+              88
             ]
           ]
         },
@@ -3192,7 +3378,7 @@
             "operator": "site_resample",
             "budget": {
               "min": 1,
-              "max": 1
+              "max": 4
             }
           },
           {
@@ -3200,7 +3386,7 @@
             "operator": "segment_resample",
             "budget": {
               "min": 1,
-              "max": 1
+              "max": 4
             }
           },
           {
@@ -3208,7 +3394,123 @@
             "operator": "segment_mutagenesis",
             "budget": {
               "min": 1,
+              "max": 4
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "llm_clobe_hinge_support",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              124,
+              125
+            ],
+            [
+              126,
+              127
+            ],
+            [
+              128,
+              130
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
               "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "llm_clobe_support",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              163,
+              164
+            ],
+            [
+              171,
+              172
+            ],
+            [
+              174,
+              176
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 4
             }
           }
         ]
@@ -3309,6 +3611,64 @@
             "budget": {
               "min": 1,
               "max": 1
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "llm_cterm_support",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              238,
+              239
+            ],
+            [
+              251,
+              252
+            ],
+            [
+              254,
+              255
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 2
             }
           }
         ]
@@ -3523,198 +3883,475 @@
     "mapping_edges": [
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site14_sequence_point",
-        "relation": "realizes",
+        "edge_id": "llm_site14_point",
         "functional_node_id": "sequence_integrity",
         "structural_node_id": "llm_site14",
         "action_operator": "point",
         "evidence_refs": [
           "aph3iia:A:13"
-        ]
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site14_fold_resample",
-        "relation": "realizes",
-        "functional_node_id": "preserve_global_fold",
+        "edge_id": "llm_site14_site_resample",
+        "functional_node_id": "mutation_scope_integrity",
         "structural_node_id": "llm_site14",
         "action_operator": "site_resample",
         "evidence_refs": [
           "aph3iia:A:13"
-        ]
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site72_scope_point",
-        "relation": "realizes",
-        "functional_node_id": "mutation_scope_integrity",
+        "edge_id": "llm_site14_segment_resample",
+        "functional_node_id": "preserve_global_fold",
+        "structural_node_id": "llm_site14",
+        "action_operator": "segment_resample",
+        "evidence_refs": [
+          "aph3iia:A:13"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site14_segment_mutagenesis",
+        "functional_node_id": "preserve_verified_core",
+        "structural_node_id": "llm_site14",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "aph3iia:A:13"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_nlobe_s04_surface_network_point",
+        "functional_node_id": "preserve_kanamycin_contacts",
+        "structural_node_id": "llm_nlobe_s04_surface_network",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:15",
+          "aph3iia:A:16",
+          "aph3iia:A:19",
+          "aph3iia:A:30",
+          "aph3iia:A:31",
+          "aph3iia:A:32",
+          "aph3iia:A:33"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_nlobe_s04_surface_network_site_resample",
+        "functional_node_id": "preserve_kanamycin_pose",
+        "structural_node_id": "llm_nlobe_s04_surface_network",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:15",
+          "aph3iia:A:16",
+          "aph3iia:A:19",
+          "aph3iia:A:30",
+          "aph3iia:A:31",
+          "aph3iia:A:32",
+          "aph3iia:A:33"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_nlobe_s04_surface_network_segment_resample",
+        "functional_node_id": "preserve_mg_geometry",
+        "structural_node_id": "llm_nlobe_s04_surface_network",
+        "action_operator": "segment_resample",
+        "evidence_refs": [
+          "aph3iia:A:15",
+          "aph3iia:A:16",
+          "aph3iia:A:19",
+          "aph3iia:A:30",
+          "aph3iia:A:31",
+          "aph3iia:A:32",
+          "aph3iia:A:33"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_nlobe_s04_surface_network_segment_mutagenesis",
+        "functional_node_id": "clash_free",
+        "structural_node_id": "llm_nlobe_s04_surface_network",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "aph3iia:A:15",
+          "aph3iia:A:16",
+          "aph3iia:A:19",
+          "aph3iia:A:30",
+          "aph3iia:A:31",
+          "aph3iia:A:32",
+          "aph3iia:A:33"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site72_point",
+        "functional_node_id": "kanamycin_label_compatibility",
         "structural_node_id": "llm_site72",
         "action_operator": "point",
         "evidence_refs": [
           "aph3iia:A:71"
-        ]
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site72_plausibility_resample",
-        "relation": "realizes",
+        "edge_id": "llm_site72_site_resample",
         "functional_node_id": "sequence_plausibility",
         "structural_node_id": "llm_site72",
         "action_operator": "site_resample",
         "evidence_refs": [
           "aph3iia:A:71"
-        ]
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site122_core_point",
-        "relation": "realizes",
+        "edge_id": "llm_site72_segment_resample",
+        "functional_node_id": "repeat_robustness",
+        "structural_node_id": "llm_site72",
+        "action_operator": "segment_resample",
+        "evidence_refs": [
+          "aph3iia:A:71"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site72_segment_mutagenesis",
+        "functional_node_id": "sequence_diversity",
+        "structural_node_id": "llm_site72",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "aph3iia:A:71"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_nlobe_support_point",
+        "functional_node_id": "sequence_integrity",
+        "structural_node_id": "llm_nlobe_support",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:73",
+          "aph3iia:A:84",
+          "aph3iia:A:86",
+          "aph3iia:A:87"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_nlobe_support_site_resample",
+        "functional_node_id": "mutation_scope_integrity",
+        "structural_node_id": "llm_nlobe_support",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:73",
+          "aph3iia:A:84",
+          "aph3iia:A:86",
+          "aph3iia:A:87"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_nlobe_support_segment_resample",
+        "functional_node_id": "preserve_global_fold",
+        "structural_node_id": "llm_nlobe_support",
+        "action_operator": "segment_resample",
+        "evidence_refs": [
+          "aph3iia:A:73",
+          "aph3iia:A:84",
+          "aph3iia:A:86",
+          "aph3iia:A:87"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_nlobe_support_segment_mutagenesis",
         "functional_node_id": "preserve_verified_core",
-        "structural_node_id": "llm_site122",
-        "action_operator": "point",
+        "structural_node_id": "llm_nlobe_support",
+        "action_operator": "segment_mutagenesis",
         "evidence_refs": [
-          "aph3iia:A:121"
-        ]
+          "aph3iia:A:73",
+          "aph3iia:A:84",
+          "aph3iia:A:86",
+          "aph3iia:A:87"
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site122_label_resample",
-        "relation": "realizes",
-        "functional_node_id": "kanamycin_label_compatibility",
-        "structural_node_id": "llm_site122",
-        "action_operator": "site_resample",
-        "evidence_refs": [
-          "aph3iia:A:121"
-        ]
-      },
-      {
-        "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site178_contacts_point",
-        "relation": "realizes",
+        "edge_id": "llm_clobe_hinge_support_point",
         "functional_node_id": "preserve_kanamycin_contacts",
+        "structural_node_id": "llm_clobe_hinge_support",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:124",
+          "aph3iia:A:126",
+          "aph3iia:A:128",
+          "aph3iia:A:129"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_clobe_hinge_support_site_resample",
+        "functional_node_id": "preserve_kanamycin_pose",
+        "structural_node_id": "llm_clobe_hinge_support",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:124",
+          "aph3iia:A:126",
+          "aph3iia:A:128",
+          "aph3iia:A:129"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_clobe_hinge_support_segment_resample",
+        "functional_node_id": "preserve_mg_geometry",
+        "structural_node_id": "llm_clobe_hinge_support",
+        "action_operator": "segment_resample",
+        "evidence_refs": [
+          "aph3iia:A:124",
+          "aph3iia:A:126",
+          "aph3iia:A:128",
+          "aph3iia:A:129"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_clobe_hinge_support_segment_mutagenesis",
+        "functional_node_id": "clash_free",
+        "structural_node_id": "llm_clobe_hinge_support",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "aph3iia:A:124",
+          "aph3iia:A:126",
+          "aph3iia:A:128",
+          "aph3iia:A:129"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_clobe_support_point",
+        "functional_node_id": "kanamycin_label_compatibility",
+        "structural_node_id": "llm_clobe_support",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:163",
+          "aph3iia:A:171",
+          "aph3iia:A:174",
+          "aph3iia:A:175"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_clobe_support_site_resample",
+        "functional_node_id": "sequence_plausibility",
+        "structural_node_id": "llm_clobe_support",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:163",
+          "aph3iia:A:171",
+          "aph3iia:A:174",
+          "aph3iia:A:175"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_clobe_support_segment_resample",
+        "functional_node_id": "repeat_robustness",
+        "structural_node_id": "llm_clobe_support",
+        "action_operator": "segment_resample",
+        "evidence_refs": [
+          "aph3iia:A:163",
+          "aph3iia:A:171",
+          "aph3iia:A:174",
+          "aph3iia:A:175"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_clobe_support_segment_mutagenesis",
+        "functional_node_id": "sequence_diversity",
+        "structural_node_id": "llm_clobe_support",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "aph3iia:A:163",
+          "aph3iia:A:171",
+          "aph3iia:A:174",
+          "aph3iia:A:175"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site178_point",
+        "functional_node_id": "sequence_integrity",
         "structural_node_id": "llm_site178",
         "action_operator": "point",
         "evidence_refs": [
           "aph3iia:A:177"
-        ]
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site178_pose_resample",
-        "relation": "realizes",
-        "functional_node_id": "preserve_kanamycin_pose",
+        "edge_id": "llm_site178_site_resample",
+        "functional_node_id": "mutation_scope_integrity",
         "structural_node_id": "llm_site178",
         "action_operator": "site_resample",
         "evidence_refs": [
           "aph3iia:A:177"
-        ]
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site238_mg_point",
-        "relation": "realizes",
+        "edge_id": "llm_site178_segment_resample",
+        "functional_node_id": "preserve_global_fold",
+        "structural_node_id": "llm_site178",
+        "action_operator": "segment_resample",
+        "evidence_refs": [
+          "aph3iia:A:177"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site178_segment_mutagenesis",
+        "functional_node_id": "preserve_verified_core",
+        "structural_node_id": "llm_site178",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "aph3iia:A:177"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site238_point",
+        "functional_node_id": "preserve_kanamycin_contacts",
+        "structural_node_id": "llm_site238",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:237"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site238_site_resample",
+        "functional_node_id": "preserve_kanamycin_pose",
+        "structural_node_id": "llm_site238",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:237"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site238_segment_resample",
         "functional_node_id": "preserve_mg_geometry",
         "structural_node_id": "llm_site238",
-        "action_operator": "point",
+        "action_operator": "segment_resample",
         "evidence_refs": [
           "aph3iia:A:237"
-        ]
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site238_clash_resample",
-        "relation": "realizes",
+        "edge_id": "llm_site238_segment_mutagenesis",
         "functional_node_id": "clash_free",
         "structural_node_id": "llm_site238",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "aph3iia:A:237"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_cterm_support_point",
+        "functional_node_id": "kanamycin_label_compatibility",
+        "structural_node_id": "llm_cterm_support",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:238",
+          "aph3iia:A:251",
+          "aph3iia:A:254"
+        ],
+        "relation": "realizes"
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_cterm_support_site_resample",
+        "functional_node_id": "sequence_plausibility",
+        "structural_node_id": "llm_cterm_support",
         "action_operator": "site_resample",
         "evidence_refs": [
-          "aph3iia:A:237"
-        ]
+          "aph3iia:A:238",
+          "aph3iia:A:251",
+          "aph3iia:A:254"
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site178_repeat_segment",
-        "relation": "realizes",
+        "edge_id": "llm_cterm_support_segment_resample",
         "functional_node_id": "repeat_robustness",
-        "structural_node_id": "llm_site178",
+        "structural_node_id": "llm_cterm_support",
         "action_operator": "segment_resample",
         "evidence_refs": [
-          "aph3iia:A:177"
-        ]
+          "aph3iia:A:238",
+          "aph3iia:A:251",
+          "aph3iia:A:254"
+        ],
+        "relation": "realizes"
       },
       {
         "schema_version": "astevolve.mapping_edge.v1",
-        "edge_id": "llm_site238_diversity_segment",
-        "relation": "realizes",
+        "edge_id": "llm_cterm_support_segment_mutagenesis",
         "functional_node_id": "sequence_diversity",
-        "structural_node_id": "llm_site238",
-        "action_operator": "segment_resample",
+        "structural_node_id": "llm_cterm_support",
+        "action_operator": "segment_mutagenesis",
         "evidence_refs": [
-          "aph3iia:A:237"
-        ]
+          "aph3iia:A:238",
+          "aph3iia:A:251",
+          "aph3iia:A:254"
+        ],
+        "relation": "realizes"
       }
     ]
   },
   "semantic_graph": {
     "schema_version": "protein_semantic_graph_v1",
-    "description": "APH(3')-IIa active-site-preserving Dual AST with five case-authorized editable single-residue segments and immutable experimental geometry guards.",
+    "description": "APH preservation Dual AST with nine initial catalog-eligible structural nodes and immutable experimental-geometry guards.",
     "structural_graph": {
       "nodes": {
-        "llm_site14": {
-          "chain_id": "A",
-          "spans": [
-            [
-              13,
-              14
-            ]
-          ],
-          "role": "adaptive_editable_site",
-          "compiled_segment": "S03_EDIT_SITE14"
-        },
-        "llm_site72": {
-          "chain_id": "A",
-          "spans": [
-            [
-              71,
-              72
-            ]
-          ],
-          "role": "adaptive_editable_site",
-          "compiled_segment": "S07_EDIT_SITE72"
-        },
-        "llm_site122": {
-          "chain_id": "A",
-          "spans": [
-            [
-              121,
-              122
-            ]
-          ],
-          "role": "adaptive_editable_site",
-          "compiled_segment": "S10_EDIT_SITE122"
-        },
-        "llm_site178": {
-          "chain_id": "A",
-          "spans": [
-            [
-              177,
-              178
-            ]
-          ],
-          "role": "adaptive_editable_site",
-          "compiled_segment": "S14_EDIT_SITE178"
-        },
-        "llm_site238": {
-          "chain_id": "A",
-          "spans": [
-            [
-              237,
-              238
-            ]
-          ],
-          "role": "adaptive_editable_site",
-          "compiled_segment": "S28_EDIT_SITE238"
-        },
         "unresolved_nterm_guard": {
           "chain_id": "A",
           "spans": [
@@ -3763,6 +4400,145 @@
             263
           ],
           "role": "crystallographic_4p5A_contact_shell"
+        },
+        "llm_site14": {
+          "chain_id": "A",
+          "spans": [
+            [
+              13,
+              14
+            ]
+          ],
+          "role": "initial_catalog_editable_region",
+          "compiled_segment": "S03_EDIT_SITE14"
+        },
+        "llm_nlobe_s04_surface_network": {
+          "chain_id": "A",
+          "spans": [
+            [
+              15,
+              17
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              30,
+              34
+            ]
+          ],
+          "role": "initial_catalog_editable_region",
+          "compiled_segment": "S04_NLOBE_PRE_DONOR"
+        },
+        "llm_site72": {
+          "chain_id": "A",
+          "spans": [
+            [
+              71,
+              72
+            ]
+          ],
+          "role": "initial_catalog_editable_region",
+          "compiled_segment": "S07_EDIT_SITE72"
+        },
+        "llm_nlobe_support": {
+          "chain_id": "A",
+          "spans": [
+            [
+              73,
+              74
+            ],
+            [
+              84,
+              85
+            ],
+            [
+              86,
+              88
+            ]
+          ],
+          "role": "initial_catalog_editable_region",
+          "compiled_segment": "S08_NLOBE_REMAINDER"
+        },
+        "llm_clobe_hinge_support": {
+          "chain_id": "A",
+          "spans": [
+            [
+              124,
+              125
+            ],
+            [
+              126,
+              127
+            ],
+            [
+              128,
+              130
+            ]
+          ],
+          "role": "initial_catalog_editable_region",
+          "compiled_segment": "S11_CLOBE_PRE_KAN_SHELL"
+        },
+        "llm_clobe_support": {
+          "chain_id": "A",
+          "spans": [
+            [
+              163,
+              164
+            ],
+            [
+              171,
+              172
+            ],
+            [
+              174,
+              176
+            ]
+          ],
+          "role": "initial_catalog_editable_region",
+          "compiled_segment": "S13_CLOBE_PRE_SITE178"
+        },
+        "llm_site178": {
+          "chain_id": "A",
+          "spans": [
+            [
+              177,
+              178
+            ]
+          ],
+          "role": "initial_catalog_editable_region",
+          "compiled_segment": "S14_EDIT_SITE178"
+        },
+        "llm_site238": {
+          "chain_id": "A",
+          "spans": [
+            [
+              237,
+              238
+            ]
+          ],
+          "role": "initial_catalog_editable_region",
+          "compiled_segment": "S28_EDIT_SITE238"
+        },
+        "llm_cterm_support": {
+          "chain_id": "A",
+          "spans": [
+            [
+              238,
+              239
+            ],
+            [
+              251,
+              252
+            ],
+            [
+              254,
+              255
+            ]
+          ],
+          "role": "initial_catalog_editable_region",
+          "compiled_segment": "S29_CLOBE_PRE_CTERM_SHELL"
         }
       },
       "edges": [
@@ -3795,10 +4571,14 @@
           "kind": "hard_constraint",
           "maps_to": [
             "llm_site14",
+            "llm_nlobe_s04_surface_network",
             "llm_site72",
-            "llm_site122",
+            "llm_nlobe_support",
+            "llm_clobe_hinge_support",
+            "llm_clobe_support",
             "llm_site178",
-            "llm_site238"
+            "llm_site238",
+            "llm_cterm_support"
           ]
         },
         "preserve_global_fold": {
@@ -3842,10 +4622,14 @@
           "kind": "soft_hidden_label_audit",
           "maps_to": [
             "llm_site14",
+            "llm_nlobe_s04_surface_network",
             "llm_site72",
-            "llm_site122",
+            "llm_nlobe_support",
+            "llm_clobe_hinge_support",
+            "llm_clobe_support",
             "llm_site178",
-            "llm_site238"
+            "llm_site238",
+            "llm_cterm_support"
           ]
         },
         "sequence_plausibility": {
@@ -3863,7 +4647,7 @@
         "sequence_diversity": {
           "kind": "archive_descriptor",
           "maps_to": [
-            "five_site_hamming"
+            "candidate_hamming_from_WT"
           ]
         }
       },
@@ -3916,35 +4700,65 @@
       ]
     },
     "mappings": {
-      "kanamycin_label_compatibility": [
+      "sequence_integrity": [
         "llm_site14",
-        "llm_site72",
-        "llm_site122",
-        "llm_site178",
-        "llm_site238"
-      ],
-      "preserve_global_fold": [
-        "llm_site14",
-        "llm_site72",
-        "llm_site122",
-        "llm_site178",
-        "llm_site238"
-      ],
-      "preserve_verified_core": [
-        "verified_core_guard"
-      ],
-      "preserve_kanamycin_contacts": [
-        "kanamycin_shell_guard"
-      ],
-      "preserve_mg_geometry": [
-        "verified_core_guard"
+        "llm_nlobe_support",
+        "llm_site178"
       ],
       "mutation_scope_integrity": [
         "llm_site14",
-        "llm_site72",
-        "llm_site122",
-        "llm_site178",
+        "llm_nlobe_support",
+        "llm_site178"
+      ],
+      "preserve_global_fold": [
+        "llm_site14",
+        "llm_nlobe_support",
+        "llm_site178"
+      ],
+      "preserve_verified_core": [
+        "llm_site14",
+        "llm_nlobe_support",
+        "llm_site178"
+      ],
+      "preserve_kanamycin_contacts": [
+        "llm_nlobe_s04_surface_network",
+        "llm_clobe_hinge_support",
         "llm_site238"
+      ],
+      "preserve_kanamycin_pose": [
+        "llm_nlobe_s04_surface_network",
+        "llm_clobe_hinge_support",
+        "llm_site238"
+      ],
+      "preserve_mg_geometry": [
+        "llm_nlobe_s04_surface_network",
+        "llm_clobe_hinge_support",
+        "llm_site238"
+      ],
+      "clash_free": [
+        "llm_nlobe_s04_surface_network",
+        "llm_clobe_hinge_support",
+        "llm_site238"
+      ],
+      "kanamycin_label_compatibility": [
+        "llm_site72",
+        "llm_clobe_support",
+        "llm_cterm_support"
+      ],
+      "sequence_plausibility": [
+        "llm_site72",
+        "llm_clobe_support",
+        "llm_cterm_support"
+      ],
+      "repeat_robustness": [
+        "llm_site72",
+        "llm_clobe_support",
+        "llm_cterm_support"
+      ],
+      "sequence_diversity": [
+        "llm_site72",
+        "llm_clobe_support",
+        "llm_cterm_support"
       ]
     }
   },
@@ -3953,10 +4767,31 @@
     "catalog_hash": "e17c5becabb2616e68f14bbf50a4b1453de318f476f763f8c49821c912437040",
     "seed_positions_zero_based": [
       13,
+      15,
+      16,
+      19,
+      30,
+      31,
+      32,
+      33,
       71,
-      121,
+      73,
+      84,
+      86,
+      87,
+      124,
+      126,
+      128,
+      129,
+      163,
+      171,
+      174,
+      175,
       177,
-      237
+      237,
+      238,
+      251,
+      254
     ],
     "eligible_positions_zero_based": [
       9,

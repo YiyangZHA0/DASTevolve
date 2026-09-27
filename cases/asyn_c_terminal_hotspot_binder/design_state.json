@@ -35,7 +35,7 @@
     "domain_segment_keys": {
       "binder_domain": "binder_segments"
     },
-    "name": "Bagel state-0 controlled-ablation seed"
+    "name": "Fixed 50-residue starting binder"
   },
   "case_id": "asyn_c_terminal_hotspot_binder",
   "case_sheet_path": "case_sheet.json",
@@ -159,7 +159,7 @@
       "B04_tile_04",
       "B05_tile_05"
     ],
-    "design_intent": "Controlled DAST ablation starting from the first sequence in the archived Bagel ASYN run; model, scorer, search count, and ESMFold budget are fixed across arms.",
+    "design_intent": "Design a 50-residue binder for the fixed ASYN C-terminal hotspot using executable Dual-AST search.",
     "preserved_nodes": [
       "ASYN_full_guard",
       "ASYN_C_terminal_hotspot"
@@ -696,10 +696,10 @@
       "all residues on chain T"
     ],
     "preferred_edit_order": [
-      "B03_tile_03",
-      "B02_tile_02",
-      "B04_tile_04",
       "B01_tile_01",
+      "B02_tile_02",
+      "B03_tile_03",
+      "B04_tile_04",
       "B05_tile_05"
     ]
   },

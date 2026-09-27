@@ -7,7 +7,7 @@
   },
   "design_goal": {
     "primary": "Preserve the Tiam1 PDZ fold and Caspr4 A-peptide canonical binding while weakening the Syndecan-1 B-peptide interface.",
-    "formal_success_definition": "A feasible candidate generated under an auditable whole-protein adaptive Dual-AST improves the same-protocol A-over-B structural-interface margin without losing the apo fold or the A complex. The outer LLM may create, delete, migrate, resize, or rewire nodes anywhere in the reviewed P chain, while deterministic safety activates only 4-8 positions per round."
+    "formal_success_definition": "A feasible candidate generated under an auditable whole-protein adaptive Dual-AST improves the same-protocol A-over-B structural-interface margin without losing the apo fold or the A complex. The outer LLM may create, delete, migrate, resize, or rewire nodes anywhere in the reviewed P chain, while deterministic safety activates only 8-24 positions per round."
   },
   "state_success_criteria": {
     "positive_signals": [
@@ -24,25 +24,99 @@
   "residue_level_constraints": {
     "indexing": "zero_based_end_exclusive",
     "mutable_residue_spans": [
-      {"chain_id": "P", "spans": [[0, 90]], "role": "whole-protein review envelope; this does not make every residue mutable at once because the active scope is selected by the safety-reviewed Executable Dual-AST"}
+      {
+        "chain_id": "P",
+        "spans": [
+          [
+            0,
+            90
+          ]
+        ],
+        "role": "whole-protein review envelope; this does not make every residue mutable at once because the active scope is selected by the safety-reviewed Executable Dual-AST"
+      }
     ],
     "frozen_residue_spans": [
-      {"chain_id": "P", "spans": [[3, 4], [6, 7], [9, 25], [32, 33], [41, 42], [54, 55], [60, 61], [66, 67], [77, 79], [82, 83]], "role": "global_Dual_AST_v2_hard_protection"},
-      {"chain_id": "A", "spans": [[0, 8]]}
+      {
+        "chain_id": "P",
+        "spans": [
+          [
+            3,
+            4
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            9,
+            25
+          ],
+          [
+            32,
+            33
+          ],
+          [
+            41,
+            42
+          ],
+          [
+            54,
+            55
+          ],
+          [
+            60,
+            61
+          ],
+          [
+            66,
+            67
+          ],
+          [
+            77,
+            79
+          ],
+          [
+            82,
+            83
+          ]
+        ],
+        "role": "global_Dual_AST_v2_hard_protection"
+      },
+      {
+        "chain_id": "A",
+        "spans": [
+          [
+            0,
+            8
+          ]
+        ]
+      }
     ],
     "per_round_active_budget": {
-      "minimum_positions": 4,
-      "maximum_positions": 8,
+      "minimum_positions": 8,
+      "maximum_positions": 24,
       "minimum_structural_nodes": 1,
-      "maximum_structural_nodes": 4,
+      "maximum_structural_nodes": 6,
       "policy": "The LLM proposes scope and residue preferences; deterministic safety compilation is authoritative."
     }
   },
   "objective_thresholds": {
-    "mutation_scope_guardrail": {"hard_gate": true, "pass_min": 0.999},
-    "target_complex_confidence_floor": {"hard_gate": true, "pass_min": 0.35},
-    "A_over_B_interface_delta": {"direction": "maximize", "target": 0.25},
-    "mutation_count": {"direction": "minimize", "pass_max": 6}
+    "mutation_scope_guardrail": {
+      "hard_gate": true,
+      "pass_min": 0.999
+    },
+    "target_complex_confidence_floor": {
+      "hard_gate": true,
+      "pass_min": 0.35
+    },
+    "A_over_B_interface_delta": {
+      "direction": "maximize",
+      "target": 0.25
+    },
+    "mutation_count": {
+      "direction": "minimize",
+      "pass_max": 10
+    }
   },
   "information_gaps": [
     "AF3, Protenix, and ESMFold confidence are not affinity oracles.",

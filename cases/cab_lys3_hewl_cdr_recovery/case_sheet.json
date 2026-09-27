@@ -3,19 +3,19 @@
   "case_name": "cab_lys3_hewl_cdr_recovery",
   "readiness": {
     "runtime": "full_dast_protenix_v2_frozen_msa",
-    "biological_specificity": "historical_recovery_benchmark_not_new_binding_evidence",
+    "biological_specificity": "reference_sequence_recovery_and_computational_interface_design",
     "dual_gpu": "requires_configured_model_runtime"
   },
   "design_goal": {
-    "primary": "Optimize a reviewed 35-position VHH CDR envelope while tracking the original 28-site L0/L1/L2 recovery benchmark and preserving the cysteines and HEWL chain.",
+    "primary": "Optimize a reviewed 35-position VHH CDR envelope while measuring L0/L1/L2 recovery at 28 defined reference sites and preserving the cysteines and HEWL chain.",
     "formal_success_definition": "Increase staged recovery while preserving integrity, SAbDab VHH plausibility, and Protenix interface quality; no native identity is exposed in the case sheet or evidence catalog."
   },
   "state_success_criteria": {
     "positive_signals": [
-      "Exactly 35 zero-based VHH CDR positions are editable; 28 retain typed recovery labels from the all-alanine benchmark.",
+      "Exactly 35 zero-based VHH CDR positions are editable; 28 have fixed L0/L1/L2 recovery labels.",
       "L0, L1, and L2 recovery are emitted as distinct typed evaluator terms.",
       "Unique MCTS candidates are evaluated with ProGen, the external SAbDab ESM-2 prior, and frozen-MSA Protenix-v2 structure evidence.",
-      "High-entropy point, site-resample, and segment-mutagenesis actions make all 35 reviewed CDR positions reachable from the first MCTS tree and explicitly reward escape from the 28-site all-alanine seed.",
+      "High-entropy point, site-resample, and segment-mutagenesis actions make all 35 reviewed CDR positions reachable from the initial MCTS tree and reward escape from the all-alanine CDR start.",
       "HEWL, VHH length, and C22-C96/C33-C109 cysteine identities remain unchanged."
     ],
     "failure_signals": [

@@ -20,263 +20,184 @@ def propose_strategy() -> Dict[str, Any]:
             "mcts_max_depth": 8,
             "mcts_progressive_widening_c": 0.25,
             "mcts_progressive_widening_alpha": 0.5,
-            "ast_revision_plan": {
-                "schema_version": "astevolve.ast_revision_plan.v2",
-                "structural_nodes": [
-                    {
-                        "node_id": "llm_alpha2_seed",
-                        "selector": {
-                            "schema_version": "astevolve.residue_selector.v1",
-                            "chain_id": "P",
-                            "spans": [[67, 77]],
-                        },
-                        "action_profile": "point_resample_3",
-                        "intent": (
-                            "Explore the complete evidence-eligible alpha2 specificity "
-                            "helix while retaining conservative helix chemistry and the "
-                            "experimentally grounded switch positions."
-                        ),
-                        "evidence_refs": [
-                            "pdz:P:67", "pdz:P:68", "pdz:P:69", "pdz:P:70", "pdz:P:71",
-                            "pdz:P:72", "pdz:P:73", "pdz:P:74", "pdz:P:75", "pdz:P:76",
-                        ],
-                        "residue_policy": {
-                            "favored_residues": ["A", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "Q", "R", "S", "T", "V", "W", "Y"],
-                            "disfavored_residues": ["C", "P"],
-                            "position_residue_rules": {
-                                "70": {
-                                    "favored_residues": ["M"],
-                                    "disfavored_residues": ["C", "P"],
-                                    "policy_weight": 1.4,
-                                    "intent": "Revisit the experimental L911M packing switch.",
-                                },
-                                "71": {
-                                    "favored_residues": ["E", "D", "Q"],
-                                    "disfavored_residues": ["C", "P"],
-                                    "policy_weight": 1.5,
-                                    "intent": "Test electrostatic discrimination at K912.",
-                                },
-                                "74": {
-                                    "favored_residues": ["M", "F"],
-                                    "disfavored_residues": ["C", "P"],
-                                    "policy_weight": 1.6,
-                                    "intent": "Test the reported L915M packing hypothesis from the natural parent.",
-                                },
-                            },
-                            "policy_weight": 1.25,
-                        },
-                    },
-                    {
-                        "node_id": "llm_beta6_seed",
-                        "selector": {
-                            "schema_version": "astevolve.residue_selector.v1",
-                            "chain_id": "P",
-                            "spans": [[79, 81], [84, 85]],
-                        },
-                        "action_profile": "point_resample_3",
-                        "intent": (
-                            "Explore the evidence-eligible beta6 terminal-pocket and "
-                            "solvent-rim positions while preserving the protected turn "
-                            "and buried beta-strand core."
-                        ),
-                        "evidence_refs": ["pdz:P:79", "pdz:P:80", "pdz:P:84"],
-                        "residue_policy": {
-                            "favored_residues": ["A", "F", "I", "L", "M", "T", "V", "Y"],
-                            "disfavored_residues": ["C", "P", "W"],
-                            "position_residue_rules": {
-                                "79": {
-                                    "favored_residues": ["V", "I"],
-                                    "disfavored_residues": ["C", "P", "W"],
-                                    "policy_weight": 1.8,
-                                    "intent": "Test the reported L920V pocket hypothesis from the natural parent.",
-                                }
-                            },
-                            "policy_weight": 1.3,
-                        },
-                    },
-                    {
-                        "node_id": "llm_s05_layered_probe",
-                        "selector": {
-                            "schema_version": "astevolve.residue_selector.v1",
-                            "chain_id": "P",
-                            "spans": [[25, 31]],
-                        },
-                        "action_profile": "point_resample_3",
-                        "intent": (
-                            "Explore the complete solvent-exposed beta2-beta3 loop as an "
-                            "optional negative-design layer without touching the protected "
-                            "beta2 ligand-strand anchor."
-                        ),
-                        "evidence_refs": [
-                            "pdz:P:25", "pdz:P:26", "pdz:P:27",
-                            "pdz:P:28", "pdz:P:29", "pdz:P:30",
-                        ],
-                        "residue_policy": {
-                            "favored_residues": ["A", "D", "E", "G", "H", "I", "K", "L", "M", "N", "Q", "R", "S", "T", "V"],
-                            "disfavored_residues": ["C", "F", "P", "W", "Y"],
-                            "position_residue_rules": {
-                                "25": {
-                                    "favored_residues": ["D", "E", "N", "Q", "K", "R"],
-                                    "disfavored_residues": ["C", "F", "P", "W", "Y"],
-                                    "policy_weight": 1.6,
-                                    "intent": "Test the variant-confounded B-enriched contact as negative design.",
-                                },
-                                "30": {
-                                    "favored_residues": ["G", "K", "N", "Q", "R", "S"],
-                                    "disfavored_residues": ["C", "F", "P", "W", "Y"],
-                                    "policy_weight": 1.5,
-                                    "intent": "Guard the A-contact opportunity with conservative loop chemistry.",
-                                },
-                            },
-                            "policy_weight": 1.3,
-                        },
-                    },
-                    {
-                        "node_id": "llm_beta3_interface_probe",
-                        "selector": {
-                            "schema_version": "astevolve.residue_selector.v1",
-                            "chain_id": "P",
-                            "spans": [[31, 32], [33, 34], [35, 38]],
-                        },
-                        "action_profile": "point_resample_3",
-                        "intent": (
-                            "Probe the evidence-eligible beta3 interface rim, including "
-                            "the residue contacting different peptide positions in A and B, "
-                            "while excluding the protected buried core positions."
-                        ),
-                        "evidence_refs": [
-                            "pdz:P:31", "pdz:P:33", "pdz:P:35",
-                            "pdz:P:36", "pdz:P:37",
-                        ],
-                        "residue_policy": {
-                            "favored_residues": ["A", "D", "E", "G", "H", "I", "K", "L", "M", "N", "Q", "R", "S", "T", "V", "Y"],
-                            "disfavored_residues": ["C", "P", "W"],
-                            "position_residue_rules": {
-                                "35": {
-                                    "favored_residues": ["D", "E", "N", "Q", "K", "R"],
-                                    "disfavored_residues": ["C", "P", "W"],
-                                    "policy_weight": 1.7,
-                                    "intent": "Test polar and charge discrimination at the A-P-3/B-P-6 contact.",
-                                }
-                            },
-                            "policy_weight": 1.2,
-                        },
-                    },
-                ],
-                "mapping_edges": [
-                    {
-                        "edge_id": "llm_margin_alpha2_point",
-                        "functional_node_id": "A_over_B_selectivity",
-                        "structural_node_id": "llm_alpha2_seed",
-                        "action_operator": "point",
-                        "evidence_refs": [
-                            "pdz:P:67", "pdz:P:68", "pdz:P:69", "pdz:P:70", "pdz:P:71",
-                            "pdz:P:72", "pdz:P:73", "pdz:P:74", "pdz:P:75", "pdz:P:76",
-                        ],
-                    },
-                    {
-                        "edge_id": "llm_margin_beta6_point",
-                        "functional_node_id": "A_over_B_selectivity",
-                        "structural_node_id": "llm_beta6_seed",
-                        "action_operator": "point",
-                        "evidence_refs": ["pdz:P:79", "pdz:P:80", "pdz:P:84"],
-                    },
-                    {
-                        "edge_id": "llm_bind_alpha2_resample",
-                        "functional_node_id": "bind_A_Caspr4",
-                        "structural_node_id": "llm_alpha2_seed",
-                        "action_operator": "site_resample",
-                        "evidence_refs": [
-                            "pdz:P:67", "pdz:P:68", "pdz:P:69", "pdz:P:70", "pdz:P:71",
-                            "pdz:P:72", "pdz:P:73", "pdz:P:74", "pdz:P:75", "pdz:P:76",
-                        ],
-                    },
-                    {
-                        "edge_id": "llm_bind_beta6_resample",
-                        "functional_node_id": "bind_A_Caspr4",
-                        "structural_node_id": "llm_beta6_seed",
-                        "action_operator": "site_resample",
-                        "evidence_refs": ["pdz:P:79", "pdz:P:80", "pdz:P:84"],
-                    },
-                    {
-                        "edge_id": "llm_margin_s05_point",
-                        "functional_node_id": "A_over_B_selectivity",
-                        "structural_node_id": "llm_s05_layered_probe",
-                        "action_operator": "point",
-                        "evidence_refs": [
-                            "pdz:P:25", "pdz:P:26", "pdz:P:27",
-                            "pdz:P:28", "pdz:P:29", "pdz:P:30",
-                        ],
-                    },
-                    {
-                        "edge_id": "llm_bind_s05_resample",
-                        "functional_node_id": "bind_A_Caspr4",
-                        "structural_node_id": "llm_s05_layered_probe",
-                        "action_operator": "site_resample",
-                        "evidence_refs": [
-                            "pdz:P:25", "pdz:P:26", "pdz:P:27",
-                            "pdz:P:28", "pdz:P:29", "pdz:P:30",
-                        ],
-                    },
-                    {
-                        "edge_id": "llm_margin_beta3_point",
-                        "functional_node_id": "A_over_B_selectivity",
-                        "structural_node_id": "llm_beta3_interface_probe",
-                        "action_operator": "point",
-                        "evidence_refs": [
-                            "pdz:P:31", "pdz:P:33", "pdz:P:35", "pdz:P:36", "pdz:P:37",
-                        ],
-                    },
-                    {
-                        "edge_id": "llm_bind_beta3_resample",
-                        "functional_node_id": "bind_A_Caspr4",
-                        "structural_node_id": "llm_beta3_interface_probe",
-                        "action_operator": "site_resample",
-                        "evidence_refs": [
-                            "pdz:P:31", "pdz:P:33", "pdz:P:35", "pdz:P:36", "pdz:P:37",
-                        ],
-                    },
-                ],
-                "decision_record": {
-                    "action": "mixed",
-                    "diagnosis": (
-                        "The narrow six-position executable scope produced a valid K72Q "
-                        "selectivity signal but underused the evidence-eligible interface "
-                        "and rim positions available to the global Dual-AST."
-                    ),
-                    "hypothesis": (
-                        "Use four independently selectable nodes and 24 evidence-backed "
-                        "positions so MCTS can compare alpha2, beta6, S05-loop, and beta3-rim "
-                        "hypotheses under the same three-state protocol."
-                    ),
-                    "evidence_refs": [
-                        "pdz:P:25", "pdz:P:26", "pdz:P:27", "pdz:P:28", "pdz:P:29", "pdz:P:30",
-                        "pdz:P:31", "pdz:P:33", "pdz:P:35", "pdz:P:36", "pdz:P:37",
-                        "pdz:P:67", "pdz:P:68", "pdz:P:69", "pdz:P:70", "pdz:P:71",
-                        "pdz:P:72", "pdz:P:73", "pdz:P:74", "pdz:P:75", "pdz:P:76",
-                        "pdz:P:79", "pdz:P:80", "pdz:P:84",
-                    ],
-                    "expected_effects": [
-                        "retain positive-target interface quality",
-                        "increase A-over-B raw and gPDE margins",
-                        "separate four node-level effects from anchor preservation",
-                        "avoid increasing interface clashes",
-                    ],
-                    "failure_condition": (
-                        "Reduce or migrate any expanded node that fails fold/clash gates "
-                        "or produces no selectivity gain across its dedicated candidates."
-                    ),
-                    "confidence": 0.82,
-                    "rationale": (
-                        "Broaden the searchable surface without broadening any single "
-                        "candidate beyond the locked ten-mutation hard cap."
-                    ),
-                    "rollback_condition": (
-                        "Return to the alpha2/beta6 anchors when the expanded S05 or beta3 "
-                        "nodes are not beneficial in independently represented finalists."
-                    ),
-                },
-            },
+            "ast_revision_plan": {'schema_version': 'astevolve.ast_revision_plan.v2',
+             'structural_nodes': [{'node_id': 'llm_alpha2_seed',
+                                   'selector': {'schema_version': 'astevolve.residue_selector.v1',
+                                                'chain_id': 'P',
+                                                'spans': [[67, 77]]},
+                                   'action_profile': 'point_resample_3',
+                                   'intent': 'Explore the complete evidence-eligible alpha2 specificity helix '
+                                             'while retaining conservative helix chemistry and the '
+                                             'experimentally grounded switch positions.',
+                                   'evidence_refs': ['pdz:P:67',
+                                                     'pdz:P:68',
+                                                     'pdz:P:69',
+                                                     'pdz:P:70',
+                                                     'pdz:P:71',
+                                                     'pdz:P:72',
+                                                     'pdz:P:73',
+                                                     'pdz:P:74',
+                                                     'pdz:P:75',
+                                                     'pdz:P:76'],
+                                   'residue_policy': {'favored_residues': [],
+                                                      'disfavored_residues': ['C', 'P'],
+                                                      'position_residue_rules': {}, 'policy_weight': 1.0}},
+                                  {'node_id': 'llm_beta6_seed',
+                                   'selector': {'schema_version': 'astevolve.residue_selector.v1',
+                                                'chain_id': 'P',
+                                                'spans': [[79, 81], [84, 85]]},
+                                   'action_profile': 'point_resample_3',
+                                   'intent': 'Explore the evidence-eligible beta6 terminal-pocket and '
+                                             'solvent-rim positions while preserving the protected turn and '
+                                             'buried beta-strand core.',
+                                   'evidence_refs': ['pdz:P:79', 'pdz:P:80', 'pdz:P:84'],
+                                   'residue_policy': {'favored_residues': [],
+                                                      'disfavored_residues': ['C', 'P'],
+                                                      'position_residue_rules': {}, 'policy_weight': 1.0}},
+                                  {'node_id': 'llm_s05_layered_probe',
+                                   'selector': {'schema_version': 'astevolve.residue_selector.v1',
+                                                'chain_id': 'P',
+                                                'spans': [[25, 31]]},
+                                   'action_profile': 'point_resample_3',
+                                   'intent': 'Explore the complete solvent-exposed beta2-beta3 loop as an '
+                                             'optional negative-design layer without touching the protected '
+                                             'beta2 ligand-strand anchor.',
+                                   'evidence_refs': ['pdz:P:25',
+                                                     'pdz:P:26',
+                                                     'pdz:P:27',
+                                                     'pdz:P:28',
+                                                     'pdz:P:29',
+                                                     'pdz:P:30'],
+                                   'residue_policy': {'favored_residues': [],
+                                                      'disfavored_residues': ['C', 'P'],
+                                                      'position_residue_rules': {}, 'policy_weight': 1.0}},
+                                  {'node_id': 'llm_beta3_interface_probe',
+                                   'selector': {'schema_version': 'astevolve.residue_selector.v1',
+                                                'chain_id': 'P',
+                                                'spans': [[31, 32], [33, 34], [35, 38]]},
+                                   'action_profile': 'point_resample_3',
+                                   'intent': 'Probe the evidence-eligible beta3 interface rim, including the '
+                                             'residue contacting different peptide positions in A and B, while '
+                                             'excluding the protected buried core positions.',
+                                   'evidence_refs': ['pdz:P:31',
+                                                     'pdz:P:33',
+                                                     'pdz:P:35',
+                                                     'pdz:P:36',
+                                                     'pdz:P:37'],
+                                   'residue_policy': {'favored_residues': [],
+                                                      'disfavored_residues': ['C', 'P'],
+                                                      'position_residue_rules': {}, 'policy_weight': 1.0}}],
+             'mapping_edges': [{'edge_id': 'llm_margin_alpha2_point',
+                                'functional_node_id': 'A_over_B_selectivity',
+                                'structural_node_id': 'llm_alpha2_seed',
+                                'action_operator': 'point',
+                                'evidence_refs': ['pdz:P:67',
+                                                  'pdz:P:68',
+                                                  'pdz:P:69',
+                                                  'pdz:P:70',
+                                                  'pdz:P:71',
+                                                  'pdz:P:72',
+                                                  'pdz:P:73',
+                                                  'pdz:P:74',
+                                                  'pdz:P:75',
+                                                  'pdz:P:76']},
+                               {'edge_id': 'llm_margin_beta6_point',
+                                'functional_node_id': 'A_over_B_selectivity',
+                                'structural_node_id': 'llm_beta6_seed',
+                                'action_operator': 'point',
+                                'evidence_refs': ['pdz:P:79', 'pdz:P:80', 'pdz:P:84']},
+                               {'edge_id': 'llm_bind_alpha2_resample',
+                                'functional_node_id': 'bind_A_Caspr4',
+                                'structural_node_id': 'llm_alpha2_seed',
+                                'action_operator': 'site_resample',
+                                'evidence_refs': ['pdz:P:67',
+                                                  'pdz:P:68',
+                                                  'pdz:P:69',
+                                                  'pdz:P:70',
+                                                  'pdz:P:71',
+                                                  'pdz:P:72',
+                                                  'pdz:P:73',
+                                                  'pdz:P:74',
+                                                  'pdz:P:75',
+                                                  'pdz:P:76']},
+                               {'edge_id': 'llm_bind_beta6_resample',
+                                'functional_node_id': 'bind_A_Caspr4',
+                                'structural_node_id': 'llm_beta6_seed',
+                                'action_operator': 'site_resample',
+                                'evidence_refs': ['pdz:P:79', 'pdz:P:80', 'pdz:P:84']},
+                               {'edge_id': 'llm_margin_s05_point',
+                                'functional_node_id': 'A_over_B_selectivity',
+                                'structural_node_id': 'llm_s05_layered_probe',
+                                'action_operator': 'point',
+                                'evidence_refs': ['pdz:P:25',
+                                                  'pdz:P:26',
+                                                  'pdz:P:27',
+                                                  'pdz:P:28',
+                                                  'pdz:P:29',
+                                                  'pdz:P:30']},
+                               {'edge_id': 'llm_bind_s05_resample',
+                                'functional_node_id': 'bind_A_Caspr4',
+                                'structural_node_id': 'llm_s05_layered_probe',
+                                'action_operator': 'site_resample',
+                                'evidence_refs': ['pdz:P:25',
+                                                  'pdz:P:26',
+                                                  'pdz:P:27',
+                                                  'pdz:P:28',
+                                                  'pdz:P:29',
+                                                  'pdz:P:30']},
+                               {'edge_id': 'llm_margin_beta3_point',
+                                'functional_node_id': 'A_over_B_selectivity',
+                                'structural_node_id': 'llm_beta3_interface_probe',
+                                'action_operator': 'point',
+                                'evidence_refs': ['pdz:P:31', 'pdz:P:33', 'pdz:P:35', 'pdz:P:36', 'pdz:P:37']},
+                               {'edge_id': 'llm_bind_beta3_resample',
+                                'functional_node_id': 'bind_A_Caspr4',
+                                'structural_node_id': 'llm_beta3_interface_probe',
+                                'action_operator': 'site_resample',
+                                'evidence_refs': ['pdz:P:31', 'pdz:P:33', 'pdz:P:35', 'pdz:P:36', 'pdz:P:37']}],
+             'decision_record': {'action': 'create',
+                                 'diagnosis': 'Caspr4-positive and Syndecan-1-negative design requires paired '
+                                              'interface evaluation while preserving the PDZ fold and '
+                                              'terminal-carboxylate anchor.',
+                                 'hypothesis': 'Four evidence-supported regions provide alternative initial '
+                                               'hypotheses for selectivity: the alpha2 helix, beta6 pocket, '
+                                               'beta2-beta3 loop, and beta3 interface rim.',
+                                 'evidence_refs': ['pdz:P:25',
+                                                   'pdz:P:26',
+                                                   'pdz:P:27',
+                                                   'pdz:P:28',
+                                                   'pdz:P:29',
+                                                   'pdz:P:30',
+                                                   'pdz:P:31',
+                                                   'pdz:P:33',
+                                                   'pdz:P:35',
+                                                   'pdz:P:36',
+                                                   'pdz:P:37',
+                                                   'pdz:P:67',
+                                                   'pdz:P:68',
+                                                   'pdz:P:69',
+                                                   'pdz:P:70',
+                                                   'pdz:P:71',
+                                                   'pdz:P:72',
+                                                   'pdz:P:73',
+                                                   'pdz:P:74',
+                                                   'pdz:P:75',
+                                                   'pdz:P:76',
+                                                   'pdz:P:79',
+                                                   'pdz:P:80',
+                                                   'pdz:P:84'],
+                                 'expected_effects': ['preserve positive-target interface quality',
+                                                      'improve A-over-B interface margins',
+                                                      'retain apo-fold integrity and clash-free interfaces'],
+                                 'failure_condition': 'Any loss of required positive-state or fold evidence, '
+                                                      'protected-residue integrity, or interface feasibility.',
+                                 'confidence': 0.0,
+                                 'rationale': 'Initialize four independently selectable regions within the '
+                                              '24-position scope and ten-mutation candidate limit, without '
+                                              'residue-specific mutation preferences.',
+                                 'rollback_condition': 'Reject infeasible candidates and revise regions or '
+                                                       'operators using evidence generated in the current '
+                                                       'run.'}},
         }
     )
     return strategy

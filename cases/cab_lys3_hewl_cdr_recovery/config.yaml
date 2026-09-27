@@ -141,7 +141,7 @@ database:
         - {metric: fixed_residue_integrity, direction: maximize, transform: identity, weight: 0.05, missing_policy: fail}
     - role_id: maturation_epistasis
       name: Protenix-screened L2 CDR1/CDR2 epistasis
-      focus: Explore the five L2 positions with periodic Protenix feedback and light developability control.
+      focus: Explore the five L2 positions with Protenix structure feedback and light developability control.
       soft_objectives: [L2 recovery, Protenix contact quality, Protenix structure quality, Protenix interface confidence, developability, sequence integrity]
       complementary_roles: [contact_native_exploit, robustness_falsification]
       metric_terms:
