@@ -73,11 +73,10 @@ python -m pip check
 python -c "import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())"
 bash scripts/check_install.sh
 python scripts/check_mcts.py
-python -m unittest discover -s tests
 bash scripts/run_case.sh tiam1 --iterations 2 --dry-run
 ```
 
-These checks compile the demo and exercise search and outer-loop contracts
+These checks compile the demo and exercise search contracts
 with offline evaluators. They do not run GPU models or contact an LLM endpoint.
 
 Scientific cases require external inputs listed in each `case.json` under
