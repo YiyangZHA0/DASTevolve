@@ -1,0 +1,7 @@
+case_id: demo_case
+schema_version: ast_case_memory_v1
+stable_priors: {}
+adaptive_memory:
+  recent_runs: []
+  motif_memory: {}
+  node_level_statistics: {}

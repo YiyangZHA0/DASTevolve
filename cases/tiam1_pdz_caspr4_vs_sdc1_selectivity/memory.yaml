@@ -1,0 +1,16 @@
+case_id: tiam1_pdz_caspr4_vs_sdc1_selectivity
+schema_version: ast_case_memory_v1
+stable_priors:
+  search_prior:
+    general:
+      preferred_edit_order:
+        - S_minus2_edit
+        - S0_edit
+  aa_prior:
+    globally_disfavored_new_positions:
+      - C
+      - P
+adaptive_memory:
+  recent_runs: []
+  motif_memory: {}
+  node_level_statistics: {}

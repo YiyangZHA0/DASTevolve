@@ -1,0 +1,4024 @@
+{
+  "version": "aph3iia_p00552_global_dual_ast_v2",
+  "case_id": "aph3iia_kanamycin_active_site_preservation",
+  "task_name": "APH3IIa_P00552_kanamycin_active_site_preserving_design",
+  "task_type": "single_chain_fixed_length_enzyme_active_site_preservation",
+  "single_chain": true,
+  "case_sheet_path": "case_sheet.json",
+  "memory_path": "memory.yaml",
+  "indexing_contract": {
+    "runtime": "zero_based_end_exclusive",
+    "scientific_sources": "UniProt_P00552_and_PDB_1ND4_author_numbering_1_based",
+    "conversion": "runtime_position = scientific_position - 1",
+    "editable_runtime_positions": [
+      9,
+      12,
+      13,
+      15,
+      16,
+      19,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      41,
+      71,
+      73,
+      84,
+      86,
+      87,
+      103,
+      105,
+      110,
+      121,
+      124,
+      126,
+      128,
+      129,
+      131,
+      133,
+      137,
+      148,
+      149,
+      150,
+      163,
+      171,
+      174,
+      175,
+      177,
+      179,
+      199,
+      201,
+      233,
+      234,
+      237,
+      238,
+      244,
+      246,
+      247,
+      250,
+      251,
+      254
+    ],
+    "editable_scientific_positions": [
+      10,
+      13,
+      14,
+      16,
+      17,
+      20,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      42,
+      72,
+      74,
+      85,
+      87,
+      88,
+      104,
+      106,
+      111,
+      122,
+      125,
+      127,
+      129,
+      130,
+      132,
+      134,
+      138,
+      149,
+      150,
+      151,
+      164,
+      172,
+      175,
+      176,
+      178,
+      180,
+      200,
+      202,
+      234,
+      235,
+      238,
+      239,
+      245,
+      247,
+      248,
+      251,
+      252,
+      255
+    ],
+    "initial_seed_runtime_positions": [
+      13,
+      71,
+      121,
+      177,
+      237
+    ],
+    "initial_seed_scientific_positions": [
+      14,
+      72,
+      122,
+      178,
+      238
+    ]
+  },
+  "seed_provenance": {
+    "sequence": "UniProt P00552 canonical full-length 264-aa WT",
+    "starting_point": "WT",
+    "sequence_path": "data://aph3iia_kanamycin_active_site_preservation/sequences/P00552_wild_type.fasta",
+    "reason": "The fixed 32-sequence Level-1 benchmark is defined relative to WT; no non-WT combination has a measured kanamycin phenotype.",
+    "minimum_candidate_hamming": 1
+  },
+  "binder": {
+    "name": "Klebsiella pneumoniae APH(3')-IIa P00552",
+    "chain_id": "A",
+    "architecture": "aminoglycoside_phosphotransferase_fixed_length_enzyme",
+    "domain_segment_keys": {
+      "n_terminal_unresolved": "n_terminal_segments",
+      "nucleotide_associated_n_lobe": "n_lobe_segments",
+      "catalytic_and_aminoglycoside_lobe": "c_lobe_segments"
+    },
+    "domain_order": [
+      "n_terminal_unresolved",
+      "nucleotide_associated_n_lobe",
+      "catalytic_and_aminoglycoside_lobe"
+    ],
+    "n_terminal_segments": [
+      [
+        "S01_UNRESOLVED_NTERM",
+        "tail",
+        "MIEQDGLHA"
+      ]
+    ],
+    "n_lobe_segments": [
+      [
+        "S02_NLOBE_PRE_SITE14",
+        "domain",
+        "GSPA"
+      ],
+      [
+        "S03_EDIT_SITE14",
+        "loop",
+        "A"
+      ],
+      [
+        "S04_NLOBE_PRE_DONOR",
+        "domain",
+        "WVERLFGYDWAQQTIGCSDAAVFRLSAQG"
+      ],
+      [
+        "S05_DONOR_CONTEXT_HOLD",
+        "active_site_guard",
+        "RPVLFVKTDLSGALNELQDE"
+      ],
+      [
+        "S06_NLOBE_PRE_SITE72",
+        "domain",
+        "AARLSWLA"
+      ],
+      [
+        "S07_EDIT_SITE72",
+        "loop",
+        "T"
+      ],
+      [
+        "S08_NLOBE_REMAINDER",
+        "domain",
+        "TGVPCAAVLDVVTEAGRDWLLLGEVPGQ"
+      ]
+    ],
+    "c_lobe_segments": [
+      [
+        "S09_CLOBE_PRE_SITE122",
+        "domain",
+        "DLLSSHLAPAEKVSIMADAMR"
+      ],
+      [
+        "S10_EDIT_SITE122",
+        "loop",
+        "R"
+      ],
+      [
+        "S11_CLOBE_PRE_KAN_SHELL",
+        "domain",
+        "LHTLDPATCPFDHQAKHRIERARTRMEAGLVDQD"
+      ],
+      [
+        "S12_KAN_SHELL_157_160",
+        "active_site_guard",
+        "DLDE"
+      ],
+      [
+        "S13_CLOBE_PRE_SITE178",
+        "domain",
+        "EHQGLAPAELFARLKAR"
+      ],
+      [
+        "S14_EDIT_SITE178",
+        "loop",
+        "M"
+      ],
+      [
+        "S15_CLOBE_PRE_D190",
+        "domain",
+        "PDGEDLVVTHG"
+      ],
+      [
+        "S16_CORE_D190",
+        "active_site_guard",
+        "D"
+      ],
+      [
+        "S17_CLOBE_PRE_N195",
+        "domain",
+        "ACLP"
+      ],
+      [
+        "S18_CORE_N195",
+        "active_site_guard",
+        "N"
+      ],
+      [
+        "S19_CLOBE_PRE_D208",
+        "domain",
+        "IMVENGRFSGFI"
+      ],
+      [
+        "S20_CORE_D208",
+        "active_site_guard",
+        "D"
+      ],
+      [
+        "S21_CLOBE_PRE_KAN211",
+        "domain",
+        "CG"
+      ],
+      [
+        "S22_KAN_SHELL_211",
+        "ligand_guard",
+        "R"
+      ],
+      [
+        "S23_CLOBE_PRE_KAN226",
+        "domain",
+        "LGVADRYQDIALAT"
+      ],
+      [
+        "S24_KAN_SHELL_226_227",
+        "ligand_guard",
+        "RD"
+      ],
+      [
+        "S25_CLOBE_PRE_KAN230",
+        "domain",
+        "IA"
+      ],
+      [
+        "S26_KAN_SHELL_230",
+        "ligand_guard",
+        "E"
+      ],
+      [
+        "S27_CLOBE_PRE_SITE238",
+        "domain",
+        "ELGGEWA"
+      ],
+      [
+        "S28_EDIT_SITE238",
+        "loop",
+        "D"
+      ],
+      [
+        "S29_CLOBE_PRE_CTERM_SHELL",
+        "domain",
+        "RFLVLYGIAAPDSQRIAFYRLL"
+      ],
+      [
+        "S30_KAN_SHELL_261_264",
+        "ligand_guard",
+        "DEFF"
+      ]
+    ]
+  },
+  "target": null,
+  "ligand_system": {
+    "positive_ligand": {
+      "name": "kanamycin A",
+      "ccd_id": "KAN",
+      "role": "preserved_substrate_pose"
+    },
+    "cofactor": {
+      "name": "magnesium",
+      "component_id": "MG",
+      "role": "preserved_metal_geometry"
+    },
+    "ATP": {
+      "present_in_1ND4": false,
+      "policy": "No ATP coordinates, pose, or ATP-distance objective may be invented. The provisional donor context remains frozen but is not scored as a verified functional node."
+    }
+  },
+  "mutation_policy": {
+    "allow_cysteine": false,
+    "preferred_edit_order": [
+      "S03_EDIT_SITE14",
+      "S07_EDIT_SITE72",
+      "S10_EDIT_SITE122",
+      "S14_EDIT_SITE178",
+      "S28_EDIT_SITE238"
+    ],
+    "always_open_segments": [],
+    "conditionally_open_segments": [],
+    "fixed_linker_segments": [],
+    "generally_frozen": [
+      "All residues outside the five controller-authorized runtime positions are closed.",
+      "The outer LLM may alter the active Node subset and mappings but cannot broaden the case-owned position or amino-acid support."
+    ]
+  },
+  "design_points": {
+    "schema_version": "ast_design_points_v1",
+    "design_intent": "Adaptive Dual-AST v2 search over five independently compiled, DMS-supported conservative sites while verified D157/D190/N195/D208 geometry, the crystallographic KAN shell, the unresolved N terminus, and the provisional donor-context region remain controller-owned guardrails.",
+    "primary_design_nodes": [
+      "S03_EDIT_SITE14",
+      "S07_EDIT_SITE72",
+      "S10_EDIT_SITE122",
+      "S14_EDIT_SITE178",
+      "S28_EDIT_SITE238"
+    ],
+    "secondary_design_nodes": [],
+    "default_open_nodes": [],
+    "preserved_nodes": [
+      "S01_UNRESOLVED_NTERM",
+      "S05_DONOR_CONTEXT_HOLD",
+      "S12_KAN_SHELL_157_160",
+      "S16_CORE_D190",
+      "S18_CORE_N195",
+      "S20_CORE_D208",
+      "S22_KAN_SHELL_211",
+      "S24_KAN_SHELL_226_227",
+      "S26_KAN_SHELL_230",
+      "S30_KAN_SHELL_261_264"
+    ]
+  },
+  "design_constraints": {
+    "schema_version": "ast_case_constraints_v1",
+    "indexing": "zero_based_end_exclusive",
+    "mutable_nodes": [],
+    "frozen_nodes": [],
+    "mutable_residue_spans": [
+      {
+        "chain_id": "A",
+        "node": "site14",
+        "spans": [
+          [
+            13,
+            14
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "site72",
+        "spans": [
+          [
+            71,
+            72
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "site122",
+        "spans": [
+          [
+            121,
+            122
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "site178",
+        "spans": [
+          [
+            177,
+            178
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "site238",
+        "spans": [
+          [
+            237,
+            238
+          ]
+        ]
+      }
+    ],
+    "frozen_residue_spans": [
+      {
+        "chain_id": "A",
+        "node": "unresolved_nterm_guard",
+        "spans": [
+          [
+            0,
+            9
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "donor_context_hold",
+        "spans": [
+          [
+            43,
+            63
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "verified_core_d157_kan_shell_157_160",
+        "spans": [
+          [
+            156,
+            160
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "verified_core_d190",
+        "spans": [
+          [
+            189,
+            190
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "verified_core_n195",
+        "spans": [
+          [
+            194,
+            195
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "verified_core_d208",
+        "spans": [
+          [
+            207,
+            208
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "kan_shell_211",
+        "spans": [
+          [
+            210,
+            211
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "kan_shell_226_227",
+        "spans": [
+          [
+            225,
+            227
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "kan_shell_230",
+        "spans": [
+          [
+            229,
+            230
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "kan_shell_261_264",
+        "spans": [
+          [
+            260,
+            264
+          ]
+        ]
+      }
+    ],
+    "fast_constraint_specs": []
+  },
+  "case_owned_residue_policy": {
+    "schema_version": "aph3iia.case_owned_residue_policy.v2",
+    "indexing": "zero_based",
+    "chain_id": "A",
+    "controller_owned": true,
+    "default_tier": "frontier",
+    "tier_environment_variable": "ASTEVOLVE_APH_DESIGN_TIER",
+    "allowed_tiers": [
+      "level1",
+      "level2",
+      "frontier"
+    ],
+    "unsupported_tiers_fail_closed": [
+      "unrestricted_20aa"
+    ],
+    "llm_authority": {
+      "may_request_search_posture": true,
+      "may_create_delete_migrate_resize_or_rewire_nodes": true,
+      "may_split_or_merge_nodes": true,
+      "may_select_active_positions_within_catalog_frontier": true,
+      "may_set_soft_favored_or_disfavored_residues_within_hard_support": true,
+      "may_broaden_position_support": true,
+      "position_broadening_boundary": "only catalog-eligible positions inside the global allowed span",
+      "may_broaden_amino_acid_support": false,
+      "may_edit_protected_spans": false,
+      "may_switch_launch_locked_tier": false
+    },
+    "search_postures": {
+      "conservative": {
+        "residue_tier": "active_run_selected_level1_level2_or_frontier",
+        "recommended_active_position_count": [
+          8,
+          12
+        ],
+        "action_profile": "conservative_point"
+      },
+      "balanced": {
+        "residue_tier": "active_run_selected_level1_level2_or_frontier",
+        "recommended_active_position_count": [
+          12,
+          20
+        ],
+        "action_profile": "balanced_point_resample"
+      },
+      "exploratory": {
+        "residue_tier": "active_run_selected_level1_level2_or_frontier",
+        "recommended_active_position_count": [
+          20,
+          32
+        ],
+        "action_profile": "exploratory_point_resample"
+      },
+      "repair": {
+        "residue_tier": "active_run_selected_level1_level2_or_frontier",
+        "recommended_active_position_count": [
+          8,
+          12
+        ],
+        "action_profile": "conservative_point"
+      },
+      "converge": {
+        "residue_tier": "active_run_selected_level1_level2_or_frontier",
+        "recommended_active_position_count": [
+          8,
+          12
+        ],
+        "action_profile": "conservative_point"
+      }
+    },
+    "tiers": {
+      "level1": {
+        "claim_scope": "32-sequence DMS-supported constrained ranking space",
+        "residue_mutation_contract": {
+          "A": {
+            "13": [
+              "A",
+              "T"
+            ],
+            "71": [
+              "T",
+              "S"
+            ],
+            "121": [
+              "R",
+              "K"
+            ],
+            "177": [
+              "M",
+              "F"
+            ],
+            "237": [
+              "D",
+              "E"
+            ]
+          }
+        },
+        "node_edit_policies": {
+          "S02_NLOBE_PRE_SITE14": {
+            "hard_allowed_residues": [
+              "A",
+              "G"
+            ],
+            "position_residue_rules": {
+              "9": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "12": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              }
+            }
+          },
+          "S03_EDIT_SITE14": {
+            "hard_allowed_residues": [
+              "A",
+              "T"
+            ],
+            "position_residue_rules": {
+              "13": {
+                "hard_allowed_residues": [
+                  "A",
+                  "T"
+                ]
+              }
+            }
+          },
+          "S04_NLOBE_PRE_DONOR": {
+            "hard_allowed_residues": [
+              "A",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "I",
+              "Q",
+              "S",
+              "V"
+            ],
+            "position_residue_rules": {
+              "15": {
+                "hard_allowed_residues": [
+                  "V"
+                ]
+              },
+              "16": {
+                "hard_allowed_residues": [
+                  "E"
+                ]
+              },
+              "19": {
+                "hard_allowed_residues": [
+                  "F"
+                ]
+              },
+              "28": {
+                "hard_allowed_residues": [
+                  "I"
+                ]
+              },
+              "29": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "30": {
+                "hard_allowed_residues": [
+                  "C"
+                ]
+              },
+              "31": {
+                "hard_allowed_residues": [
+                  "S"
+                ]
+              },
+              "32": {
+                "hard_allowed_residues": [
+                  "D"
+                ]
+              },
+              "33": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "41": {
+                "hard_allowed_residues": [
+                  "Q"
+                ]
+              }
+            }
+          },
+          "S07_EDIT_SITE72": {
+            "hard_allowed_residues": [
+              "S",
+              "T"
+            ],
+            "position_residue_rules": {
+              "71": {
+                "hard_allowed_residues": [
+                  "T",
+                  "S"
+                ]
+              }
+            }
+          },
+          "S08_NLOBE_REMAINDER": {
+            "hard_allowed_residues": [
+              "A",
+              "G",
+              "T"
+            ],
+            "position_residue_rules": {
+              "73": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "84": {
+                "hard_allowed_residues": [
+                  "T"
+                ]
+              },
+              "86": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "87": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              }
+            }
+          },
+          "S09_CLOBE_PRE_SITE122": {
+            "hard_allowed_residues": [
+              "E",
+              "H",
+              "S"
+            ],
+            "position_residue_rules": {
+              "103": {
+                "hard_allowed_residues": [
+                  "S"
+                ]
+              },
+              "105": {
+                "hard_allowed_residues": [
+                  "H"
+                ]
+              },
+              "110": {
+                "hard_allowed_residues": [
+                  "E"
+                ]
+              }
+            }
+          },
+          "S10_EDIT_SITE122": {
+            "hard_allowed_residues": [
+              "K",
+              "R"
+            ],
+            "position_residue_rules": {
+              "121": {
+                "hard_allowed_residues": [
+                  "R",
+                  "K"
+                ]
+              }
+            }
+          },
+          "S11_CLOBE_PRE_KAN_SHELL": {
+            "hard_allowed_residues": [
+              "A",
+              "D",
+              "E",
+              "G",
+              "K",
+              "P",
+              "T"
+            ],
+            "position_residue_rules": {
+              "124": {
+                "hard_allowed_residues": [
+                  "T"
+                ]
+              },
+              "126": {
+                "hard_allowed_residues": [
+                  "D"
+                ]
+              },
+              "128": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "129": {
+                "hard_allowed_residues": [
+                  "T"
+                ]
+              },
+              "131": {
+                "hard_allowed_residues": [
+                  "P"
+                ]
+              },
+              "133": {
+                "hard_allowed_residues": [
+                  "D"
+                ]
+              },
+              "137": {
+                "hard_allowed_residues": [
+                  "K"
+                ]
+              },
+              "148": {
+                "hard_allowed_residues": [
+                  "E"
+                ]
+              },
+              "149": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "150": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              }
+            }
+          },
+          "S13_CLOBE_PRE_SITE178": {
+            "hard_allowed_residues": [
+              "A",
+              "G",
+              "K"
+            ],
+            "position_residue_rules": {
+              "163": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "171": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "174": {
+                "hard_allowed_residues": [
+                  "K"
+                ]
+              },
+              "175": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              }
+            }
+          },
+          "S14_EDIT_SITE178": {
+            "hard_allowed_residues": [
+              "F",
+              "M"
+            ],
+            "position_residue_rules": {
+              "177": {
+                "hard_allowed_residues": [
+                  "M",
+                  "F"
+                ]
+              }
+            }
+          },
+          "S15_CLOBE_PRE_D190": {
+            "hard_allowed_residues": [
+              "D"
+            ],
+            "position_residue_rules": {
+              "179": {
+                "hard_allowed_residues": [
+                  "D"
+                ]
+              }
+            }
+          },
+          "S19_CLOBE_PRE_D208": {
+            "hard_allowed_residues": [
+              "N",
+              "R"
+            ],
+            "position_residue_rules": {
+              "199": {
+                "hard_allowed_residues": [
+                  "N"
+                ]
+              },
+              "201": {
+                "hard_allowed_residues": [
+                  "R"
+                ]
+              }
+            }
+          },
+          "S27_CLOBE_PRE_SITE238": {
+            "hard_allowed_residues": [
+              "E",
+              "G"
+            ],
+            "position_residue_rules": {
+              "233": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "234": {
+                "hard_allowed_residues": [
+                  "E"
+                ]
+              }
+            }
+          },
+          "S28_EDIT_SITE238": {
+            "hard_allowed_residues": [
+              "D",
+              "E"
+            ],
+            "position_residue_rules": {
+              "237": {
+                "hard_allowed_residues": [
+                  "D",
+                  "E"
+                ]
+              }
+            }
+          },
+          "S29_CLOBE_PRE_CTERM_SHELL": {
+            "hard_allowed_residues": [
+              "A",
+              "G",
+              "Q",
+              "R",
+              "S"
+            ],
+            "position_residue_rules": {
+              "238": {
+                "hard_allowed_residues": [
+                  "R"
+                ]
+              },
+              "244": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "246": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "247": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "250": {
+                "hard_allowed_residues": [
+                  "S"
+                ]
+              },
+              "251": {
+                "hard_allowed_residues": [
+                  "Q"
+                ]
+              },
+              "254": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "level2": {
+        "claim_scope": "243-sequence conservative computational extension; combinations are unmeasured",
+        "residue_mutation_contract": {
+          "A": {
+            "13": [
+              "A",
+              "T",
+              "S"
+            ],
+            "71": [
+              "T",
+              "S",
+              "A"
+            ],
+            "121": [
+              "R",
+              "K",
+              "Q"
+            ],
+            "177": [
+              "M",
+              "F",
+              "L"
+            ],
+            "237": [
+              "D",
+              "E",
+              "N"
+            ]
+          }
+        },
+        "node_edit_policies": {
+          "S02_NLOBE_PRE_SITE14": {
+            "hard_allowed_residues": [
+              "A",
+              "G"
+            ],
+            "position_residue_rules": {
+              "9": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "12": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              }
+            }
+          },
+          "S03_EDIT_SITE14": {
+            "hard_allowed_residues": [
+              "A",
+              "S",
+              "T"
+            ],
+            "position_residue_rules": {
+              "13": {
+                "hard_allowed_residues": [
+                  "A",
+                  "T",
+                  "S"
+                ]
+              }
+            }
+          },
+          "S04_NLOBE_PRE_DONOR": {
+            "hard_allowed_residues": [
+              "A",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "I",
+              "Q",
+              "S",
+              "V"
+            ],
+            "position_residue_rules": {
+              "15": {
+                "hard_allowed_residues": [
+                  "V"
+                ]
+              },
+              "16": {
+                "hard_allowed_residues": [
+                  "E"
+                ]
+              },
+              "19": {
+                "hard_allowed_residues": [
+                  "F"
+                ]
+              },
+              "28": {
+                "hard_allowed_residues": [
+                  "I"
+                ]
+              },
+              "29": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "30": {
+                "hard_allowed_residues": [
+                  "C"
+                ]
+              },
+              "31": {
+                "hard_allowed_residues": [
+                  "S"
+                ]
+              },
+              "32": {
+                "hard_allowed_residues": [
+                  "D"
+                ]
+              },
+              "33": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "41": {
+                "hard_allowed_residues": [
+                  "Q"
+                ]
+              }
+            }
+          },
+          "S07_EDIT_SITE72": {
+            "hard_allowed_residues": [
+              "A",
+              "S",
+              "T"
+            ],
+            "position_residue_rules": {
+              "71": {
+                "hard_allowed_residues": [
+                  "T",
+                  "S",
+                  "A"
+                ]
+              }
+            }
+          },
+          "S08_NLOBE_REMAINDER": {
+            "hard_allowed_residues": [
+              "A",
+              "G",
+              "T"
+            ],
+            "position_residue_rules": {
+              "73": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "84": {
+                "hard_allowed_residues": [
+                  "T"
+                ]
+              },
+              "86": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "87": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              }
+            }
+          },
+          "S09_CLOBE_PRE_SITE122": {
+            "hard_allowed_residues": [
+              "E",
+              "H",
+              "S"
+            ],
+            "position_residue_rules": {
+              "103": {
+                "hard_allowed_residues": [
+                  "S"
+                ]
+              },
+              "105": {
+                "hard_allowed_residues": [
+                  "H"
+                ]
+              },
+              "110": {
+                "hard_allowed_residues": [
+                  "E"
+                ]
+              }
+            }
+          },
+          "S10_EDIT_SITE122": {
+            "hard_allowed_residues": [
+              "K",
+              "Q",
+              "R"
+            ],
+            "position_residue_rules": {
+              "121": {
+                "hard_allowed_residues": [
+                  "R",
+                  "K",
+                  "Q"
+                ]
+              }
+            }
+          },
+          "S11_CLOBE_PRE_KAN_SHELL": {
+            "hard_allowed_residues": [
+              "A",
+              "D",
+              "E",
+              "G",
+              "K",
+              "P",
+              "T"
+            ],
+            "position_residue_rules": {
+              "124": {
+                "hard_allowed_residues": [
+                  "T"
+                ]
+              },
+              "126": {
+                "hard_allowed_residues": [
+                  "D"
+                ]
+              },
+              "128": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "129": {
+                "hard_allowed_residues": [
+                  "T"
+                ]
+              },
+              "131": {
+                "hard_allowed_residues": [
+                  "P"
+                ]
+              },
+              "133": {
+                "hard_allowed_residues": [
+                  "D"
+                ]
+              },
+              "137": {
+                "hard_allowed_residues": [
+                  "K"
+                ]
+              },
+              "148": {
+                "hard_allowed_residues": [
+                  "E"
+                ]
+              },
+              "149": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "150": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              }
+            }
+          },
+          "S13_CLOBE_PRE_SITE178": {
+            "hard_allowed_residues": [
+              "A",
+              "G",
+              "K"
+            ],
+            "position_residue_rules": {
+              "163": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "171": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "174": {
+                "hard_allowed_residues": [
+                  "K"
+                ]
+              },
+              "175": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              }
+            }
+          },
+          "S14_EDIT_SITE178": {
+            "hard_allowed_residues": [
+              "F",
+              "L",
+              "M"
+            ],
+            "position_residue_rules": {
+              "177": {
+                "hard_allowed_residues": [
+                  "M",
+                  "F",
+                  "L"
+                ]
+              }
+            }
+          },
+          "S15_CLOBE_PRE_D190": {
+            "hard_allowed_residues": [
+              "D"
+            ],
+            "position_residue_rules": {
+              "179": {
+                "hard_allowed_residues": [
+                  "D"
+                ]
+              }
+            }
+          },
+          "S19_CLOBE_PRE_D208": {
+            "hard_allowed_residues": [
+              "N",
+              "R"
+            ],
+            "position_residue_rules": {
+              "199": {
+                "hard_allowed_residues": [
+                  "N"
+                ]
+              },
+              "201": {
+                "hard_allowed_residues": [
+                  "R"
+                ]
+              }
+            }
+          },
+          "S27_CLOBE_PRE_SITE238": {
+            "hard_allowed_residues": [
+              "E",
+              "G"
+            ],
+            "position_residue_rules": {
+              "233": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "234": {
+                "hard_allowed_residues": [
+                  "E"
+                ]
+              }
+            }
+          },
+          "S28_EDIT_SITE238": {
+            "hard_allowed_residues": [
+              "D",
+              "E",
+              "N"
+            ],
+            "position_residue_rules": {
+              "237": {
+                "hard_allowed_residues": [
+                  "D",
+                  "E",
+                  "N"
+                ]
+              }
+            }
+          },
+          "S29_CLOBE_PRE_CTERM_SHELL": {
+            "hard_allowed_residues": [
+              "A",
+              "G",
+              "Q",
+              "R",
+              "S"
+            ],
+            "position_residue_rules": {
+              "238": {
+                "hard_allowed_residues": [
+                  "R"
+                ]
+              },
+              "244": {
+                "hard_allowed_residues": [
+                  "G"
+                ]
+              },
+              "246": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "247": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              },
+              "250": {
+                "hard_allowed_residues": [
+                  "S"
+                ]
+              },
+              "251": {
+                "hard_allowed_residues": [
+                  "Q"
+                ]
+              },
+              "254": {
+                "hard_allowed_residues": [
+                  "A"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "frontier": {
+        "claim_scope": "structure-screened exploratory computational space; only the five seed positions carry qualitative DMS support",
+        "residue_mutation_contract": {
+          "A": {
+            "9": [
+              "G",
+              "A",
+              "S"
+            ],
+            "12": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "13": [
+              "A",
+              "T",
+              "S"
+            ],
+            "15": [
+              "V",
+              "I",
+              "L",
+              "M",
+              "A",
+              "T"
+            ],
+            "16": [
+              "E",
+              "D",
+              "Q"
+            ],
+            "19": [
+              "F",
+              "Y",
+              "W",
+              "L",
+              "I",
+              "M"
+            ],
+            "28": [
+              "I",
+              "L",
+              "V",
+              "M",
+              "F"
+            ],
+            "29": [
+              "G",
+              "A",
+              "S"
+            ],
+            "30": [
+              "C",
+              "S",
+              "A"
+            ],
+            "31": [
+              "S",
+              "T",
+              "N",
+              "Q",
+              "A",
+              "G"
+            ],
+            "32": [
+              "D",
+              "E",
+              "N"
+            ],
+            "33": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "41": [
+              "Q",
+              "N",
+              "E",
+              "K",
+              "R"
+            ],
+            "71": [
+              "T",
+              "S",
+              "A"
+            ],
+            "73": [
+              "G",
+              "A",
+              "S"
+            ],
+            "84": [
+              "T",
+              "S",
+              "N",
+              "Q",
+              "A",
+              "V"
+            ],
+            "86": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "87": [
+              "G",
+              "A",
+              "S"
+            ],
+            "103": [
+              "S",
+              "T",
+              "N",
+              "Q",
+              "A",
+              "G"
+            ],
+            "105": [
+              "H",
+              "N",
+              "Q",
+              "K",
+              "R",
+              "Y"
+            ],
+            "110": [
+              "E",
+              "D",
+              "Q"
+            ],
+            "121": [
+              "R",
+              "K",
+              "Q"
+            ],
+            "124": [
+              "T",
+              "S",
+              "N",
+              "Q",
+              "A",
+              "V"
+            ],
+            "126": [
+              "D",
+              "E",
+              "N"
+            ],
+            "128": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "129": [
+              "T",
+              "S",
+              "N",
+              "Q",
+              "A",
+              "V"
+            ],
+            "131": [
+              "P",
+              "A",
+              "S",
+              "T"
+            ],
+            "133": [
+              "D",
+              "E",
+              "N"
+            ],
+            "137": [
+              "K",
+              "R",
+              "Q",
+              "H"
+            ],
+            "148": [
+              "E",
+              "D",
+              "Q"
+            ],
+            "149": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "150": [
+              "G",
+              "A",
+              "S"
+            ],
+            "163": [
+              "G",
+              "A",
+              "S"
+            ],
+            "171": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "174": [
+              "K",
+              "R",
+              "Q",
+              "H"
+            ],
+            "175": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "177": [
+              "M",
+              "F",
+              "L"
+            ],
+            "179": [
+              "D",
+              "E",
+              "N"
+            ],
+            "199": [
+              "N",
+              "Q",
+              "S",
+              "T",
+              "D"
+            ],
+            "201": [
+              "R",
+              "K",
+              "Q",
+              "H"
+            ],
+            "233": [
+              "G",
+              "A",
+              "S"
+            ],
+            "234": [
+              "E",
+              "D",
+              "Q"
+            ],
+            "237": [
+              "D",
+              "E",
+              "N"
+            ],
+            "238": [
+              "R",
+              "K",
+              "Q",
+              "H"
+            ],
+            "244": [
+              "G",
+              "A",
+              "S"
+            ],
+            "246": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "247": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "250": [
+              "S",
+              "T",
+              "N",
+              "Q",
+              "A",
+              "G"
+            ],
+            "251": [
+              "Q",
+              "N",
+              "E",
+              "K",
+              "R"
+            ],
+            "254": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ]
+          }
+        },
+        "node_edit_policies": {
+          "S02_NLOBE_PRE_SITE14": {
+            "hard_allowed_residues": [
+              "A",
+              "G",
+              "S",
+              "T",
+              "V"
+            ],
+            "position_residue_rules": {
+              "9": {
+                "hard_allowed_residues": [
+                  "G",
+                  "A",
+                  "S"
+                ]
+              },
+              "12": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              }
+            }
+          },
+          "S03_EDIT_SITE14": {
+            "hard_allowed_residues": [
+              "A",
+              "S",
+              "T"
+            ],
+            "position_residue_rules": {
+              "13": {
+                "hard_allowed_residues": [
+                  "A",
+                  "T",
+                  "S"
+                ]
+              }
+            }
+          },
+          "S04_NLOBE_PRE_DONOR": {
+            "hard_allowed_residues": [
+              "A",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "I",
+              "K",
+              "L",
+              "M",
+              "N",
+              "Q",
+              "R",
+              "S",
+              "T",
+              "V",
+              "W",
+              "Y"
+            ],
+            "position_residue_rules": {
+              "15": {
+                "hard_allowed_residues": [
+                  "V",
+                  "I",
+                  "L",
+                  "M",
+                  "A",
+                  "T"
+                ]
+              },
+              "16": {
+                "hard_allowed_residues": [
+                  "E",
+                  "D",
+                  "Q"
+                ]
+              },
+              "19": {
+                "hard_allowed_residues": [
+                  "F",
+                  "Y",
+                  "W",
+                  "L",
+                  "I",
+                  "M"
+                ]
+              },
+              "28": {
+                "hard_allowed_residues": [
+                  "I",
+                  "L",
+                  "V",
+                  "M",
+                  "F"
+                ]
+              },
+              "29": {
+                "hard_allowed_residues": [
+                  "G",
+                  "A",
+                  "S"
+                ]
+              },
+              "30": {
+                "hard_allowed_residues": [
+                  "C",
+                  "S",
+                  "A"
+                ]
+              },
+              "31": {
+                "hard_allowed_residues": [
+                  "S",
+                  "T",
+                  "N",
+                  "Q",
+                  "A",
+                  "G"
+                ]
+              },
+              "32": {
+                "hard_allowed_residues": [
+                  "D",
+                  "E",
+                  "N"
+                ]
+              },
+              "33": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              },
+              "41": {
+                "hard_allowed_residues": [
+                  "Q",
+                  "N",
+                  "E",
+                  "K",
+                  "R"
+                ]
+              }
+            }
+          },
+          "S07_EDIT_SITE72": {
+            "hard_allowed_residues": [
+              "A",
+              "S",
+              "T"
+            ],
+            "position_residue_rules": {
+              "71": {
+                "hard_allowed_residues": [
+                  "T",
+                  "S",
+                  "A"
+                ]
+              }
+            }
+          },
+          "S08_NLOBE_REMAINDER": {
+            "hard_allowed_residues": [
+              "A",
+              "G",
+              "N",
+              "Q",
+              "S",
+              "T",
+              "V"
+            ],
+            "position_residue_rules": {
+              "73": {
+                "hard_allowed_residues": [
+                  "G",
+                  "A",
+                  "S"
+                ]
+              },
+              "84": {
+                "hard_allowed_residues": [
+                  "T",
+                  "S",
+                  "N",
+                  "Q",
+                  "A",
+                  "V"
+                ]
+              },
+              "86": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              },
+              "87": {
+                "hard_allowed_residues": [
+                  "G",
+                  "A",
+                  "S"
+                ]
+              }
+            }
+          },
+          "S09_CLOBE_PRE_SITE122": {
+            "hard_allowed_residues": [
+              "A",
+              "D",
+              "E",
+              "G",
+              "H",
+              "K",
+              "N",
+              "Q",
+              "R",
+              "S",
+              "T",
+              "Y"
+            ],
+            "position_residue_rules": {
+              "103": {
+                "hard_allowed_residues": [
+                  "S",
+                  "T",
+                  "N",
+                  "Q",
+                  "A",
+                  "G"
+                ]
+              },
+              "105": {
+                "hard_allowed_residues": [
+                  "H",
+                  "N",
+                  "Q",
+                  "K",
+                  "R",
+                  "Y"
+                ]
+              },
+              "110": {
+                "hard_allowed_residues": [
+                  "E",
+                  "D",
+                  "Q"
+                ]
+              }
+            }
+          },
+          "S10_EDIT_SITE122": {
+            "hard_allowed_residues": [
+              "K",
+              "Q",
+              "R"
+            ],
+            "position_residue_rules": {
+              "121": {
+                "hard_allowed_residues": [
+                  "R",
+                  "K",
+                  "Q"
+                ]
+              }
+            }
+          },
+          "S11_CLOBE_PRE_KAN_SHELL": {
+            "hard_allowed_residues": [
+              "A",
+              "D",
+              "E",
+              "G",
+              "H",
+              "K",
+              "N",
+              "P",
+              "Q",
+              "R",
+              "S",
+              "T",
+              "V"
+            ],
+            "position_residue_rules": {
+              "124": {
+                "hard_allowed_residues": [
+                  "T",
+                  "S",
+                  "N",
+                  "Q",
+                  "A",
+                  "V"
+                ]
+              },
+              "126": {
+                "hard_allowed_residues": [
+                  "D",
+                  "E",
+                  "N"
+                ]
+              },
+              "128": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              },
+              "129": {
+                "hard_allowed_residues": [
+                  "T",
+                  "S",
+                  "N",
+                  "Q",
+                  "A",
+                  "V"
+                ]
+              },
+              "131": {
+                "hard_allowed_residues": [
+                  "P",
+                  "A",
+                  "S",
+                  "T"
+                ]
+              },
+              "133": {
+                "hard_allowed_residues": [
+                  "D",
+                  "E",
+                  "N"
+                ]
+              },
+              "137": {
+                "hard_allowed_residues": [
+                  "K",
+                  "R",
+                  "Q",
+                  "H"
+                ]
+              },
+              "148": {
+                "hard_allowed_residues": [
+                  "E",
+                  "D",
+                  "Q"
+                ]
+              },
+              "149": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              },
+              "150": {
+                "hard_allowed_residues": [
+                  "G",
+                  "A",
+                  "S"
+                ]
+              }
+            }
+          },
+          "S13_CLOBE_PRE_SITE178": {
+            "hard_allowed_residues": [
+              "A",
+              "G",
+              "H",
+              "K",
+              "Q",
+              "R",
+              "S",
+              "T",
+              "V"
+            ],
+            "position_residue_rules": {
+              "163": {
+                "hard_allowed_residues": [
+                  "G",
+                  "A",
+                  "S"
+                ]
+              },
+              "171": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              },
+              "174": {
+                "hard_allowed_residues": [
+                  "K",
+                  "R",
+                  "Q",
+                  "H"
+                ]
+              },
+              "175": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              }
+            }
+          },
+          "S14_EDIT_SITE178": {
+            "hard_allowed_residues": [
+              "F",
+              "L",
+              "M"
+            ],
+            "position_residue_rules": {
+              "177": {
+                "hard_allowed_residues": [
+                  "M",
+                  "F",
+                  "L"
+                ]
+              }
+            }
+          },
+          "S15_CLOBE_PRE_D190": {
+            "hard_allowed_residues": [
+              "D",
+              "E",
+              "N"
+            ],
+            "position_residue_rules": {
+              "179": {
+                "hard_allowed_residues": [
+                  "D",
+                  "E",
+                  "N"
+                ]
+              }
+            }
+          },
+          "S19_CLOBE_PRE_D208": {
+            "hard_allowed_residues": [
+              "D",
+              "H",
+              "K",
+              "N",
+              "Q",
+              "R",
+              "S",
+              "T"
+            ],
+            "position_residue_rules": {
+              "199": {
+                "hard_allowed_residues": [
+                  "N",
+                  "Q",
+                  "S",
+                  "T",
+                  "D"
+                ]
+              },
+              "201": {
+                "hard_allowed_residues": [
+                  "R",
+                  "K",
+                  "Q",
+                  "H"
+                ]
+              }
+            }
+          },
+          "S27_CLOBE_PRE_SITE238": {
+            "hard_allowed_residues": [
+              "A",
+              "D",
+              "E",
+              "G",
+              "Q",
+              "S"
+            ],
+            "position_residue_rules": {
+              "233": {
+                "hard_allowed_residues": [
+                  "G",
+                  "A",
+                  "S"
+                ]
+              },
+              "234": {
+                "hard_allowed_residues": [
+                  "E",
+                  "D",
+                  "Q"
+                ]
+              }
+            }
+          },
+          "S28_EDIT_SITE238": {
+            "hard_allowed_residues": [
+              "D",
+              "E",
+              "N"
+            ],
+            "position_residue_rules": {
+              "237": {
+                "hard_allowed_residues": [
+                  "D",
+                  "E",
+                  "N"
+                ]
+              }
+            }
+          },
+          "S29_CLOBE_PRE_CTERM_SHELL": {
+            "hard_allowed_residues": [
+              "A",
+              "E",
+              "G",
+              "H",
+              "K",
+              "N",
+              "Q",
+              "R",
+              "S",
+              "T",
+              "V"
+            ],
+            "position_residue_rules": {
+              "238": {
+                "hard_allowed_residues": [
+                  "R",
+                  "K",
+                  "Q",
+                  "H"
+                ]
+              },
+              "244": {
+                "hard_allowed_residues": [
+                  "G",
+                  "A",
+                  "S"
+                ]
+              },
+              "246": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              },
+              "247": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              },
+              "250": {
+                "hard_allowed_residues": [
+                  "S",
+                  "T",
+                  "N",
+                  "Q",
+                  "A",
+                  "G"
+                ]
+              },
+              "251": {
+                "hard_allowed_residues": [
+                  "Q",
+                  "N",
+                  "E",
+                  "K",
+                  "R"
+                ]
+              },
+              "254": {
+                "hard_allowed_residues": [
+                  "A",
+                  "G",
+                  "S",
+                  "T",
+                  "V"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "runtime_integration_contract": {
+      "resolved_strategy_node_policy_source": "case_owned_residue_policy.tiers.<ASTEVOLVE_APH_DESIGN_TIER>.node_edit_policies",
+      "resolved_sa_config_contract_source": "active executable Nodes projected into residue_mutation_contract through case-owned per-position rules",
+      "merge_order": "case hard support last and authoritative; LLM residue_policy may only narrow or reweight",
+      "fallback_generation_requirement": "all generator paths consume the active-Node residue_mutation_contract; the evaluator independently rejects any escape"
+    },
+    "retired_position_policy": "revert_to_case_reference",
+    "retired_position_policy_authority": "case_controller: when an editable position leaves the active Node set, candidate residue identity must equal the case reference before evaluation",
+    "search_posture_tier_invariant": "ASTEVOLVE_APH_DESIGN_TIER is launch-locked; posture and the LLM may change active Node topology and soft amino-acid guidance only within the selected tier's case-owned hard support"
+  },
+  "reference_structure_path": "data://aph3iia_kanamycin_active_site_preservation/structures/ast_ready/1ND4_chainA_KAN_MG.pdb",
+  "reference_inputs": {
+    "reference_chainA_KAN_MG": {
+      "path": "data://aph3iia_kanamycin_active_site_preservation/structures/ast_ready/1ND4_chainA_KAN_MG.pdb",
+      "pdb_id": "1ND4",
+      "protein_chain_id": "A",
+      "state": "kanamycin_bound_reference",
+      "observed_residues_1based": [
+        10,
+        264
+      ],
+      "ligands": [
+        "KAN",
+        "MG"
+      ],
+      "use": "primary_geometry_reference_only"
+    },
+    "reference_chainB_KAN_MG_repeat": {
+      "path": "data://aph3iia_kanamycin_active_site_preservation/structures/ast_ready/1ND4_chainB_KAN_MG.pdb",
+      "pdb_id": "1ND4",
+      "protein_chain_id": "B",
+      "state": "independent_crystal_repeat",
+      "observed_residues_1based": [
+        10,
+        264
+      ],
+      "ligands": [
+        "KAN",
+        "MG"
+      ],
+      "use": "soft_repeat_audit_only"
+    },
+    "reference_A2_assembly": {
+      "state": "author_assigned_A2",
+      "use": "report_only_not_a_functional_interface_constraint",
+      "available": false
+    }
+  },
+  "complex_states": [
+    {
+      "name": "candidate_apo",
+      "role": "preserve_full_length_monomer_fold",
+      "required": true,
+      "entities": [
+        {
+          "type": "protein",
+          "id": "APH3IIa",
+          "source_chain": "A"
+        }
+      ]
+    },
+    {
+      "name": "candidate_chainA_KAN_MG",
+      "role": "primary_candidate_generated_ligand_geometry",
+      "required": true,
+      "candidate_generated_coordinates_required": true,
+      "entities": [
+        {
+          "type": "protein",
+          "id": "APH3IIa",
+          "source_chain": "A"
+        },
+        {
+          "type": "ligand",
+          "id": "KAN",
+          "ccd": "KAN"
+        },
+        {
+          "type": "ion",
+          "id": "MG",
+          "ion": "MG"
+        }
+      ]
+    }
+  ],
+  "case_evaluation_protocol": {
+    "schema_version": "aph3iia.kanamycin_evaluation.v1",
+    "direction": "maximize",
+    "claim_scope": "computational fold/geometry preservation and constrained ranking; not enzyme kinetics or MIC",
+    "primary_state": "candidate_chainA_KAN_MG",
+    "apo_state": "candidate_apo",
+    "repeat_audit_state": "reference_chainB_KAN_MG_repeat",
+    "verified_core_positions_0based": [
+      156,
+      189,
+      194,
+      207
+    ],
+    "verified_core_positions_1based": [
+      157,
+      190,
+      195,
+      208
+    ],
+    "kanamycin_contact_shell_positions_0based": [
+      156,
+      157,
+      158,
+      159,
+      189,
+      194,
+      210,
+      225,
+      226,
+      229,
+      260,
+      261,
+      263
+    ],
+    "hard_gates": {
+      "global_backbone_RMSD_residues_10_264_A": {
+        "operator": "<=",
+        "threshold": 1.5
+      },
+      "verified_core_backbone_RMSD_A": {
+        "operator": "<=",
+        "threshold": 0.75
+      },
+      "verified_core_all_heavy_RMSD_A": {
+        "operator": "<=",
+        "threshold": 1.25
+      },
+      "KAN_contact_coverage": {
+        "operator": ">=",
+        "threshold": 0.9
+      },
+      "KAN_pose_RMSD_A": {
+        "operator": "<=",
+        "threshold": 1.5
+      },
+      "Mg_coordination_max_error_from_reference_A": {
+        "operator": "<=",
+        "threshold": 0.5
+      },
+      "severe_local_clash_count": {
+        "operator": "==",
+        "threshold": 0
+      }
+    },
+    "missing_or_nonfinite_evidence": "required hard gate fail closed",
+    "coordinate_provenance_policy": {
+      "candidate_generated_required_for_KAN_and_MG_scoring": true,
+      "reject_reference_coordinate_copy_as_candidate": true,
+      "reject_template_or_transplanted_ligand_pose": true,
+      "ATP_scoring": "disabled_absent_declared_reference"
+    },
+    "information_partition": {
+      "generator_and_outer_LLM": "WT sequence, hard position/AA support, 1ND4/KAN/MG geometry summaries, qualitative DMS tiers",
+      "hidden_evaluator": "exact selected-site DMS enrichments and p-values",
+      "report_only": "other-five-antibiotic labels and wet-reference MIC rows"
+    },
+    "repeat_policy": "Chain B is a soft independent crystal-copy robustness audit; no A2 interface function claim."
+  },
+  "multistate_objective_aggregation": {
+    "enabled": false,
+    "reason_code": "evaluator_term_post_plugin_binding_not_implemented",
+    "authoritative_provider": "aph3iia_kanamycin",
+    "authoritative_runtime": "production_evaluator_plugin_terms_and_gate_status",
+    "reenable_requires": "exact post-plugin evaluator-term binding without duplicate scoring"
+  },
+  "multistate_objectives": [
+    {
+      "name": "apo_fold_preservation",
+      "state": "candidate_apo",
+      "term": "aph_global_fold_preservation",
+      "type": "evaluator_term",
+      "role": "hard_gate"
+    },
+    {
+      "name": "verified_core_preservation",
+      "state": "candidate_chainA_KAN_MG",
+      "term": "aph_verified_core_preservation",
+      "type": "evaluator_term",
+      "role": "hard_gate"
+    },
+    {
+      "name": "KAN_contact_preservation",
+      "state": "candidate_chainA_KAN_MG",
+      "term": "aph_kanamycin_contact_preservation",
+      "type": "evaluator_term",
+      "role": "hard_gate"
+    },
+    {
+      "name": "KAN_pose_preservation",
+      "state": "candidate_chainA_KAN_MG",
+      "term": "aph_kanamycin_pose_preservation",
+      "type": "evaluator_term",
+      "role": "hard_gate"
+    },
+    {
+      "name": "Mg_geometry_preservation",
+      "state": "candidate_chainA_KAN_MG",
+      "term": "aph_mg_geometry_preservation",
+      "type": "evaluator_term",
+      "role": "hard_gate"
+    },
+    {
+      "name": "clash_guard",
+      "state": "candidate_chainA_KAN_MG",
+      "term": "aph_clash_free",
+      "type": "evaluator_term",
+      "role": "hard_gate"
+    },
+    {
+      "name": "kanamycin_label_rank",
+      "state": "sequence",
+      "term": "aph_kanamycin_label_compatibility",
+      "type": "evaluator_term",
+      "role": "soft_hidden_label_audit"
+    },
+    {
+      "name": "sequence_plausibility",
+      "state": "sequence",
+      "term": "aph_sequence_plausibility",
+      "type": "evaluator_term",
+      "role": "soft_objective"
+    },
+    {
+      "name": "repeat_robustness",
+      "state": "reference_chainB_KAN_MG_repeat",
+      "term": "aph_repeat_robustness",
+      "type": "evaluator_term",
+      "role": "soft_report_only"
+    },
+    {
+      "name": "sequence_diversity",
+      "state": "population",
+      "term": "aph_sequence_diversity",
+      "type": "evaluator_term",
+      "role": "soft_archive_descriptor"
+    }
+  ],
+  "evaluator_plugins": [
+    "aph3iia_kanamycin"
+  ],
+  "evaluator_capabilities": {
+    "aph3iia_kanamycin": [
+      "aph_sequence_integrity",
+      "aph_mutation_scope_integrity",
+      "aph_global_fold_preservation",
+      "aph_verified_core_preservation",
+      "aph_kanamycin_contact_preservation",
+      "aph_kanamycin_pose_preservation",
+      "aph_mg_geometry_preservation",
+      "aph_clash_free",
+      "aph_kanamycin_label_compatibility",
+      "aph_sequence_plausibility",
+      "aph_repeat_robustness",
+      "aph_sequence_diversity"
+    ]
+  },
+  "residue_evidence_catalog": "data://aph3iia_kanamycin_active_site_preservation/data/residue_evidence_catalog.json",
+  "residue_evidence_prompt_max_bytes": 131072,
+  "global_ast_evolution_policy": {
+    "schema_version": "astevolve.ast_evolution_policy.v2",
+    "enabled": true,
+    "allowed_chain_spans": {
+      "A": [
+        [
+          9,
+          264
+        ]
+      ]
+    },
+    "protected_chain_spans": {
+      "A": [
+        [
+          0,
+          9
+        ],
+        [
+          43,
+          63
+        ],
+        [
+          156,
+          160
+        ],
+        [
+          189,
+          190
+        ],
+        [
+          194,
+          195
+        ],
+        [
+          207,
+          208
+        ],
+        [
+          210,
+          211
+        ],
+        [
+          225,
+          227
+        ],
+        [
+          229,
+          230
+        ],
+        [
+          260,
+          264
+        ]
+      ]
+    },
+    "min_total_editable_positions": 8,
+    "max_total_editable_positions": 32,
+    "min_active_structural_nodes": 4,
+    "max_active_structural_nodes": 12,
+    "max_positions_per_node": 8,
+    "max_spans_per_node": 4,
+    "max_mapping_edges": 40,
+    "immutable_structural_node_ids": [
+      "unresolved_nterm_guard",
+      "donor_context_hold",
+      "verified_core_d157_kan_shell_157_160",
+      "verified_core_d190",
+      "verified_core_n195",
+      "verified_core_d208",
+      "kan_shell_211",
+      "kan_shell_226_227",
+      "kan_shell_230",
+      "kan_shell_261_264"
+    ],
+    "allowed_functional_node_ids": [
+      "sequence_integrity",
+      "mutation_scope_integrity",
+      "preserve_global_fold",
+      "preserve_verified_core",
+      "preserve_kanamycin_contacts",
+      "preserve_kanamycin_pose",
+      "preserve_mg_geometry",
+      "clash_free",
+      "kanamycin_label_compatibility",
+      "sequence_plausibility",
+      "repeat_robustness",
+      "sequence_diversity"
+    ],
+    "action_profiles": {
+      "conservative_point": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      },
+      "balanced_point_resample": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          }
+        ]
+      },
+      "exploratory_point_resample": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          },
+          {
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          },
+          {
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 4
+            }
+          }
+        ]
+      }
+    },
+    "require_catalog_eligibility": true,
+    "require_position_evidence_refs": true,
+    "min_position_safety_score": 0.7,
+    "node_id_pattern": "llm_[a-z0-9_]{3,80}",
+    "edge_id_pattern": "llm_[a-z0-9_]{3,80}"
+  },
+  "executable_dual_ast": {
+    "schema_version": "astevolve.executable_dual_ast.v1",
+    "ast_id": "aph3iia_kanamycin_global_dual_ast_v2",
+    "revision": 1,
+    "structural_nodes": [
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "unresolved_nterm_guard",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              0,
+              9
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "donor_context_hold",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              43,
+              63
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "verified_core_d157_kan_shell_157_160",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              156,
+              160
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "verified_core_d190",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              189,
+              190
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "verified_core_n195",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              194,
+              195
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "verified_core_d208",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              207,
+              208
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "kan_shell_211",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              210,
+              211
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "kan_shell_226_227",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              225,
+              227
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "kan_shell_230",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              229,
+              230
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "kan_shell_261_264",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              260,
+              264
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "llm_site14",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              13,
+              14
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "llm_site72",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              71,
+              72
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "llm_site122",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              121,
+              122
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "llm_site178",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              177,
+              178
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "llm_site238",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              237,
+              238
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_resample",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    ],
+    "functional_nodes": [
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "sequence_integrity",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_sequence_integrity"
+        },
+        "threshold": 1.0,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:P00552_length_and_identity"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "mutation_scope_integrity",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_mutation_scope_integrity"
+        },
+        "threshold": 1.0,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:controller_owned_level1_level2_support"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "preserve_global_fold",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_global_fold_preservation"
+        },
+        "threshold": 0.5,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:1ND4_residues_10_264"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "preserve_verified_core",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_verified_core_preservation"
+        },
+        "threshold": 0.5,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:verified_D157_D190_N195_D208"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "preserve_kanamycin_contacts",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_kanamycin_contact_preservation"
+        },
+        "threshold": 0.9,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:1ND4_13_residue_KAN_shell"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "preserve_kanamycin_pose",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_kanamycin_pose_preservation"
+        },
+        "threshold": 0.5,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:1ND4_KAN_pose"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "preserve_mg_geometry",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_mg_geometry_preservation"
+        },
+        "threshold": 0.5,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:N195_D208_MG_geometry"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "clash_free",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_clash_free"
+        },
+        "threshold": 1.0,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:severe_local_clash_gate"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "kanamycin_label_compatibility",
+        "kind": "objective",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_kanamycin_label_compatibility"
+        },
+        "threshold": null,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:hidden_Melnikov_kanamycin_label_audit"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "sequence_plausibility",
+        "kind": "objective",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_sequence_plausibility"
+        },
+        "threshold": null,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:matched_sequence_prior"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "repeat_robustness",
+        "kind": "objective",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_repeat_robustness"
+        },
+        "threshold": null,
+        "missing_policy": "abstain",
+        "evidence_refs": [
+          "case:1ND4_chainB_repeat"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "sequence_diversity",
+        "kind": "objective",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "aph3iia_kanamycin",
+          "term_name": "aph_sequence_diversity"
+        },
+        "threshold": null,
+        "missing_policy": "abstain",
+        "evidence_refs": [
+          "case:five_site_hamming"
+        ]
+      }
+    ],
+    "mapping_edges": [
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site14_sequence_point",
+        "relation": "realizes",
+        "functional_node_id": "sequence_integrity",
+        "structural_node_id": "llm_site14",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:13"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site14_fold_resample",
+        "relation": "realizes",
+        "functional_node_id": "preserve_global_fold",
+        "structural_node_id": "llm_site14",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:13"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site72_scope_point",
+        "relation": "realizes",
+        "functional_node_id": "mutation_scope_integrity",
+        "structural_node_id": "llm_site72",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:71"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site72_plausibility_resample",
+        "relation": "realizes",
+        "functional_node_id": "sequence_plausibility",
+        "structural_node_id": "llm_site72",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:71"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site122_core_point",
+        "relation": "realizes",
+        "functional_node_id": "preserve_verified_core",
+        "structural_node_id": "llm_site122",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:121"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site122_label_resample",
+        "relation": "realizes",
+        "functional_node_id": "kanamycin_label_compatibility",
+        "structural_node_id": "llm_site122",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:121"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site178_contacts_point",
+        "relation": "realizes",
+        "functional_node_id": "preserve_kanamycin_contacts",
+        "structural_node_id": "llm_site178",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:177"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site178_pose_resample",
+        "relation": "realizes",
+        "functional_node_id": "preserve_kanamycin_pose",
+        "structural_node_id": "llm_site178",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:177"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site238_mg_point",
+        "relation": "realizes",
+        "functional_node_id": "preserve_mg_geometry",
+        "structural_node_id": "llm_site238",
+        "action_operator": "point",
+        "evidence_refs": [
+          "aph3iia:A:237"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site238_clash_resample",
+        "relation": "realizes",
+        "functional_node_id": "clash_free",
+        "structural_node_id": "llm_site238",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "aph3iia:A:237"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site178_repeat_segment",
+        "relation": "realizes",
+        "functional_node_id": "repeat_robustness",
+        "structural_node_id": "llm_site178",
+        "action_operator": "segment_resample",
+        "evidence_refs": [
+          "aph3iia:A:177"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "llm_site238_diversity_segment",
+        "relation": "realizes",
+        "functional_node_id": "sequence_diversity",
+        "structural_node_id": "llm_site238",
+        "action_operator": "segment_resample",
+        "evidence_refs": [
+          "aph3iia:A:237"
+        ]
+      }
+    ]
+  },
+  "semantic_graph": {
+    "schema_version": "protein_semantic_graph_v1",
+    "description": "APH(3')-IIa active-site-preserving Dual AST with five case-authorized editable single-residue segments and immutable experimental geometry guards.",
+    "structural_graph": {
+      "nodes": {
+        "llm_site14": {
+          "chain_id": "A",
+          "spans": [
+            [
+              13,
+              14
+            ]
+          ],
+          "role": "adaptive_editable_site",
+          "compiled_segment": "S03_EDIT_SITE14"
+        },
+        "llm_site72": {
+          "chain_id": "A",
+          "spans": [
+            [
+              71,
+              72
+            ]
+          ],
+          "role": "adaptive_editable_site",
+          "compiled_segment": "S07_EDIT_SITE72"
+        },
+        "llm_site122": {
+          "chain_id": "A",
+          "spans": [
+            [
+              121,
+              122
+            ]
+          ],
+          "role": "adaptive_editable_site",
+          "compiled_segment": "S10_EDIT_SITE122"
+        },
+        "llm_site178": {
+          "chain_id": "A",
+          "spans": [
+            [
+              177,
+              178
+            ]
+          ],
+          "role": "adaptive_editable_site",
+          "compiled_segment": "S14_EDIT_SITE178"
+        },
+        "llm_site238": {
+          "chain_id": "A",
+          "spans": [
+            [
+              237,
+              238
+            ]
+          ],
+          "role": "adaptive_editable_site",
+          "compiled_segment": "S28_EDIT_SITE238"
+        },
+        "unresolved_nterm_guard": {
+          "chain_id": "A",
+          "spans": [
+            [
+              0,
+              9
+            ]
+          ],
+          "role": "frozen_and_excluded_from_local_RMSD"
+        },
+        "donor_context_hold": {
+          "chain_id": "A",
+          "spans": [
+            [
+              43,
+              63
+            ]
+          ],
+          "role": "provisional_frozen_not_scored_as_verified_donor_site"
+        },
+        "verified_core_guard": {
+          "chain_id": "A",
+          "positions": [
+            156,
+            189,
+            194,
+            207
+          ],
+          "role": "D157_D190_N195_D208_geometry"
+        },
+        "kanamycin_shell_guard": {
+          "chain_id": "A",
+          "positions": [
+            156,
+            157,
+            158,
+            159,
+            189,
+            194,
+            210,
+            225,
+            226,
+            229,
+            260,
+            261,
+            263
+          ],
+          "role": "crystallographic_4p5A_contact_shell"
+        }
+      },
+      "edges": [
+        {
+          "source": "verified_core_guard",
+          "target": "kanamycin_shell_guard",
+          "relation": "overlaps_at_D157_D190_N195"
+        },
+        {
+          "source": "donor_context_hold",
+          "target": "verified_core_guard",
+          "relation": "provisional_context_not_verified_core"
+        },
+        {
+          "source": "unresolved_nterm_guard",
+          "target": "preserve_global_fold",
+          "relation": "excluded_from_experimental_local_RMSD"
+        }
+      ]
+    },
+    "functional_graph": {
+      "nodes": {
+        "sequence_integrity": {
+          "kind": "hard_constraint",
+          "maps_to": [
+            "full_sequence"
+          ]
+        },
+        "mutation_scope_integrity": {
+          "kind": "hard_constraint",
+          "maps_to": [
+            "llm_site14",
+            "llm_site72",
+            "llm_site122",
+            "llm_site178",
+            "llm_site238"
+          ]
+        },
+        "preserve_global_fold": {
+          "kind": "hard_constraint",
+          "maps_to": [
+            "observed_residues_10_264"
+          ]
+        },
+        "preserve_verified_core": {
+          "kind": "hard_constraint",
+          "maps_to": [
+            "verified_core_guard"
+          ]
+        },
+        "preserve_kanamycin_contacts": {
+          "kind": "hard_constraint",
+          "maps_to": [
+            "kanamycin_shell_guard"
+          ]
+        },
+        "preserve_kanamycin_pose": {
+          "kind": "hard_constraint",
+          "maps_to": [
+            "KAN"
+          ]
+        },
+        "preserve_mg_geometry": {
+          "kind": "hard_constraint",
+          "maps_to": [
+            "verified_core_guard",
+            "MG"
+          ]
+        },
+        "clash_free": {
+          "kind": "hard_constraint",
+          "maps_to": [
+            "candidate_chainA_KAN_MG"
+          ]
+        },
+        "kanamycin_label_compatibility": {
+          "kind": "soft_hidden_label_audit",
+          "maps_to": [
+            "llm_site14",
+            "llm_site72",
+            "llm_site122",
+            "llm_site178",
+            "llm_site238"
+          ]
+        },
+        "sequence_plausibility": {
+          "kind": "soft_objective",
+          "maps_to": [
+            "full_sequence"
+          ]
+        },
+        "repeat_robustness": {
+          "kind": "soft_report_only",
+          "maps_to": [
+            "reference_chainB_KAN_MG_repeat"
+          ]
+        },
+        "sequence_diversity": {
+          "kind": "archive_descriptor",
+          "maps_to": [
+            "five_site_hamming"
+          ]
+        }
+      },
+      "edges": [
+        {
+          "source": "sequence_integrity",
+          "target": "kanamycin_label_compatibility",
+          "relation": "gates"
+        },
+        {
+          "source": "mutation_scope_integrity",
+          "target": "kanamycin_label_compatibility",
+          "relation": "gates"
+        },
+        {
+          "source": "preserve_global_fold",
+          "target": "kanamycin_label_compatibility",
+          "relation": "gates"
+        },
+        {
+          "source": "preserve_verified_core",
+          "target": "kanamycin_label_compatibility",
+          "relation": "gates"
+        },
+        {
+          "source": "preserve_kanamycin_contacts",
+          "target": "kanamycin_label_compatibility",
+          "relation": "gates"
+        },
+        {
+          "source": "preserve_kanamycin_pose",
+          "target": "kanamycin_label_compatibility",
+          "relation": "gates"
+        },
+        {
+          "source": "preserve_mg_geometry",
+          "target": "kanamycin_label_compatibility",
+          "relation": "gates"
+        },
+        {
+          "source": "clash_free",
+          "target": "kanamycin_label_compatibility",
+          "relation": "gates"
+        },
+        {
+          "source": "repeat_robustness",
+          "target": "kanamycin_label_compatibility",
+          "relation": "audits_not_gates"
+        }
+      ]
+    },
+    "mappings": {
+      "kanamycin_label_compatibility": [
+        "llm_site14",
+        "llm_site72",
+        "llm_site122",
+        "llm_site178",
+        "llm_site238"
+      ],
+      "preserve_global_fold": [
+        "llm_site14",
+        "llm_site72",
+        "llm_site122",
+        "llm_site178",
+        "llm_site238"
+      ],
+      "preserve_verified_core": [
+        "verified_core_guard"
+      ],
+      "preserve_kanamycin_contacts": [
+        "kanamycin_shell_guard"
+      ],
+      "preserve_mg_geometry": [
+        "verified_core_guard"
+      ],
+      "mutation_scope_integrity": [
+        "llm_site14",
+        "llm_site72",
+        "llm_site122",
+        "llm_site178",
+        "llm_site238"
+      ]
+    }
+  },
+  "adaptive_frontier_summary": {
+    "schema_version": "aph3iia.adaptive_frontier_summary.v1",
+    "catalog_hash": "e17c5becabb2616e68f14bbf50a4b1453de318f476f763f8c49821c912437040",
+    "seed_positions_zero_based": [
+      13,
+      71,
+      121,
+      177,
+      237
+    ],
+    "eligible_positions_zero_based": [
+      9,
+      12,
+      13,
+      15,
+      16,
+      19,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      41,
+      71,
+      73,
+      84,
+      86,
+      87,
+      103,
+      105,
+      110,
+      121,
+      124,
+      126,
+      128,
+      129,
+      131,
+      133,
+      137,
+      148,
+      149,
+      150,
+      163,
+      171,
+      174,
+      175,
+      177,
+      179,
+      199,
+      201,
+      233,
+      234,
+      237,
+      238,
+      244,
+      246,
+      247,
+      250,
+      251,
+      254
+    ],
+    "eligible_position_count": 50,
+    "selection_boundary": {
+      "minimum_distance_to_KAN_A": 8.0,
+      "minimum_distance_to_MG_A": 8.0,
+      "minimum_distance_to_verified_core_A": 8.0,
+      "minimum_policy_safety_score": 0.7,
+      "minimum_relative_sasa": 0.25
+    },
+    "node_topology_authority": "LLM may create/delete/migrate/resize/split/merge/rewire 4-12 active Nodes over 8-32 eligible positions; each Node must stay within one compiled segment",
+    "amino_acid_authority": "LLM soft guidance only; case-owned hard alphabet remains authoritative"
+  }
+}

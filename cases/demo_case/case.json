@@ -1,0 +1,25 @@
+{
+  "schema_version": "astevolve.case_manifest.v2",
+  "case_id": "demo_case",
+  "name": "Teaching case: editable binder against a fixed synthetic target",
+  "task_type": "synthetic_case_authoring_demo",
+  "design_state_path": "design_state.json",
+  "memory_path": "memory.yaml",
+  "entry_program": "initial_program.py",
+  "config_path": "config.yaml",
+  "outer_evaluator_path": "demo_outer_evaluator.py",
+  "test_evaluator_path": "demo_evaluator.py",
+  "lifecycle": {
+    "schema_version": "astevolve.case_lifecycle.v1",
+    "status": "active",
+    "default_eligible": false,
+    "smoke_eligible": true,
+    "formal_eligible": false,
+    "explicit_run_only": true
+  },
+  "launcher_defaults": {
+    "inner_iterations": 10,
+    "progen_weight": 0.05
+  },
+  "notes": "A GPU-first ProGen + classic ESMFold + Protenix example for learning the case contract. It makes no biological claim and bundles no model weights."
+}

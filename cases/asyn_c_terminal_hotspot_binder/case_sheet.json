@@ -1,0 +1,103 @@
+{
+  "schema_version": "ast_case_sheet_v1",
+  "case_name": "asyn_c_terminal_hotspot_binder",
+  "readiness": {
+    "runtime": "classic_esmfold_every_candidate",
+    "biological_specificity": "computational_proxy_requires_experimental_validation"
+  },
+  "design_goal": {
+    "primary": "Design a foldable 50-aa binder that forms a high-confidence interface localized to fixed ASYN residues 99-140.",
+    "formal_success_definition": "A candidate preserves the exact 140-aa ASYN target, remains exactly 50 canonical residues and developable, and forms a clash-controlled holo interface whose ASYN contacts are enriched in residues 99-140."
+  },
+  "state_success_criteria": {
+    "positive_signals": [
+      "At least one direct binder-ASYN residue pair lies inside ASYN residues 99-140.",
+      "Most ASYN-side interface residue pairs fall inside residues 99-140.",
+      "The binder avoids excessive hydrophobicity, cysteine burden, and long homopolymers.",
+      "The binder has acceptable confidence inside the holo complex.",
+      "The holo complex has usable ipTM/PAE-derived confidence and a contact-rich binder-ASYN interface."
+    ],
+    "failure_signals": [
+      "Any ASYN residue changes or the ASYN chain length changes.",
+      "No direct binder contact reaches ASYN residues 99-140.",
+      "Required holo complex structure evidence is missing.",
+      "The apparent interface is dominated by ASYN residues outside 99-140.",
+      "The binder is not exactly 50 canonical amino acids.",
+      "The interface contains excessive steric clashes."
+    ]
+  },
+  "residue_level_constraints": {
+    "indexing": "zero_based_end_exclusive",
+    "mutable_residue_spans": [
+      {
+        "chain_id": "B",
+        "spans": [
+          [
+            0,
+            50
+          ]
+        ],
+        "role": "de_novo_binder_only"
+      }
+    ],
+    "frozen_residue_spans": [
+      {
+        "chain_id": "T",
+        "spans": [
+          [
+            0,
+            140
+          ]
+        ],
+        "role": "immutable_full_length_ASYN"
+      }
+    ],
+    "per_round_active_budget": {
+      "minimum_positions": 50,
+      "maximum_positions": 50,
+      "minimum_structural_nodes": 5,
+      "maximum_structural_nodes": 5
+    }
+  },
+  "objective_thresholds": {
+    "target_sequence_integrity": {
+      "hard_gate": true,
+      "pass_min": 1.0
+    },
+    "binder_sequence_validity": {
+      "hard_gate": true,
+      "pass_min": 1.0
+    },
+    "binder_holo_confidence": {
+      "direction": "maximize",
+      "target": 70.0
+    },
+    "hotspot_contact_fraction": {
+      "direction": "maximize",
+      "target": 0.65
+    },
+    "interface_clash_count": {
+      "hard_gate": true,
+      "pass_max": 3
+    },
+    "binder_hydrophobic_fraction": {
+      "hard_gate": true,
+      "pass_max": 0.5
+    },
+    "asyn_hotspot_contact_guard": {
+      "hard_gate": true,
+      "pass_min": 1.0
+    }
+  },
+  "information_gaps": [
+    "ESMFold confidence, pTM, PAE, and contact geometry are structural proxies requiring experimental binding validation.",
+    "The ASYN C terminus is intrinsically disordered; low hotspot pLDDT is not a failure criterion.",
+    "No negative target or off-target state is included in this first case version.",
+    "Experimental binding, specificity, solubility, and aggregation assays are required."
+  ],
+  "provisional_assumptions": [
+    "The biological hotspot is ASYN residues 99-140, mapped to zero-based [98,140).",
+    "Candidates compared within one run use the same sealed provider mode, seeds, and sampling protocol.",
+    "The starting binder is the fixed 50-residue Bagel state-0 sequence. The five search nodes form a resizable contiguous partition over all 50 binder positions."
+  ]
+}

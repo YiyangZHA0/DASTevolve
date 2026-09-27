@@ -1,0 +1,8 @@
+{
+  "schema_version": "ast_case_sheet_v1",
+  "case_name": "aph3iia_kanamycin_active_site_preservation",
+  "design_goal": {
+    "primary": "Explore fixed-length APH(3')-IIa variants while preserving the P00552 fold, the experimentally observed 1ND4 kanamycin pocket, the verified catalytic/Mg context, and the known kanamycin-compatible label boundary.",
+    "formal_success_definition": "A candidate is feasible only if it obeys the active tier's controller-owned position/amino-acid contract, keeps every globally frozen residue unchanged, passes matched-protocol fold/core/KAN/Mg/clash gates in the primary chain-A state, and does not fail the chain-B repeat audit. Sequence likelihood, DMS-label compatibility, diversity, and island specialization order candidates only after global feasibility."
+  }
+}

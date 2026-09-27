@@ -1,0 +1,193 @@
+{
+  "schema_version": "ast_case_sheet_v1",
+  "case_name": "cab_lys3_hewl_cdr_recovery",
+  "readiness": {
+    "runtime": "full_dast_protenix_v2_frozen_msa",
+    "biological_specificity": "historical_recovery_benchmark_not_new_binding_evidence",
+    "dual_gpu": "requires_configured_model_runtime"
+  },
+  "design_goal": {
+    "primary": "Optimize a reviewed 35-position VHH CDR envelope while tracking the original 28-site L0/L1/L2 recovery benchmark and preserving the cysteines and HEWL chain.",
+    "formal_success_definition": "Increase staged recovery while preserving integrity, SAbDab VHH plausibility, and Protenix interface quality; no native identity is exposed in the case sheet or evidence catalog."
+  },
+  "state_success_criteria": {
+    "positive_signals": [
+      "Exactly 35 zero-based VHH CDR positions are editable; 28 retain typed recovery labels from the all-alanine benchmark.",
+      "L0, L1, and L2 recovery are emitted as distinct typed evaluator terms.",
+      "Unique MCTS candidates are evaluated with ProGen, the external SAbDab ESM-2 prior, and frozen-MSA Protenix-v2 structure evidence.",
+      "High-entropy point, site-resample, and segment-mutagenesis actions make all 35 reviewed CDR positions reachable from the first MCTS tree and explicitly reward escape from the 28-site all-alanine seed.",
+      "HEWL, VHH length, and C22-C96/C33-C109 cysteine identities remain unchanged."
+    ],
+    "failure_signals": [
+      "Any edit outside the compiled 35-position CDR mask.",
+      "Any VHH or HEWL length change.",
+      "Any edit of HEWL or one of the four disulfide-forming cysteines.",
+      "A formal final selection missing Protenix evidence for the exact selected sequence."
+    ]
+  },
+  "residue_level_constraints": {
+    "indexing": "zero_based_end_exclusive",
+    "staged_positions": {
+      "L0": [
+        101,
+        104,
+        105
+      ],
+      "L1": [
+        98,
+        99,
+        100,
+        102,
+        103,
+        106,
+        107,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121
+      ],
+      "L2": [
+        28,
+        29,
+        30,
+        52,
+        56
+      ]
+    },
+    "all_a_position_count": 28,
+    "all_a_search_seed_position_count": 35,
+    "editable_position_count": 35,
+    "reviewed_llm_envelope": [
+      {
+        "chain_id": "A",
+        "spans": [
+          [
+            25,
+            32
+          ]
+        ],
+        "role": "CDR1_window"
+      },
+      {
+        "chain_id": "A",
+        "spans": [
+          [
+            52,
+            57
+          ]
+        ],
+        "role": "CDR2_window"
+      },
+      {
+        "chain_id": "A",
+        "spans": [
+          [
+            98,
+            108
+          ],
+          [
+            109,
+            122
+          ]
+        ],
+        "role": "CDR3_window_except_C109"
+      }
+    ],
+    "hard_protected_positions": [
+      21,
+      32,
+      95,
+      108
+    ],
+    "fixed_target": {
+      "chain_id": "L",
+      "spans": [
+        [
+          0,
+          129
+        ]
+      ]
+    }
+  },
+  "objective_thresholds": {
+    "fixed_residue_integrity": {
+      "hard_gate": true,
+      "pass_min": 1.0
+    },
+    "l0_native_recovery": {
+      "direction": "maximize",
+      "target": 1.0
+    },
+    "l1_native_recovery": {
+      "direction": "maximize",
+      "target": 1.0
+    },
+    "l2_native_recovery": {
+      "direction": "maximize",
+      "target": 1.0
+    },
+    "all_nodes_native_recovery": {
+      "direction": "maximize",
+      "target": 1.0
+    },
+    "cdr_all_a_escape": {
+      "direction": "maximize",
+      "target_nonalanine_count": 22,
+      "hard_gate": false
+    },
+    "protenix_structure_quality": {
+      "direction": "maximize",
+      "required_in": "dual_gpu"
+    },
+    "protenix_interface_confidence": {
+      "direction": "maximize",
+      "required_in": "dual_gpu"
+    },
+    "protenix_interface_pae_quality": {
+      "direction": "maximize",
+      "required_in": "dual_gpu"
+    },
+    "protenix_contact_quality": {
+      "direction": "maximize",
+      "required_in": "dual_gpu"
+    },
+    "sabdab_vhh_plausibility": {
+      "direction": "maximize",
+      "required_in": "dual_gpu"
+    }
+  },
+  "information_gaps": [
+    "Sequence recovery is not experimental affinity prediction.",
+    "Protenix confidence is a computational design signal; experimental affinity and activity remain unmeasured.",
+    "Native identities are evaluator-only and are not used as an LLM residue prior."
+  ],
+  "provisional_assumptions": [
+    "The scientific package uses 1JTT chain-local 1-based numbering; runtime selectors are zero-based and end-exclusive.",
+    "No insertions, deletions, or chain changes are permitted."
+  ],
+  "current_structure_evaluator": {
+    "schema_version": "cab_lys3.protenix_v2_frozen_msa.v1",
+    "rollout_provider": "protenix",
+    "required_final_provider": "protenix",
+    "rollout_budget": 100,
+    "final_candidates": 5,
+    "sequence_binding": "exact selected sequence hash",
+    "tree_persistence": "single inner run only; winner phenotype crosses outer memory",
+    "claim_boundary": "structure-confidence guidance; not an affinity or experimental validation metric",
+    "model_name": "protenix-v2",
+    "fidelity_checkpoints_enabled": false,
+    "msa": "frozen paired and unpaired templates; candidate query rewritten at prediction time",
+    "cycle": 10,
+    "step": 200,
+    "sample": 1
+  }
+}

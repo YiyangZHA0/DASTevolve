@@ -1,0 +1,49 @@
+{
+  "schema_version": "ast_case_sheet_v1",
+  "case_name": "demo_case",
+  "readiness": {
+    "runtime": "gpu_teaching_example",
+    "biological_specificity": "not_applicable"
+  },
+  "design_goal": {
+    "primary": "Exercise a target-response objective while preserving fixed residues.",
+    "formal_success_definition": "Match two declared synthetic goal residues without changing frozen or target residues."
+  },
+  "state_success_criteria": {
+    "positive_signals": [
+      "Declared desired residues are present.",
+      "Frozen binder residues and target chain remain unchanged."
+    ],
+    "failure_signals": [
+      "A fixed residue changes.",
+      "A chain is missing or has the wrong length."
+    ]
+  },
+  "residue_level_constraints": {
+    "indexing": "zero_based_end_exclusive",
+    "frozen_residue_spans": [
+      {
+        "chain_id": "B",
+        "spans": [
+          [
+            7,
+            9
+          ]
+        ]
+      }
+    ]
+  },
+  "objective_thresholds": {
+    "synthetic_goal_match": {
+      "direction": "maximize",
+      "pass_min": 1.0
+    },
+    "fixed_residue_integrity": {
+      "hard_gate": true
+    }
+  },
+  "information_gaps": [],
+  "provisional_assumptions": [
+    "The sequence objective is synthetic and carries no biological meaning; ESMFold and Protenix are used only to teach the model-evidence flow."
+  ]
+}

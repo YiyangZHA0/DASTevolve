@@ -1,0 +1,269 @@
+case_id: aph3iia_kanamycin_active_site_preservation
+schema_version: ast_case_memory_v1
+stable_priors:
+  claim_boundary: A computational pass supports conformity to the declared sequence and structural-preservation
+    proxies. It does not establish kanamycin MIC, phosphotransferase turnover, expression, stability in
+    cells, or improved function. Only newly measured MIC or purified-enzyme assays may be called experimentally
+    validated.
+  construct:
+    chain_id: A
+    protein: APH(3')-IIa / NPTII
+    uniprot: P00552
+    length: 264
+    scientific_numbering: one_based
+    runtime_indexing: zero_based_end_exclusive
+    candidate_apo_state: candidate_apo
+    primary_candidate_state: candidate_chainA_KAN_MG
+    primary_reference_state: reference_chainA_KAN_MG
+    repeat_reference_state: reference_chainB_KAN_MG_repeat
+    unresolved_reference_span_1based:
+    - 1
+    - 9
+  scientific_correction:
+    donor_context_hold:
+      status: frozen_not_scored
+      scientific_span_1based_inclusive:
+      - 44
+      - 63
+      runtime_span_0based_end_exclusive:
+      - 43
+      - 63
+      guidance: Do not describe K44/E60 as an APH donor-capture pair. The imported assignment is inconsistent
+        with P00552/1ND4 residue identities, and 1ND4 contains no ATP. Keep this span frozen and omit
+        donor/ATP geometry from scoring until a donor-bound reference and mapping are verified.
+    verified_scored_core_1based:
+    - 157
+    - 190
+    - 195
+    - 208
+    kanamycin_contact_shell_1based:
+    - 157
+    - 158
+    - 159
+    - 160
+    - 190
+    - 195
+    - 211
+    - 226
+    - 227
+    - 230
+    - 261
+    - 262
+    - 264
+  global_hard_contract:
+    applies_to_all_islands: true
+    exact_length: 264
+    allowed_chain_ids:
+    - A
+    unresolved_hold_0based:
+    - - 0
+      - 9
+    donor_context_hold_0based:
+    - - 43
+      - 63
+    protected_core_and_contact_positions_0based:
+    - 156
+    - 157
+    - 158
+    - 159
+    - 189
+    - 194
+    - 207
+    - 210
+    - 225
+    - 226
+    - 229
+    - 260
+    - 261
+    - 263
+    fail_closed_rules:
+    - no insertion, deletion, stop, gap, noncanonical residue, or chain change
+    - no mutation outside the compiled active selector
+    - no mutation outside the active tier's hard amino-acid allowlist
+    - no mutation in a protected span
+    - no required geometry may pass when missing or conflicting
+    - no island or search posture may weaken a global gate
+  search_modes:
+    adaptive_frontier:
+      status: default_dynamic_outer
+      position_source: residue_evidence_catalog
+      eligible_position_count: 50
+      initial_seed_positions_1based:
+      - 14
+      - 72
+      - 122
+      - 178
+      - 238
+      active_node_count:
+      - 4
+      - 12
+      active_position_count:
+      - 8
+      - 32
+      max_positions_per_node: 8
+      max_spans_per_node: 4
+      node_must_stay_within_one_compiled_segment: true
+      purpose: Start from 9 segment-bounded Nodes over 26 positions and let the LLM replace them with
+        a complete desired AST over the geometry-screened frontier. Non-seed positions are exploratory
+        and have no substitution-level DMS label.
+  hard_amino_acid_catalog:
+    authority: case_controller_not_LLM
+    level1:
+      '14':
+      - A
+      - T
+      '72':
+      - T
+      - S
+      '122':
+      - R
+      - K
+      '178':
+      - M
+      - F
+      '238':
+      - D
+      - E
+    level2:
+      '14':
+      - A
+      - T
+      - S
+      '72':
+      - T
+      - S
+      - A
+      '122':
+      - R
+      - K
+      - Q
+      '178':
+      - M
+      - F
+      - L
+      '238':
+      - D
+      - E
+      - N
+    frontier:
+      source: data://aph3iia_kanamycin_active_site_preservation/data/residue_evidence_catalog.json
+      rule: use metadata.frontier_hard_allowed_residues for each active position
+      unrestricted_20aa_sampling: false
+    LLM_authority: The LLM may create/delete/migrate/resize/split/merge/rewire Nodes, select 8-32 eligible
+      positions, allocate mutation budget, and change soft favored/disfavored guidance. It cannot add
+      a position outside catalog eligibility or a residue identity absent from that position's hard catalog.
+  search_postures:
+    conservative:
+      tier: active_run_selected_level1_level2_or_frontier
+      behavior: retain compact incumbent Nodes and conservative soft residue guidance
+    balanced:
+      tier: active_run_selected_level1_level2_or_frontier
+      behavior: allow migration/resize and balanced action intensity inside the selected hard tier
+    exploratory:
+      tier: active_run_selected_level1_level2_or_frontier
+      behavior: in frontier mode probe eligible non-incumbent segments and diversify soft guidance
+    repair:
+      tier: active_run_selected_level1_level2_or_frontier
+      behavior: diagnose one failed gate and change only implicated Nodes
+    revert:
+      tier: active_run_selected_level1_level2_or_frontier
+      behavior: restore a trusted parent and return retired positions to the case reference
+    invariant: ASTEVOLVE_APH_DESIGN_TIER is launch-locked. The LLM may change topology, selected positions,
+      and soft residue preferences inside that tier; it cannot weaken protected spans or case-owned hard
+      amino-acid alphabets.
+  node_control_prior:
+    proposal_semantics: complete_desired_AST_not_delta
+    allowed_decision_actions:
+    - keep
+    - create
+    - delete
+    - migrate
+    - resize
+    - split
+    - merge
+    - revise
+    - rewire
+    - mixed
+    - revert
+    evidence_requirements:
+    - every active position cites a catalog evidence_id
+    - every active position is catalog eligible and above the safety floor
+    - active Nodes are non-overlapping and remain inside compiled segment boundaries
+    - protected residues and functional operators remain controller-owned
+    preferred_edit_order:
+    - repair a diagnosed hard-gate or evidence failure
+    - refine a feasible incumbent inside its current tier
+    - test a complementary Node topology at the same tier
+    - migrate to a new catalog segment only in explicit exploratory mode
+  evaluator_prior:
+    evaluator_id: aph3iia_kanamycin
+    global_hard_terms:
+    - aph_sequence_integrity
+    - aph_mutation_scope_integrity
+    - aph_global_fold_preservation
+    - aph_verified_core_preservation
+    - aph_kanamycin_contact_preservation
+    - aph_kanamycin_pose_preservation
+    - aph_mg_geometry_preservation
+    - aph_clash_free
+    soft_or_audit_terms:
+    - aph_kanamycin_label_compatibility
+    - aph_sequence_plausibility
+    - aph_repeat_robustness
+    - aph_sequence_diversity
+    raw_metric_policy: Preserve raw provider, model, seed, state, RMSD, contact, Mg, clash, and missingness
+      fields alongside every normalized/composite value.
+    threshold_policy: Absolute imported thresholds are provisional until WT is run under the exact same
+      provider versions and seed set. Provider-specific WT noninferiority must not be pooled across providers.
+    sequence_prior_reference: null
+    sequence_prior_reference_status: unavailable_until_same_runtime_WT_is_sealed
+    hidden_label_policy: Exact selected-site DMS values and wet MIC rows are evaluator/post-hoc evidence
+      only in closed-book runs. Never expose them in the residue evidence prompt digest or optimizer memory.
+  island_prior:
+    hard_gates_shared: true
+    roles:
+      core_geometry_guard:
+        emphasis: fold, verified core, KAN contacts/pose, Mg geometry, clashes
+        complementary_roles:
+        - kan_function_ranker
+        - repeat_robustness
+      kan_function_ranker:
+        emphasis: hidden-label compatibility and independent sequence plausibility after feasibility
+        complementary_roles:
+        - core_geometry_guard
+        - node_region_explorer
+        - repeat_robustness
+      node_region_explorer:
+        emphasis: non-incumbent segment probes, Node resize/migration, and sequence/topology diversity
+        complementary_roles:
+        - core_geometry_guard
+        - kan_function_ranker
+        - repeat_robustness
+      repeat_robustness:
+        emphasis: chain-repeat/seed worst-case, variance, clashes, and compact mutation burden
+        complementary_roles:
+        - core_geometry_guard
+        - kan_function_ranker
+        - node_region_explorer
+    migration_rule: Share immutable evaluated candidate IDs only; re-score target-role soft evidence,
+      preserve provenance, and never let an infeasible migrant replace a feasible resident.
+  information_partition:
+    generator_may_read:
+    - WT sequence and active tier contract
+    - sanitized residue evidence IDs and safety/geometry/conservation summaries
+    - 1ND4 KAN/Mg state and declared protected nodes
+    - trusted parent lineage and computational evaluator feedback
+    generator_must_not_read:
+    - exact DMS values in closed-book runs
+    - wet MIC rows before rank and hash freeze
+    - other-drug labels when optimizing the kanamycin-preservation objective
+adaptive_memory:
+  recent_runs: []
+  motif_memory: {}
+  node_level_statistics: {}
+  island_level_statistics:
+    core_geometry_guard: {}
+    kan_function_ranker: {}
+    node_region_explorer: {}
+    repeat_robustness: {}
+  threshold_calibration: {}

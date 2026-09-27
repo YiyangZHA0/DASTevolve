@@ -1,0 +1,1013 @@
+{
+  "version": "cab_lys3_hewl_high_entropy_all_a_dual_ast_v2",
+  "case_id": "cab_lys3_hewl_cdr_recovery",
+  "task_name": "cAb-Lys3 high-entropy 35-position all-A CDR search with staged 28-position recovery",
+  "task_type": "fixed_length_vhh_staged_oracle_calibration",
+  "case_sheet_path": "case_sheet.json",
+  "memory_path": "memory.yaml",
+  "binder": {
+    "name": "cAb-Lys3 VHH 35-position CDR all-alanine parent",
+    "chain_id": "A",
+    "architecture": "single_vhh_domain",
+    "domain_segment_keys": {
+      "vhh_domain": "vhh_segments"
+    },
+    "domain_order": [
+      "vhh_domain"
+    ],
+    "vhh_segments": [
+      [
+        "FR1",
+        "framework",
+        "DVQLQASGGGSVQAGGSLRLSCAAS"
+      ],
+      [
+        "CDR1_window",
+        "cdr",
+        "AAAAAAA"
+      ],
+      [
+        "FR2",
+        "framework",
+        "CMGWFRQAPGKEREGVAAIN"
+      ],
+      [
+        "CDR2_window",
+        "cdr",
+        "AAAAA"
+      ],
+      [
+        "FR3",
+        "framework",
+        "TYYADSVKGRFTISQDNAKNTVYLLMNSLEPEDTAIYYCAA"
+      ],
+      [
+        "CDR3_window",
+        "cdr",
+        "AAAAAAAAAACAAAAAAAAAAAAA"
+      ],
+      [
+        "FR4",
+        "framework",
+        "WGQGTQVTVSS"
+      ]
+    ]
+  },
+  "target": {
+    "chain_id": "L",
+    "name": "HEWL mature chain",
+    "sequence": "KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL",
+    "feature_kind": "fixed_antigen",
+    "epitope_name": "1JTT_HEWL_interface",
+    "epitope_source": "1JTT chain L reviewed contact map",
+    "epitope_spans": [
+      [
+        0,
+        129
+      ]
+    ]
+  },
+  "mutation_policy": {
+    "preferred_edit_order": [
+      "CDR3_window",
+      "CDR1_window",
+      "CDR2_window"
+    ],
+    "always_open_segments": [],
+    "conditionally_open_segments": [
+      "CDR1_window",
+      "CDR2_window",
+      "CDR3_window"
+    ],
+    "fixed_linker_segments": [],
+    "generally_frozen": [
+      "FR1",
+      "FR2",
+      "FR3",
+      "FR4",
+      "HEWL"
+    ]
+  },
+  "design_points": {
+    "schema_version": "ast_design_points_v1",
+    "design_intent": "Let the outer LLM resize and repartition Structural Nodes within a reviewed 35-position CDR envelope while 28 hidden recovery sites, the disulfides, and the fixed HEWL chain remain controller-owned.",
+    "primary_design_nodes": [
+      "CDR3_window"
+    ],
+    "secondary_design_nodes": [
+      "CDR1_window",
+      "CDR2_window"
+    ],
+    "default_open_nodes": [
+      "CDR3_window",
+      "CDR1_window",
+      "CDR2_window"
+    ],
+    "preserved_nodes": [
+      "FR1",
+      "FR2",
+      "FR3",
+      "FR4"
+    ]
+  },
+  "design_constraints": {
+    "schema_version": "ast_case_constraints_v1",
+    "indexing": "zero_based_end_exclusive",
+    "mutable_nodes": [
+      "CDR1_window",
+      "CDR2_window",
+      "CDR3_window"
+    ],
+    "frozen_nodes": [
+      "FR1",
+      "FR2",
+      "FR3",
+      "FR4"
+    ],
+    "mutable_residue_spans": [
+      {
+        "chain_id": "A",
+        "node": "CDR1_window",
+        "spans": [
+          [
+            25,
+            32
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "CDR2_window",
+        "spans": [
+          [
+            52,
+            57
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "CDR3_window",
+        "spans": [
+          [
+            98,
+            108
+          ],
+          [
+            109,
+            122
+          ]
+        ]
+      }
+    ],
+    "frozen_residue_spans": [
+      {
+        "chain_id": "A",
+        "node": "canonical_disulfide_c22",
+        "spans": [
+          [
+            21,
+            22
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "extra_disulfide_c33",
+        "spans": [
+          [
+            32,
+            33
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "canonical_disulfide_c96",
+        "spans": [
+          [
+            95,
+            96
+          ]
+        ]
+      },
+      {
+        "chain_id": "A",
+        "node": "extra_disulfide_c109",
+        "spans": [
+          [
+            108,
+            109
+          ]
+        ]
+      },
+      {
+        "chain_id": "L",
+        "node": "hewl_fixed",
+        "spans": [
+          [
+            0,
+            129
+          ]
+        ]
+      }
+    ],
+    "target_epitopes": [
+      {
+        "name": "1JTT_HEWL_interface",
+        "entity": "HEWL",
+        "chain_id": "L",
+        "spans": [
+          [
+            0,
+            129
+          ]
+        ],
+        "zero_based": true,
+        "role": "fixed_positive_target"
+      }
+    ]
+  },
+  "evaluator_capabilities": {
+    "cab_lys3_cpu": [
+      "l0_native_recovery",
+      "l1_native_recovery",
+      "l2_native_recovery",
+      "all_nodes_native_recovery",
+      "cdr_all_a_escape",
+      "mutation_sparsity",
+      "fixed_residue_integrity",
+      "developability_score",
+      "sabdab_vhh_plausibility",
+      "sabdab_whole_vhh_similarity",
+      "sabdab_framework_similarity",
+      "sabdab_cdr1_similarity",
+      "sabdab_cdr2_similarity",
+      "sabdab_cdr3_similarity",
+      "protenix_binder_confidence",
+      "protenix_design_region_confidence",
+      "protenix_interface_confidence",
+      "protenix_structure_quality",
+      "protenix_interface_plddt",
+      "protenix_interface_pae_quality",
+      "protenix_contact_quality"
+    ]
+  },
+  "evaluator_plugins": [
+    "cab_lys3_cpu"
+  ],
+  "residue_evidence_catalog": "data://cab_lys3_hewl_cdr_recovery/residue_evidence_catalog.json",
+  "residue_evidence_prompt_max_bytes": 32768,
+  "global_ast_evolution_policy": {
+    "schema_version": "astevolve.ast_evolution_policy.v2",
+    "enabled": true,
+    "allowed_chain_spans": {
+      "A": [
+        [
+          25,
+          32
+        ],
+        [
+          52,
+          57
+        ],
+        [
+          98,
+          108
+        ],
+        [
+          109,
+          122
+        ]
+      ]
+    },
+    "protected_chain_spans": {
+      "A": [
+        [
+          21,
+          22
+        ],
+        [
+          32,
+          33
+        ],
+        [
+          95,
+          96
+        ],
+        [
+          108,
+          109
+        ]
+      ]
+    },
+    "min_total_editable_positions": 22,
+    "max_total_editable_positions": 35,
+    "min_active_structural_nodes": 1,
+    "max_active_structural_nodes": 6,
+    "max_positions_per_node": 23,
+    "max_spans_per_node": 8,
+    "max_mapping_edges": 12,
+    "immutable_structural_node_ids": [
+      "hewl_antigen_guard"
+    ],
+    "allowed_functional_node_ids": [
+      "l0_contact_recovery",
+      "l1_cdr3_recovery",
+      "l2_maturation_recovery",
+      "cdr_all_a_escape",
+      "sequence_integrity_guard"
+    ],
+    "action_profiles": {
+      "point_resample": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "operator": "site_resample",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          }
+        ]
+      },
+      "point_only": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          }
+        ]
+      },
+      "cdr3_high_entropy": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "operator": "site_resample",
+            "budget": {
+              "min": 6,
+              "max": 10
+            }
+          },
+          {
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 12,
+              "max": 23
+            }
+          }
+        ]
+      },
+      "cdr_short_high_entropy": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "operator": "site_resample",
+            "budget": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          {
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 3,
+              "max": 7
+            }
+          }
+        ]
+      },
+      "cdr2_high_entropy": {
+        "allowed_actions": [
+          {
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "operator": "site_resample",
+            "budget": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          {
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 3,
+              "max": 5
+            }
+          }
+        ]
+      }
+    },
+    "require_catalog_eligibility": true,
+    "require_position_evidence_refs": true,
+    "min_position_safety_score": 0.7,
+    "node_id_pattern": "llm_[a-z0-9_]{3,80}",
+    "edge_id_pattern": "llm_[a-z0-9_]{3,80}",
+    "bootstrap_required_spans": {
+      "A": [
+        [
+          98,
+          108
+        ],
+        [
+          109,
+          122
+        ]
+      ]
+    },
+    "bootstrap_release_callable": "cases.cab_lys3_hewl_cdr_recovery.cab_lys3_sequence_gate:sequence_quality_summary"
+  },
+  "executable_dual_ast": {
+    "schema_version": "astevolve.executable_dual_ast.v1",
+    "ast_id": "cab_lys3_hewl_staged_all_a_dual_ast",
+    "revision": 2,
+    "structural_nodes": [
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "cdr3_l0_l1_stage",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              98,
+              108
+            ],
+            [
+              109,
+              122
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 2,
+              "max": 6
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 6,
+              "max": 12
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "l2_cdr1_stage",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              25,
+              32
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 3,
+              "max": 5
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "l2_cdr2_stage",
+        "kind": "editable",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "A",
+          "spans": [
+            [
+              52,
+              57
+            ]
+          ]
+        },
+        "invariants": [],
+        "allowed_actions": [
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "point",
+            "budget": {
+              "min": 1,
+              "max": 2
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "site_resample",
+            "budget": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          {
+            "schema_version": "astevolve.allowed_action.v1",
+            "operator": "segment_mutagenesis",
+            "budget": {
+              "min": 3,
+              "max": 5
+            }
+          }
+        ]
+      },
+      {
+        "schema_version": "astevolve.structural_node.v1",
+        "node_id": "hewl_antigen_guard",
+        "kind": "frozen",
+        "selector": {
+          "schema_version": "astevolve.residue_selector.v1",
+          "chain_id": "L",
+          "spans": [
+            [
+              0,
+              129
+            ]
+          ]
+        },
+        "invariants": [
+          {
+            "schema_version": "astevolve.invariant_spec.v1",
+            "kind": "preserve_parent"
+          }
+        ],
+        "allowed_actions": []
+      }
+    ],
+    "functional_nodes": [
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "l0_contact_recovery",
+        "kind": "objective",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "cab_lys3_cpu",
+          "term_name": "l0_native_recovery"
+        },
+        "threshold": null,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:L0_contact_recovery"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "l1_cdr3_recovery",
+        "kind": "objective",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "cab_lys3_cpu",
+          "term_name": "l1_native_recovery"
+        },
+        "threshold": null,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:L1_cdr3_recovery"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "l2_maturation_recovery",
+        "kind": "objective",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "cab_lys3_cpu",
+          "term_name": "l2_native_recovery"
+        },
+        "threshold": null,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:L2_maturation_recovery"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "cdr_all_a_escape",
+        "kind": "objective",
+        "state": "positive",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "cab_lys3_cpu",
+          "term_name": "cdr_all_a_escape"
+        },
+        "threshold": null,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:all_a_search_bootstrap"
+        ]
+      },
+      {
+        "schema_version": "astevolve.functional_node.v1",
+        "node_id": "sequence_integrity_guard",
+        "kind": "hard_constraint",
+        "state": "preserve",
+        "direction": "maximize",
+        "evaluator_binding": {
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "evaluator_id": "cab_lys3_cpu",
+          "term_name": "fixed_residue_integrity"
+        },
+        "threshold": 1.0,
+        "missing_policy": "fail",
+        "evidence_refs": [
+          "case:fixed_sequence_integrity"
+        ]
+      }
+    ],
+    "mapping_edges": [
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "l0_recovery_point",
+        "relation": "realizes",
+        "functional_node_id": "l0_contact_recovery",
+        "structural_node_id": "cdr3_l0_l1_stage",
+        "action_operator": "point",
+        "evidence_refs": [
+          "cab:A:101",
+          "cab:A:104",
+          "cab:A:105"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "l1_recovery_resample",
+        "relation": "realizes",
+        "functional_node_id": "l1_cdr3_recovery",
+        "structural_node_id": "cdr3_l0_l1_stage",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "cab:A:98",
+          "cab:A:99",
+          "cab:A:100",
+          "cab:A:102",
+          "cab:A:103",
+          "cab:A:106",
+          "cab:A:107",
+          "cab:A:109",
+          "cab:A:110",
+          "cab:A:111",
+          "cab:A:112",
+          "cab:A:113",
+          "cab:A:114",
+          "cab:A:115",
+          "cab:A:116",
+          "cab:A:117",
+          "cab:A:118",
+          "cab:A:119",
+          "cab:A:120",
+          "cab:A:121"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "l2_cdr1_recovery_point",
+        "relation": "realizes",
+        "functional_node_id": "l2_maturation_recovery",
+        "structural_node_id": "l2_cdr1_stage",
+        "action_operator": "point",
+        "evidence_refs": [
+          "cab:A:28",
+          "cab:A:29",
+          "cab:A:30"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "l2_cdr2_recovery_point",
+        "relation": "realizes",
+        "functional_node_id": "l2_maturation_recovery",
+        "structural_node_id": "l2_cdr2_stage",
+        "action_operator": "point",
+        "evidence_refs": [
+          "cab:A:52",
+          "cab:A:56"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "l2_cdr1_integrity_resample",
+        "relation": "realizes",
+        "functional_node_id": "sequence_integrity_guard",
+        "structural_node_id": "l2_cdr1_stage",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "cab:A:25",
+          "cab:A:26",
+          "cab:A:27",
+          "cab:A:28",
+          "cab:A:29",
+          "cab:A:30",
+          "cab:A:31"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "l2_cdr2_integrity_resample",
+        "relation": "realizes",
+        "functional_node_id": "sequence_integrity_guard",
+        "structural_node_id": "l2_cdr2_stage",
+        "action_operator": "site_resample",
+        "evidence_refs": [
+          "cab:A:52",
+          "cab:A:53",
+          "cab:A:54",
+          "cab:A:55",
+          "cab:A:56"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "cdr3_diversification_segment",
+        "relation": "realizes",
+        "functional_node_id": "cdr_all_a_escape",
+        "structural_node_id": "cdr3_l0_l1_stage",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "cab:A:98",
+          "cab:A:99",
+          "cab:A:100",
+          "cab:A:101",
+          "cab:A:102",
+          "cab:A:103",
+          "cab:A:104",
+          "cab:A:105",
+          "cab:A:106",
+          "cab:A:107",
+          "cab:A:109",
+          "cab:A:110",
+          "cab:A:111",
+          "cab:A:112",
+          "cab:A:113",
+          "cab:A:114",
+          "cab:A:115",
+          "cab:A:116",
+          "cab:A:117",
+          "cab:A:118",
+          "cab:A:119",
+          "cab:A:120",
+          "cab:A:121"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "cdr1_diversification_segment",
+        "relation": "realizes",
+        "functional_node_id": "cdr_all_a_escape",
+        "structural_node_id": "l2_cdr1_stage",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "cab:A:25",
+          "cab:A:26",
+          "cab:A:27",
+          "cab:A:28",
+          "cab:A:29",
+          "cab:A:30",
+          "cab:A:31"
+        ]
+      },
+      {
+        "schema_version": "astevolve.mapping_edge.v1",
+        "edge_id": "cdr2_diversification_segment",
+        "relation": "realizes",
+        "functional_node_id": "cdr_all_a_escape",
+        "structural_node_id": "l2_cdr2_stage",
+        "action_operator": "segment_mutagenesis",
+        "evidence_refs": [
+          "cab:A:52",
+          "cab:A:53",
+          "cab:A:54",
+          "cab:A:55",
+          "cab:A:56"
+        ]
+      }
+    ]
+  },
+  "semantic_graph": {
+    "schema_version": "protein_semantic_graph_v1",
+    "description": "Staged 28-site recovery in a 35-position CDR search envelope.",
+    "structural_graph": {
+      "nodes": {
+        "CDR1_window": {
+          "id": "CDR1_window",
+          "kind": "cdr",
+          "chain_id": "A",
+          "spans": [
+            [
+              25,
+              32
+            ]
+          ],
+          "role": "reviewed adaptive envelope"
+        },
+        "CDR2_window": {
+          "id": "CDR2_window",
+          "kind": "cdr",
+          "chain_id": "A",
+          "spans": [
+            [
+              52,
+              57
+            ]
+          ],
+          "role": "reviewed adaptive envelope"
+        },
+        "CDR3_window": {
+          "id": "CDR3_window",
+          "kind": "cdr",
+          "chain_id": "A",
+          "spans": [
+            [
+              98,
+              108
+            ],
+            [
+              109,
+              122
+            ]
+          ],
+          "role": "reviewed adaptive envelope with C109 protected"
+        },
+        "HEWL_guard": {
+          "id": "HEWL_guard",
+          "kind": "frozen_antigen",
+          "chain_id": "L",
+          "spans": [
+            [
+              0,
+              129
+            ]
+          ],
+          "role": "fixed target"
+        }
+      },
+      "edges": []
+    },
+    "functional_graph": {
+      "nodes": {
+        "l0_contact_recovery": {
+          "id": "l0_contact_recovery",
+          "kind": "objective",
+          "state": "positive",
+          "direction": "maximize",
+          "evaluator_binding": "l0_native_recovery",
+          "maps_to": [
+            "CDR3_window"
+          ]
+        },
+        "l1_cdr3_recovery": {
+          "id": "l1_cdr3_recovery",
+          "kind": "objective",
+          "state": "positive",
+          "direction": "maximize",
+          "evaluator_binding": "l1_native_recovery",
+          "maps_to": [
+            "CDR3_window"
+          ]
+        },
+        "l2_maturation_recovery": {
+          "id": "l2_maturation_recovery",
+          "kind": "objective",
+          "state": "positive",
+          "direction": "maximize",
+          "evaluator_binding": "l2_native_recovery",
+          "maps_to": [
+            "CDR1_window",
+            "CDR2_window"
+          ]
+        },
+        "cdr_all_a_escape": {
+          "id": "cdr_all_a_escape",
+          "kind": "objective",
+          "state": "positive",
+          "direction": "maximize",
+          "evaluator_binding": "cdr_all_a_escape",
+          "maps_to": [
+            "CDR1_window",
+            "CDR2_window",
+            "CDR3_window"
+          ]
+        },
+        "sequence_integrity_guard": {
+          "id": "sequence_integrity_guard",
+          "kind": "guardrail",
+          "state": "preserve",
+          "direction": "maximize",
+          "evaluator_binding": "fixed_residue_integrity",
+          "maps_to": [
+            "CDR1_window",
+            "CDR2_window",
+            "CDR3_window"
+          ]
+        }
+      },
+      "edges": []
+    },
+    "mappings": {
+      "l0_contact_recovery": [
+        "CDR3_window"
+      ],
+      "l1_cdr3_recovery": [
+        "CDR3_window"
+      ],
+      "l2_maturation_recovery": [
+        "CDR1_window",
+        "CDR2_window"
+      ],
+      "cdr_all_a_escape": [
+        "CDR1_window",
+        "CDR2_window",
+        "CDR3_window"
+      ],
+      "sequence_integrity_guard": [
+        "CDR1_window",
+        "CDR2_window",
+        "CDR3_window"
+      ]
+    }
+  },
+  "cab_lys3_cpu_evaluator": {
+    "schema_version": "cab_lys3_cpu_evaluator.v1",
+    "binder_chain_id": "A",
+    "target_chain_id": "L",
+    "l0_positions_zero_based": [
+      101,
+      104,
+      105
+    ],
+    "claim_scope": "hidden-answer sequence recovery calibration only"
+  }
+}

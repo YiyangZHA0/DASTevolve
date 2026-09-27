@@ -1,0 +1,962 @@
+{
+  "binder": {
+    "architecture": "bagel_state0_five_resizable_tiles",
+    "binder_segments": [
+      [
+        "B01_tile_01",
+        "unknown_region",
+        "VCTVRIGTAV"
+      ],
+      [
+        "B02_tile_02",
+        "unknown_region",
+        "QWSTWVRNIM"
+      ],
+      [
+        "B03_tile_03",
+        "unknown_region",
+        "GKLPCLGTPQ"
+      ],
+      [
+        "B04_tile_04",
+        "unknown_region",
+        "MDSVMQTLGA"
+      ],
+      [
+        "B05_tile_05",
+        "unknown_region",
+        "IFLTCETEIP"
+      ]
+    ],
+    "chain_id": "B",
+    "domain_order": [
+      "binder_domain"
+    ],
+    "domain_segment_keys": {
+      "binder_domain": "binder_segments"
+    },
+    "name": "Bagel state-0 controlled-ablation seed"
+  },
+  "case_id": "asyn_c_terminal_hotspot_binder",
+  "case_sheet_path": "case_sheet.json",
+  "complex_states": [
+    {
+      "entities": [
+        {
+          "id": "binder",
+          "source_chain": "B",
+          "type": "protein"
+        },
+        {
+          "id": "ASYN",
+          "source_chain": "T",
+          "type": "protein"
+        }
+      ],
+      "metric": "plddt",
+      "name": "binder_plus_ASYN",
+      "role": "positive_target"
+    }
+  ],
+  "design_constraints": {
+    "frozen_nodes": [
+      "ASYN_full_guard"
+    ],
+    "frozen_residue_spans": [
+      {
+        "chain_id": "T",
+        "node": "ASYN_full_guard",
+        "spans": [
+          [
+            0,
+            140
+          ]
+        ]
+      }
+    ],
+    "indexing": "zero_based_end_exclusive",
+    "mutable_nodes": [
+      "B01_tile_01",
+      "B02_tile_02",
+      "B03_tile_03",
+      "B04_tile_04",
+      "B05_tile_05"
+    ],
+    "mutable_residue_spans": [
+      {
+        "chain_id": "B",
+        "node": "B01_tile_01",
+        "spans": [
+          [
+            0,
+            10
+          ]
+        ]
+      },
+      {
+        "chain_id": "B",
+        "node": "B02_tile_02",
+        "spans": [
+          [
+            10,
+            20
+          ]
+        ]
+      },
+      {
+        "chain_id": "B",
+        "node": "B03_tile_03",
+        "spans": [
+          [
+            20,
+            30
+          ]
+        ]
+      },
+      {
+        "chain_id": "B",
+        "node": "B04_tile_04",
+        "spans": [
+          [
+            30,
+            40
+          ]
+        ]
+      },
+      {
+        "chain_id": "B",
+        "node": "B05_tile_05",
+        "spans": [
+          [
+            40,
+            50
+          ]
+        ]
+      }
+    ],
+    "schema_version": "ast_case_constraints_v1",
+    "target_epitopes": [
+      {
+        "chain_id": "T",
+        "entity": "ASYN",
+        "name": "ASYN_C_terminal_99_140",
+        "role": "fixed_positive_target",
+        "spans": [
+          [
+            98,
+            140
+          ]
+        ],
+        "zero_based": true
+      }
+    ]
+  },
+  "design_points": {
+    "default_open_nodes": [
+      "B01_tile_01",
+      "B02_tile_02",
+      "B03_tile_03",
+      "B04_tile_04",
+      "B05_tile_05"
+    ],
+    "design_intent": "Controlled DAST ablation starting from the first sequence in the archived Bagel ASYN run; model, scorer, search count, and ESMFold budget are fixed across arms.",
+    "preserved_nodes": [
+      "ASYN_full_guard",
+      "ASYN_C_terminal_hotspot"
+    ],
+    "primary_design_nodes": [
+      "B02_tile_02",
+      "B03_tile_03",
+      "B04_tile_04"
+    ],
+    "schema_version": "ast_design_points_v1",
+    "secondary_design_nodes": [
+      "B01_tile_01",
+      "B05_tile_05"
+    ]
+  },
+  "dynamic_node_partition_contract": {
+    "chain_id": "B",
+    "coverage": "exact_contiguous_partition",
+    "end": 50,
+    "max_positions_per_node": 46,
+    "min_positions_per_node": 1,
+    "node_count": 5,
+    "schema_version": "astevolve.structured_ast_partition_contract.v1",
+    "single_span_per_node": true,
+    "start": 0
+  },
+  "evaluator_capabilities": {
+    "asyn_hotspot_binder": [
+      "asyn_target_sequence_integrity",
+      "asyn_binder_sequence_validity",
+      "asyn_state_evidence_complete",
+      "asyn_binder_holo_confidence",
+      "asyn_interface_quality",
+      "asyn_hotspot_localization",
+      "asyn_binder_developability",
+      "asyn_interface_clash_guard"
+    ]
+  },
+  "evaluator_plugins": [
+    "asyn_hotspot_binder"
+  ],
+  "executable_dual_ast": {
+    "ast_id": "asyn_hotspot_binder_initial_dual_ast",
+    "functional_nodes": [
+      {
+        "direction": "maximize",
+        "evaluator_binding": {
+          "evaluator_id": "asyn_hotspot_binder",
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "term_name": "asyn_binder_holo_confidence"
+        },
+        "evidence_refs": [
+          "case_ast:binder_plus_ASYN"
+        ],
+        "kind": "objective",
+        "missing_policy": "fail",
+        "node_id": "binder_holo_fold",
+        "schema_version": "astevolve.functional_node.v1",
+        "state": "positive",
+        "threshold": null
+      },
+      {
+        "direction": "maximize",
+        "evaluator_binding": {
+          "evaluator_id": "asyn_hotspot_binder",
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "term_name": "asyn_interface_quality"
+        },
+        "evidence_refs": [
+          "case_ast:ASYN_99_140"
+        ],
+        "kind": "objective",
+        "missing_policy": "fail",
+        "node_id": "hotspot_interface",
+        "schema_version": "astevolve.functional_node.v1",
+        "state": "positive",
+        "threshold": null
+      },
+      {
+        "direction": "maximize",
+        "evaluator_binding": {
+          "evaluator_id": "asyn_hotspot_binder",
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "term_name": "asyn_hotspot_localization"
+        },
+        "evidence_refs": [
+          "case_ast:ASYN_99_140"
+        ],
+        "kind": "objective",
+        "missing_policy": "fail",
+        "node_id": "hotspot_localization",
+        "schema_version": "astevolve.functional_node.v1",
+        "state": "positive",
+        "threshold": 0.5
+      },
+      {
+        "direction": "maximize",
+        "evaluator_binding": {
+          "evaluator_id": "asyn_hotspot_binder",
+          "schema_version": "astevolve.evaluator_binding.v1",
+          "term_name": "asyn_binder_developability"
+        },
+        "evidence_refs": [
+          "case_ast:binder_developability"
+        ],
+        "kind": "hard_constraint",
+        "missing_policy": "fail",
+        "node_id": "developability",
+        "schema_version": "astevolve.functional_node.v1",
+        "state": "preserve",
+        "threshold": 0.5
+      }
+    ],
+    "mapping_edges": [
+      {
+        "action_operator": "point",
+        "edge_id": "B01_interface",
+        "evidence_refs": [
+          "initial:distributed_exploration"
+        ],
+        "functional_node_id": "hotspot_interface",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B01_active"
+      },
+      {
+        "action_operator": "point",
+        "edge_id": "B02_interface",
+        "evidence_refs": [
+          "initial:distributed_exploration"
+        ],
+        "functional_node_id": "hotspot_interface",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B02_active"
+      },
+      {
+        "action_operator": "point",
+        "edge_id": "B03_interface",
+        "evidence_refs": [
+          "initial:distributed_exploration"
+        ],
+        "functional_node_id": "hotspot_interface",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B03_active"
+      },
+      {
+        "action_operator": "point",
+        "edge_id": "B04_interface",
+        "evidence_refs": [
+          "initial:distributed_exploration"
+        ],
+        "functional_node_id": "hotspot_interface",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B04_active"
+      },
+      {
+        "action_operator": "site_resample",
+        "edge_id": "B01_fold",
+        "evidence_refs": [
+          "initial:whole_binder_fold"
+        ],
+        "functional_node_id": "binder_holo_fold",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B01_active"
+      },
+      {
+        "action_operator": "site_resample",
+        "edge_id": "B02_fold",
+        "evidence_refs": [
+          "initial:whole_binder_fold"
+        ],
+        "functional_node_id": "binder_holo_fold",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B02_active"
+      },
+      {
+        "action_operator": "site_resample",
+        "edge_id": "B04_fold",
+        "evidence_refs": [
+          "initial:whole_binder_fold"
+        ],
+        "functional_node_id": "binder_holo_fold",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B04_active"
+      },
+      {
+        "action_operator": "site_resample",
+        "edge_id": "B05_fold",
+        "evidence_refs": [
+          "initial:whole_binder_fold"
+        ],
+        "functional_node_id": "binder_holo_fold",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B05_active"
+      },
+      {
+        "action_operator": "site_resample",
+        "edge_id": "B03_hotspot_localization",
+        "evidence_refs": [
+          "initial:hotspot_contact_localization"
+        ],
+        "functional_node_id": "hotspot_localization",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B03_active"
+      },
+      {
+        "action_operator": "point",
+        "edge_id": "B05_developability",
+        "evidence_refs": [
+          "initial:sequence_developability"
+        ],
+        "functional_node_id": "developability",
+        "relation": "realizes",
+        "schema_version": "astevolve.mapping_edge.v1",
+        "structural_node_id": "B05_active"
+      }
+    ],
+    "revision": 1,
+    "schema_version": "astevolve.executable_dual_ast.v1",
+    "structural_nodes": [
+      {
+        "allowed_actions": [
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "point",
+            "schema_version": "astevolve.allowed_action.v1"
+          },
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "site_resample",
+            "schema_version": "astevolve.allowed_action.v1"
+          }
+        ],
+        "invariants": [],
+        "kind": "editable",
+        "node_id": "B01_active",
+        "schema_version": "astevolve.structural_node.v1",
+        "selector": {
+          "chain_id": "B",
+          "schema_version": "astevolve.residue_selector.v1",
+          "spans": [
+            [
+              0,
+              10
+            ]
+          ]
+        }
+      },
+      {
+        "allowed_actions": [
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "point",
+            "schema_version": "astevolve.allowed_action.v1"
+          },
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "site_resample",
+            "schema_version": "astevolve.allowed_action.v1"
+          }
+        ],
+        "invariants": [],
+        "kind": "editable",
+        "node_id": "B02_active",
+        "schema_version": "astevolve.structural_node.v1",
+        "selector": {
+          "chain_id": "B",
+          "schema_version": "astevolve.residue_selector.v1",
+          "spans": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      },
+      {
+        "allowed_actions": [
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "point",
+            "schema_version": "astevolve.allowed_action.v1"
+          },
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "site_resample",
+            "schema_version": "astevolve.allowed_action.v1"
+          }
+        ],
+        "invariants": [],
+        "kind": "editable",
+        "node_id": "B03_active",
+        "schema_version": "astevolve.structural_node.v1",
+        "selector": {
+          "chain_id": "B",
+          "schema_version": "astevolve.residue_selector.v1",
+          "spans": [
+            [
+              20,
+              30
+            ]
+          ]
+        }
+      },
+      {
+        "allowed_actions": [
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "point",
+            "schema_version": "astevolve.allowed_action.v1"
+          },
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "site_resample",
+            "schema_version": "astevolve.allowed_action.v1"
+          }
+        ],
+        "invariants": [],
+        "kind": "editable",
+        "node_id": "B04_active",
+        "schema_version": "astevolve.structural_node.v1",
+        "selector": {
+          "chain_id": "B",
+          "schema_version": "astevolve.residue_selector.v1",
+          "spans": [
+            [
+              30,
+              40
+            ]
+          ]
+        }
+      },
+      {
+        "allowed_actions": [
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "point",
+            "schema_version": "astevolve.allowed_action.v1"
+          },
+          {
+            "budget": {
+              "max": 2,
+              "min": 1
+            },
+            "operator": "site_resample",
+            "schema_version": "astevolve.allowed_action.v1"
+          }
+        ],
+        "invariants": [],
+        "kind": "editable",
+        "node_id": "B05_active",
+        "schema_version": "astevolve.structural_node.v1",
+        "selector": {
+          "chain_id": "B",
+          "schema_version": "astevolve.residue_selector.v1",
+          "spans": [
+            [
+              40,
+              50
+            ]
+          ]
+        }
+      },
+      {
+        "allowed_actions": [],
+        "invariants": [
+          {
+            "kind": "preserve_parent",
+            "schema_version": "astevolve.invariant_spec.v1"
+          }
+        ],
+        "kind": "frozen",
+        "node_id": "ASYN_hotspot_measurement_guard",
+        "schema_version": "astevolve.structural_node.v1",
+        "selector": {
+          "chain_id": "T",
+          "schema_version": "astevolve.residue_selector.v1",
+          "spans": [
+            [
+              98,
+              140
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "global_ast_evolution_policy": {
+    "action_profiles": {
+      "point_only": {
+        "allowed_actions": [
+          {
+            "budget": {
+              "max": 3,
+              "min": 1
+            },
+            "operator": "point"
+          }
+        ]
+      },
+      "point_resample": {
+        "allowed_actions": [
+          {
+            "budget": {
+              "max": 3,
+              "min": 1
+            },
+            "operator": "point"
+          },
+          {
+            "budget": {
+              "max": 3,
+              "min": 1
+            },
+            "operator": "site_resample"
+          }
+        ]
+      }
+    },
+    "allowed_chain_spans": {
+      "B": [
+        [
+          0,
+          50
+        ]
+      ]
+    },
+    "allowed_functional_node_ids": [
+      "binder_holo_fold",
+      "hotspot_interface",
+      "hotspot_localization",
+      "developability"
+    ],
+    "edge_id_pattern": "llm_[a-z0-9_]{3,80}",
+    "enabled": true,
+    "immutable_structural_node_ids": [
+      "ASYN_hotspot_measurement_guard"
+    ],
+    "max_active_structural_nodes": 5,
+    "max_mapping_edges": 12,
+    "max_positions_per_node": 46,
+    "max_spans_per_node": 1,
+    "max_total_editable_positions": 50,
+    "min_active_structural_nodes": 5,
+    "min_position_safety_score": 0.0,
+    "min_total_editable_positions": 50,
+    "node_id_pattern": "llm_[a-z0-9_]{3,80}",
+    "protected_chain_spans": {},
+    "require_catalog_eligibility": false,
+    "require_position_evidence_refs": false,
+    "schema_version": "astevolve.ast_evolution_policy.v2"
+  },
+  "memory_path": "memory.yaml",
+  "multistate_objectives": [
+    {
+      "clash_tolerance": 3,
+      "contact_target": 45,
+      "name": "binder_ASYN_interface",
+      "pair": [
+        "binder",
+        "ASYN"
+      ],
+      "residue_pair_target": 10,
+      "state": "binder_plus_ASYN",
+      "type": "interface_on",
+      "weight": 3.0
+    },
+    {
+      "aggregate": "min",
+      "hard_floor": 40.0,
+      "metric": "plddt_min",
+      "name": "binder_node_confidence_floor",
+      "nodes": [
+        "B01_tile_01",
+        "B02_tile_02",
+        "B03_tile_03",
+        "B04_tile_04",
+        "B05_tile_05"
+      ],
+      "states": [
+        "binder_plus_ASYN"
+      ],
+      "target": 65.0,
+      "type": "region_confidence_floor",
+      "weight": 1.0
+    }
+  ],
+  "mutation_policy": {
+    "always_open_segments": [
+      "B01_tile_01",
+      "B02_tile_02",
+      "B03_tile_03",
+      "B04_tile_04",
+      "B05_tile_05"
+    ],
+    "conditionally_open_segments": [],
+    "fixed_linker_segments": [],
+    "generally_frozen": [
+      "all residues on chain T"
+    ],
+    "preferred_edit_order": [
+      "B03_tile_03",
+      "B02_tile_02",
+      "B04_tile_04",
+      "B01_tile_01",
+      "B05_tile_05"
+    ]
+  },
+  "residue_evidence_catalog": "data://asyn_c_terminal_hotspot_binder/residue_evidence_catalog.json",
+  "semantic_graph": {
+    "description": "Hotspot-biased 50-aa helical seed partitioned into five resizable tiles mapped to fold, interface, localization, and developability intents; ASYN is measurement-only and immutable.",
+    "functional_graph": {
+      "edges": [
+        {
+          "relation": "gates",
+          "source": "target_integrity",
+          "target": "hotspot_interface"
+        },
+        {
+          "relation": "gates",
+          "source": "binder_holo_fold",
+          "target": "hotspot_interface"
+        },
+        {
+          "relation": "qualifies",
+          "source": "hotspot_localization",
+          "target": "hotspot_interface"
+        },
+        {
+          "relation": "constrains",
+          "source": "developability",
+          "target": "hotspot_interface"
+        }
+      ],
+      "nodes": {
+        "binder_holo_fold": {
+          "direction": "maximize",
+          "evaluator_binding": "asyn_binder_holo_confidence",
+          "id": "binder_holo_fold",
+          "kind": "objective",
+          "maps_to": [
+            "B01_tile_01",
+            "B02_tile_02",
+            "B03_tile_03",
+            "B04_tile_04",
+            "B05_tile_05"
+          ],
+          "state": "positive"
+        },
+        "developability": {
+          "direction": "maximize",
+          "evaluator_binding": "asyn_binder_developability",
+          "id": "developability",
+          "kind": "guardrail",
+          "maps_to": [
+            "B01_tile_01",
+            "B02_tile_02",
+            "B03_tile_03",
+            "B04_tile_04",
+            "B05_tile_05"
+          ],
+          "state": "preserve"
+        },
+        "hotspot_interface": {
+          "direction": "maximize",
+          "evaluator_binding": "asyn_interface_quality",
+          "id": "hotspot_interface",
+          "kind": "objective",
+          "maps_to": [
+            "B01_tile_01",
+            "B02_tile_02",
+            "B03_tile_03",
+            "B04_tile_04",
+            "B05_tile_05",
+            "ASYN_C_terminal_hotspot"
+          ],
+          "state": "positive"
+        },
+        "hotspot_localization": {
+          "direction": "maximize",
+          "evaluator_binding": "asyn_hotspot_localization",
+          "id": "hotspot_localization",
+          "kind": "objective",
+          "maps_to": [
+            "ASYN_C_terminal_hotspot"
+          ],
+          "state": "positive"
+        },
+        "target_integrity": {
+          "direction": "maximize",
+          "evaluator_binding": "asyn_target_sequence_integrity",
+          "id": "target_integrity",
+          "kind": "hard_constraint",
+          "maps_to": [
+            "ASYN_full_guard"
+          ],
+          "state": "preserve"
+        }
+      }
+    },
+    "mappings": {
+      "binder_holo_fold": [
+        "B01_tile_01",
+        "B02_tile_02",
+        "B03_tile_03",
+        "B04_tile_04",
+        "B05_tile_05"
+      ],
+      "developability": [
+        "B01_tile_01",
+        "B02_tile_02",
+        "B03_tile_03",
+        "B04_tile_04",
+        "B05_tile_05"
+      ],
+      "hotspot_interface": [
+        "B01_tile_01",
+        "B02_tile_02",
+        "B03_tile_03",
+        "B04_tile_04",
+        "B05_tile_05",
+        "ASYN_C_terminal_hotspot"
+      ],
+      "hotspot_localization": [
+        "ASYN_C_terminal_hotspot"
+      ],
+      "target_integrity": [
+        "ASYN_full_guard"
+      ]
+    },
+    "schema_version": "protein_semantic_graph_v1",
+    "structural_graph": {
+      "edges": [
+        {
+          "relation": "contains",
+          "source": "ASYN_full_guard",
+          "target": "ASYN_C_terminal_hotspot"
+        },
+        {
+          "relation": "sequence_adjacent",
+          "source": "B01_tile_01",
+          "target": "B02_tile_02"
+        },
+        {
+          "relation": "sequence_adjacent",
+          "source": "B02_tile_02",
+          "target": "B03_tile_03"
+        },
+        {
+          "relation": "sequence_adjacent",
+          "source": "B03_tile_03",
+          "target": "B04_tile_04"
+        },
+        {
+          "relation": "sequence_adjacent",
+          "source": "B04_tile_04",
+          "target": "B05_tile_05"
+        }
+      ],
+      "nodes": {
+        "ASYN_C_terminal_hotspot": {
+          "chain_id": "T",
+          "id": "ASYN_C_terminal_hotspot",
+          "kind": "measurement_selector",
+          "role": "contact localization only",
+          "spans": [
+            [
+              98,
+              140
+            ]
+          ]
+        },
+        "ASYN_full_guard": {
+          "chain_id": "T",
+          "id": "ASYN_full_guard",
+          "kind": "fixed_target",
+          "role": "immutable target",
+          "spans": [
+            [
+              0,
+              140
+            ]
+          ]
+        },
+        "B01_tile_01": {
+          "chain_id": "B",
+          "id": "B01_tile_01",
+          "kind": "unknown_region",
+          "role": "initial exploration tile",
+          "spans": [
+            [
+              0,
+              10
+            ]
+          ]
+        },
+        "B02_tile_02": {
+          "chain_id": "B",
+          "id": "B02_tile_02",
+          "kind": "unknown_region",
+          "role": "initial exploration tile",
+          "spans": [
+            [
+              10,
+              20
+            ]
+          ]
+        },
+        "B03_tile_03": {
+          "chain_id": "B",
+          "id": "B03_tile_03",
+          "kind": "unknown_region",
+          "role": "initial exploration tile",
+          "spans": [
+            [
+              20,
+              30
+            ]
+          ]
+        },
+        "B04_tile_04": {
+          "chain_id": "B",
+          "id": "B04_tile_04",
+          "kind": "unknown_region",
+          "role": "initial exploration tile",
+          "spans": [
+            [
+              30,
+              40
+            ]
+          ]
+        },
+        "B05_tile_05": {
+          "chain_id": "B",
+          "id": "B05_tile_05",
+          "kind": "unknown_region",
+          "role": "initial exploration tile",
+          "spans": [
+            [
+              40,
+              50
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "target": {
+    "chain_id": "T",
+    "epitope_name": "ASYN_C_terminal_99_140",
+    "epitope_source": "P37840 residues 99-140",
+    "epitope_spans": [
+      [
+        98,
+        140
+      ]
+    ],
+    "feature_kind": "fixed_target_hotspot",
+    "name": "Human alpha-synuclein P37840",
+    "sequence": "MDVFMKGLSKAKEGVVAAAEKTKQGVAEAAGKTKEGVLYVGSKTKEGVVHGVATVAEKTKEQVTNVGGAVVTGVTAVAQKTVEGAGSIAAATGFVKKDQLGKNEEGAPQEGILEDMPVDPDNEAYEMPSEEGYQDYEPEA"
+  },
+  "task_name": "ASYN_C_terminal_50aa_binder_design",
+  "task_type": "fixed_target_de_novo_binder_design",
+  "version": "asyn_hotspot_binder_dual_ast_v1"
+}

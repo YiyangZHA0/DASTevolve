@@ -1,0 +1,61 @@
+max_iterations: 3
+checkpoint_interval: 1
+log_level: INFO
+random_seed: 23
+language: python
+file_suffix: .py
+diff_based_evolution: true
+max_code_length: 16000
+early_stopping_patience: null
+early_stopping_metric: final_energy
+
+memory_policy:
+  adaptive_prior_mode: winner_commit
+  inner_state_scope: run
+
+llm:
+  provider: openai
+  api_base: ${ASTEVOLVE_LLM_API_BASE}
+  api_key: ${ASTEVOLVE_LLM_API_KEY}
+  name: ${ASTEVOLVE_LLM_MODEL}
+  models:
+    - name: ${ASTEVOLVE_LLM_MODEL}
+      weight: 1.0
+  temperature: 0.2
+  max_tokens: 6000
+  timeout: 120
+  retries: 2
+  retry_delay: 2
+
+prompt:
+  proposal_mode: legacy_diff
+  hierarchical_audit_v2: true
+  num_top_programs: 1
+  num_diverse_programs: 0
+  include_artifacts: true
+  candidate_diff_retries: 2
+
+database:
+  in_memory: true
+  population_size: 8
+  archive_size: 4
+  num_islands: 1
+  proposal_wave_size: 1
+  feature_dimensions: [complexity, diversity]
+  feature_bins: 4
+  optimizer_memory_enabled: true
+
+hierarchical_design:
+  enabled: true
+  global_strategist_enabled: true
+  proposal_critic_enabled: true
+  reasoning_audit_enabled: true
+
+evaluator:
+  timeout: 900
+  cascade_evaluation: false
+  max_retries: 0
+  parallel_evaluations: 1
+  distributed: false
+  use_llm_feedback: false
+  enable_artifacts: true

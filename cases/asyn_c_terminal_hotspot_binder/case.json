@@ -1,0 +1,32 @@
+{
+  "case_id": "asyn_c_terminal_hotspot_binder",
+  "design_state_path": "design_state.json",
+  "entry_program": "initial_program.py",
+  "launcher_defaults": {
+    "inner_iterations": 100,
+    "progen_weight": 0.0
+  },
+  "lifecycle": {
+    "default_eligible": false,
+    "explicit_run_only": true,
+    "formal_eligible": true,
+    "schema_version": "astevolve.case_lifecycle.v1",
+    "smoke_eligible": true,
+    "status": "active"
+  },
+  "memory_path": "memory.yaml",
+  "name": "50-aa binder design for the ASYN C-terminal hotspot",
+  "notes": "Full executable Dual-AST program search with five resizable binder nodes and attributed evaluator feedback. The initial 100 evaluations are followed by 50 outer revisions with 100 inner evaluations each.",
+  "outer_evaluator_path": "asyn_outer_evaluator.py",
+  "schema_version": "astevolve.case_manifest.v2",
+  "task_type": "fixed_target_de_novo_binder_design",
+  "test_evaluator_path": "asyn_binder_evaluator.py",
+  "config_path": "config.yaml",
+  "required_assets": [
+    {
+      "role": "residue_evidence_catalog",
+      "path": "data://asyn_c_terminal_hotspot_binder/residue_evidence_catalog.json",
+      "required": true
+    }
+  ]
+}

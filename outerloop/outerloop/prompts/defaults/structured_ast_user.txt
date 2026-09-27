@@ -1,0 +1,87 @@
+# Current Objective
+- Primary objective: {fitness_score}
+- Feature coordinates: {feature_coords}
+- Focus areas: {improvement_areas}
+
+{artifacts}
+
+{optimizer_memory}
+
+{hierarchical_design}
+
+# Comparative Evolution Context
+{evolution_history}
+
+# Parent-Bound AST Context
+{structured_ast_context}
+
+# Deterministic Migration Rule
+{migration_instruction}
+
+# Required Response
+Return exactly one JSON object with these five top-level fields and no others:
+
+- `schema_version`: exactly `{structured_ast_proposal_version}`
+- `parent_evolve_hash`: copy the exact value from Parent-Bound AST Context
+- `controls`: copy `required_controls` exactly; these are controller-owned
+- {structured_ast_audit_contract} If Parent-Bound AST Context contains an
+  `edit_contract_handoff`, set `edit_contract_response` to exactly four fields:
+  `schema_version`, `contract_id`, `decision`, and `reason`, using the supplied
+  response schema and exact contract ID. Otherwise it must be JSON `null`.
+- `ast_revision_plan`: the COMPLETE desired `astevolve.ast_revision_plan.v2`
+  with exactly four top-level fields: `schema_version`, `structural_nodes`,
+  `mapping_edges`, and `decision_record`
+
+The audit is an externally reviewable scientific decision record, not private
+chain-of-thought. It is authoritative: the controller deterministically binds
+its hypothesis, expected_effects, failure_condition, rationale, and
+rollback_condition into `ast_revision_plan.decision_record`, so these fields
+remain visible in downstream artifacts and prompt feedback. The plan must still
+contain a schema-valid decision_record, but minor duplicate-text differences do
+not require a retry.
+
+The EditContract response belongs only in `audit.edit_contract_response`. Never
+put `last_contract_response` or `edit_contract_response` in ast_revision_plan or
+in Python source. The controller validates it against the full canonical parent
+envelope and transports it to the evaluator as non-evolvable runtime data.
+
+`ast_revision_plan.decision_record.action` must be exactly one of `keep`,
+`create`, `delete`, `migrate`, `resize`, `revise`, `rewire`, `mixed`, or
+`revert`. `retain` is not a valid action; use `keep`. Treat
+`proposal_constraints` in Parent-Bound AST Context as controller-owned and
+closed. For every supplied constraint field: every node ID and edge ID must
+match its exact regex, every `functional_node_id` must be in its allowed list,
+every `action_profile` must name one listed profile, and every edge
+`action_operator` and action budget must come from that node's listed profile.
+Obey its editable-position, structural-node, per-node position/span, and
+mapping-edge budgets exactly.
+
+Before returning, perform this mandatory graph-and-audit consistency pass:
+
+- Treat `mapping_edges` as the complete desired executable graph. Every ID in
+  `proposal_constraints.allowed_functional_node_ids` must appear in at least
+  one edge, including objectives that are not the assigned island's soft
+  focus. Copy unchanged valid parent nodes and edges when they are not targeted.
+- Keep every `(structural_node_id, action_operator)` routing pair globally
+  unique. Edge IDs must also be unique. When one node serves several functions,
+  use distinct allowed operators or distribute those functions across nodes.
+- Keep evidence namespaces separate. Node, edge, and decision-record
+  `evidence_refs` must be exact catalog IDs supplied for selected positions by
+  the parent plan or MIGRATION_FRONTIER. Audit `evidence_refs` must instead be
+  exact controller-published evidence IDs from the hierarchical design. Never
+  copy program artifact IDs into `ast_revision_plan.decision_record`.
+- For audit v2, provide 1--8 non-empty expected effects and 1--8 quality floors.
+  At least one floor must use an exact global hard-quality metric published in
+  `final_selection.hard_gate_metrics`; use `direction: min` for a lower bound
+  such as pLDDT. `planned_ablation` must be a concrete non-empty experiment.
+  Copy the frozen strategy epoch, island role, and evidence IDs exactly.
+- If changing only one Node or amino-acid preference, copy every other parent
+  Node and mapping edge verbatim. A local hypothesis does not authorize deleting
+  unrelated functional coverage or inventing new evidence.
+
+
+The plan may create, delete, migrate, resize, keep, or rewire nodes and may
+revise node- and position-level amino-acid preferences. Preserve the immutable
+functional objectives and follow the supplied MIGRATION_FRONTIER. Every node
+selector must remain wholly within one compiled segment. Return JSON only: no
+Markdown fence, SEARCH/REPLACE diff, source code, or prose outside the object.

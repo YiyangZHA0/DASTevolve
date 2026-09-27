@@ -1,0 +1,57 @@
+{
+  "schema_version": "ast_case_sheet_v1",
+  "case_name": "tiam1_pdz_caspr4_vs_sdc1_selectivity",
+  "readiness": {
+    "runtime": "gpu_multistate_candidate",
+    "biological_specificity": "computational_proxy_requires_experimental_validation"
+  },
+  "design_goal": {
+    "primary": "Preserve the Tiam1 PDZ fold and Caspr4 A-peptide canonical binding while weakening the Syndecan-1 B-peptide interface.",
+    "formal_success_definition": "A feasible candidate generated under an auditable whole-protein adaptive Dual-AST improves the same-protocol A-over-B structural-interface margin without losing the apo fold or the A complex. The outer LLM may create, delete, migrate, resize, or rewire nodes anywhere in the reviewed P chain, while deterministic safety activates only 4-8 positions per round."
+  },
+  "state_success_criteria": {
+    "positive_signals": [
+      "A complex retains a canonical, clash-free PDZ-peptide pose.",
+      "A interface strength remains high while B interface strength decreases.",
+      "Apo PDZ confidence and the shared terminal-carboxylate anchor remain intact."
+    ],
+    "failure_signals": [
+      "Any mutation outside the active compiled AST selector or inside a globally protected residue span.",
+      "A severe chain break, core/interface clash, or extremely low A-complex confidence.",
+      "Apparent selectivity produced by globally unfolding the PDZ domain or disrupting both peptide states."
+    ]
+  },
+  "residue_level_constraints": {
+    "indexing": "zero_based_end_exclusive",
+    "mutable_residue_spans": [
+      {"chain_id": "P", "spans": [[0, 90]], "role": "whole-protein review envelope; this does not make every residue mutable at once because the active scope is selected by the safety-reviewed Executable Dual-AST"}
+    ],
+    "frozen_residue_spans": [
+      {"chain_id": "P", "spans": [[3, 4], [6, 7], [9, 25], [32, 33], [41, 42], [54, 55], [60, 61], [66, 67], [77, 79], [82, 83]], "role": "global_Dual_AST_v2_hard_protection"},
+      {"chain_id": "A", "spans": [[0, 8]]}
+    ],
+    "per_round_active_budget": {
+      "minimum_positions": 4,
+      "maximum_positions": 8,
+      "minimum_structural_nodes": 1,
+      "maximum_structural_nodes": 4,
+      "policy": "The LLM proposes scope and residue preferences; deterministic safety compilation is authoritative."
+    }
+  },
+  "objective_thresholds": {
+    "mutation_scope_guardrail": {"hard_gate": true, "pass_min": 0.999},
+    "target_complex_confidence_floor": {"hard_gate": true, "pass_min": 0.35},
+    "A_over_B_interface_delta": {"direction": "maximize", "target": 0.25},
+    "mutation_count": {"direction": "minimize", "pass_max": 6}
+  },
+  "information_gaps": [
+    "AF3, Protenix, and ESMFold confidence are not affinity oracles.",
+    "The experimental structure matrix lacks WT+A and engineered+B cross structures.",
+    "Any new sequence requires paired A/B Kd measurements and a folding/stability assay."
+  ],
+  "provisional_assumptions": [
+    "All candidates are compared with the same structure protocol and seed policy.",
+    "The peptide sequences have free C termini even though the sequence-only input has no terminal modification token.",
+    "The closed-book search is evaluated against the known engineered reference only after ranking."
+  ]
+}
