@@ -91,16 +91,10 @@ Run the teaching demo or the Tiam1 case for example used in our case studies:
 ```bash
 bash scripts/run_case.sh demo --iterations 1
 bash scripts/run_case.sh tiam1 --iterations 100
-bash scripts/run_case.sh asyn
-bash scripts/run_case.sh cab
-bash scripts/run_case.sh aph
+## bash scripts/run_case.sh asyn --iterations 100
+## bash scripts/run_case.sh cab --iterations 100
+## bash scripts/run_case.sh aph --iterations 100
 ```
-
-ASYN, cAb-Lys3, and APH default to 50 outer revisions with 100 charged inner
-candidate evaluations per revision. Initial-program evaluation and root
-baseline checks are separate from that child-candidate budget. ASYN uses
-classic ESMFold; cAb-Lys3 enables the SAbDab ESM-2 prior and frozen-MSA
-Protenix-v2; APH uses attributed evaluator feedback and Protenix mini.
 
 Each accepted program starts a fresh MCTS tree. Evaluation outcomes update
 node values and subsequent branch selection; search grows to a case-specific
