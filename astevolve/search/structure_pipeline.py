@@ -83,7 +83,7 @@ class StructureEvidenceUnavailableError(RuntimeError):
 
 _PROVIDER_EVIDENCE_VERSIONS = {
     "protenix": "astevolve.protenix_adapter.v2",
-    "esmfold": "astevolve.esmfold_adapter.v1",
+    "esmfold": "astevolve.esmfold_adapter.v2",
     "esmfold2": "astevolve.esmfold2_adapter.v2",
     "alphafold3": "astevolve.alphafold3_adapter.v1",
 }

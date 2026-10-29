@@ -374,14 +374,31 @@ class ASYNHotspotBinderPlugin:
         binder_holo_plddt = binder_confidence["plddt"]
         binder_holo_floor = binder_confidence["node_min"]
         bound_iptm = _state_scalar(bound, "iptm")
+        provider = str(bound.get("provider") or "").strip().lower() if bound else ""
+        protocol = str(
+            context.score_config.get("asyn_interface_evidence_protocol", "iptm_required")
+        ).strip().lower()
+        if protocol not in {"iptm_required", "esmfold_interface_only"}:
+            raise ValueError(f"unsupported ASYN interface evidence protocol: {protocol!r}")
+        iptm_required = protocol == "iptm_required"
+        # Only the explicitly configured classic-ESMFold protocol can omit ipTM.
+        # Do not trust ipTM placeholders in older ESMFold evidence artifacts.
+        if provider == "esmfold":
+            bound_iptm = None
+        iptm_available = bound_iptm is not None and 0.0 <= bound_iptm <= 1.0
+        protocol_compatible = iptm_required or provider == "esmfold"
         interface_score, interface_available, interface_details = _objective_score(
             context.structure, "binder_ASYN_interface"
+        )
+        interface_evidence_available = (
+            protocol_compatible
+            and interface_available
+            and (not iptm_required or iptm_available)
         )
         evidence_complete = (
             bound is not None
             and binder_holo_plddt is not None
-            and bound_iptm is not None
-            and interface_available
+            and interface_evidence_available
         )
 
         holo_target = max(88.0, _config_float(context, "asyn_holo_binder_plddt_target", 88.0))
@@ -390,11 +407,13 @@ class ASYNHotspotBinderPlugin:
         holo_floor_score = _clamp01((binder_holo_floor or 0.0) / holo_floor_target)
         iptm_target = max(1e-8, _config_float(context, "asyn_iptm_target", 0.65))
         iptm_score = _clamp01((bound_iptm or 0.0) / iptm_target)
-        combined_interface_score = (
-            0.70 * interface_score + 0.30 * iptm_score
-            if interface_available and bound_iptm is not None
-            else 0.0
-        )
+        combined_interface_score = 0.0
+        if interface_evidence_available:
+            combined_interface_score = (
+                0.70 * interface_score + 0.30 * iptm_score
+                if iptm_required
+                else interface_score
+            )
 
         localization = _hotspot_localization(
             bound,
@@ -487,7 +506,11 @@ class ASYNHotspotBinderPlugin:
                     "required_states": [STATE_BOUND],
                     "observed_states": sorted(states),
                     "binder_holo_plddt_available": binder_holo_plddt is not None,
-                    "bound_iptm_available": bound_iptm is not None,
+                    "bound_iptm_available": iptm_available,
+                    "bound_iptm_required": iptm_required,
+                    "interface_evidence_protocol": protocol,
+                    "interface_protocol_compatible": protocol_compatible,
+                    "structure_provider": provider,
                     "interface_objective_available": interface_available,
                 },
                 available=evidence_complete,
@@ -525,11 +548,22 @@ class ASYNHotspotBinderPlugin:
                     "state": "positive",
                     "interface_objective_score": interface_score,
                     "bound_iptm": bound_iptm,
+                    "bound_iptm_available": iptm_available,
+                    "bound_iptm_required": iptm_required,
+                    "interface_evidence_protocol": protocol,
+                    "structure_provider": provider,
+                    "formula": (
+                        "0.70 * interface_score + 0.30 * iptm_score"
+                        if iptm_required else "interface_score"
+                    ),
                     "iptm_target": iptm_target,
                     "interface_details": interface_details,
                     "required": True,
                 },
-                available=interface_available and bound_iptm is not None,
+                available=interface_evidence_available,
+                warnings=[] if interface_evidence_available else [
+                    "interface evidence is incomplete or incompatible with the configured protocol"
+                ],
             ),
             _term(
                 context,
@@ -704,6 +738,7 @@ def register_asyn_hotspot_binder_plugin() -> None:
                 "eval_asyn_interface_clash_guard",
             ),
             config_fields={
+                "interface_evidence_protocol": PluginConfigField(kind="str", runtime_key="asyn_interface_evidence_protocol"),
                 "holo_binder_plddt_target": PluginConfigField(kind="float", runtime_key="asyn_holo_binder_plddt_target"),
                 "holo_binder_plddt_floor_target": PluginConfigField(kind="float", runtime_key="asyn_holo_binder_plddt_floor_target"),
                 "iptm_target": PluginConfigField(kind="float", runtime_key="asyn_iptm_target"),

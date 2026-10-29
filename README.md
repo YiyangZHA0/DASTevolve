@@ -73,11 +73,22 @@ python -m pip check
 python -c "import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())"
 bash scripts/check_install.sh
 python scripts/check_mcts.py
+python scripts/check_esmfold_evidence.py
 bash scripts/run_case.sh tiam1 --iterations 2 --dry-run
 ```
 
 These checks compile the demo and exercise search contracts
 with offline evaluators. They do not run GPU models or contact an LLM endpoint.
+
+MCTS keeps separate proxy and high-fidelity root baselines so checkpoint
+upgrades do not change the reward scale of subsequent proxy evaluations.
+Classic ESMFold reports ipTM as unavailable. The packaged ASYN case explicitly
+uses `interface_evidence_protocol: esmfold_interface_only`, which scores the
+available interface evidence without an ipTM term. For a backend providing
+ipTM, select `iptm_required` to use the original 70/30 interface/ipTM mixture;
+missing ipTM then fails the evidence gate. All comparison arms must use the
+same protocol, and historical ASYN scores require rescoring under the corrected
+protocol.
 
 Scientific cases require external inputs listed in each `case.json` under
 `required_assets`. Place them under `${ASTEVOLVE_DATA_ROOT}/<case_id>/` and run

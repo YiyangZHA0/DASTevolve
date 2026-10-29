@@ -700,6 +700,17 @@ def _run_mcts_fidelity_checkpoint(
             manifest.get("inline_provider_release_count", 0)
         ) + 1
 
+    # Keep the inline/proxy baseline immutable when the root's current evidence
+    # is upgraded. New proxy candidates must still use a same-fidelity root.
+    proxy_root_loss = float(
+        root_candidate.get(
+            "proxy_selection_loss",
+            root_candidate.get("selection_loss", root_candidate.get("fast_loss", 0.0)),
+        )
+    )
+    root_candidate.setdefault("proxy_selection_loss", proxy_root_loss)
+    tree["root"].setdefault("proxy_selection_loss", proxy_root_loss)
+
     if not isinstance(root_candidate.get("mcts_fidelity_upgrade"), Mapping):
         root_filter_pass = bool(
             (root_candidate.get("fast_filter") or {}).get("pass", True)
@@ -715,6 +726,17 @@ def _run_mcts_fidelity_checkpoint(
                 "reason": "parent_failed_pre_model_sequence_gate",
             }
         )
+        if str(root_upgrade.get("status") or "") == "ok":
+            try:
+                valid_root_loss = math.isfinite(float(root_upgrade["selection_loss"]))
+            except (KeyError, TypeError, ValueError):
+                valid_root_loss = False
+            if not valid_root_loss:
+                root_upgrade = {
+                    **root_upgrade,
+                    "status": "failed",
+                    "error": "high-fidelity root returned no finite selection loss",
+                }
         root_candidate["mcts_fidelity_upgrade"] = root_upgrade
         if str(root_upgrade.get("status") or "") not in {"ok", "skipped"}:
             if bool(cfg.mcts_fidelity_upgrade_required):
@@ -724,9 +746,6 @@ def _run_mcts_fidelity_checkpoint(
                 )
         elif str(root_upgrade.get("status") or "") == "ok":
             root_loss = float(root_upgrade["selection_loss"])
-            root_candidate.setdefault(
-                "proxy_selection_loss", root_candidate.get("selection_loss")
-            )
             root_candidate["selection_loss"] = root_loss
             root_candidate["inner_structure_gate_pass"] = bool(
                 root_upgrade.get("gate_pass", False)
@@ -750,17 +769,18 @@ def _run_mcts_fidelity_checkpoint(
             wave_end=wave_end,
         )
     root_upgrade = root_candidate.get("mcts_fidelity_upgrade") or {}
-    raw_root_loss = root_upgrade.get("selection_loss")
-    if raw_root_loss is None:
-        raw_root_loss = root_candidate.get("selection_loss")
-    if raw_root_loss is None:
-        raw_root_loss = root_candidate.get("fast_loss", 0.0)
-    root_loss = float(raw_root_loss)
+    root_loss = (
+        float(root_upgrade["selection_loss"])
+        if str(root_upgrade.get("status") or "") == "ok"
+        else None
+    )
     event = {
         "checkpoint": int(checkpoint),
         "final": bool(final),
         "wave_start": int(wave_start),
         "wave_end": int(wave_end),
+        "proxy_root_selection_loss": proxy_root_loss,
+        "high_fidelity_root_selection_loss": root_loss,
         "selected": [],
     }
     failures = []
@@ -784,11 +804,18 @@ def _run_mcts_fidelity_checkpoint(
 
         new_loss = float(upgrade["selection_loss"])
         gate_pass = bool(upgrade.get("gate_pass", False))
-        new_reward = (
-            float(np.tanh((root_loss - new_loss) / reward_scale))
-            if gate_pass
-            else -1.0
-        )
+        if not gate_pass:
+            new_reward = -1.0
+            reward_update = "hard_gate_failure"
+        elif root_loss is not None:
+            new_reward = float(np.tanh((root_loss - new_loss) / reward_scale))
+            reward_update = "same_fidelity_root_delta"
+        else:
+            # Optional root failures (or a pre-model skip) leave no comparable
+            # high-fidelity baseline. Retain the evaluated proxy reward instead
+            # of subtracting a high-fidelity candidate from a proxy root.
+            new_reward = old_reward
+            reward_update = "preserve_proxy_reward_missing_high_fidelity_root"
         delta = _apply_fidelity_reward_delta(
             tree,
             node_id,
@@ -804,6 +831,7 @@ def _run_mcts_fidelity_checkpoint(
                 "old_reward": old_reward,
                 "new_reward": new_reward,
                 "reward_delta": delta,
+                "reward_update": reward_update,
                 "visits_incremented": False,
             }
         )
@@ -1023,6 +1051,8 @@ def _run_mcts_search(
         root_candidate["inner_structure_gate_pass"] = root_structure_gate_pass
         root_candidate["selection_loss"] = root_selection_loss
 
+    root_candidate["proxy_selection_loss"] = root_selection_loss
+
     designable = _designable_segments(compiled, masks)
     if not designable:
         mapping_actions = _active_mapping_actions(compiled, cfg)
@@ -1103,6 +1133,7 @@ def _run_mcts_search(
             "seqs": root_seqs,
             "fast_loss": float(root_fast),
             "selection_loss": float(root_selection_loss),
+            "proxy_selection_loss": float(root_selection_loss),
             "inner_structure_gate_pass": bool(root_structure_gate_pass),
             "inner_structure_evaluation": root_inner_structure,
             "constraint_penalty": float(root_break["total"]),

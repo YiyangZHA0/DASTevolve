@@ -103,6 +103,7 @@
     },
     "plugin_config": {
       "asyn_hotspot_binder": {
+        "interface_evidence_protocol": "esmfold_interface_only",
         "holo_binder_plddt_target": 88.0,
         "holo_binder_plddt_floor_target": 65.0,
         "iptm_target": 0.65,

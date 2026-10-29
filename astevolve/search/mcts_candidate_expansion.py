@@ -755,7 +755,11 @@ def expand_mcts_candidate_siblings(
 
     batch_weights = _normalized_sibling_priors(proposed)
     semantic_prefix_options: List[Tuple[float, str, Dict[str, Any]]] = []
-    root_selection_loss = float(tree["root"].get("selection_loss", root_fast))
+    root_selection_loss = float(
+        tree["root"].get(
+            "proxy_selection_loss", tree["root"].get("selection_loss", root_fast)
+        )
+    )
 
     for batch_rank, ((prop, move), batch_prior) in enumerate(
         zip(proposed, batch_weights)

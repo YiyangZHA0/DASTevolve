@@ -279,7 +279,10 @@ def run_esmfold_confidence_multichain(
     summary = {
         "provider": "esmfold",
         "model_name": str(model_name or "facebook/esmfold_v1"),
-        "metrics": {"plddt": plddt, "ptm": ptm, "iptm": 0.0, metric: {"plddt": plddt, "ptm": ptm}.get(metric, plddt)},
+        # Classic ESMFold does not provide ipTM. Keep it missing even when
+        # requested as ``metric``; a numeric placeholder is not evidence.
+        "metrics": {"plddt": plddt, "ptm": ptm, "iptm": None},
+        "unavailable_metrics": {"iptm": "not_supported_by_esmfold_v1"},
         "chain_metrics": {"plddt": chain_plddt},
         "residue_plddt": residue_plddt,
         "inference_chain_id_map": bagel_chain_ids,

@@ -21,13 +21,18 @@ from astevolve.search.reporting import _mcts_select_leaf
 
 
 class MCTSChecks(unittest.TestCase):
-    def run_search(self, *, optimizer=False, sweep=False, evaluator=None, seed=77, rounds=40):
+    def run_search(self, *, optimizer=False, sweep=False, evaluator=None,
+                   fidelity_evaluator=None, seed=77, rounds=40):
         segment = Segment(kind="cdr", name="loop", chain_id="B", spans=[(0, 20)])
         compiled = {"chain_order": ["B"], "chain_lengths": {"B": 20}, "segments": [segment]}
         cfg = SAConfig(
             iterations=rounds, search_method="mcts", mcts_max_depth=4,
             progen_weight=0.0, fast_filter_enabled=False,
             inner_structure_enabled=True,
+            inner_structure_model="offline",
+            mcts_fidelity_upgrade_interval=20,
+            mcts_fidelity_upgrade_candidates=1,
+            mcts_fidelity_upgrade_final_candidates=1,
             mcts_save_tree=False, mcts_save_variants=False,
             node_optimizer_enabled=optimizer,
             mcts_progressive_widening_c=0.5,
@@ -76,6 +81,7 @@ class MCTSChecks(unittest.TestCase):
                 compiled, [], cfg, {"B": np.ones(20, dtype=bool)},
                 np.random.default_rng(seed), {"B": "A" * 20}, {"B": {}}, None,
                 inner_structure_evaluator=structure,
+                mcts_fidelity_upgrade_evaluator=fidelity_evaluator,
             )
         return out, captured["tree"]
 
@@ -182,6 +188,138 @@ class MCTSChecks(unittest.TestCase):
         self.assertEqual(tree["a"]["reward"],-1.0)
         self.assertEqual(visits,{key:node["visits"] for key,node in tree.items()})
         self.assertEqual(_mcts_select_leaf(tree,"root",cfg),"b")
+
+    def test_proxy_rewards_keep_their_baseline_across_fidelity_checkpoints(self):
+        seen = []
+        checkpoints = []
+        original_checkpoint = inner_opt._run_mcts_fidelity_checkpoint
+
+        def high_fidelity(candidate):
+            seen.append(candidate["variant_id"])
+            return {
+                "status": "ok", "gate_pass": True,
+                "selection_loss": 0.8 if candidate["variant_id"] == "root" else 0.7,
+            }
+
+        def checked_checkpoint(**kwargs):
+            visits = {key: node["visits"] for key, node in kwargs["tree"].items()}
+            original_checkpoint(**kwargs)
+            self.assertEqual(
+                visits, {key: node["visits"] for key, node in kwargs["tree"].items()}
+            )
+            checkpoints.append(kwargs["checkpoint"])
+
+        with patch.object(inner_opt, "_run_mcts_fidelity_checkpoint", side_effect=checked_checkpoint):
+            out, tree = self.run_search(
+                optimizer=True,
+                evaluator=lambda candidate, count: (0.2 if count == 0 else 0.1, True),
+                fidelity_evaluator=high_fidelity,
+            )
+
+        self.assertGreaterEqual(len(checkpoints), 2)
+        self.assertEqual(tree["root"]["selection_loss"], 0.8)
+        self.assertEqual(tree["root"]["proxy_selection_loss"], 0.2)
+        self.assertEqual(out[6]["root_candidate"]["proxy_selection_loss"], 0.2)
+        proxy_ids = [
+            key for key, node in tree.items()
+            if key != "root" and not node.get("mcts_fidelity_upgrade")
+        ]
+        self.assertTrue(any(int(key[1:]) <= 20 for key in proxy_ids))
+        self.assertTrue(any(int(key[1:]) > 20 for key in proxy_ids))
+        for key, node in tree.items():
+            if key != "root":
+                self.assertAlmostEqual(node["reward"], float(np.tanh(0.1)))
+        self.assertEqual(tree["root"]["visits"], len(tree) - 1)
+        self.assertEqual(seen.count("root"), 1)
+        self.assertEqual(len(seen), len(set(seen)))
+
+    def fidelity_checkpoint_fixture(self):
+        reward = float(np.tanh(0.1))
+        root = {"variant_id": "root", "seqs": {"B": "AA"},
+                "fast_loss": 0.2, "selection_loss": 0.2}
+        candidate = {
+            "variant_id": "a", "seqs": {"B": "CA"}, "fast_loss": 0.1,
+            "selection_loss": 0.1, "reward": reward, "inner_structure_gate_pass": True,
+            "inner_structure_evaluation": {
+                "status": "ok", "result": {"inner_evaluator_report": {}}
+            },
+        }
+        tree = {
+            "root": {"id": "root", "parent": None, "children": ["a"], "depth": 0,
+                     "visits": 1, "total_reward": reward, "selection_loss": 0.2},
+            "a": {**deepcopy(candidate), "id": "a", "parent": "root", "children": [],
+                  "depth": 1, "visits": 1, "total_reward": reward},
+        }
+        state = expansion.MCTSExpansionState(
+            candidate_serial=1, best_sequences={"B": "CA"}, best_breakdown={"total": 0},
+            best_progen={"loglik_sum": 0, "loglik_avg": 0}, best_fast=0.1,
+            best_node_id="a", best_selection_loss=0.1,
+        )
+        return root, candidate, tree, state
+
+    def test_missing_high_fidelity_root_preserves_proxy_reward_and_hard_gates(self):
+        for root_status in ("failed", "skipped", "nonfinite"):
+            for gate_pass in (True, False):
+                with self.subTest(root_status=root_status, gate_pass=gate_pass):
+                    root, candidate, tree, state = self.fidelity_checkpoint_fixture()
+                    if root_status == "skipped":
+                        root["fast_filter"] = {"pass": False}
+                    seen = []
+
+                    def high_fidelity(row):
+                        seen.append(row["variant_id"])
+                        if row["variant_id"] == "root":
+                            if root_status == "nonfinite":
+                                return {"status": "ok", "gate_pass": True,
+                                        "selection_loss": float("nan")}
+                            return {"status": "failed", "error": "offline root failure"}
+                        return {"status": "ok", "gate_pass": gate_pass, "selection_loss": 0.7}
+
+                    kwargs = dict(
+                        tree=tree, candidates=[candidate], root_candidate=root, state=state,
+                        evaluator=high_fidelity,
+                        cfg=SAConfig(inner_structure_model="offline", mcts_fidelity_upgrade_candidates=1),
+                        reward_scale=1.0, history={}, checkpoint=1, wave_start=0, wave_end=1,
+                    )
+                    inner_opt._run_mcts_fidelity_checkpoint(**kwargs)
+                    expected = float(np.tanh(0.1)) if gate_pass else -1.0
+                    self.assertAlmostEqual(candidate["reward"], expected)
+                    self.assertAlmostEqual(tree["root"]["total_reward"], expected)
+                    self.assertEqual(candidate["selection_loss"], 0.7)
+                    self.assertEqual(candidate["inner_structure_gate_pass"], gate_pass)
+                    self.assertEqual(tree["root"]["selection_loss"], 0.2)
+                    self.assertEqual(tree["root"]["proxy_selection_loss"], 0.2)
+                    self.assertEqual({key: node["visits"] for key, node in tree.items()},
+                                     {"root": 1, "a": 1})
+                    if gate_pass:
+                        self.assertEqual(candidate["mcts_fidelity_upgrade"]["reward_update"],
+                                         "preserve_proxy_reward_missing_high_fidelity_root")
+                    previous_tree = deepcopy(tree)
+                    previous_seen = list(seen)
+                    inner_opt._run_mcts_fidelity_checkpoint(**kwargs)
+                    self.assertEqual(tree, previous_tree)
+                    self.assertEqual(seen, previous_seen)
+                    if root_status == "skipped":
+                        self.assertNotIn("root", seen)
+
+    def test_required_high_fidelity_root_failure_still_aborts(self):
+        for loss in (None, float("nan")):
+            with self.subTest(loss=loss):
+                root, candidate, tree, state = self.fidelity_checkpoint_fixture()
+                before = deepcopy(tree)
+                response = ({"status": "failed", "error": "offline root failure"}
+                            if loss is None else
+                            {"status": "ok", "gate_pass": True, "selection_loss": loss})
+                with self.assertRaisesRegex(RuntimeError, "mcts_fidelity_root_upgrade_failed"):
+                    inner_opt._run_mcts_fidelity_checkpoint(
+                        tree=tree, candidates=[candidate], root_candidate=root, state=state,
+                        evaluator=lambda row: response,
+                        cfg=SAConfig(inner_structure_model="offline", mcts_fidelity_upgrade_required=True),
+                        reward_scale=1.0, history={}, checkpoint=1, wave_start=0, wave_end=1,
+                    )
+                for key in tree:
+                    self.assertEqual(tree[key]["visits"], before[key]["visits"])
+                    self.assertEqual(tree[key]["total_reward"], before[key]["total_reward"])
 
     def test_bootstrap_scope_and_old_signature_compatibility(self):
         masks = {"B": [True, False]}
