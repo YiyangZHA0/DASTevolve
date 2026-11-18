@@ -1,0 +1,40 @@
+case_id: cab_lys3_hewl_cdr_recovery
+schema_version: ast_case_memory_v1
+stable_priors:
+  indexing: zero_based_end_exclusive
+  claim_boundary: >-
+    The starting VHH has alanine at all 35 editable CDR positions. Recovery
+    is measured at 28 reference sites across L0, L1, and L2. Sequence recovery
+    and Protenix confidence provide computational design evidence; binding
+    affinity and experimental activity remain unmeasured.
+  parent_baseline: 35_position_all_alanine
+  editable_position_count: 35
+  recovery_scored_position_count: 28
+  staged_functional_objectives:
+    - l0_native_recovery
+    - l1_native_recovery
+    - l2_native_recovery
+  globally_disfavored_new_residues:
+    - C
+  recovery_groups:
+    L0:
+      scored_sites: [cab:A:101, cab:A:104, cab:A:105]
+      role: contact_recovery
+    L1:
+      role: remaining_CDR3_recovery
+    L2:
+      role: CDR1_CDR2_maturation_recovery
+  ast_revision_guidance:
+    editable_scope: all_35_reviewed_CDR_positions_from_initial_search
+    staged_interface_gate_required: false
+    structure_feedback: frozen_MSA_Protenix_v2_per_candidate_and_final_selection
+    resize_requirements:
+      - enumerate_added_and_removed_zero_based_positions
+      - cite_position_evidence_for_every_added_position
+      - predict_effect_on_recovery_and_protenix_interface_terms
+      - define_rollback_condition
+    migration_policy: role_preserving_re_rank
+adaptive_memory:
+  recent_runs: []
+  motif_memory: {}
+  node_level_statistics: {}

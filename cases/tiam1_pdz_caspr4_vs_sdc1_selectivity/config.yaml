@@ -1,0 +1,203 @@
+max_iterations: 100
+checkpoint_interval: 10
+log_level: INFO
+random_seed: 20260731
+language: python
+file_suffix: .py
+diff_based_evolution: true
+
+max_code_length: 32000
+early_stopping_patience: null
+convergence_threshold: 0.0001
+early_stopping_metric: final_energy
+
+memory_policy:
+  adaptive_prior_mode: winner_commit
+  inner_state_scope: run
+
+llm:
+  provider: openai
+  api_base: ${ASTEVOLVE_LLM_API_BASE}
+  api_key: ${ASTEVOLVE_LLM_API_KEY}
+  name: ${ASTEVOLVE_LLM_MODEL}
+  models:
+    - name: ${ASTEVOLVE_LLM_MODEL}
+      weight: 1.0
+      reasoning_effort: medium
+  temperature: 0.35
+  max_tokens: 12000
+  timeout: 240
+  retries: 4
+  retry_delay: 5
+  random_seed: 20260731
+  reasoning_effort: medium
+
+prompt:
+  proposal_mode: structured_strategy_v1
+  hierarchical_audit_v2: true
+  num_top_programs: 2
+  num_diverse_programs: 1
+  use_template_stochasticity: true
+  include_artifacts: true
+  max_artifact_bytes: 32768
+
+  max_artifact_total_bytes: 90112
+  complete_artifacts:
+    - migration_frontier
+    - residue_evidence_prompt_digest
+  artifact_priority:
+    - structured_ast_proposal_audit
+    - migration_frontier
+    - residue_evidence_prompt_digest
+    - parent_sequence_lineage
+    - best_seqs
+    - structure_finalist_feedback
+    - llm_feedback_summary
+    - energy_feedback
+    - ast_revision_report
+    - residue_evidence_catalog_summary
+    - effective_phenotype_identity
+    - edit_contract_envelope
+    - accepted_runtime_artifact
+    - strategy_schema_report
+    - structure_metrics
+    - search_artifacts
+    - mutation_history
+    - graph_patch
+    - evaluator_report
+    - causal_trace
+  optimizer_memory_max_chars: 12288
+  hierarchical_design_max_chars: 32768
+  candidate_diff_retries: 5
+
+database:
+  in_memory: true
+  population_size: 96
+  archive_size: 48
+  num_islands: 4
+  outer_effective_phenotype_enabled: true
+  outer_population_policy_version: v9
+  outer_parent_selection_mode: mixture
+  outer_parent_selection_mixture:
+    elite: 0.15
+    weighted: 0.55
+    uniform: 0.30
+  outer_behavior_bin_dimensions:
+    - feasibility
+    - functional_scope
+    - structural_scope
+    - mutation_burden
+    - action_coverage
+    - operator_scope
+  outer_robustness_metrics:
+    - positive_A_iptm
+    - positive_A_interface_q
+    - positive_A_plddt
+    - apo_plddt
+    - iptm_margin
+    - gpde_margin
+    - interface_q_margin
+    - positive_noninferiority_min_ratio
+    - worst_case_score
+    - seed_score_std
+    - multistate_score
+    - clash_count
+    - node_plddt_min
+
+  proposal_wave_size: 1
+  strategy_epoch_candidate_interval: 8
+  elite_selection_ratio: 0.15
+  exploration_ratio: 0.30
+  exploitation_ratio: 0.55
+  migration_interval: 5
+  migration_interval_scope: per_island
+  migration_rate: 0.10
+  random_seed: 20260731
+  feature_dimensions:
+    - complexity
+    - diversity
+  feature_bins: 10
+  optimizer_memory_enabled: true
+  optimizer_memory_recent_limit: 24
+  optimizer_memory_best_limit: 8
+  ast_scheduler_enabled: true
+  ast_parent_selection_weight: 0.25
+  island_role_selection_weight: 0.40
+
+  island_role_survivor_objective_tolerance: 0.01
+  ast_scheduler_stagnation_window: 6
+  ast_scheduler_stagnation_min_delta: 0.0001
+  island_specialization_enabled: true
+  island_roles:
+    - role_id: a_interface_fold
+      name: A-interface and fold integrity
+      focus: Improve Caspr4 A binding while preserving fold and interface quality.
+      soft_objectives: [A ipTM, A interface quality, pLDDT, pTM]
+      complementary_roles: [selectivity_margin, robustness_safety]
+      metric_terms:
+        - {metric: tiam1_A_complex_integrity, direction: maximize, transform: identity, weight: 0.30, missing_policy: fail}
+        - {metric: tiam1_A_iptm_noninferiority, direction: maximize, transform: identity, weight: 0.25, missing_policy: fail}
+        - {metric: tiam1_A_interface_q_noninferiority, direction: maximize, transform: identity, weight: 0.25, missing_policy: fail}
+        - {metric: tiam1_apo_fold_integrity, direction: maximize, transform: identity, weight: 0.20, missing_policy: fail}
+    - role_id: selectivity_margin
+      name: A/B selectivity margin
+      focus: Improve the Caspr4-over-SDC1 selectivity margin without violating A-state gates.
+      soft_objectives: [A/B ipTM margin, GPDE margin, positive A interface quality]
+      complementary_roles: [a_interface_fold, region_exploration, robustness_safety]
+      metric_terms:
+        - {metric: tiam1_v2_iptm_margin, direction: maximize, transform: identity, weight: 0.30, missing_policy: fail}
+        - {metric: tiam1_v2_gpde_margin, direction: maximize, transform: identity, weight: 0.25, missing_policy: fail}
+        - {metric: tiam1_v2_interface_q_margin, direction: maximize, transform: identity, weight: 0.25, missing_policy: fail}
+        - {metric: tiam1_v2_positive_interface_q, direction: maximize, transform: identity, weight: 0.20, missing_policy: fail}
+    - role_id: region_exploration
+      name: new-region exploration
+      focus: Probe evidence-supported structural regions and non-incumbent residue positions.
+      soft_objectives: [node-action coverage, mutation topology, sequence novelty]
+      complementary_roles: [selectivity_margin, a_interface_fold]
+    - role_id: robustness_safety
+      name: robustness and safety
+      focus: Prefer candidates that remain good across states and seeds with low clashes and variance.
+      soft_objectives: [multi-seed robustness, clash-free interface, worst-case quality]
+      complementary_roles: [a_interface_fold, selectivity_margin]
+      metric_terms:
+        - {metric: tiam1_state_evidence_complete, direction: maximize, transform: identity, weight: 0.30, missing_policy: fail}
+        - {metric: tiam1_A_clash_free, direction: maximize, transform: identity, weight: 0.20, missing_policy: fail}
+        - {metric: tiam1_B_clash_free_final, direction: maximize, transform: identity, weight: 0.20, missing_policy: fail}
+        - {metric: tiam1_interface_clash_guard, direction: maximize, transform: identity, weight: 0.20, missing_policy: fail}
+        - {metric: tiam1_mutation_budget_integrity, direction: maximize, transform: identity, weight: 0.10, missing_policy: fail}
+  experiment_registry_enabled: true
+  experiment_registry_lease_seconds: 7200
+  experiment_registry_retry_failed: true
+  experiment_registry_replicate_policy: reject
+
+hierarchical_design:
+  enabled: true
+  global_strategist_enabled: true
+  proposal_critic_enabled: true
+  llm_critic_enabled: false
+  reasoning_audit_enabled: true
+  strategy_refresh_on_stagnation: true
+  global_strategy_retries: 2
+  evidence_max_chars: 32768
+  node_tenure: 3
+  exploration_window: 4
+  outside_incumbent_execution_quota: 0.50
+  min_segments_per_window: 2
+
+evaluator:
+  timeout: 7200
+  max_retries: 1
+  cascade_evaluation: false
+  parallel_evaluations: 1
+  distributed: false
+  use_llm_feedback: false
+  enable_artifacts: true
+  max_artifact_storage: 536870912
+
+evolution_trace:
+  enabled: true
+  format: jsonl
+  include_code: false
+  include_prompts: true
+  buffer_size: 1
+  compress: false

@@ -1,0 +1,21 @@
+{
+  "schema_version": "astevolve.asyn_runtime_protocol.v1",
+  "case_id": "asyn_c_terminal_hotspot_binder",
+  "budget": {
+    "outer_evaluations": 51
+  },
+  "dynamic_node_partition": {
+    "chain_id": "B",
+    "coverage": "exact_contiguous_partition",
+    "end": 50,
+    "max_positions_per_node": 46,
+    "min_positions_per_node": 1,
+    "node_count": 5,
+    "schema_version": "astevolve.structured_ast_partition_contract.v1",
+    "single_span_per_node": true,
+    "start": 0
+  },
+  "fixed_inputs": {
+    "initial_binder_sequence": "VCTVRIGTAVQWSTWVRNIMGKLPCLGTPQMDSVMQTLGAIFLTCETEIP"
+  }
+}

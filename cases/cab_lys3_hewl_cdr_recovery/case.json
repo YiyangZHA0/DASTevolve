@@ -1,0 +1,101 @@
+{
+  "schema_version": "astevolve.case_manifest.v2",
+  "case_id": "cab_lys3_hewl_cdr_recovery",
+  "name": "cAb-Lys3 VHH high-entropy 35-position all-A CDR search against HEWL",
+  "task_type": "knowledge_guided_vhh_cdr_design",
+  "lifecycle": {
+    "schema_version": "astevolve.case_lifecycle.v1",
+    "status": "active",
+    "default_eligible": false,
+    "smoke_eligible": true,
+    "formal_eligible": true,
+    "explicit_run_only": true
+  },
+  "design_state_path": "design_state.json",
+  "memory_path": "memory.yaml",
+  "entry_program": "initial_program.py",
+  "test_evaluator_path": "cab_lys3_evaluator.py",
+  "launcher_defaults": {
+    "inner_iterations": 100,
+    "progen_weight": 0.2
+  },
+  "notes": "Full DAST program search with the external SAbDab ESM-2 prior, masked-LM proposals, and frozen-MSA Protenix-v2 evaluation. Fifty outer revisions each receive 100 inner candidate evaluations; a fresh run also evaluates the initial program with 100 candidates. The 35-position all-alanine CDR start, four protected cysteines, and fixed HEWL chain are preserved.",
+  "config_path": "config.yaml",
+  "required_assets": [
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/A.paired.template.a3m",
+      "role": "frozen_msa",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/A.unpaired.template.a3m",
+      "role": "frozen_msa",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/L.paired.template.a3m",
+      "role": "frozen_msa",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/L.unpaired.template.a3m",
+      "role": "frozen_msa",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/manifest.json",
+      "role": "frozen_msa",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/residue_evidence_catalog.json",
+      "role": "residue_knowledge",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/calibration.json",
+      "role": "external_esm2_prior",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/cdr1.npy",
+      "role": "external_esm2_prior",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/cdr2.npy",
+      "role": "external_esm2_prior",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/cdr3.npy",
+      "role": "external_esm2_prior",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/embedding_manifest.json",
+      "role": "external_esm2_prior",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/embedding_metadata.csv",
+      "role": "external_esm2_prior",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/framework.npy",
+      "role": "external_esm2_prior",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/target_profile.json",
+      "role": "external_esm2_prior",
+      "required": true
+    },
+    {
+      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/whole_vhh.npy",
+      "role": "external_esm2_prior",
+      "required": true
+    }
+  ]
+}

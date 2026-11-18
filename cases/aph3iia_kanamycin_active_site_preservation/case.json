@@ -1,0 +1,64 @@
+{
+  "schema_version": "astevolve.case_manifest.v2",
+  "case_id": "aph3iia_kanamycin_active_site_preservation",
+  "name": "APH(3')-IIa kanamycin-site-preserving adaptive design",
+  "task_type": "single_chain_fixed_length_enzyme_active_site_and_ligand_geometry_preservation",
+  "immutable_reference": {
+    "schema_version": "astevolve.immutable_sequence_reference.v1",
+    "reference_id": "P00552_WT",
+    "candidate_role": "immutable_reference",
+    "chain_id": "A",
+    "sequence_path": "data://aph3iia_kanamycin_active_site_preservation/sequences/P00552_wild_type.fasta",
+    "sequence_length": 264,
+    "fasta_sha256": "3d772b0cc4e765a8c918d1a5d1ceab6c5d23a5e7cef0369d61db6e97df550422",
+    "sequence_sha256": "acbf1fe51a97a2e90c2bcd13adabec985a63c501fae0f2a2cfcb46258abda56e",
+    "sequence_bundle_hash": "sequence_sha256:eef4a986757e55dc6cc887aa2c0cffb1e18e58f77a6ca71d7f1a08d3a747831f",
+    "comparison_policy": "fixed_for_entire_run_and_never_replaced_by_dynamic_parent"
+  },
+  "lifecycle": {
+    "schema_version": "astevolve.case_lifecycle.v1",
+    "status": "active",
+    "default_eligible": false,
+    "smoke_eligible": true,
+    "formal_eligible": false,
+    "explicit_run_only": true
+  },
+  "design_state_path": "design_state.json",
+  "memory_path": "memory.yaml",
+  "entry_program": "initial_program.py",
+  "test_evaluator_path": "aph3iia_evaluator.py",
+  "launcher_defaults": {
+    "outer_iterations": 50,
+    "inner_iterations": 100,
+    "random_seed": 20260803,
+    "run_mode": "adaptive_frontier",
+    "design_tier": "frontier",
+    "diagnostic_feedback_mode": "full_attributed",
+    "provider_cascade": "protenix",
+    "progen_weight": 0.05
+  },
+  "notes": "Full-feedback adaptive-frontier APH(3')-IIa program evolution from P00552 WT. Initial executable program: nine nodes over 26 mutable positions; eight mutations per candidate. Protected core, contact shell, unresolved residues and donor-context span remain fixed.",
+  "config_path": "config.yaml",
+  "required_assets": [
+    {
+      "path": "data://aph3iia_kanamycin_active_site_preservation/sequences/P00552_wild_type.fasta",
+      "kind": "file",
+      "required": true
+    },
+    {
+      "path": "data://aph3iia_kanamycin_active_site_preservation/structures/ast_ready/1ND4_chainA_KAN_MG.pdb",
+      "kind": "file",
+      "required": true
+    },
+    {
+      "path": "data://aph3iia_kanamycin_active_site_preservation/structures/ast_ready/1ND4_chainB_KAN_MG.pdb",
+      "kind": "file",
+      "required": true
+    },
+    {
+      "path": "data://aph3iia_kanamycin_active_site_preservation/data/residue_evidence_catalog.json",
+      "kind": "file",
+      "required": true
+    }
+  ]
+}
