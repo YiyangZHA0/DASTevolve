@@ -1,0 +1,64 @@
+{
+  "schema_version": "dastbench.trpb.closed_loop_archive_protocol.dev.v1",
+  "status": "preregistered_public_development_diagnostic",
+  "case_id": "trpb",
+  "supersedes_for_development_only": {
+    "failed_protocol": "initial_panel.json",
+    "failed_run_sha256": "3f179fe3bc2974ca5188b4e2ff3922b082eee0dad9d09cde43ef5429961763e5",
+    "failure_not_discarded": true,
+    "diagnosis": [
+      "32 labels underdetermine the 4201-dimensional Full DAST feature map",
+      "oracle DAST also lost to random, proving the sequential policy did not exploit correct AST knowledge",
+      "top-5-percent best-so-far AUC saturates under 192 random queries"
+    ]
+  },
+  "claim_scope": "mechanism-controlled closed-loop evolution using a real TrpB historical archive and hidden real TrpB candidate sequences; not a pure-activity or wet-lab superiority claim",
+  "official_test_labels_may_be_read": false,
+  "development_episode_seeds": [64, 65, 66, 67],
+  "data": {
+    "historical_archive_role": "fit_train",
+    "hidden_candidate_role": "dev",
+    "sequence_and_experimental_target_are_real": true,
+    "archive_labels": "phase objective is compiled from retained raw evidence; no dev candidate objective is visible before query"
+  },
+  "evolution": {
+    "rounds": 12,
+    "batch_size": 16,
+    "environment_shift_before_round": 7,
+    "same_query_budget_across_arms": true,
+    "query_without_replacement": true,
+    "gpu_refit_after_every_batch": true
+  },
+  "objective": {
+    "experimental_activity_weight": 0.25,
+    "executable_dual_ast_program_weight": 0.75,
+    "normalization": "historical archive mean and standard deviation only",
+    "phase_a_program_seed_offset": 3000,
+    "phase_b_program_seed_offset": 4000
+  },
+  "llm": {
+    "model": "gpt-5.6-sol",
+    "real_authenticated_calls_required": true,
+    "patch_rounds": [2, 7],
+    "phase_b_structural_patch_target": "approximately 25 percent capacity-preserving assignment change",
+    "phase_b_functional_patch_target": "two of five structural-to-functional mappings change"
+  },
+  "arms": ["full_dast_llm_dual_ast", "static_dast", "single_ast_llm", "flat_llm_memory", "bayesian_ridge_onehot", "random_search", "oracle_dast_upper_bound"],
+  "primary_competitors": ["static_dast", "single_ast_llm", "flat_llm_memory", "bayesian_ridge_onehot", "random_search"],
+  "metric": {
+    "primary": "mean_prefix_ndcg_auc_across_both_phases",
+    "prefix_budgets_per_phase": [16, 32, 48, 64, 80, 96],
+    "success_threshold_quantile": 0.995,
+    "relative_gain_definition": "(full_auc - strongest_non_oracle_auc) / (1 - strongest_non_oracle_auc)",
+    "reported": ["prefix_ndcg", "enrichment", "simple_regret", "cost_to_hit", "adaptation_budget", "function_retention", "post_patch_next_batch_gain"]
+  },
+  "gpu": {"device": "cuda:0", "cpu_model_fallback": false, "ridge_alpha": 0.1},
+  "diagnostic_success_conditions": {
+    "oracle_beats_random": true,
+    "full_beats_static": true,
+    "full_beats_flat": true,
+    "full_episode_wins_vs_strongest_out_of_4": 3,
+    "corruption_performance_spearman_at_most": -0.5
+  },
+  "reporting": {"retain_all_failures": true, "do_not_use_development_seeds_for_later_confirmation": true, "official_test_labels_read": false}
+}

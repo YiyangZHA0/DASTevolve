@@ -1,0 +1,104 @@
+{
+  "schema_version": "dastbench.trpb.closed_loop_evolution_protocol.v2",
+  "status": "preregistered_public_development_confirmatory",
+  "case_id": "trpb",
+  "supersedes": {
+    "protocol": "trpb_closed_loop_evolution_protocol_v1.json",
+    "protocol_sha256": "26b9d3a82e4173e27b3668851a042602d28d1a48169c0b9e7c7bbb5b025b396a",
+    "reason": "seed 64 was used for a no-score GPU runtime precheck that exposed fit RMSE; v2 reserves untouched seeds before implementation or outcome inspection"
+  },
+  "claim_scope": "mechanism-controlled closed-loop evolution with real TrpB sequences; not a pure experimental-activity or wet-lab superiority claim",
+  "official_test_labels_may_be_read": false,
+  "protocol_freeze": {
+    "results_may_not_change_thresholds": true,
+    "failed_runs_are_retained": true,
+    "confirmatory_episode_seeds": [80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95],
+    "precheck_seed_excluded": 64
+  },
+  "data": {
+    "candidate_roles": ["fit_train", "dev"],
+    "sequence_and_experimental_target_are_real": true,
+    "policy_label_access": "only the common initial panel and each arm's queried batches",
+    "initial_panel_size": 32,
+    "candidate_pool_construction": "deterministic episode-seed hash partition; labels are hidden from policies"
+  },
+  "evolution": {
+    "rounds": 12,
+    "batch_size": 16,
+    "environment_shift_before_round": 7,
+    "phase_a_rounds": [1, 2, 3, 4, 5, 6],
+    "phase_b_rounds": [7, 8, 9, 10, 11, 12],
+    "same_initial_panel_across_arms": true,
+    "same_query_budget_across_arms": true,
+    "query_without_replacement": true,
+    "refit_after_every_revealed_batch": true,
+    "selection_rule": "top predicted hidden objective with variant_id tie break"
+  },
+  "objective": {
+    "experimental_activity_weight": 0.25,
+    "executable_ast_program_weight": 0.75,
+    "normalization": "initial-panel statistics only within each phase",
+    "phase_a_program_seed_offset": 1000,
+    "phase_b_program_seed_offset": 2000,
+    "goal_shift": "phase B preserves normalized experimental activity and changes the executable selection program",
+    "higher_is_better": true
+  },
+  "dual_ast": {
+    "design_ast": "structural and functional mutation modules used to generate/rank candidates",
+    "evaluator_ast": "phase, objective weights, hard constraints, evidence confidence and abstention state",
+    "initial_design_ast_corruption": 1.0,
+    "llm_patch_rounds": [2, 7],
+    "llm_receipt_required": true,
+    "patch_must_be_normalized_and_executable": true,
+    "patch_locality_is_reported": true,
+    "future_hidden_targets_and_confirmatory_seeds_are_absent_from_prompts": true
+  },
+  "arms": [
+    "full_dast_llm_dual_ast",
+    "static_dast",
+    "single_ast_llm",
+    "flat_llm_memory",
+    "bayesian_ridge_onehot",
+    "random_search",
+    "oracle_dast_upper_bound"
+  ],
+  "fairness": {
+    "primary_competitors": ["static_dast", "single_ast_llm", "flat_llm_memory", "bayesian_ridge_onehot", "random_search"],
+    "oracle_is_not_a_competitor": true,
+    "identical_experimental_query_budget": true,
+    "llm_tokens_and_wall_time_reported_separately": true,
+    "no_arm_may_read_unqueried_objective_values": true
+  },
+  "gpu": {"device": "cuda:0", "cpu_model_fallback": false, "ridge_alpha": 0.1},
+  "metrics": {
+    "primary": "sample_efficiency_auc",
+    "reported": ["success_at_k", "enrichment_at_k", "ndcg_at_k", "simple_regret", "sample_efficiency_auc", "cost_to_hit", "adaptation_budget", "function_retention", "patch_locality", "repair_speed", "experimental_activity_best_so_far"],
+    "success_threshold": "episode objective 95th percentile over the hidden candidate pool",
+    "budgets": [32, 64, 96, 128, 160, 192, 224]
+  },
+  "causal_audits": {
+    "required": ["full_vs_static_ast", "full_vs_single_ast", "full_vs_flat_llm_memory", "correct_patch_vs_random_capacity_preserving_patch", "design_ast_corruption_curve", "evaluator_ast_freeze", "post_patch_next_batch_gain"],
+    "corruption_levels": [0.0, 0.25, 0.5, 0.75, 1.0]
+  },
+  "acceptance": {
+    "full_dast_must_win": true,
+    "minimum_episode_wins_vs_strongest_non_oracle_out_of_16": 12,
+    "minimum_mean_sample_efficiency_auc_relative_gain": 0.2,
+    "maximum_mean_cost_to_hit_ratio": 0.7,
+    "maximum_mean_adaptation_budget_ratio": 0.7,
+    "minimum_post_patch_next_batch_gain": 0.05,
+    "minimum_function_retention": 0.8,
+    "paired_bootstrap_95pct_lower_bound": 0.0,
+    "maximum_corruption_severity_score_spearman": -0.5,
+    "full_must_beat_static_and_flat_llm_separately": true
+  },
+  "reporting": {
+    "development_only": true,
+    "report_all_arms_and_all_seeds": true,
+    "report_failed_gates_without_reinterpretation": true,
+    "report_mechanism_controlled_and_experimental_activity_results_separately": true,
+    "retain_iterative_v1_raw_target_failure_as_scope_boundary": true,
+    "gpu_fit_receipt_required": true,
+    "llm_prompt_response_hashes_required": true
+  }
+}

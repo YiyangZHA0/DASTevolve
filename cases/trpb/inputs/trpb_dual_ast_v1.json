@@ -1,0 +1,117 @@
+{
+  "case_id": "trpb",
+  "evidence_boundary": {
+    "candidate_pool_statistics_are_label_free": true,
+    "hidden_test_labels_used": false,
+    "official_test_candidate_sequences_used_for_training": false,
+    "structural_module_basis": "public variable-position windows and visible library co-occurrence only"
+  },
+  "functional_ast": {
+    "nodes": [
+      {
+        "id": "peripheral_tuning",
+        "mapped_structural_nodes": ["segment_104_108", "segment_117_119"]
+      },
+      {
+        "id": "allosteric_tuning",
+        "mapped_structural_nodes": ["allosteric_162_166_301"]
+      },
+      {
+        "id": "core_chemistry",
+        "mapped_structural_nodes": ["core_left_182_186", "core_right_227_231"]
+      }
+    ]
+  },
+  "mapping_edges": [
+    {"functional": "peripheral_tuning", "structural": "segment_104_108", "type": "realizes"},
+    {"functional": "peripheral_tuning", "structural": "segment_117_119", "type": "realizes"},
+    {"functional": "allosteric_tuning", "structural": "allosteric_162_166_301", "type": "realizes"},
+    {"functional": "core_chemistry", "structural": "core_left_182_186", "type": "realizes"},
+    {"functional": "core_chemistry", "structural": "core_right_227_231", "type": "realizes"}
+  ],
+  "schema_version": "dastbench.trpb.dual_ast.v1",
+  "shuffled_mapping_ablation": {
+    "constraint": "preserves structural-node capacities and has no position assigned to its true structural node",
+    "position_to_structural_node": {
+      "104": "core_left_182_186",
+      "105": "core_right_227_231",
+      "106": "segment_117_119",
+      "107": "allosteric_162_166_301",
+      "108": "allosteric_162_166_301",
+      "117": "allosteric_162_166_301",
+      "118": "core_left_182_186",
+      "119": "core_left_182_186",
+      "162": "core_right_227_231",
+      "166": "core_right_227_231",
+      "182": "segment_117_119",
+      "183": "segment_104_108",
+      "184": "segment_117_119",
+      "185": "segment_104_108",
+      "186": "core_right_227_231",
+      "227": "segment_104_108",
+      "228": "core_left_182_186",
+      "230": "segment_104_108",
+      "231": "core_left_182_186",
+      "301": "segment_104_108"
+    },
+    "seed": 20260803
+  },
+  "structural_ast": {
+    "nodes": [
+      {
+        "id": "segment_104_108",
+        "ordered_positions_1based": [104, 105, 106, 107, 108],
+        "positions_1based": [104, 105, 106, 107, 108]
+      },
+      {
+        "id": "segment_117_119",
+        "ordered_positions_1based": [117, 118, 119],
+        "positions_1based": [117, 118, 119]
+      },
+      {
+        "id": "allosteric_162_166_301",
+        "ordered_positions_1based": [162, 166, 301],
+        "positions_1based": [162, 166, 301]
+      },
+      {
+        "id": "core_left_182_186",
+        "ordered_positions_1based": [182, 183, 184, 185, 186],
+        "positions_1based": [182, 183, 184, 185, 186]
+      },
+      {
+        "id": "core_right_227_231",
+        "ordered_positions_1based": [227, 228, 230, 231],
+        "positions_1based": [227, 228, 230, 231]
+      }
+    ]
+  },
+  "typed_coupling_edges": [
+    {
+      "from": "core_left_182_186",
+      "to": "core_right_227_231",
+      "type": "catalytic_core_composition"
+    },
+    {
+      "from": "allosteric_162_166_301",
+      "to": "core_right_227_231",
+      "type": "allosteric_modulation"
+    }
+  ],
+  "v1_model_contract": {
+    "flat_features_shared_by_all_learned_arms": [
+      "position_residue",
+      "global_residue_bag",
+      "global_ordered_residue_pairs",
+      "masked_lm_prior_statistics"
+    ],
+    "full_dast_features": [
+      "structural_node_residue",
+      "functional_node_residue",
+      "structural_node_ordered_pair_expert",
+      "functional_node_ordered_pair_compositor",
+      "node_local_prior_statistics"
+    ],
+    "shuffled_mapping_difference": "only position-to-structural-node mapping is permuted",
+    "test_label_adaptation": false
+  }
+}

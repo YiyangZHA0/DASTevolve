@@ -1,0 +1,71 @@
+{
+  "functional_nodes": [
+    {
+      "id": "peripheral_tuning",
+      "mapped_structural_nodes": [
+        "segment_104_108",
+        "core_left_182_186"
+      ]
+    },
+    {
+      "id": "allosteric_tuning",
+      "mapped_structural_nodes": [
+        "allosteric_162_166_301"
+      ]
+    },
+    {
+      "id": "core_chemistry",
+      "mapped_structural_nodes": [
+        "segment_117_119",
+        "core_right_227_231"
+      ]
+    }
+  ],
+  "structural_nodes": [
+    {
+      "id": "segment_104_108",
+      "positions_1based": [
+        104,
+        105,
+        106,
+        107,
+        166
+      ]
+    },
+    {
+      "id": "segment_117_119",
+      "positions_1based": [
+        117,
+        119,
+        230
+      ]
+    },
+    {
+      "id": "allosteric_162_166_301",
+      "positions_1based": [
+        118,
+        162,
+        301
+      ]
+    },
+    {
+      "id": "core_left_182_186",
+      "positions_1based": [
+        108,
+        182,
+        183,
+        185,
+        227
+      ]
+    },
+    {
+      "id": "core_right_227_231",
+      "positions_1based": [
+        184,
+        186,
+        228,
+        231
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "calls": 8,
+  "confirmatory_seeds_absent_from_prompts": true,
+  "exact_by_phase": {
+    "a": 4,
+    "b": 4
+  },
+  "future_hidden_targets_absent_from_prompts": true,
+  "llm_receipts_sha256": "2a26dbc9aadfb2a7abd47de4775f8390c33f0036f5172ad561c707003c1c1d8f",
+  "minimum_exact_per_phase": 3,
+  "model": "gpt-5.6-sol",
+  "official_test_labels_read": false,
+  "phase_a_ast_sha256": "a6b90bf4dddd4fb4290d63c3843e779cff3f2b96f4135d90f0c94f9fc1b7ab46",
+  "phase_a_ast_value_hash": "8e5f0e698b2b7e477be95d77090405e258d0468de765fd242f5962bcf19ba44c",
+  "phase_b_ast_sha256": "2853b148caa3f2b780897b7402c81052bfaffca4c861db2b3f7ea4a31c6bd0bc",
+  "phase_b_ast_value_hash": "804d5a3e346c382ad6f8581b482fa829e63a333a1735f8e2fc0eceeb2df73706",
+  "prompts_sha256": "116676335c0019bebb264730062b98ecd1fb3d4a92fe3ee50dbc1df0977a81e1",
+  "protocol_sha256": "3a6b76ea750ef5f3ce45275a218d71e603a2220a6900c1f9c1aedad99f8491e4",
+  "schema_version": "dastbench.trpb.closed_loop_llm_patches.v1",
+  "source_run_sha256": "335db9f68dc9fbc195f5b5331da53f52f0470d478462540956461013f65ce06f",
+  "status": "REAL_LLM_DUAL_AST_PATCHES_VALIDATED",
+  "archived_llm_receipts_sha256": "0c05187f55c0d1f3ec1930fb154072dac1c98dc95306343d5597e0db1bf942d3"
+}

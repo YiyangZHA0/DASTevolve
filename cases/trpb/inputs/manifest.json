@@ -1,0 +1,58 @@
+{
+  "official_test_labels_read": false,
+  "archived_source_run_sha256": "335db9f68dc9fbc195f5b5331da53f52f0470d478462540956461013f65ce06f",
+  "inputs": {
+    "reference.json": {
+      "path": "reference.json",
+      "sha256": "2ca5de59dd54c898417d1e75bb344ea41d63c4951e9782bc6a24805d13ebcc3a"
+    },
+    "visible_observations.parquet": {
+      "path": "visible_observations.parquet",
+      "sha256": "a12a667dd192043e65e490e8bca83f36f381fe1712d4e6610a4fd459ffbcd9fc"
+    },
+    "masked_marginals.parquet": {
+      "path": "masked_marginals.parquet",
+      "sha256": "eb92879b32acdf774f410f64d10046befe0c2fc8603e41272042cba626a59341"
+    },
+    "trpb_dual_ast_v1.json": {
+      "path": "trpb_dual_ast_v1.json",
+      "sha256": "f408ce3c9e17db5296682d8cd774c6bb4cccd8b18c34a4d3feeba57f018ccf29"
+    }
+  },
+  "data_sources": {
+    "experimental_measurements": {
+      "authors": "Johnston et al. (2024)",
+      "article": "https://doi.org/10.1073/pnas.2400439121",
+      "dataset": "https://data.caltech.edu/records/h5rah-5z170",
+      "license": "CC0-1.0"
+    },
+    "processed_dataset": {
+      "authors": "Didi et al.",
+      "dataset": "FLIP2",
+      "record": "https://doi.org/10.5281/zenodo.18433203",
+      "file": "trpb/by_position.csv.gz",
+      "download": "https://zenodo.org/records/18433203/files/trpb/by_position.csv.gz?download=1",
+      "sha256": "924a3f4942d89d123856905caac60c2a6739f2bdd92e879caafe9b5e3619cf17",
+      "license": "CC-BY-4.0"
+    },
+    "included_observations": {
+      "input": "visible_observations.parquet",
+      "target": "FLIP2 target",
+      "selection": "Rows from the upstream train split. The validation flag assigns rows to dev (true) and fit_train (false).",
+      "roles": {
+        "fit_train": 31557,
+        "dev": 7889
+      }
+    },
+    "benchmark_inputs": "The reference, AST, and masked-marginal prior are frozen benchmark inputs. The search scripts combine experimental targets with the phase-specific modular objective at runtime."
+  },
+  "recorded_selections": {
+    "path": "query_order.parquet",
+    "sha256": "080b217224482eb53570b70d389085a6326db1caa4035913d05ee6c53a21d06c",
+    "description": "Ordered variant IDs selected by the original searches. Used only for rescoring the recorded trajectories.",
+    "source_query_table_sha256": {
+      "archive": "3333454f1b0b6490e13aac0c6e8dc3d5670f99d2f58e509e17d18ce324fc9e3e",
+      "initial_panel": "a2678dd35cafcd41047172357812a78d4d06c85a4d9214d66bb5c0b5ab54eb46"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "allowed_variable_positions_1based": [
+    104,
+    105,
+    106,
+    107,
+    108,
+    117,
+    118,
+    119,
+    162,
+    166,
+    182,
+    183,
+    184,
+    185,
+    186,
+    227,
+    228,
+    230,
+    231,
+    301
+  ],
+  "core_parent_state": "VFVS",
+  "core_positions_1based": [
+    183,
+    184,
+    227,
+    228
+  ],
+  "numbering": "Tm9D8*_construct_1based",
+  "reference_id": "trpb_tm9d8star_construct_389",
+  "schema_version": "dastbench.trpb.v0",
+  "sequence_length": 389,
+  "sequence_sha256": "8a0792def4d2f8b9fa91eb32613ade22e1db02a19372e44363631d22b33e979d",
+  "validation": {
+    "all_candidate_differences_within_allowed_positions": true,
+    "claim": "dataset-internal canonical reference for the FLIP2 by_position adapter",
+    "exact_zero_mutation_candidate_count_in_flip2": 1,
+    "external_caltech_raw_fasta_crosscheck": "deferred; raw archive is not required for minimal v0"
+  }
+}

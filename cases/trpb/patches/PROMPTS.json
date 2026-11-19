@@ -1,0 +1,474 @@
+{
+  "confirmatory_seeds_absent_as_inputs": true,
+  "phase_a": {
+    "allowed_positions_1based": [
+      104,
+      105,
+      106,
+      107,
+      108,
+      117,
+      118,
+      119,
+      162,
+      166,
+      182,
+      183,
+      184,
+      185,
+      186,
+      227,
+      228,
+      230,
+      231,
+      301
+    ],
+    "anti_leakage": {
+      "confirmatory_episode_seeds_80_95": "absent and forbidden",
+      "future_hidden_candidate_targets": "absent and forbidden",
+      "official_test_labels": "absent and forbidden",
+      "tools_files_or_network": "do not request or use"
+    },
+    "constraints": {
+      "all_positions_exactly_once": true,
+      "all_structural_nodes_mapped_exactly_once": true,
+      "functional_node_count": [
+        2,
+        6
+      ],
+      "identifiers": "preserve current lowercase snake_case identifiers",
+      "output_keys_exactly": [
+        "rationale",
+        "structural_nodes",
+        "functional_nodes"
+      ],
+      "structural_node_count": [
+        3,
+        8
+      ]
+    },
+    "current_design_ast": {
+      "functional_nodes": [
+        {
+          "id": "peripheral_tuning",
+          "mapped_structural_nodes": [
+            "segment_104_108",
+            "segment_117_119"
+          ]
+        },
+        {
+          "id": "allosteric_tuning",
+          "mapped_structural_nodes": [
+            "allosteric_162_166_301"
+          ]
+        },
+        {
+          "id": "core_chemistry",
+          "mapped_structural_nodes": [
+            "core_left_182_186",
+            "core_right_227_231"
+          ]
+        }
+      ],
+      "structural_nodes": [
+        {
+          "id": "segment_104_108",
+          "positions_1based": [
+            118,
+            162,
+            182,
+            183,
+            231
+          ]
+        },
+        {
+          "id": "segment_117_119",
+          "positions_1based": [
+            106,
+            185,
+            228
+          ]
+        },
+        {
+          "id": "allosteric_162_166_301",
+          "positions_1based": [
+            117,
+            119,
+            184
+          ]
+        },
+        {
+          "id": "core_left_182_186",
+          "positions_1based": [
+            105,
+            166,
+            227,
+            230,
+            301
+          ]
+        },
+        {
+          "id": "core_right_227_231",
+          "positions_1based": [
+            104,
+            107,
+            108,
+            186
+          ]
+        }
+      ]
+    },
+    "decision_rule": "Return one complete AST JSON. A partial patch or prose-only response is invalid.",
+    "evaluator_ast_feedback": {
+      "change_detected": "initial executable Design AST is inconsistent with observed mutation-module co-occurrence",
+      "instruction": "recover modules from the co-occurrence evidence; do not invent positions",
+      "label_free_mutation_set_counts": [
+        {
+          "count": 5553,
+          "positions": [
+            105,
+            106,
+            107
+          ]
+        },
+        {
+          "count": 5476,
+          "positions": [
+            104,
+            105,
+            106
+          ]
+        },
+        {
+          "count": 5475,
+          "positions": [
+            106,
+            107,
+            108
+          ]
+        },
+        {
+          "count": 5264,
+          "positions": [
+            162,
+            166,
+            301
+          ]
+        },
+        {
+          "count": 5261,
+          "positions": [
+            117,
+            118,
+            119
+          ]
+        },
+        {
+          "count": 302,
+          "positions": [
+            104,
+            105
+          ]
+        },
+        {
+          "count": 298,
+          "positions": [
+            104,
+            106
+          ]
+        },
+        {
+          "count": 298,
+          "positions": [
+            106,
+            108
+          ]
+        },
+        {
+          "count": 296,
+          "positions": [
+            183,
+            184
+          ]
+        },
+        {
+          "count": 292,
+          "positions": [
+            117,
+            118
+          ]
+        },
+        {
+          "count": 289,
+          "positions": [
+            117,
+            119
+          ]
+        },
+        {
+          "count": 287,
+          "positions": [
+            118,
+            119
+          ]
+        },
+        {
+          "count": 283,
+          "positions": [
+            105,
+            107
+          ]
+        },
+        {
+          "count": 281,
+          "positions": [
+            166,
+            301
+          ]
+        },
+        {
+          "count": 281,
+          "positions": [
+            162,
+            301
+          ]
+        },
+        {
+          "count": 281,
+          "positions": [
+            105,
+            106
+          ]
+        },
+        {
+          "count": 280,
+          "positions": [
+            107,
+            108
+          ]
+        },
+        {
+          "count": 279,
+          "positions": [
+            106,
+            107
+          ]
+        },
+        {
+          "count": 276,
+          "positions": [
+            162,
+            166
+          ]
+        },
+        {
+          "count": 276,
+          "positions": [
+            227,
+            228
+          ]
+        },
+        {
+          "count": 18,
+          "positions": [
+            119
+          ]
+        },
+        {
+          "count": 17,
+          "positions": [
+            107
+          ]
+        },
+        {
+          "count": 17,
+          "positions": [
+            108
+          ]
+        },
+        {
+          "count": 17,
+          "positions": [
+            184
+          ]
+        }
+      ],
+      "node_identifier_semantics": "node identifiers survived corruption and name the intended locality"
+    },
+    "phase": "a",
+    "task": "Patch the executable TrpB Design AST after evaluator feedback."
+  },
+  "phase_b": {
+    "allowed_positions_1based": [
+      104,
+      105,
+      106,
+      107,
+      108,
+      117,
+      118,
+      119,
+      162,
+      166,
+      182,
+      183,
+      184,
+      185,
+      186,
+      227,
+      228,
+      230,
+      231,
+      301
+    ],
+    "anti_leakage": {
+      "confirmatory_episode_seeds_80_95": "absent and forbidden",
+      "future_hidden_candidate_targets": "absent and forbidden",
+      "official_test_labels": "absent and forbidden",
+      "tools_files_or_network": "do not request or use"
+    },
+    "constraints": {
+      "all_positions_exactly_once": true,
+      "all_structural_nodes_mapped_exactly_once": true,
+      "functional_node_count": [
+        2,
+        6
+      ],
+      "identifiers": "preserve current lowercase snake_case identifiers",
+      "output_keys_exactly": [
+        "rationale",
+        "structural_nodes",
+        "functional_nodes"
+      ],
+      "structural_node_count": [
+        3,
+        8
+      ]
+    },
+    "current_design_ast": {
+      "functional_nodes": [
+        {
+          "id": "peripheral_tuning",
+          "mapped_structural_nodes": [
+            "segment_104_108",
+            "segment_117_119"
+          ]
+        },
+        {
+          "id": "allosteric_tuning",
+          "mapped_structural_nodes": [
+            "allosteric_162_166_301"
+          ]
+        },
+        {
+          "id": "core_chemistry",
+          "mapped_structural_nodes": [
+            "core_left_182_186",
+            "core_right_227_231"
+          ]
+        }
+      ],
+      "structural_nodes": [
+        {
+          "id": "segment_104_108",
+          "positions_1based": [
+            104,
+            105,
+            106,
+            107,
+            108
+          ]
+        },
+        {
+          "id": "segment_117_119",
+          "positions_1based": [
+            117,
+            118,
+            119
+          ]
+        },
+        {
+          "id": "allosteric_162_166_301",
+          "positions_1based": [
+            162,
+            166,
+            301
+          ]
+        },
+        {
+          "id": "core_left_182_186",
+          "positions_1based": [
+            182,
+            183,
+            184,
+            185,
+            186
+          ]
+        },
+        {
+          "id": "core_right_227_231",
+          "positions_1based": [
+            227,
+            228,
+            230,
+            231
+          ]
+        }
+      ]
+    },
+    "decision_rule": "Return one complete AST JSON. A partial patch or prose-only response is invalid.",
+    "evaluator_ast_feedback": {
+      "change_detected": "Evaluator AST detected a new selection environment before round 7",
+      "evidence_scope": "aggregated evaluator node-affinity feedback from the frozen development calibration; no confirmatory episode seed or future candidate target is included",
+      "functional_mapping_status": "functional meanings are retained, but evaluator conflict evidence requires the displayed local two-edge remap",
+      "instruction": "apply the smallest complete executable patch consistent with the new affinity evidence",
+      "new_functional_mapping_by_node": {
+        "allosteric_tuning": [
+          "allosteric_162_166_301"
+        ],
+        "core_chemistry": [
+          "segment_117_119",
+          "core_right_227_231"
+        ],
+        "peripheral_tuning": [
+          "segment_104_108",
+          "core_left_182_186"
+        ]
+      },
+      "new_position_affinity_by_surviving_node_identifier": {
+        "allosteric_162_166_301": [
+          118,
+          162,
+          301
+        ],
+        "core_left_182_186": [
+          108,
+          182,
+          183,
+          185,
+          227
+        ],
+        "core_right_227_231": [
+          184,
+          186,
+          228,
+          231
+        ],
+        "segment_104_108": [
+          104,
+          105,
+          106,
+          107,
+          166
+        ],
+        "segment_117_119": [
+          117,
+          119,
+          230
+        ]
+      }
+    },
+    "phase": "b",
+    "task": "Patch the executable TrpB Design AST after evaluator feedback."
+  }
+}
