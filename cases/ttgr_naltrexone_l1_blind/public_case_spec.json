@@ -1,0 +1,44 @@
+{
+  "schema_version": "ttgr.public_runtime_spec.v1",
+  "case_id": "ttgr_naltrexone_l1_blind",
+  "claim_scope": "structure-derived ranking proxy requiring reporter validation",
+  "protein": {
+    "name": "TtgR",
+    "source_chain_id": "T",
+    "length": 210,
+    "sequence": "MVRRTKEEAQETRAQIIEAAERAFYKRGVARTTLADIAELAGVTRGAIYWHFNNKAELVQALLDSLHETHDHLARASESEDEVDPLGCMRKLLLQVFNELVLDARTRRINEILHHKCEFTDDMCEIRQQRQSAVLDCHKGITLALANAVRRGQLPGELDAERAAVAMFAYVDGLIRRWLLLPDSVDLLGDVEKWVDTGLDMLRLSPALRK"
+  },
+  "design_contract": {
+    "indexing": "zero_based",
+    "library_positions": [66, 69, 73, 77, 88, 91, 92, 95, 109, 112, 113],
+    "allowed_residues": {
+      "66": "EHKT",
+      "69": "FHL",
+      "73": "AILV",
+      "77": "EQ",
+      "88": "FILMV",
+      "91": "AILMTV",
+      "92": "ILW",
+      "95": "FILV",
+      "109": "FMN",
+      "112": "AFL",
+      "113": "FHY"
+    },
+    "max_candidate_mutations": 4,
+    "active_ast_positions_per_round": [4, 8],
+    "active_structural_nodes_per_round": [1, 3],
+    "all_other_positions": "preserve_parent"
+  },
+  "states": [
+    {"name": "candidate_apo", "role": "fold/dimer and apo-repression structural guardrail"},
+    {"name": "candidate_plus_naltrexone", "role": "target-ligand structural proxy"},
+    {"name": "candidate_plus_endoxifen", "role": "relative counter-ligand structural proxy"},
+    {"name": "candidate_plus_tamoxifen", "role": "relative counter-ligand structural proxy"}
+  ],
+  "truth_boundary": [
+    "Predicted structure confidence and contacts do not establish reporter response.",
+    "The apo-repression term is a structural guardrail, not a DNA-binding or expression measurement.",
+    "All new candidates are prediction-only until tested with basal and ligand-dependent reporters."
+  ],
+  "withheld_data_policy": "No successful-variant identity, successful-variant coordinates, or experimental activity label is part of this runtime package."
+}

@@ -72,3 +72,4 @@ outerloop = [
 "cases.asyn_c_terminal_hotspot_binder" = ["*.json", "*.yaml", "prompts/*.txt"]
 "cases.cab_lys3_hewl_cdr_recovery" = ["*.json", "*.yaml", "prompts/*.txt"]
 "cases.aph3iia_kanamycin_active_site_preservation" = ["*.json", "*.yaml", "prompts/*.txt"]
+"cases.ttgr_naltrexone_l1_blind" = ["*.json", "*.yaml"]

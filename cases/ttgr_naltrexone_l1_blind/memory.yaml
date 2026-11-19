@@ -1,0 +1,9 @@
+case_id: ttgr_naltrexone_l1_blind
+schema_version: ast_case_memory_v1
+stable_priors:
+  aa_prior:
+    note: Site-specific hard alphabets are injected by initial_program.py; no successful-variant residues are stored here.
+adaptive_memory:
+  recent_runs: []
+  motif_memory: {}
+  node_level_statistics: {}

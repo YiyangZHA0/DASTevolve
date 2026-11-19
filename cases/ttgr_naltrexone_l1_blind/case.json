@@ -1,0 +1,24 @@
+{
+  "schema_version": "astevolve.case_manifest.v1",
+  "case_id": "ttgr_naltrexone_l1_blind",
+  "name": "TtgR naltrexone L1 blind baseline",
+  "task_type": "multistate_allosteric_transcription_factor_design",
+  "design_state_path": "design_state.json",
+  "memory_path": "memory.yaml",
+  "entry_program": "initial_program.py",
+  "config_path": "config.yaml",
+  "scientific_spec": "public_case_spec.json",
+  "lifecycle": {
+    "schema_version": "astevolve.case_lifecycle.v1",
+    "status": "active",
+    "default_eligible": false,
+    "smoke_eligible": true,
+    "formal_eligible": false,
+    "explicit_run_only": true
+  },
+  "launcher_defaults": {
+    "inner_iterations": 3,
+    "progen_weight": 0.0
+  },
+  "notes": "Blind L1 runtime. Only WT, the eleven published library positions, their observed amino-acid alphabets, and public ligand identities are visible. Experimental activity labels and successful-variant identities are absent."
+}
