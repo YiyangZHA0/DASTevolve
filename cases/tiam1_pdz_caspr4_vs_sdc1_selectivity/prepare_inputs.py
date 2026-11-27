@@ -1,5 +1,6 @@
 """Build the TIAM1 strict preflight bundle from this checkout and a fresh reference prediction."""
 
+import argparse
 import hashlib
 import json
 import os
@@ -25,6 +26,17 @@ def _write(path, content):
 
 def _sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _verify_bundle(bundle):
+    manifest = bundle / "case.json"
+    verify_case_readiness(bundle / "readiness.json", manifest)
+    evidence = json.loads((bundle / "recorded_evidence.json").read_text(encoding="utf-8"))
+    for item in evidence["provenance"]["source_files"]:
+        path = (bundle / item["relative_path"]).resolve()
+        if not path.is_relative_to(bundle) or not path.is_file() or _sha(path) != item["sha256"]:
+            raise ValueError(f"Missing or changed TIAM1 reference artifact: {item['role']}")
+    return manifest
 
 
 def _record_evidence(bundle, manifest):
@@ -94,12 +106,13 @@ def _record_evidence(bundle, manifest):
 def prepare_run(manifest: Path, output: Path) -> Path:
     """Create and verify the checked reference pack once per run, outside the checkout."""
     output = output.resolve()
+    if output.is_relative_to(Path(__file__).resolve().parents[2]):
+        raise ValueError("Choose a TIAM1 output directory outside the checkout")
     output.mkdir(parents=True, exist_ok=True)
     destination = output / "tiam1-preflight"
     final_manifest = destination / "case.json"
     if final_manifest.exists():
-        verify_case_readiness(destination / "readiness.json", final_manifest)
-        return final_manifest
+        return _verify_bundle(destination)
     source = manifest.resolve().parent
     config = json.loads(manifest.read_text(encoding="utf-8"))
     with tempfile.TemporaryDirectory(prefix=".tiam1-preflight-", dir=output) as temporary:
@@ -121,5 +134,11 @@ def prepare_run(manifest: Path, output: Path) -> Path:
         if not report.ready_for_smoke:
             raise ValueError(f"TIAM1 preflight failed: {report.failure_codes}")
         os.rename(bundle, destination)
-    verify_case_readiness(destination / "readiness.json", final_manifest)
-    return final_manifest
+    return _verify_bundle(destination)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, required=True, help="External run directory")
+    args = parser.parse_args()
+    print(prepare_run(Path(__file__).with_name("case.json"), args.output))

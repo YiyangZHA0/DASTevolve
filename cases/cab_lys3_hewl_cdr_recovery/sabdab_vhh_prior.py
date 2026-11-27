@@ -13,12 +13,12 @@ from typing import Any, Dict, Mapping, Optional
 
 import numpy as np
 
-from astevolve.runtime.paths import data_path, model_root
+from astevolve.runtime.paths import model_root
+from cases.cab_lys3_hewl_cdr_recovery import reference_path
 
 
 REGIONS = ("whole_vhh", "framework", "cdr1", "cdr2", "cdr3")
-DEFAULT_INDEX_DIR = data_path(
-    "cab_lys3_hewl_cdr_recovery",
+DEFAULT_INDEX_DIR = reference_path(
     "sabdab_vhh_reference",
     "embeddings",
     "esm2_t6_8M_UR50D",

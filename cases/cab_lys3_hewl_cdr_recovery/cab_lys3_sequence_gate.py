@@ -8,8 +8,8 @@ import os
 from pathlib import Path
 from typing import Any, Dict, Mapping, Optional
 
-from astevolve.runtime.paths import data_path
 from cases.cab_lys3_hewl_cdr_recovery.sabdab_vhh_prior import (
+    DEFAULT_INDEX_DIR as DEFAULT_SABDAB_INDEX_DIR,
     score_sabdab_vhh_prior,
 )
 
@@ -35,12 +35,6 @@ SABDAB_RULE_POSITIONS = {
     "cdr2": tuple(range(52, 57)),
     "cdr3": tuple(range(98, 108)) + tuple(range(109, 122)),
 }
-DEFAULT_SABDAB_INDEX_DIR = data_path(
-    "cab_lys3_hewl_cdr_recovery",
-    "sabdab_vhh_reference",
-    "embeddings",
-    "esm2_t6_8M_UR50D",
-)
 
 
 def _resampled_residues(sequence: str, length: int) -> tuple[str, ...]:
@@ -162,9 +156,6 @@ def build_sabdab_bootstrap_proposals(
         raise ValueError("SAbDab bootstrap reference table is empty")
     rules = sabdab_position_residue_rules(str(root))
     requested = max(1, int(count))
-    cap = config.get("feasible_parent_bootstrap_cap")
-    if cap is not None and evaluate_pre_model_gate(seqs=root_sequences, config=config)["pass"]:
-        requested = min(requested, max(1, int(cap)))
     start = int(seed) % len(rows)
     proposals: list[tuple[Dict[str, str], Dict[str, Any]]] = []
     seen: set[str] = set()

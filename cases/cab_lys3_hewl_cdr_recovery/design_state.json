@@ -256,7 +256,7 @@
   "evaluator_plugins": [
     "cab_lys3_cpu"
   ],
-  "residue_evidence_catalog": "data://cab_lys3_hewl_cdr_recovery/residue_evidence_catalog.json",
+  "residue_evidence_catalog": "inputs/residue_evidence_catalog.json",
   "residue_evidence_prompt_max_bytes": 32768,
   "global_ast_evolution_policy": {
     "schema_version": "astevolve.ast_evolution_policy.v2",
