@@ -5,7 +5,7 @@ usage() {
   cat <<'EOF'
 Usage: bash scripts/run_case.sh CASE [OPTIONS]
 
-CASE is one of: demo, tiam1, asyn, cab, aph (or the full case directory name).
+CASE is one of: demo, tiam1, asyn, cab, ttgr, aph (or the full case directory name).
 
 Options:
   --iterations N  Number of outer iterations (case config default if omitted).
@@ -72,6 +72,9 @@ case "${case_name}" in
     ;;
   cab|cab_lys3_hewl_cdr_recovery)
     case_slug="cab_lys3_hewl_cdr_recovery"
+    ;;
+  ttgr|ttgr_naltrexone_l1_blind)
+    case_slug="ttgr_naltrexone_l1_blind"
     ;;
   aph|aph3iia_kanamycin_active_site_preservation)
     case_slug="aph3iia_kanamycin_active_site_preservation"

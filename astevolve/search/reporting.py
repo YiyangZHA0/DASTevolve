@@ -314,10 +314,15 @@ def _mcts_select_leaf(
                 and exhausted_token in deferred_expansions
             )
         )
-        if (
-            not proposal_space_exhausted
-            and int(pair.get("available_slots", 0) or 0) > 0
-        ):
+        root_width = cfg.mcts_root_puct_after_passing_children
+        prefer_descendants = (
+            root_width > 0
+            and node_id == root_id
+            and node.get("inner_structure_gate_pass") is True
+            and len(passing_children) >= root_width
+        )
+        local_slot = not proposal_space_exhausted and int(pair.get("available_slots", 0) or 0) > 0
+        if local_slot and not prefer_descendants:
             return node_id
 
         eligible_children = passing_children + bootstrap_children
@@ -330,6 +335,9 @@ def _mcts_select_leaf(
             selected = _find_expandable(child_id, next_path)
             if selected is not None:
                 return selected
+
+        if local_slot:
+            return node_id
 
         # If every traversable child is terminal/exhausted (or high-fidelity
         # gating removed the whole frontier), unlock exactly one additional

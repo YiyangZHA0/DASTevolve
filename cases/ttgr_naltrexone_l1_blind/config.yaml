@@ -11,8 +11,8 @@ convergence_threshold: 0.0001
 early_stopping_metric: final_energy
 
 memory_policy:
-  adaptive_prior_mode: disabled
-  inner_state_scope: evaluation
+  adaptive_prior_mode: "off"
+  inner_state_scope: lineage
 
 llm:
   provider: openai

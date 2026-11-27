@@ -377,6 +377,11 @@ def locked_runtime_defaults(
                 },
             }
         )
+    if sabdab_enabled and FORMAL_INNER_ITERATIONS == 10:
+        # Retain the initial reference bootstrap for an infeasible all-A start.
+        # A feasible parent can instead spend most of its budget on MCTS descendants.
+        defaults["sequence_bootstrap_config"]["feasible_parent_bootstrap_cap"] = 2
+        defaults["mcts_root_puct_after_passing_children"] = 4
     if FORMAL_INNER_ITERATIONS < 30:
         defaults.update(
             {

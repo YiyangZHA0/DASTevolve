@@ -374,6 +374,16 @@ def _protocol() -> Dict[str, Any]:
 
 def _locked_runtime() -> Dict[str, Any]:
     locked = json.loads((_case_root() / "runtime_config.json").read_text(encoding="utf-8"))
+    if os.environ.get("ASTEVOLVE_INNER_ITERATIONS") == "10":
+        # The ten-candidate run needs both breadth and the case's minimum depth.
+        depth = locked["mcts_tree_min_max_depth"]
+        locked["mcts_max_depth"] = depth
+        locked["search_schedule"] = {
+            "phases": {
+                phase: {"mcts_max_depth": depth}
+                for phase in ("explore_ast", "refine_ast", "converge")
+            }
+        }
     model = os.environ.get("ASTEVOLVE_ESMFOLD_MODEL", "facebook/esmfold_v1")
     locked["inner_structure_model_name"] = model
     locked["structure_model_name"] = model

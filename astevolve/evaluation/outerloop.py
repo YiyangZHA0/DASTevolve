@@ -1572,6 +1572,7 @@ def _failed_evaluation(error, *, traceback_text=None):
 
 
     artifacts = {
+        "failure_stage": "evaluation",
         "error": str(error),
         "direction": "minimize",
     }

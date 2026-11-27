@@ -24,7 +24,7 @@
   "required_assets": [
     {
       "role": "residue_evidence_catalog",
-      "path": "data://tiam1_pdz_caspr4_vs_sdc1_selectivity/residue_evidence_catalog.json"
+      "path": "residue_evidence_catalog.json"
     }
   ]
 }

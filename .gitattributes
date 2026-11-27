@@ -2,3 +2,4 @@
 *.sh text eol=lf
 *.env text eol=lf
 *.example text eol=lf
+cases/*/inputs/** -text

@@ -39,6 +39,8 @@ def _tmp_root() -> Path:
 def _protenix_env() -> Dict[str, str]:
     env = os.environ.copy()
     env.setdefault("PROTENIX_ROOT_DIR", str(_DEFAULT_PROTENIX_ROOT))
+    if env.get("ASTEVOLVE_PROTENIX_PYTHON"):
+        env.setdefault("LAYERNORM_TYPE", "torch")
     env.setdefault("TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD", "1")
     env.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
     return env
@@ -98,13 +100,12 @@ def _protenix_command(
 ) -> List[str]:
 
 
-    resolved_conda_env = resolve_protenix_conda_env(conda_env)
+    python = os.environ.get("ASTEVOLVE_PROTENIX_PYTHON")
+    interpreter = [python] if python else [
+        _find_conda_exe(), "run", "-n", resolve_protenix_conda_env(conda_env), "python"
+    ]
     cmd = [
-        _find_conda_exe(),
-        "run",
-        "-n",
-        resolved_conda_env,
-        "python",
+        *interpreter,
         str(Path(__file__).with_name("protenix_worker.py")),
         "--input",
         str(input_json_path),

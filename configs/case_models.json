@@ -1,0 +1,85 @@
+{
+  "cases": {
+    "asyn": [
+      "esmfold"
+    ],
+    "tiam1": [
+      "esmfold",
+      "esm2",
+      "progen",
+      "protenix-common",
+      "protenix-mini"
+    ],
+    "cab": [
+      "protenix-v2",
+      "esm2",
+      "protenix-common"
+    ],
+    "ttgr": [
+      "protenix-common",
+      "protenix-mini"
+    ]
+  },
+  "models": {
+    "esmfold": {
+      "folder": "esmfold_v1",
+      "url": "https://huggingface.co/biohub/esmfold_v1/resolve/75a3841ee059df2bf4d56688166c8fb459ddd97a/",
+      "files": {
+        "config.json": "6b98125e2685fef2875499f6bd7c83968a077993ab53f99bf5581113665f7cc6",
+        "tokenizer_config.json": "bfd8a81f4215e59174634eec71eea99aa1841d8692bdf5c60e9ecaa12904fde8",
+        "vocab.txt": "4c20cc7640bf894d2cdefaa6964ec702fd9b2e7a416abf2a50172d8763f3fc14",
+        "special_tokens_map.json": "9000546299e3cd9007b851ba512167b6f62d274e22fa74485c4ab52aabae0f35",
+        "pytorch_model.bin": "2ee07356b125d1e3e57503c204111fd7323347fc4735d41d3caac57c2a78e116"
+      }
+    },
+    "esm2": {
+      "folder": "esm2_t6_8M_UR50D",
+      "url": "https://huggingface.co/facebook/esm2_t6_8M_UR50D/resolve/c731040fcd8d73dceaa04b0a8e6329b345b0f5df/",
+      "files": {
+        "config.json": "facb9355e8252149f6f99dff5fd1e32e890c3c655362b261d0c81cd6b5839c85",
+        "tokenizer_config.json": "7e9161ecdb548ec45a41cbc6b24aa4476fdd418461f491c4207baa99419a29ad",
+        "vocab.txt": "0b82cc0a7c7cf9e567b1e5892d793285b9fbae822c964ca48696f7db44598e03",
+        "special_tokens_map.json": "3aedcd4211c0d43aec4e607ff60a63255f3174ead795e997350f09a5f8cd9ee1",
+        "model.safetensors": "24c5fa474c48f3b754b86efe752d5f189d2bcd88190fa2270fc92b2ef3034189"
+      }
+    },
+    "progen": {
+      "folder": "progen2-small",
+      "url": "https://huggingface.co/hugohrban/progen2-small/resolve/43237a0b733c6629226a079266d2985c9fdce9b7/",
+      "files": {
+        "config.json": "9d738e772e849c2a4fa3a054b56a4e10f6beeb2cfd723bbd01e43ea3ad187af8",
+        "configuration_progen.py": "e00fde880ae7ea9891033d30fadfeb43afebdc8f5ecf198a000bc66e6ac1fba5",
+        "modeling_progen.py": "b5457329fb3ce35047fb1f03ecf7b983a7a28170033032d3b2a0ea3400d1f0a8",
+        "generation_config.json": "5d96ed7903c0b56b0bfb894ffe2fb9783b57d75eaf58726b81b36a330904fb09",
+        "tokenizer.json": "dbb0ba7691906bec8568a10bb8c8a14ea88b236a061308e3ebdf5207a33f50de",
+        "model.safetensors": "12b6d31fa3127e4c68ca488a322980e39cb3e1d406d6362d2d8fe273725bff79"
+      }
+    },
+    "protenix-common": {
+      "folder": "protenix",
+      "url": "https://protenix.tos-cn-beijing.volces.com/",
+      "files": {
+        "common/clusters-by-entity-40.txt": "1ab4af905e75b382eda8dec59917dc3608bee0729e36b9e71baf860bbe86850c",
+        "common/obsolete_release_date.csv": "a4f3f63ac5d7eebd78b07995cc669b9eccd6f5d8813c9492c9df02868893cf33",
+        "common/components.cif": "bb31ae5cf6c8bc669924313077cb4231ee5ffefd3a20118cd14f3ec89f8bb6a5",
+        "common/components.cif.rdkit_mol.pkl": "d1cfb71f5993a3ebea7c47877022d7f597bbfbaf86e28a4770e957da6c50cd35"
+      }
+    },
+    "protenix-mini": {
+      "folder": "protenix",
+      "url": "https://protenix.tos-cn-beijing.volces.com/",
+      "files": {
+        "checkpoint/protenix_mini_esm_v0.5.0.pt": "1301bba9ad322518eace60fd244ded7904439f55317e90d402cc7a0c06026664",
+        "checkpoint/esm2_t36_3B_UR50D.pt": "7de8b4082ba15891959ab368b77ce3886697af1efb16d3c9e9e7b0c5d3f07500",
+        "checkpoint/esm2_t36_3B_UR50D-contact-regression.pt": "4da500eab246481dc9c8c95bc7b1d02f2803d761c380b0e95186d4a07d0fc84e"
+      }
+    },
+    "protenix-v2": {
+      "folder": "protenix",
+      "url": "https://protenix.tos-cn-beijing.volces.com/",
+      "files": {
+        "checkpoint/protenix-v2.pt": "8f931f9774a396b67033d0e58628e1834f4a1448165e04254b40a780b0c0d599"
+      }
+    }
+  }
+}

@@ -474,6 +474,7 @@ class SAConfig:
 
     mcts_tree_quality_required: bool = False
     mcts_tree_min_root_children: int = 0
+    mcts_root_puct_after_passing_children: int = 0
     mcts_tree_min_branching_nodes: int = 0
     mcts_tree_min_leaves: int = 0
     mcts_tree_min_max_depth: int = 0
@@ -713,6 +714,7 @@ class SAConfig:
         self.mcts_artifact_mode = mode
         for field_name in (
             "mcts_tree_min_root_children",
+            "mcts_root_puct_after_passing_children",
             "mcts_tree_min_branching_nodes",
             "mcts_tree_min_leaves",
             "mcts_tree_min_max_depth",

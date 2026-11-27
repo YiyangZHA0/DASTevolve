@@ -1,0 +1,1414 @@
+{
+  "indexing": "zero_based",
+  "metadata": {
+    "case_id": "asyn_c_terminal_hotspot_binder",
+    "claim_boundary": "Position identity and edit eligibility only; no pre-search structural or binding evidence is asserted.",
+    "initial_sequence_source": "Bagel ASYN-binder-10000-20260806-154251 state 0"
+  },
+  "residues": [
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:0",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 0,
+      "residue": "V",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:1",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 1,
+      "residue": "C",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:2",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 2,
+      "residue": "T",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:3",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 3,
+      "residue": "V",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:4",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 4,
+      "residue": "R",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:5",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 5,
+      "residue": "I",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:6",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 6,
+      "residue": "G",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:7",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 7,
+      "residue": "T",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:8",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 8,
+      "residue": "A",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:9",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 9,
+      "residue": "V",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:10",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 10,
+      "residue": "Q",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:11",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 11,
+      "residue": "W",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:12",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 12,
+      "residue": "S",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:13",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 13,
+      "residue": "T",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:14",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 14,
+      "residue": "W",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:15",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 15,
+      "residue": "V",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:16",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 16,
+      "residue": "R",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:17",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 17,
+      "residue": "N",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:18",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 18,
+      "residue": "I",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:19",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 19,
+      "residue": "M",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:20",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 20,
+      "residue": "G",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:21",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 21,
+      "residue": "K",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:22",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 22,
+      "residue": "L",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:23",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 23,
+      "residue": "P",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:24",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 24,
+      "residue": "C",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:25",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 25,
+      "residue": "L",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:26",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 26,
+      "residue": "G",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:27",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 27,
+      "residue": "T",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:28",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 28,
+      "residue": "P",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:29",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 29,
+      "residue": "Q",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:30",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 30,
+      "residue": "M",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:31",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 31,
+      "residue": "D",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:32",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 32,
+      "residue": "S",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:33",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 33,
+      "residue": "V",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:34",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 34,
+      "residue": "M",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:35",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 35,
+      "residue": "Q",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:36",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 36,
+      "residue": "T",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:37",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 37,
+      "residue": "L",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:38",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 38,
+      "residue": "G",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:39",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 39,
+      "residue": "A",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:40",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 40,
+      "residue": "I",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:41",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 41,
+      "residue": "F",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:42",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 42,
+      "residue": "L",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:43",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 43,
+      "residue": "T",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:44",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 44,
+      "residue": "C",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:45",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 45,
+      "residue": "E",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:46",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 46,
+      "residue": "T",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:47",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 47,
+      "residue": "E",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:48",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 48,
+      "residue": "I",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    },
+    {
+      "chain_id": "B",
+      "conservation": {
+        "available": false,
+        "reason": "No case-owned binder MSA."
+      },
+      "eligible": true,
+      "evidence_id": "asyn:B:49",
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "interface": {
+        "available": false,
+        "reason": "No pre-search interface evidence; evaluate candidate holo interface."
+      },
+      "metadata": {
+        "design_policy_annotation": "bagel_state0_controlled_ablation_position",
+        "hard_protected": false
+      },
+      "position": 49,
+      "residue": "P",
+      "safety_score": 1,
+      "structure": {
+        "available": false,
+        "reason": "No pre-search structure evidence; evaluate candidate holo structure."
+      }
+    }
+  ],
+  "schema_version": "astevolve.residue_evidence_catalog.v1",
+  "sequences": {
+    "B": "VCTVRIGTAVQWSTWVRNIMGKLPCLGTPQMDSVMQTLGAIFLTCETEIP"
+  }
+}

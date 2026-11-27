@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import inspect
 import os
 import sys
 from pathlib import Path
@@ -105,6 +106,16 @@ def main() -> int:
         f"use_msa={use_msa} num_workers={inference_configs['num_workers']} "
         f"need_atom_confidence={inference_configs['need_atom_confidence']}"
     )
+    optional = {"need_atom_confidence": _bool_arg(args.need_atom_confidence)}
+    portable = bool(os.environ.get("ASTEVOLVE_PROTENIX_PYTHON"))
+    for key in ("trimul_kernel", "triatt_kernel"):
+        value = os.environ.get("ASTEVOLVE_PROTENIX_" + key.upper(), "torch" if portable else "")
+        if value:
+            optional[key] = value
+    fusion = os.environ.get("ASTEVOLVE_PROTENIX_ENABLE_FUSION", "false" if portable else "")
+    if fusion:
+        optional["enable_fusion"] = _bool_arg(fusion)
+    supported = inspect.signature(inference_jsons).parameters
     inference_jsons(
         args.input,
         str(out_dir),
@@ -114,6 +125,7 @@ def main() -> int:
         n_step=step,
         n_sample=int(args.sample),
         model_name=args.model_name,
+        **{key: value for key, value in optional.items() if key in supported},
     )
 
     if not _prediction_available(out_dir):

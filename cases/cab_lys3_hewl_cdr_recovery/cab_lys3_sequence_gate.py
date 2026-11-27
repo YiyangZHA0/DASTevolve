@@ -162,6 +162,9 @@ def build_sabdab_bootstrap_proposals(
         raise ValueError("SAbDab bootstrap reference table is empty")
     rules = sabdab_position_residue_rules(str(root))
     requested = max(1, int(count))
+    cap = config.get("feasible_parent_bootstrap_cap")
+    if cap is not None and evaluate_pre_model_gate(seqs=root_sequences, config=config)["pass"]:
+        requested = min(requested, max(1, int(cap)))
     start = int(seed) % len(rows)
     proposals: list[tuple[Dict[str, str], Dict[str, Any]]] = []
     seen: set[str] = set()

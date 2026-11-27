@@ -7,6 +7,41 @@
 DASTevolve is a Dual Abstract Syntax Tree (Dual-AST) protein-design framework with an LLM-guided outer loop and a MCTS inner search loop.
 This repository contains a teaching demo, case studies, and a practical guide for configuring a new case.
 
+## Run a packaged case
+
+Use Linux, Python 3.12 with `venv`, Git, curl, an NVIDIA GPU with a CUDA 12.8-compatible driver, and credentials for an OpenAI-compatible endpoint. The launch command installs the required Python environments, downloads the selected models, checks their SHA-256 hashes and stages the case inputs. Set the three LLM variables in your shell or in a local environment file sourced via `DASTEVOLVE_ENV_FILE`. Keep your API key private.
+
+```bash
+git clone https://github.com/YiyangZHA0/DASTevolve.git
+cd DASTevolve
+export ASTEVOLVE_BOOTSTRAP_PYTHON=python3.12
+export ASTEVOLVE_RUNTIME_ROOT="$HOME/dastevolve-runtime"
+export ASTEVOLVE_LLM_API_BASE="https://your-endpoint.example/v1"
+export ASTEVOLVE_LLM_MODEL="your-model"
+read -rsp "LLM API key: " ASTEVOLVE_LLM_API_KEY && echo
+export ASTEVOLVE_LLM_API_KEY
+bash scripts/quickstart.sh asyn
+```
+
+| Case | Structure model | Included inputs |
+|---|---|---|
+| `asyn` | Classic ESMFold v1 | Residue evidence catalog |
+| `tiam1` | Classic ESMFold v1 and Protenix Mini-ESM | Residue evidence catalog. The run creates a fresh GPU reference for its preflight check. |
+| `cab` | Protenix v2 | Frozen paired/unpaired alignments and VHH reference features. [Sources and attribution](cases/cab_lys3_hewl_cdr_recovery/INPUTS.md) |
+| `ttgr` | Protenix Mini-ESM | Packaged apo and naltrexone-bound state definitions. This case measures a computational pocket proxy. |
+
+For `cab`, supply the exact Protenix-v2 checkpoint if your official download is unavailable. Put it at `${ASTEVOLVE_RUNTIME_ROOT}/models/protenix/checkpoint/protenix-v2.pt` or set `ASTEVOLVE_PROTENIX_V2_URL` to a URL you are authorized to use. The installer verifies the checkpoint against its pinned SHA-256. Upstream provides separate terms for these weights. [Protenix model terms](https://github.com/bytedance/Protenix#license)
+
+The default example evaluates the seed program, then two accepted LLM revisions with a 10-round inner budget each. A revision begins with its predecessor's selected sequences and program. Rejected proposals consume attempt slots. The command exits unsuccessfully if it reaches the proposal limit before completing the requested revisions. The case's own feasibility gates determine scientific success.
+
+```bash
+bash scripts/quickstart.sh cab --plan          # Paths and budget, no downloads
+bash scripts/quickstart.sh cab --prepare-only  # Install and download before requesting a GPU
+bash scripts/quickstart.sh cab --prepared      # Reuse those packages and verify cached weights
+```
+
+On Slurm, run the last command inside a single-GPU allocation. On a multi-GPU machine, use `CUDA_VISIBLE_DEVICES` to give each case its own GPU. Each run creates a new directory under `${ASTEVOLVE_RUNTIME_ROOT}/runs`. Its `outer/verified-rounds.json` records the accepted program IDs, starting and selected sequence hashes, inner-budget counts and scientific gate outcomes. Use `--output /path/to/new-directory` to choose the destination. Model files, logs, generated structures and checkpoints stay outside the checkout. Model weights are fetched from their respective publishers or identified mirrors under their own terms. The exact files and checksums are recorded in [the model manifest](configs/case_models.json).
+
 ## Requirements
 
 - Linux
@@ -77,8 +112,9 @@ python scripts/check_esmfold_evidence.py
 bash scripts/run_case.sh tiam1 --iterations 2 --dry-run
 ```
 
-Scientific cases require external inputs listed in each `case.json` under
-`required_assets`. Place them under `${ASTEVOLVE_DATA_ROOT}/<case_id>/` and run
+For the lower-level launcher, provide the inputs listed in each `case.json` under
+`required_assets`. The packaged quickstart stages its inputs. For other bundles,
+place their inputs under `${ASTEVOLVE_DATA_ROOT}/<case_id>/` and run
 `bash scripts/check_install.sh --all-cases` on Linux.
 
 Run the teaching demo or the Tiam1 case for example used in our case studies:
@@ -88,7 +124,6 @@ bash scripts/run_case.sh demo --iterations 1
 bash scripts/run_case.sh tiam1 --iterations 100
 ## bash scripts/run_case.sh asyn --iterations 100
 ## bash scripts/run_case.sh cab --iterations 100
-## bash scripts/run_case.sh aph --iterations 100
 ```
 
 Outputs are written outside the repository under
