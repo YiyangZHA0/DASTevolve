@@ -1,11 +1,10 @@
 {
   "schema_version": "cab_hewl.frozen_protenix_msa.v1",
   "created_at": "2026-09-12",
-  "purpose": "Shared frozen paired/unpaired MSA templates for every CAB n81 2x2 ablation arm",
+  "purpose": "Frozen paired and unpaired MSA templates for cAb-Lys3 and HEWL",
   "query_rewrite_policy": "At prediction time only the first query row is replaced with the exact same-length candidate sequence; all homolog rows and pair assignments remain frozen.",
   "source": {
     "description": "Retained A3Ms from the archive named cab_lys3_cdr_allA_protenix_v2_msa_20260821; homolog rows came from the CAB WT ColabFold search. Runtime does not reuse the archived query row.",
-    "source_run_plddt": 84.33711242675781,
     "archived_query_scope_note": "The archived query fully alaninized CDR3 but not all 35 positions in the current expanded CDR1/CDR2/CDR3 mask; attach_reused_remote_msa always replaces that query with the exact current candidate."
   },
   "templates": {
