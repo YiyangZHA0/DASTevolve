@@ -1943,9 +1943,6 @@ def _run_mcts_search(
     tree_quality = _mcts_tree_quality_report(tree, cfg)
     history["mcts_tree_quality"] = tree_quality
     round_summary["mcts_tree_quality"] = tree_quality
-    round_summary["mcts_candidate_budget"] = dict(candidate_budget_accounting)
-    if cfg.mcts_root_puct_after_passing_children:
-        round_summary["mcts_root_puct_after_passing_children"] = cfg.mcts_root_puct_after_passing_children
     _attach_proposal_tier_accounting(round_summary, history)
     round_summary["semantic_coverage"] = _semantic_coverage_report(cfg, history)
     round_summary["node_sweep_summary"] = deepcopy(

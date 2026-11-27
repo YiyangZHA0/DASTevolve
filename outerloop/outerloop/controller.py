@@ -902,7 +902,7 @@ class OuterLoop:
             ):
                 detail = (initial_artifacts or {}).get("stderr") or (
                     initial_artifacts or {}
-                ).get("error") or (initial_artifacts or {}).get("error_type") or "unknown evaluation failure"
+                ).get("error_type") or "unknown evaluation failure"
                 raise RuntimeError(
                     f"initial evaluation failed before runtime evidence sealing: {detail}"
                 )
@@ -1403,14 +1403,6 @@ class OuterLoop:
         if final_iteration > 0 and final_iteration % self.config.checkpoint_interval == 0:
             self._save_checkpoint(final_iteration)
 
-    def _select_serial_parent(self, island_id):
-        return self.database.sample_from_island(
-            island_id=island_id,
-            num_inspirations=getattr(
-                self.config.prompt, "num_diverse_programs", self.config.prompt.num_top_programs
-            ),
-        )
-
     async def _run_evolution_serial_with_checkpoints(
         self, start_iteration: int, max_iterations: int, target_score: Optional[float]
     ) -> None:
@@ -1483,7 +1475,14 @@ class OuterLoop:
             reserved_inputs = {}
             parent_bindings = {}
             for reservation in coordinator.plan.reservations:
-                parent, inspirations = self._select_serial_parent(reservation.target_island or 0)
+                parent, inspirations = self.database.sample_from_island(
+                    island_id=reservation.target_island or 0,
+                    num_inspirations=getattr(
+                        self.config.prompt,
+                        "num_diverse_programs",
+                        self.config.prompt.num_top_programs,
+                    ),
+                )
                 reserved_inputs[reservation.proposal_id] = (parent, inspirations)
                 envelope = envelope_from_parent_artifacts(
                     self.database.get_artifacts(parent.id),

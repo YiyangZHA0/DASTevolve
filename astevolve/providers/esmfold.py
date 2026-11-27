@@ -121,7 +121,7 @@ def _start_worker() -> subprocess.Popen[str]:
     )
     _WORKER = subprocess.Popen(
         [str(python), "-m", "astevolve.providers.esmfold_worker"],
-        cwd=str(root) if root.is_dir() else str(project_root),
+        cwd=str(root),
         env=env,
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
@@ -183,28 +183,16 @@ def _load_model() -> Any:
         os.environ.setdefault("HF_HUB_OFFLINE", "1")
         os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
         from bagel.oracles.folding.esmfold import ESMFold
-        from inspect import signature
-
-        config = {"glycine_linker": "", "position_ids_skip": 512}
-        if "use_modal" in signature(ESMFold).parameters:
-            _MODEL = ESMFold(use_modal=False, config={
-                **config, "output_pdb": False, "output_cif": False, "output_atomarray": True,
-            })
-        else:
-            from boileroom.models.esm.core import ESMFoldCore
-
-            class LocalESMFold(ESMFold):
-                def _load(self, config=None):
-                    self.model = ESMFoldCore({**(config or {}), "device": self.device})
-                    model_dir = os.environ.get("ASTEVOLVE_ESMFOLD_MODEL")
-                    if model_dir:
-                        from transformers import AutoTokenizer, EsmForProteinFolding
-
-                        self.model.tokenizer = AutoTokenizer.from_pretrained(model_dir, local_files_only=True)
-                        self.model.model = EsmForProteinFolding.from_pretrained(model_dir, local_files_only=True)
-                        self.model._load()
-
-            _MODEL = LocalESMFold(backend="local", device="cuda:0", config=config)
+        _MODEL = ESMFold(
+            use_modal=False,
+            config={
+                "output_pdb": False,
+                "output_cif": False,
+                "output_atomarray": True,
+                "glycine_linker": "",
+                "position_ids_skip": 512,
+            },
+        )
         return _MODEL
 
 

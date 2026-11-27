@@ -480,9 +480,6 @@ def build_sa_config(
         "mcts_tree_quality_required": bool(
             strategy.get("mcts_tree_quality_required", False)
         ),
-        "mcts_root_puct_after_passing_children": int(
-            strategy.get("mcts_root_puct_after_passing_children", 0)
-        ),
         "mcts_tree_min_root_children": int(
             strategy.get("mcts_tree_min_root_children", 0)
         ),
