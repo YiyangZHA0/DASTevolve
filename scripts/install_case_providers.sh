@@ -31,10 +31,11 @@ case "$runtime/" in "$repo/"*) echo "Choose a runtime directory outside the chec
 "$python" -c 'import sys; sys.exit(0 if sys.version_info[:2] == (3, 12) and sys.platform == "linux" else "Inference workers require Linux and Python 3.12")'
 mkdir -p "$runtime/envs"
 for provider in "${providers[@]}"; do
+  env_dir=$(realpath -m -- "$runtime/envs/$provider")
+  case "$env_dir/" in "$repo/"*) echo "Choose a provider environment outside the checkout." >&2; exit 2 ;; esac
   (
     flock -x 9
     cd "$runtime"
-    env_dir="$runtime/envs/$provider"
     [[ -x "$env_dir/bin/python" ]] || "$python" -m venv "$env_dir"
     py="$env_dir/bin/python"
     torch_source=(--index-url "${ASTEVOLVE_TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu128}")
@@ -47,7 +48,7 @@ for provider in "${providers[@]}"; do
       # and unrelated models. These are the local folding worker dependencies.
       "$py" -m pip install 'transformers==4.57.6' 'numpy>=2.2,<3' 'biotite>=1.4,<3' \
         'biopython>=1.85' 'scipy>=1.12' 'pandas>=2.2.3' 'pydantic>=2.10.6' 'matplotlib>=3.10' \
-        'fire>=0.5' 'modal>=1.1,<2' 'deprecated>=1.2.14' 'rich>=14' pyyaml click
+        'rich>=14' pyyaml
       "$py" -m pip install --no-deps \
         'boileroom @ git+https://github.com/softnanolab/boileroom.git@e343f185710505d43af28e77aadf99d93faa5d1b' \
         'biobagel @ git+https://github.com/softnanolab/bagel.git@a248750576a6e22d57660fdc2321224bdc9edcf6'
@@ -59,10 +60,10 @@ for provider in "${providers[@]}"; do
       "$py" -m pip install 'ml_collections==1.1.0' 'modelcif==1.4' 'fair-esm==2.0.0' \
         'icecream==2.1.7' 'optree==0.17.0' 'biotite==1.4.0' 'gemmi==0.6.7' 'py3Dmol==2.5.2' \
         'pdbeccdutils==1.0.0' 'ipdb==0.13.13' 'wandb==0.21.1' 'biopython==1.85' \
-        'rdkit==2025.9.3' 'numpy>=2.2,<3' 'pandas>=2.2,<3' 'matplotlib>=3.10' \
+        'rdkit>=2025.9.3,<2027' 'numpy>=2.2,<3' 'pandas>=2.2,<4' 'matplotlib>=3.10' \
         'scikit-learn>=1.7,<2' 'scipy>=1.12' 'networkx>=3.4' pyyaml pydantic tqdm einops dm-tree requests
       PROTENIX_ROOT_DIR="$runtime/models/protenix" LAYERNORM_TYPE=torch "$py" -c 'from runner.batch_inference import inference_jsons, inference_configs'
     fi
     echo "Ready: $py"
-  ) 9>"$runtime/envs/.$provider-install.lock"
+  ) 9>"$env_dir.install.lock"
 done
