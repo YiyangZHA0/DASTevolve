@@ -703,7 +703,7 @@
       "B05_tile_05"
     ]
   },
-  "residue_evidence_catalog": "data://asyn_c_terminal_hotspot_binder/residue_evidence_catalog.json",
+  "residue_evidence_catalog": "inputs/residue_evidence_catalog.json",
   "semantic_graph": {
     "description": "Hotspot-biased 50-aa helical seed partitioned into five resizable tiles mapped to fold, interface, localization, and developability intents; ASYN is measurement-only and immutable.",
     "functional_graph": {

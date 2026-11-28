@@ -122,7 +122,7 @@ def register_ttgr_plugin() -> None:
     register_plugin(
         EvaluatorPluginSpec(
             name=PLUGIN_NAME,
-            factory="ttgr_evaluator:TTGRBlindPlugin",
+            factory="cases.ttgr_naltrexone_l1_blind.ttgr_evaluator:TTGRBlindPlugin",
             weight_fields=(
                 "eval_ttgr_state_evidence",
                 "eval_ttgr_sequence_contract",

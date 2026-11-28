@@ -11,13 +11,13 @@ convergence_threshold: 0.0001
 early_stopping_metric: final_energy
 
 memory_policy:
-  adaptive_prior_mode: disabled
-  inner_state_scope: evaluation
+  adaptive_prior_mode: "off"
+  inner_state_scope: lineage
 
 llm:
   provider: openai
-  api_base: ${OPENAI_API_BASE}
-  api_key: ${OPENAI_API_KEY}
+  api_base: ${ASTEVOLVE_LLM_API_BASE}
+  api_key: ${ASTEVOLVE_LLM_API_KEY}
   name: ${ASTEVOLVE_LLM_MODEL}
   models:
     - name: ${ASTEVOLVE_LLM_MODEL}

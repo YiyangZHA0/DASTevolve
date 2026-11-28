@@ -23,77 +23,77 @@
   "config_path": "config.yaml",
   "required_assets": [
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/A.paired.template.a3m",
+      "path": "inputs/msa_cache/A.paired.template.a3m",
       "role": "frozen_msa",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/A.unpaired.template.a3m",
+      "path": "inputs/msa_cache/A.unpaired.template.a3m",
       "role": "frozen_msa",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/L.paired.template.a3m",
+      "path": "inputs/msa_cache/L.paired.template.a3m",
       "role": "frozen_msa",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/L.unpaired.template.a3m",
+      "path": "inputs/msa_cache/L.unpaired.template.a3m",
       "role": "frozen_msa",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/msa_cache/manifest.json",
+      "path": "inputs/msa_cache/manifest.json",
       "role": "frozen_msa",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/residue_evidence_catalog.json",
+      "path": "inputs/residue_evidence_catalog.json",
       "role": "residue_knowledge",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/calibration.json",
+      "path": "inputs/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/calibration.json",
       "role": "external_esm2_prior",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/cdr1.npy",
+      "path": "inputs/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/cdr1.npy",
       "role": "external_esm2_prior",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/cdr2.npy",
+      "path": "inputs/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/cdr2.npy",
       "role": "external_esm2_prior",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/cdr3.npy",
+      "path": "inputs/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/cdr3.npy",
       "role": "external_esm2_prior",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/embedding_manifest.json",
+      "path": "inputs/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/embedding_manifest.json",
       "role": "external_esm2_prior",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/embedding_metadata.csv",
+      "path": "inputs/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/embedding_metadata.csv",
       "role": "external_esm2_prior",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/framework.npy",
+      "path": "inputs/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/framework.npy",
       "role": "external_esm2_prior",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/target_profile.json",
+      "path": "inputs/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/target_profile.json",
       "role": "external_esm2_prior",
       "required": true
     },
     {
-      "path": "data://cab_lys3_hewl_cdr_recovery/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/whole_vhh.npy",
+      "path": "inputs/sabdab_vhh_reference/embeddings/esm2_t6_8M_UR50D/whole_vhh.npy",
       "role": "external_esm2_prior",
       "required": true
     }

@@ -350,7 +350,7 @@ from typing import Mapping, Optional
 
 from astevolve.runtime.case_context import current_case_kwargs
 from astevolve.runtime.case_program import merge_locked_runtime_defaults
-from astevolve.runtime.paths import artifact_path
+from astevolve.runtime.paths import artifact_path, resolve_path
 from engine.case_builder import prepare_case_inputs, run_design_search
 from engine.runtime_profile import build_sa_config
 
@@ -374,6 +374,16 @@ def _protocol() -> Dict[str, Any]:
 
 def _locked_runtime() -> Dict[str, Any]:
     locked = json.loads((_case_root() / "runtime_config.json").read_text(encoding="utf-8"))
+    if os.environ.get("ASTEVOLVE_INNER_ITERATIONS") == "10":
+        # The ten-candidate run needs both breadth and the case's minimum depth.
+        depth = locked["mcts_tree_min_max_depth"]
+        locked["mcts_max_depth"] = depth
+        locked["search_schedule"] = {
+            "phases": {
+                phase: {"mcts_max_depth": depth}
+                for phase in ("explore_ast", "refine_ast", "converge")
+            }
+        }
     model = os.environ.get("ASTEVOLVE_ESMFOLD_MODEL", "facebook/esmfold_v1")
     locked["inner_structure_model_name"] = model
     locked["structure_model_name"] = model
@@ -517,6 +527,9 @@ def _materialize_dynamic_design_state(
     state = json.loads(source_path.read_text(encoding="utf-8"))
     state["case_sheet_path"] = str(source_path.parent / "case_sheet.json")
     state["memory_path"] = str(source_path.parent / "memory.yaml")
+    catalog = state["residue_evidence_catalog"]
+    if isinstance(catalog, str):
+        state["residue_evidence_catalog"] = str(resolve_path(catalog, base=source_path.parent))
     binder = state["binder"]
     parts_key = next(iter(binder["domain_segment_keys"].values()))
     source_parts = binder[parts_key]

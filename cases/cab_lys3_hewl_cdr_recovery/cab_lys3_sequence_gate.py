@@ -8,8 +8,8 @@ import os
 from pathlib import Path
 from typing import Any, Dict, Mapping, Optional
 
-from astevolve.runtime.paths import data_path
 from cases.cab_lys3_hewl_cdr_recovery.sabdab_vhh_prior import (
+    DEFAULT_INDEX_DIR as DEFAULT_SABDAB_INDEX_DIR,
     score_sabdab_vhh_prior,
 )
 
@@ -35,12 +35,6 @@ SABDAB_RULE_POSITIONS = {
     "cdr2": tuple(range(52, 57)),
     "cdr3": tuple(range(98, 108)) + tuple(range(109, 122)),
 }
-DEFAULT_SABDAB_INDEX_DIR = data_path(
-    "cab_lys3_hewl_cdr_recovery",
-    "sabdab_vhh_reference",
-    "embeddings",
-    "esm2_t6_8M_UR50D",
-)
 
 
 def _resampled_residues(sequence: str, length: int) -> tuple[str, ...]:

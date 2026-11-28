@@ -1,0 +1,3942 @@
+{
+  "schema_version": "astevolve.residue_evidence_catalog.v1",
+  "indexing": "zero_based",
+  "sequences": {
+    "P": "KVTQSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLKDFLSQPSLGLLVRTYPEL"
+  },
+  "residues": [
+    {
+      "evidence_id": "pdz:P:0",
+      "chain_id": "P",
+      "position": 0,
+      "residue": "K",
+      "eligible": true,
+      "safety_score": 0.8962,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.581,
+        "sasa_A2": 137.122,
+        "secondary_structure": "cap",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S01_Ncap"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "K",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 841
+      }
+    },
+    {
+      "evidence_id": "pdz:P:1",
+      "chain_id": "P",
+      "position": 1,
+      "residue": "V",
+      "eligible": true,
+      "safety_score": 0.8454,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.3271,
+        "sasa_A2": 56.917,
+        "secondary_structure": "cap",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S01_Ncap"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "V",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 842
+      }
+    },
+    {
+      "evidence_id": "pdz:P:2",
+      "chain_id": "P",
+      "position": 2,
+      "residue": "T",
+      "eligible": true,
+      "safety_score": 0.8602,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.401,
+        "sasa_A2": 68.971,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S02_beta1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "T",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 843
+      }
+    },
+    {
+      "evidence_id": "pdz:P:3",
+      "chain_id": "P",
+      "position": 3,
+      "residue": "Q",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4195,
+        "sasa_A2": 93.972,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S02_beta1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "Q",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 844
+      }
+    },
+    {
+      "evidence_id": "pdz:P:4",
+      "chain_id": "P",
+      "position": 4,
+      "residue": "S",
+      "eligible": true,
+      "safety_score": 0.8709,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4547,
+        "sasa_A2": 70.483,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S02_beta1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 845
+      }
+    },
+    {
+      "evidence_id": "pdz:P:5",
+      "chain_id": "P",
+      "position": 5,
+      "residue": "I",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0611,
+        "sasa_A2": 12.032,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S02_beta1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "I",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 846
+      }
+    },
+    {
+      "evidence_id": "pdz:P:6",
+      "chain_id": "P",
+      "position": 6,
+      "residue": "H",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.5532,
+        "sasa_A2": 123.923,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S02_beta1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "H",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 847
+      }
+    },
+    {
+      "evidence_id": "pdz:P:7",
+      "chain_id": "P",
+      "position": 7,
+      "residue": "I",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0174,
+        "sasa_A2": 3.43,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S02_beta1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "I",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 848
+      }
+    },
+    {
+      "evidence_id": "pdz:P:8",
+      "chain_id": "P",
+      "position": 8,
+      "residue": "E",
+      "eligible": true,
+      "safety_score": 0.8947,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.5734,
+        "sasa_A2": 127.866,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S02_beta1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "E",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 849
+      }
+    },
+    {
+      "evidence_id": "pdz:P:9",
+      "chain_id": "P",
+      "position": 9,
+      "residue": "K",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.5455,
+        "sasa_A2": 128.731,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "K",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 850
+      }
+    },
+    {
+      "evidence_id": "pdz:P:10",
+      "chain_id": "P",
+      "position": 10,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": false,
+        "relative_sasa": null,
+        "sasa_A2": null,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 851
+      }
+    },
+    {
+      "evidence_id": "pdz:P:11",
+      "chain_id": "P",
+      "position": 11,
+      "residue": "D",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": false,
+        "relative_sasa": null,
+        "sasa_A2": null,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "D",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 852
+      }
+    },
+    {
+      "evidence_id": "pdz:P:12",
+      "chain_id": "P",
+      "position": 12,
+      "residue": "T",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": false,
+        "relative_sasa": null,
+        "sasa_A2": null,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "T",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 853
+      }
+    },
+    {
+      "evidence_id": "pdz:P:13",
+      "chain_id": "P",
+      "position": 13,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": false,
+        "relative_sasa": null,
+        "sasa_A2": null,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "A",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 854
+      }
+    },
+    {
+      "evidence_id": "pdz:P:14",
+      "chain_id": "P",
+      "position": 14,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": false,
+        "relative_sasa": null,
+        "sasa_A2": null,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "A",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 855
+      }
+    },
+    {
+      "evidence_id": "pdz:P:15",
+      "chain_id": "P",
+      "position": 15,
+      "residue": "D",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": false,
+        "relative_sasa": null,
+        "sasa_A2": null,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "D",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 856
+      }
+    },
+    {
+      "evidence_id": "pdz:P:16",
+      "chain_id": "P",
+      "position": 16,
+      "residue": "T",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.8185,
+        "sasa_A2": 140.781,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P0"
+        ],
+        "A_heavy_atom_contacts": 4,
+        "B_contact_positions": [
+          "P0"
+        ],
+        "B_heavy_atom_contacts": 4,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "T",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 857
+      }
+    },
+    {
+      "evidence_id": "pdz:P:17",
+      "chain_id": "P",
+      "position": 17,
+      "residue": "Y",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0153,
+        "sasa_A2": 4.012,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P0"
+        ],
+        "A_heavy_atom_contacts": 7,
+        "B_contact_positions": [
+          "P0"
+        ],
+        "B_heavy_atom_contacts": 10,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "Y",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": true,
+        "uniprot_position": 858
+      }
+    },
+    {
+      "evidence_id": "pdz:P:18",
+      "chain_id": "P",
+      "position": 18,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.1456,
+        "sasa_A2": 15.143,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S03_carboxylate_loop"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P0"
+        ],
+        "A_heavy_atom_contacts": 4,
+        "B_contact_positions": [
+          "P0"
+        ],
+        "B_heavy_atom_contacts": 5,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "G",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 859
+      }
+    },
+    {
+      "evidence_id": "pdz:P:19",
+      "chain_id": "P",
+      "position": 19,
+      "residue": "F",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.1042,
+        "sasa_A2": 25.017,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S04_beta2_ligand_strand"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-1",
+          "P0"
+        ],
+        "A_heavy_atom_contacts": 6,
+        "B_contact_positions": [
+          "P-1",
+          "P0"
+        ],
+        "B_heavy_atom_contacts": 9,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "F",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail",
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 860
+      }
+    },
+    {
+      "evidence_id": "pdz:P:20",
+      "chain_id": "P",
+      "position": 20,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2759,
+        "sasa_A2": 42.757,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S04_beta2_ligand_strand"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-1",
+          "P-2",
+          "P-3"
+        ],
+        "A_heavy_atom_contacts": 7,
+        "B_contact_positions": [
+          "P-1",
+          "P-2"
+        ],
+        "B_heavy_atom_contacts": 5,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 861
+      }
+    },
+    {
+      "evidence_id": "pdz:P:21",
+      "chain_id": "P",
+      "position": 21,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2046,
+        "sasa_A2": 41.119,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S04_beta2_ligand_strand"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-2",
+          "P-3",
+          "P0"
+        ],
+        "A_heavy_atom_contacts": 9,
+        "B_contact_positions": [
+          "P-2",
+          "P-3"
+        ],
+        "B_heavy_atom_contacts": 8,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 862
+      }
+    },
+    {
+      "evidence_id": "pdz:P:22",
+      "chain_id": "P",
+      "position": 22,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.3238,
+        "sasa_A2": 50.194,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S04_beta2_ligand_strand"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-4"
+        ],
+        "A_heavy_atom_contacts": 2,
+        "B_contact_positions": [
+          "P-4",
+          "P-6"
+        ],
+        "B_heavy_atom_contacts": 7,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 863
+      }
+    },
+    {
+      "evidence_id": "pdz:P:23",
+      "chain_id": "P",
+      "position": 23,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4058,
+        "sasa_A2": 62.893,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S04_beta2_ligand_strand"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-2",
+          "P-4",
+          "P-5",
+          "P-6"
+        ],
+        "A_heavy_atom_contacts": 18,
+        "B_contact_positions": [
+          "P-4",
+          "P-5",
+          "P-6"
+        ],
+        "B_heavy_atom_contacts": 10,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 864
+      }
+    },
+    {
+      "evidence_id": "pdz:P:24",
+      "chain_id": "P",
+      "position": 24,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.3879,
+        "sasa_A2": 67.491,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S04_beta2_ligand_strand"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-5"
+        ],
+        "A_heavy_atom_contacts": 6,
+        "B_contact_positions": [
+          "P-7"
+        ],
+        "B_heavy_atom_contacts": 5,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "V",
+        "design_policy_annotation": "hard_freeze_terminal_carboxylate_anchor",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "shared_terminal_carboxylate_guardrail",
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 865
+      }
+    },
+    {
+      "evidence_id": "pdz:P:25",
+      "chain_id": "P",
+      "position": 25,
+      "residue": "E",
+      "eligible": true,
+      "safety_score": 0.78,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.355,
+        "sasa_A2": 79.157,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S05_beta2_beta3_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [
+          "P-7"
+        ],
+        "B_heavy_atom_contacts": 4,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "E",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 866
+      }
+    },
+    {
+      "evidence_id": "pdz:P:26",
+      "chain_id": "P",
+      "position": 26,
+      "residue": "E",
+      "eligible": true,
+      "safety_score": 0.8654,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4271,
+        "sasa_A2": 95.238,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S05_beta2_beta3_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "E",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 867
+      }
+    },
+    {
+      "evidence_id": "pdz:P:27",
+      "chain_id": "P",
+      "position": 27,
+      "residue": "D",
+      "eligible": true,
+      "safety_score": 0.8756,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4779,
+        "sasa_A2": 92.226,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S05_beta2_beta3_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "D",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 868
+      }
+    },
+    {
+      "evidence_id": "pdz:P:28",
+      "chain_id": "P",
+      "position": 28,
+      "residue": "G",
+      "eligible": true,
+      "safety_score": 0.9253,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.7266,
+        "sasa_A2": 75.567,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S05_beta2_beta3_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "G",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 869
+      }
+    },
+    {
+      "evidence_id": "pdz:P:29",
+      "chain_id": "P",
+      "position": 29,
+      "residue": "I",
+      "eligible": true,
+      "safety_score": 0.8672,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4358,
+        "sasa_A2": 85.859,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S05_beta2_beta3_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "I",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 870
+      }
+    },
+    {
+      "evidence_id": "pdz:P:30",
+      "chain_id": "P",
+      "position": 30,
+      "residue": "R",
+      "eligible": true,
+      "safety_score": 0.78,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.1796,
+        "sasa_A2": 49.209,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S05_beta2_beta3_loop"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-2"
+        ],
+        "A_heavy_atom_contacts": 1,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "R",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 871
+      }
+    },
+    {
+      "evidence_id": "pdz:P:31",
+      "chain_id": "P",
+      "position": 31,
+      "residue": "R",
+      "eligible": true,
+      "safety_score": 0.8204,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2019,
+        "sasa_A2": 55.314,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S06_beta3"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "R",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 872
+      }
+    },
+    {
+      "evidence_id": "pdz:P:32",
+      "chain_id": "P",
+      "position": 32,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0081,
+        "sasa_A2": 1.622,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S06_beta3"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": true,
+        "uniprot_position": 873
+      }
+    },
+    {
+      "evidence_id": "pdz:P:33",
+      "chain_id": "P",
+      "position": 33,
+      "residue": "Y",
+      "eligible": true,
+      "safety_score": 0.8326,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2628,
+        "sasa_A2": 69.116,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S06_beta3"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "Y",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 874
+      }
+    },
+    {
+      "evidence_id": "pdz:P:34",
+      "chain_id": "P",
+      "position": 34,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.031,
+        "sasa_A2": 5.396,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S06_beta3"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "V",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 875
+      }
+    },
+    {
+      "evidence_id": "pdz:P:35",
+      "chain_id": "P",
+      "position": 35,
+      "residue": "N",
+      "eligible": true,
+      "safety_score": 0.78,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4825,
+        "sasa_A2": 94.097,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S06_beta3"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-3"
+        ],
+        "A_heavy_atom_contacts": 4,
+        "B_contact_positions": [
+          "P-6"
+        ],
+        "B_heavy_atom_contacts": 2,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "N",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 876
+      }
+    },
+    {
+      "evidence_id": "pdz:P:36",
+      "chain_id": "P",
+      "position": 36,
+      "residue": "S",
+      "eligible": true,
+      "safety_score": 0.8496,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.3482,
+        "sasa_A2": 53.972,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S06_beta3"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 877
+      }
+    },
+    {
+      "evidence_id": "pdz:P:37",
+      "chain_id": "P",
+      "position": 37,
+      "residue": "V",
+      "eligible": true,
+      "safety_score": 0.8309,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2543,
+        "sasa_A2": 44.249,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S06_beta3"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "V",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 878
+      }
+    },
+    {
+      "evidence_id": "pdz:P:38",
+      "chain_id": "P",
+      "position": 38,
+      "residue": "K",
+      "eligible": true,
+      "safety_score": 0.8352,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2761,
+        "sasa_A2": 65.169,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S07_beta3_alpha1_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": true,
+        "observations": [
+          {
+            "effect": "strongly_reduces_SDC1_binding",
+            "mutation": "K879E",
+            "role": "outside_original_four_site_positive_probe",
+            "source": "UniProt_Q13009_experimental_annotation"
+          }
+        ]
+      },
+      "metadata": {
+        "canonical_wt_aa": "K",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 879
+      }
+    },
+    {
+      "evidence_id": "pdz:P:39",
+      "chain_id": "P",
+      "position": 39,
+      "residue": "E",
+      "eligible": true,
+      "safety_score": 0.8788,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4938,
+        "sasa_A2": 110.12,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S07_beta3_alpha1_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "E",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 880
+      }
+    },
+    {
+      "evidence_id": "pdz:P:40",
+      "chain_id": "P",
+      "position": 40,
+      "residue": "T",
+      "eligible": true,
+      "safety_score": 0.9048,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.6242,
+        "sasa_A2": 107.36,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S07_beta3_alpha1_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "T",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 881
+      }
+    },
+    {
+      "evidence_id": "pdz:P:41",
+      "chain_id": "P",
+      "position": 41,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.1118,
+        "sasa_A2": 11.627,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S08_alpha1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "G",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 882
+      }
+    },
+    {
+      "evidence_id": "pdz:P:42",
+      "chain_id": "P",
+      "position": 42,
+      "residue": "L",
+      "eligible": true,
+      "safety_score": 0.833,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2649,
+        "sasa_A2": 53.252,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S08_alpha1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 883
+      }
+    },
+    {
+      "evidence_id": "pdz:P:43",
+      "chain_id": "P",
+      "position": 43,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0,
+        "sasa_A2": 0.0,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S08_alpha1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "A",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 884
+      }
+    },
+    {
+      "evidence_id": "pdz:P:44",
+      "chain_id": "P",
+      "position": 44,
+      "residue": "S",
+      "eligible": true,
+      "safety_score": 0.821,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2049,
+        "sasa_A2": 31.758,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S08_alpha1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 885
+      }
+    },
+    {
+      "evidence_id": "pdz:P:45",
+      "chain_id": "P",
+      "position": 45,
+      "residue": "K",
+      "eligible": true,
+      "safety_score": 0.9041,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.6203,
+        "sasa_A2": 146.4,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S08_alpha1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "K",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 886
+      }
+    },
+    {
+      "evidence_id": "pdz:P:46",
+      "chain_id": "P",
+      "position": 46,
+      "residue": "K",
+      "eligible": true,
+      "safety_score": 0.8763,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4817,
+        "sasa_A2": 113.669,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S08_alpha1"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "K",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 887
+      }
+    },
+    {
+      "evidence_id": "pdz:P:47",
+      "chain_id": "P",
+      "position": 47,
+      "residue": "G",
+      "eligible": true,
+      "safety_score": 0.8429,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.3147,
+        "sasa_A2": 32.728,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S09_alpha1_beta4_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "G",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 888
+      }
+    },
+    {
+      "evidence_id": "pdz:P:48",
+      "chain_id": "P",
+      "position": 48,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0119,
+        "sasa_A2": 2.398,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S09_alpha1_beta4_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 889
+      }
+    },
+    {
+      "evidence_id": "pdz:P:49",
+      "chain_id": "P",
+      "position": 49,
+      "residue": "K",
+      "eligible": true,
+      "safety_score": 0.8462,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.3308,
+        "sasa_A2": 78.06,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S09_alpha1_beta4_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "K",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 890
+      }
+    },
+    {
+      "evidence_id": "pdz:P:50",
+      "chain_id": "P",
+      "position": 50,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.8844,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.5219,
+        "sasa_A2": 67.327,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S09_alpha1_beta4_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "A",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 891
+      }
+    },
+    {
+      "evidence_id": "pdz:P:51",
+      "chain_id": "P",
+      "position": 51,
+      "residue": "G",
+      "eligible": true,
+      "safety_score": 0.8906,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.5532,
+        "sasa_A2": 57.538,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S09_alpha1_beta4_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "G",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 892
+      }
+    },
+    {
+      "evidence_id": "pdz:P:52",
+      "chain_id": "P",
+      "position": 52,
+      "residue": "D",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0243,
+        "sasa_A2": 4.699,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S09_alpha1_beta4_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "D",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 893
+      }
+    },
+    {
+      "evidence_id": "pdz:P:53",
+      "chain_id": "P",
+      "position": 53,
+      "residue": "E",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0391,
+        "sasa_A2": 8.729,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S10_beta4"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "E",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 894
+      }
+    },
+    {
+      "evidence_id": "pdz:P:54",
+      "chain_id": "P",
+      "position": 54,
+      "residue": "I",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.001,
+        "sasa_A2": 0.2,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S10_beta4"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "I",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": true,
+        "uniprot_position": 895
+      }
+    },
+    {
+      "evidence_id": "pdz:P:55",
+      "chain_id": "P",
+      "position": 55,
+      "residue": "L",
+      "eligible": true,
+      "safety_score": 0.8182,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.1911,
+        "sasa_A2": 38.419,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S10_beta4"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 896
+      }
+    },
+    {
+      "evidence_id": "pdz:P:56",
+      "chain_id": "P",
+      "position": 56,
+      "residue": "E",
+      "eligible": true,
+      "safety_score": 0.8282,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2409,
+        "sasa_A2": 53.727,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S10_beta4"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "E",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 897
+      }
+    },
+    {
+      "evidence_id": "pdz:P:57",
+      "chain_id": "P",
+      "position": 57,
+      "residue": "I",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0,
+        "sasa_A2": 0.0,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S10_beta4"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "I",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 898
+      }
+    },
+    {
+      "evidence_id": "pdz:P:58",
+      "chain_id": "P",
+      "position": 58,
+      "residue": "N",
+      "eligible": true,
+      "safety_score": 0.8273,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2367,
+        "sasa_A2": 46.16,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S11_beta4_beta5_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "N",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 899
+      }
+    },
+    {
+      "evidence_id": "pdz:P:59",
+      "chain_id": "P",
+      "position": 59,
+      "residue": "N",
+      "eligible": true,
+      "safety_score": 0.9208,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.7041,
+        "sasa_A2": 137.302,
+        "secondary_structure": "loop",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S11_beta4_beta5_loop"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "N",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 900
+      }
+    },
+    {
+      "evidence_id": "pdz:P:60",
+      "chain_id": "P",
+      "position": 60,
+      "residue": "R",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4442,
+        "sasa_A2": 121.7,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S12_beta5"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "R",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 901
+      }
+    },
+    {
+      "evidence_id": "pdz:P:61",
+      "chain_id": "P",
+      "position": 61,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.8551,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.3756,
+        "sasa_A2": 48.45,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S12_beta5"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "A",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 902
+      }
+    },
+    {
+      "evidence_id": "pdz:P:62",
+      "chain_id": "P",
+      "position": 62,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0473,
+        "sasa_A2": 6.105,
+        "secondary_structure": "turn",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S13_beta5_alpha2_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "A",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 903
+      }
+    },
+    {
+      "evidence_id": "pdz:P:63",
+      "chain_id": "P",
+      "position": 63,
+      "residue": "D",
+      "eligible": true,
+      "safety_score": 0.867,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4352,
+        "sasa_A2": 84.002,
+        "secondary_structure": "turn",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S13_beta5_alpha2_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "D",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 904
+      }
+    },
+    {
+      "evidence_id": "pdz:P:64",
+      "chain_id": "P",
+      "position": 64,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.8798,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4989,
+        "sasa_A2": 64.355,
+        "secondary_structure": "turn",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S13_beta5_alpha2_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "A",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 905
+      }
+    },
+    {
+      "evidence_id": "pdz:P:65",
+      "chain_id": "P",
+      "position": 65,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0648,
+        "sasa_A2": 13.022,
+        "secondary_structure": "turn",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S13_beta5_alpha2_connector"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 906
+      }
+    },
+    {
+      "evidence_id": "pdz:P:66",
+      "chain_id": "P",
+      "position": 66,
+      "residue": "N",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4304,
+        "sasa_A2": 83.935,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "N",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 907
+      }
+    },
+    {
+      "evidence_id": "pdz:P:67",
+      "chain_id": "P",
+      "position": 67,
+      "residue": "S",
+      "eligible": true,
+      "safety_score": 0.78,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4558,
+        "sasa_A2": 70.65,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-2",
+          "P-4"
+        ],
+        "A_heavy_atom_contacts": 9,
+        "B_contact_positions": [
+          "P-2"
+        ],
+        "B_heavy_atom_contacts": 1,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 908
+      }
+    },
+    {
+      "evidence_id": "pdz:P:68",
+      "chain_id": "P",
+      "position": 68,
+      "residue": "S",
+      "eligible": true,
+      "safety_score": 0.8831,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.5155,
+        "sasa_A2": 79.904,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 909
+      }
+    },
+    {
+      "evidence_id": "pdz:P:69",
+      "chain_id": "P",
+      "position": 69,
+      "residue": "M",
+      "eligible": true,
+      "safety_score": 0.822,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2102,
+        "sasa_A2": 47.076,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "M",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 910
+      }
+    },
+    {
+      "evidence_id": "pdz:P:70",
+      "chain_id": "P",
+      "position": 70,
+      "residue": "L",
+      "eligible": true,
+      "safety_score": 0.78,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.1237,
+        "sasa_A2": 24.854,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P-2",
+          "P0"
+        ],
+        "A_heavy_atom_contacts": 5,
+        "B_contact_positions": [
+          "P-2"
+        ],
+        "B_heavy_atom_contacts": 1,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "primary_design_site_known_QM",
+        "experimentally_validated_switch": true,
+        "functional_memberships": [
+          "S_minus2_specificity_pocket",
+          "known_QM_switch"
+        ],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 911
+      }
+    },
+    {
+      "evidence_id": "pdz:P:71",
+      "chain_id": "P",
+      "position": 71,
+      "residue": "K",
+      "eligible": true,
+      "safety_score": 0.78,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.6278,
+        "sasa_A2": 148.152,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P0"
+        ],
+        "A_heavy_atom_contacts": 3,
+        "B_contact_positions": [
+          "P-2"
+        ],
+        "B_heavy_atom_contacts": 1,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "K",
+        "design_policy_annotation": "primary_design_site_known_QM",
+        "experimentally_validated_switch": true,
+        "functional_memberships": [
+          "S_minus2_specificity_pocket",
+          "known_QM_switch"
+        ],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 912
+      }
+    },
+    {
+      "evidence_id": "pdz:P:72",
+      "chain_id": "P",
+      "position": 72,
+      "residue": "D",
+      "eligible": true,
+      "safety_score": 0.8546,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.373,
+        "sasa_A2": 71.987,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "D",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 913
+      }
+    },
+    {
+      "evidence_id": "pdz:P:73",
+      "chain_id": "P",
+      "position": 73,
+      "residue": "F",
+      "eligible": true,
+      "safety_score": 0.7998,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0988,
+        "sasa_A2": 23.716,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "F",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 914
+      }
+    },
+    {
+      "evidence_id": "pdz:P:74",
+      "chain_id": "P",
+      "position": 74,
+      "residue": "L",
+      "eligible": true,
+      "safety_score": 0.78,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2216,
+        "sasa_A2": 44.543,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [
+          "P0"
+        ],
+        "A_heavy_atom_contacts": 16,
+        "B_contact_positions": [
+          "P-2"
+        ],
+        "B_heavy_atom_contacts": 2,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "primary_design_site_known_QM",
+        "experimentally_validated_switch": true,
+        "functional_memberships": [
+          "S0_terminal_sidechain_pocket",
+          "known_QM_switch"
+        ],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 915
+      }
+    },
+    {
+      "evidence_id": "pdz:P:75",
+      "chain_id": "P",
+      "position": 75,
+      "residue": "S",
+      "eligible": true,
+      "safety_score": 0.8757,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4786,
+        "sasa_A2": 74.19,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 916
+      }
+    },
+    {
+      "evidence_id": "pdz:P:76",
+      "chain_id": "P",
+      "position": 76,
+      "residue": "Q",
+      "eligible": true,
+      "safety_score": 0.838,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2898,
+        "sasa_A2": 65.206,
+        "secondary_structure": "alpha_helix",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S14_alpha2_specificity_helix"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "Q",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 917
+      }
+    },
+    {
+      "evidence_id": "pdz:P:77",
+      "chain_id": "P",
+      "position": 77,
+      "residue": "P",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.6038,
+        "sasa_A2": 96.011,
+        "secondary_structure": "turn",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S15_alpha2_beta6_turn"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "P",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 918
+      }
+    },
+    {
+      "evidence_id": "pdz:P:78",
+      "chain_id": "P",
+      "position": 78,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.3907,
+        "sasa_A2": 60.551,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S16_beta6"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "S",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 919
+      }
+    },
+    {
+      "evidence_id": "pdz:P:79",
+      "chain_id": "P",
+      "position": 79,
+      "residue": "L",
+      "eligible": true,
+      "safety_score": 0.7844,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.022,
+        "sasa_A2": 4.422,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S16_beta6"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "primary_design_site_known_QM",
+        "experimentally_validated_switch": true,
+        "functional_memberships": [
+          "S0_terminal_sidechain_pocket",
+          "known_QM_switch"
+        ],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 920
+      }
+    },
+    {
+      "evidence_id": "pdz:P:80",
+      "chain_id": "P",
+      "position": 80,
+      "residue": "G",
+      "eligible": true,
+      "safety_score": 0.8036,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.1182,
+        "sasa_A2": 12.289,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S16_beta6"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "G",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 921
+      }
+    },
+    {
+      "evidence_id": "pdz:P:81",
+      "chain_id": "P",
+      "position": 81,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0324,
+        "sasa_A2": 6.509,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S16_beta6"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 922
+      }
+    },
+    {
+      "evidence_id": "pdz:P:82",
+      "chain_id": "P",
+      "position": 82,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2426,
+        "sasa_A2": 48.769,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S16_beta6"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "expanded_pocket_site_review_before_opening",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [
+          "fold_core_guardrail"
+        ],
+        "hard_protected": true,
+        "low_exposure_guard": false,
+        "uniprot_position": 923
+      }
+    },
+    {
+      "evidence_id": "pdz:P:83",
+      "chain_id": "P",
+      "position": 83,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0101,
+        "sasa_A2": 1.758,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S16_beta6"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "V",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 924
+      }
+    },
+    {
+      "evidence_id": "pdz:P:84",
+      "chain_id": "P",
+      "position": 84,
+      "residue": "R",
+      "eligible": true,
+      "safety_score": 0.8343,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.2715,
+        "sasa_A2": 74.387,
+        "secondary_structure": "beta_strand",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S16_beta6"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "R",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 925
+      }
+    },
+    {
+      "evidence_id": "pdz:P:85",
+      "chain_id": "P",
+      "position": 85,
+      "residue": "T",
+      "eligible": false,
+      "safety_score": 0.55,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.0625,
+        "sasa_A2": 10.752,
+        "secondary_structure": "tail",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S17_C_tail"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "T",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": true,
+        "uniprot_position": 926
+      }
+    },
+    {
+      "evidence_id": "pdz:P:86",
+      "chain_id": "P",
+      "position": 86,
+      "residue": "Y",
+      "eligible": true,
+      "safety_score": 0.8998,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.5991,
+        "sasa_A2": 157.574,
+        "secondary_structure": "tail",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S17_C_tail"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "Y",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 927
+      }
+    },
+    {
+      "evidence_id": "pdz:P:87",
+      "chain_id": "P",
+      "position": 87,
+      "residue": "P",
+      "eligible": true,
+      "safety_score": 0.8635,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.4176,
+        "sasa_A2": 66.404,
+        "secondary_structure": "tail",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S17_C_tail"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "P",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 928
+      }
+    },
+    {
+      "evidence_id": "pdz:P:88",
+      "chain_id": "P",
+      "position": 88,
+      "residue": "E",
+      "eligible": true,
+      "safety_score": 0.9093,
+      "structure": {
+        "available": true,
+        "relative_sasa": 0.6465,
+        "sasa_A2": 144.174,
+        "secondary_structure": "tail",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S17_C_tail"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "E",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 929
+      }
+    },
+    {
+      "evidence_id": "pdz:P:89",
+      "chain_id": "P",
+      "position": 89,
+      "residue": "L",
+      "eligible": true,
+      "safety_score": 0.98,
+      "structure": {
+        "available": true,
+        "relative_sasa": 1.0,
+        "sasa_A2": 232.037,
+        "secondary_structure": "tail",
+        "source": "3KZD_AST_ready_biotite_sasa",
+        "structural_node": "S17_C_tail"
+      },
+      "interface": {
+        "A_contact_positions": [],
+        "A_heavy_atom_contacts": 0,
+        "B_contact_positions": [],
+        "B_heavy_atom_contacts": 0,
+        "available": true,
+        "source": "4NXQ_QM_A_vs_4GVD_WT_B_contacts_4A",
+        "variant_confounded": true
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; PLM_entropy_not_labeled_as_conservation"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "canonical_wt_aa": "L",
+        "design_policy_annotation": "freeze_by_default",
+        "experimentally_validated_switch": false,
+        "functional_memberships": [],
+        "hard_protected": false,
+        "low_exposure_guard": false,
+        "uniprot_position": 930
+      }
+    }
+  ],
+  "metadata": {
+    "case_id": "tiam1_pdz_caspr4_vs_sdc1",
+    "conservation_policy": "unavailable_not_imputed",
+    "construct": "Tiam1_841_930_natural_Q13009",
+    "contact_caveat": "A_uses_QM_and_B_uses_WT_so_contacts_are_variant_confounded",
+    "scope": "entire_90_residue_design_construct"
+  },
+  "catalog_hash": "f09896cae059cb2298c0edb113e44c6acca63e20f307f0571a6e542cc4b4ac69"
+}

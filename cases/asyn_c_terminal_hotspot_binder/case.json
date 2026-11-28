@@ -25,7 +25,7 @@
   "required_assets": [
     {
       "role": "residue_evidence_catalog",
-      "path": "data://asyn_c_terminal_hotspot_binder/residue_evidence_catalog.json",
+      "path": "inputs/residue_evidence_catalog.json",
       "required": true
     }
   ]

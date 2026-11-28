@@ -34,6 +34,18 @@ llm:
 
 prompt:
   proposal_mode: structured_strategy_v1
+  system_message: |
+    Revise the cAb-Lys3 search program using the measured parent and the assigned island role.
+    Preserve unaffected nodes and mappings in the complete plan. At least one audit target
+    must change in the submitted policy, selector, or associated mapping edge.
+    Copy the assigned island_role_id and the published strategy_epoch_id. Use no-global-epoch
+    if there is no published epoch. Cite evidence from the supplied controller bundle when
+    available, or actual parent evidence IDs when the bundle is empty.
+    Each expected effect cites a subset of audit.evidence_refs. Give a measured or testable
+    metric_id, direction, effect_size, numeric confidence and a list of evidence ID strings.
+    Each absolute quality floor has metric_id, comparison, direction and a finite threshold.
+    Values in position_residue_rules have exactly four fields: favored_residues,
+    disfavored_residues, policy_weight and intent.
   hierarchical_audit_v2: true
   num_top_programs: 2
   num_diverse_programs: 1

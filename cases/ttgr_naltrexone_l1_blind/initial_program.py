@@ -75,7 +75,6 @@ def propose_strategy() -> Dict[str, Any]:
 # EVOLVE-BLOCK-END
 
 import os
-import sys
 from copy import deepcopy
 from pathlib import Path
 from typing import Optional
@@ -83,14 +82,11 @@ from typing import Optional
 from astevolve.runtime.case_context import current_case_kwargs
 from astevolve.runtime.case_program import merge_locked_runtime_defaults
 from astevolve.runtime.paths import artifact_path
+from cases.ttgr_naltrexone_l1_blind.ttgr_evaluator import register_ttgr_plugin
 from engine.case_builder import prepare_case_inputs, run_design_search
 
 
 CASE_ROOT = Path(__file__).resolve().parent
-if str(CASE_ROOT) not in sys.path:
-    sys.path.insert(0, str(CASE_ROOT))
-
-from ttgr_evaluator import register_ttgr_plugin
 
 
 register_ttgr_plugin()
@@ -172,6 +168,9 @@ _LOCKED_RUNTIME_DEFAULTS: Dict[str, Any] = {
     "chai1_top_frac": 0.10,
     "chai1_min_candidates": 1,
     "chai1_max_candidates": 1,
+    # The pocket objective needs the ligand in both search-time and final structures.
+    "inner_structure_model": "protenix",
+    "inner_structure_model_name": "protenix_mini_esm_v0.5.0",
     "structure_model": "protenix",
     "structure_model_name": "protenix_mini_esm_v0.5.0",
     "protenix_model_name": "protenix_mini_esm_v0.5.0",

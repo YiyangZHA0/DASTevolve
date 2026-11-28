@@ -1,0 +1,4989 @@
+{
+  "schema_version": "astevolve.residue_evidence_catalog.v1",
+  "indexing": "zero_based",
+  "sequences": {
+    "A": "DVQLQASGGGSVQAGGSLRLSCAASAAAAAAACMGWFRQAPGKEREGVAAINAAAAATYYADSVKGRFTISQDNAKNTVYLLMNSLEPEDTAIYYCAAAAAAAAAAAACAAAAAAAAAAAAAWGQGTQVTVSS"
+  },
+  "residues": [
+    {
+      "evidence_id": "cab:A:0",
+      "chain_id": "A",
+      "position": 0,
+      "residue": "D",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 1,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:1",
+      "chain_id": "A",
+      "position": 1,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 2,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:2",
+      "chain_id": "A",
+      "position": 2,
+      "residue": "Q",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 3,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:3",
+      "chain_id": "A",
+      "position": 3,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 4,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:4",
+      "chain_id": "A",
+      "position": 4,
+      "residue": "Q",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 5,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:5",
+      "chain_id": "A",
+      "position": 5,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 6,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:6",
+      "chain_id": "A",
+      "position": 6,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 7,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:7",
+      "chain_id": "A",
+      "position": 7,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 8,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:8",
+      "chain_id": "A",
+      "position": 8,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 9,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:9",
+      "chain_id": "A",
+      "position": 9,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 10,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:10",
+      "chain_id": "A",
+      "position": 10,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 11,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:11",
+      "chain_id": "A",
+      "position": 11,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 12,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:12",
+      "chain_id": "A",
+      "position": 12,
+      "residue": "Q",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 13,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:13",
+      "chain_id": "A",
+      "position": 13,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 14,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:14",
+      "chain_id": "A",
+      "position": 14,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 15,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:15",
+      "chain_id": "A",
+      "position": 15,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 16,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:16",
+      "chain_id": "A",
+      "position": 16,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 17,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:17",
+      "chain_id": "A",
+      "position": 17,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 18,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:18",
+      "chain_id": "A",
+      "position": 18,
+      "residue": "R",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 19,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:19",
+      "chain_id": "A",
+      "position": 19,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 20,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:20",
+      "chain_id": "A",
+      "position": 20,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 21,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:21",
+      "chain_id": "A",
+      "position": 21,
+      "residue": "C",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 22,
+        "hard_protected": true,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:22",
+      "chain_id": "A",
+      "position": 22,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 23,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:23",
+      "chain_id": "A",
+      "position": 23,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 24,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:24",
+      "chain_id": "A",
+      "position": 24,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR1"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 25,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:25",
+      "chain_id": "A",
+      "position": 25,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR1_window"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 26,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:26",
+      "chain_id": "A",
+      "position": 26,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR1_window"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 27,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:27",
+      "chain_id": "A",
+      "position": 27,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR1_window"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 1,
+        "minimum_distance_A": 4.343,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 1
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 28,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:28",
+      "chain_id": "A",
+      "position": 28,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR1_window"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 5,
+        "minimum_distance_A": 3.232,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 2
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": true,
+        "observations": [
+          "historical_affinity_maturation_site"
+        ]
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 29,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": true,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:29",
+      "chain_id": "A",
+      "position": 29,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR1_window"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 4,
+        "minimum_distance_A": 4.02,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 1
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": true,
+        "observations": [
+          "historical_affinity_maturation_site"
+        ]
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 30,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": true,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:30",
+      "chain_id": "A",
+      "position": 30,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR1_window"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 2,
+        "minimum_distance_A": 4.039,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 1
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": true,
+        "observations": [
+          "historical_affinity_maturation_site"
+        ]
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 31,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": true,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:31",
+      "chain_id": "A",
+      "position": 31,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR1_window"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 12,
+        "minimum_distance_A": 3.297,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 1
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 32,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:32",
+      "chain_id": "A",
+      "position": 32,
+      "residue": "C",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 33,
+        "hard_protected": true,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:33",
+      "chain_id": "A",
+      "position": 33,
+      "residue": "M",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 34,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:34",
+      "chain_id": "A",
+      "position": 34,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 35,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:35",
+      "chain_id": "A",
+      "position": 35,
+      "residue": "W",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 36,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:36",
+      "chain_id": "A",
+      "position": 36,
+      "residue": "F",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 37,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:37",
+      "chain_id": "A",
+      "position": 37,
+      "residue": "R",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 38,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:38",
+      "chain_id": "A",
+      "position": 38,
+      "residue": "Q",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 39,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:39",
+      "chain_id": "A",
+      "position": 39,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 40,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:40",
+      "chain_id": "A",
+      "position": 40,
+      "residue": "P",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 41,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:41",
+      "chain_id": "A",
+      "position": 41,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 42,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:42",
+      "chain_id": "A",
+      "position": 42,
+      "residue": "K",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 43,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:43",
+      "chain_id": "A",
+      "position": 43,
+      "residue": "E",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 44,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:44",
+      "chain_id": "A",
+      "position": 44,
+      "residue": "R",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 45,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:45",
+      "chain_id": "A",
+      "position": 45,
+      "residue": "E",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 46,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:46",
+      "chain_id": "A",
+      "position": 46,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 47,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:47",
+      "chain_id": "A",
+      "position": 47,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 48,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:48",
+      "chain_id": "A",
+      "position": 48,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 49,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:49",
+      "chain_id": "A",
+      "position": 49,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 50,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:50",
+      "chain_id": "A",
+      "position": 50,
+      "residue": "I",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 51,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:51",
+      "chain_id": "A",
+      "position": 51,
+      "residue": "N",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR2_and_CDR1_anchor"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 52,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:52",
+      "chain_id": "A",
+      "position": 52,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.9,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR2_window"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": true,
+        "observations": [
+          "historical_affinity_maturation_site"
+        ]
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 53,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": true,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:53",
+      "chain_id": "A",
+      "position": 53,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR2_window"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 17,
+        "minimum_distance_A": 3.209,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 3
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 54,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:54",
+      "chain_id": "A",
+      "position": 54,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR2_window"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 16,
+        "minimum_distance_A": 3.567,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 2
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 55,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:55",
+      "chain_id": "A",
+      "position": 55,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR2_window"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 56,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:56",
+      "chain_id": "A",
+      "position": 56,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR2_window"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 16,
+        "minimum_distance_A": 3.611,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 2
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": true,
+        "observations": [
+          "historical_affinity_maturation_site"
+        ]
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 57,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": true,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:57",
+      "chain_id": "A",
+      "position": 57,
+      "residue": "T",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 58,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:58",
+      "chain_id": "A",
+      "position": 58,
+      "residue": "Y",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 59,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:59",
+      "chain_id": "A",
+      "position": 59,
+      "residue": "Y",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 60,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:60",
+      "chain_id": "A",
+      "position": 60,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 61,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:61",
+      "chain_id": "A",
+      "position": 61,
+      "residue": "D",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 62,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:62",
+      "chain_id": "A",
+      "position": 62,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 63,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:63",
+      "chain_id": "A",
+      "position": 63,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 64,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:64",
+      "chain_id": "A",
+      "position": 64,
+      "residue": "K",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 65,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:65",
+      "chain_id": "A",
+      "position": 65,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 66,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:66",
+      "chain_id": "A",
+      "position": 66,
+      "residue": "R",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 67,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:67",
+      "chain_id": "A",
+      "position": 67,
+      "residue": "F",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 68,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:68",
+      "chain_id": "A",
+      "position": 68,
+      "residue": "T",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 69,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:69",
+      "chain_id": "A",
+      "position": 69,
+      "residue": "I",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 70,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:70",
+      "chain_id": "A",
+      "position": 70,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 71,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:71",
+      "chain_id": "A",
+      "position": 71,
+      "residue": "Q",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 72,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:72",
+      "chain_id": "A",
+      "position": 72,
+      "residue": "D",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 73,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:73",
+      "chain_id": "A",
+      "position": 73,
+      "residue": "N",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 74,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:74",
+      "chain_id": "A",
+      "position": 74,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 75,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:75",
+      "chain_id": "A",
+      "position": 75,
+      "residue": "K",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 76,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:76",
+      "chain_id": "A",
+      "position": 76,
+      "residue": "N",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 77,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:77",
+      "chain_id": "A",
+      "position": 77,
+      "residue": "T",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 78,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:78",
+      "chain_id": "A",
+      "position": 78,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 79,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:79",
+      "chain_id": "A",
+      "position": 79,
+      "residue": "Y",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 80,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:80",
+      "chain_id": "A",
+      "position": 80,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 81,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:81",
+      "chain_id": "A",
+      "position": 81,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 82,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:82",
+      "chain_id": "A",
+      "position": 82,
+      "residue": "M",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 83,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:83",
+      "chain_id": "A",
+      "position": 83,
+      "residue": "N",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 84,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:84",
+      "chain_id": "A",
+      "position": 84,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 85,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:85",
+      "chain_id": "A",
+      "position": 85,
+      "residue": "L",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 86,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:86",
+      "chain_id": "A",
+      "position": 86,
+      "residue": "E",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 87,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:87",
+      "chain_id": "A",
+      "position": 87,
+      "residue": "P",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 88,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:88",
+      "chain_id": "A",
+      "position": 88,
+      "residue": "E",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 89,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:89",
+      "chain_id": "A",
+      "position": 89,
+      "residue": "D",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 90,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:90",
+      "chain_id": "A",
+      "position": 90,
+      "residue": "T",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 91,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:91",
+      "chain_id": "A",
+      "position": 91,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 92,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:92",
+      "chain_id": "A",
+      "position": 92,
+      "residue": "I",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 93,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:93",
+      "chain_id": "A",
+      "position": 93,
+      "residue": "Y",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 94,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:94",
+      "chain_id": "A",
+      "position": 94,
+      "residue": "Y",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 95,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:95",
+      "chain_id": "A",
+      "position": 95,
+      "residue": "C",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 96,
+        "hard_protected": true,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:96",
+      "chain_id": "A",
+      "position": 96,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 97,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:97",
+      "chain_id": "A",
+      "position": 97,
+      "residue": "A",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 98,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:98",
+      "chain_id": "A",
+      "position": 98,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 99,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:99",
+      "chain_id": "A",
+      "position": 99,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 1,
+        "minimum_distance_A": 4.423,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 1
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 100,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:100",
+      "chain_id": "A",
+      "position": 100,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 7,
+        "minimum_distance_A": 3.731,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 2
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 101,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:101",
+      "chain_id": "A",
+      "position": 101,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.98,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 38,
+        "minimum_distance_A": 2.918,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 5
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": true,
+        "observations": [
+          "L0_masked_contact_site_native_identity_withheld"
+        ]
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 102,
+        "hard_protected": false,
+        "l0_site": true,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:102",
+      "chain_id": "A",
+      "position": 102,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 21,
+        "minimum_distance_A": 2.953,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 4
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 103,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:103",
+      "chain_id": "A",
+      "position": 103,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 38,
+        "minimum_distance_A": 2.78,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 7
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 104,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:104",
+      "chain_id": "A",
+      "position": 104,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.98,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 25,
+        "minimum_distance_A": 2.967,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 5
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": true,
+        "observations": [
+          "L0_masked_contact_site_native_identity_withheld"
+        ]
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 105,
+        "hard_protected": false,
+        "l0_site": true,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:105",
+      "chain_id": "A",
+      "position": 105,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.98,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 56,
+        "minimum_distance_A": 2.898,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 6
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": true,
+        "observations": [
+          "L0_masked_contact_site_native_identity_withheld"
+        ]
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 106,
+        "hard_protected": false,
+        "l0_site": true,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:106",
+      "chain_id": "A",
+      "position": 106,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 2,
+        "minimum_distance_A": 3.641,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 1
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 107,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:107",
+      "chain_id": "A",
+      "position": 107,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 108,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:108",
+      "chain_id": "A",
+      "position": 108,
+      "residue": "C",
+      "eligible": false,
+      "safety_score": 0.0,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 109,
+        "hard_protected": true,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:109",
+      "chain_id": "A",
+      "position": 109,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 110,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:110",
+      "chain_id": "A",
+      "position": 110,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 111,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:111",
+      "chain_id": "A",
+      "position": 111,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 112,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:112",
+      "chain_id": "A",
+      "position": 112,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 113,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:113",
+      "chain_id": "A",
+      "position": 113,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 114,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:114",
+      "chain_id": "A",
+      "position": 114,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 115,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:115",
+      "chain_id": "A",
+      "position": 115,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 116,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:116",
+      "chain_id": "A",
+      "position": 116,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 117,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:117",
+      "chain_id": "A",
+      "position": 117,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.94,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": true,
+        "heavy_atom_contact_count_4p5A": 15,
+        "minimum_distance_A": 3.144,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 1
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 118,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:118",
+      "chain_id": "A",
+      "position": 118,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 119,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:119",
+      "chain_id": "A",
+      "position": 119,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 120,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:120",
+      "chain_id": "A",
+      "position": 120,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 121,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:121",
+      "chain_id": "A",
+      "position": 121,
+      "residue": "A",
+      "eligible": true,
+      "safety_score": 0.76,
+      "structure": {
+        "available": true,
+        "secondary_structure": "cdr",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "CDR3"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "all_a_parent_site": true,
+        "case_position_1based": 122,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": true,
+        "segment_kind": "cdr"
+      }
+    },
+    {
+      "evidence_id": "cab:A:122",
+      "chain_id": "A",
+      "position": 122,
+      "residue": "W",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 123,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:123",
+      "chain_id": "A",
+      "position": 123,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 124,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:124",
+      "chain_id": "A",
+      "position": 124,
+      "residue": "Q",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 125,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:125",
+      "chain_id": "A",
+      "position": 125,
+      "residue": "G",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 126,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:126",
+      "chain_id": "A",
+      "position": 126,
+      "residue": "T",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 127,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:127",
+      "chain_id": "A",
+      "position": 127,
+      "residue": "Q",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 128,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:128",
+      "chain_id": "A",
+      "position": 128,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 129,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:129",
+      "chain_id": "A",
+      "position": 129,
+      "residue": "T",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 130,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:130",
+      "chain_id": "A",
+      "position": 130,
+      "residue": "V",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 131,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:131",
+      "chain_id": "A",
+      "position": 131,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 132,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    },
+    {
+      "evidence_id": "cab:A:132",
+      "chain_id": "A",
+      "position": 132,
+      "residue": "S",
+      "eligible": false,
+      "safety_score": 0.2,
+      "structure": {
+        "available": true,
+        "secondary_structure": "framework",
+        "source": "1JTT_chain_A_reviewed_structure_window",
+        "structural_node": "FR4"
+      },
+      "interface": {
+        "available": false,
+        "heavy_atom_contact_count_4p5A": 0,
+        "minimum_distance_A": null,
+        "source": "1JTT_A_L_heavy_atom_distance_le_4p5A",
+        "unique_antigen_residue_count": 0
+      },
+      "conservation": {
+        "available": false,
+        "reason": "no_case_owned_MSA; not imputed"
+      },
+      "history": {
+        "available": false,
+        "observations": []
+      },
+      "metadata": {
+        "case_position_1based": 133,
+        "hard_protected": false,
+        "l0_site": false,
+        "maturation_site": false,
+        "reviewed_cdr_envelope": false,
+        "segment_kind": "framework"
+      }
+    }
+  ],
+  "metadata": {
+    "case_id": "cab_lys3_hewl_cdr_recovery",
+    "claim_boundary": "Evidence controls mutation eligibility; it is not a Kd predictor.",
+    "construct": "mature_cAb_Lys3_VHH_1JTT_chain_A",
+    "parent_baseline": "35_position_cdr_all_alanine",
+    "scope": "full_133_residue_VHH_with_reviewed_CDR_eligibility"
+  },
+  "catalog_hash": "d117f907c7e711b24ae835c355be4d50d74c9fd363fdb5bb6c7d8b165649c023"
+}

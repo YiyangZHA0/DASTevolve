@@ -7,7 +7,11 @@ import os
 import shutil
 from typing import Any, Dict, Mapping, Optional
 
-from astevolve.runtime.paths import artifact_path, data_path, model_root
+from astevolve.runtime.paths import artifact_path, model_root
+from engine.memory_lifecycle import current_memory_execution_context
+from cases.cab_lys3_hewl_cdr_recovery import reference_path
+from cases.cab_lys3_hewl_cdr_recovery.cab_lys3_sequence_gate import evaluate_pre_model_gate
+from cases.cab_lys3_hewl_cdr_recovery.sabdab_vhh_prior import DEFAULT_INDEX_DIR
 
 
 CPU_MODE = "cpu"
@@ -25,14 +29,7 @@ FINAL_AF3_DIFFUSION_SAMPLES = 0
 ROSETTA_INTERFACE = "A_B"
 SABDAB_VHH_INDEX_DIR = os.environ.get(
     "ASTEVOLVE_CAB_LYS3_SABDAB_INDEX",
-    str(
-        data_path(
-            "cab_lys3_hewl_cdr_recovery",
-            "sabdab_vhh_reference",
-            "embeddings",
-            "esm2_t6_8M_UR50D",
-        )
-    ),
+    str(DEFAULT_INDEX_DIR),
 )
 SABDAB_ESM2_MODEL_DIR = os.environ.get(
     "ASTEVOLVE_CAB_LYS3_ESM2_MODEL",
@@ -191,9 +188,8 @@ def locked_runtime_defaults(
     sabdab_enabled = resolve_sabdab_prior_enabled()
     for name, default in {
         "ASTEVOLVE_PROTENIX_MSA_TEMPLATE_ROOT": str(
-            data_path("cab_lys3_hewl_cdr_recovery", "msa_cache")
+            reference_path("msa_cache")
         ),
-        "ASTEVOLVE_PROTENIX_ROOT": str(model_root() / "protenix-v2"),
         "ASTEVOLVE_PROTENIX_CONDA_ENV": "protenix-v2",
     }.items():
         if not str(os.environ.get(name) or "").strip():
@@ -377,6 +373,16 @@ def locked_runtime_defaults(
                 },
             }
         )
+    if sabdab_enabled and FORMAL_INNER_ITERATIONS == 10:
+        scope = current_memory_execution_context()
+        lineage = scope.parent_sequence_lineage() if scope else None
+        if lineage and evaluate_pre_model_gate(
+            seqs=lineage["sequences"], config=defaults["sequence_prefilter_config"]
+        )["pass"]:
+            # Feasible inherited CDRs no longer need the all-A recovery bootstrap.
+            # Keep one root slot per mapping action across the short search.
+            defaults["sequence_bootstrap_callable"] = None
+            defaults["mcts_progressive_widening_c"] = 0.05
     if FORMAL_INNER_ITERATIONS < 30:
         defaults.update(
             {

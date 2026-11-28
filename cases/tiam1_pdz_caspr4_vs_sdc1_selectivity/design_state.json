@@ -433,7 +433,7 @@
       "tiam1_no_new_alpha2_proline"
     ]
   },
-  "residue_evidence_catalog": "data://tiam1_pdz_caspr4_vs_sdc1_selectivity/residue_evidence_catalog.json",
+  "residue_evidence_catalog": "residue_evidence_catalog.json",
   "residue_evidence_prompt_max_bytes": 32768,
   "global_ast_evolution_policy": {
     "schema_version": "astevolve.ast_evolution_policy.v2",

@@ -1,0 +1,87 @@
+{
+  "created_at_utc": "2026-08-10T11:49:10.297058+00:00",
+  "device_used": "cpu",
+  "hostname": "redacted",
+  "matrices": {
+    "cdr1": {
+      "all_finite": true,
+      "dtype": "float32",
+      "norm_max": 1.0000001192092896,
+      "norm_min": 0.9999998211860657,
+      "path": "cdr1.npy",
+      "sha256": "ea3d5d55da0e275205430d7b0493a4df5b54c283ec0da7594715d48789b01d19",
+      "shape": [
+        988,
+        320
+      ]
+    },
+    "cdr2": {
+      "all_finite": true,
+      "dtype": "float32",
+      "norm_max": 1.0000001192092896,
+      "norm_min": 0.9999998211860657,
+      "path": "cdr2.npy",
+      "sha256": "2ca14a9d70d08bcf87f8870c5e1ce44b53047a3dbfb31aeba2e775c0184b5ce6",
+      "shape": [
+        988,
+        320
+      ]
+    },
+    "cdr3": {
+      "all_finite": true,
+      "dtype": "float32",
+      "norm_max": 1.0000001192092896,
+      "norm_min": 0.9999998211860657,
+      "path": "cdr3.npy",
+      "sha256": "9fc0caad4444c45e5713622b6f756a853cb45b46f6bd654fa3bdc67df2eda1ae",
+      "shape": [
+        988,
+        320
+      ]
+    },
+    "framework": {
+      "all_finite": true,
+      "dtype": "float32",
+      "norm_max": 1.0000001192092896,
+      "norm_min": 0.9999998211860657,
+      "path": "framework.npy",
+      "sha256": "29d0ea7fe3fc451ffa61ca8336557bb560ebbe7b9efcea536dd7df21ccf6d724",
+      "shape": [
+        988,
+        320
+      ]
+    },
+    "whole_vhh": {
+      "all_finite": true,
+      "dtype": "float32",
+      "norm_max": 1.000000238418579,
+      "norm_min": 0.9999997615814209,
+      "path": "whole_vhh.npy",
+      "sha256": "0458f835649ab94bf7b2da370beff26e8be10fea13599474ecd8d390ef59cb7d",
+      "shape": [
+        988,
+        320
+      ]
+    }
+  },
+  "metadata": {
+    "path": "embedding_metadata.csv",
+    "sha256": "eba345cdbb632dbe4f4dc988556ceaff4f0543383467c6d62ccdd310ecca342a"
+  },
+  "model_dir": "${ASTEVOLVE_CAB_LYS3_ESM2_MODEL}",
+  "model_files_sha256": {
+    "config.json": "facb9355e8252149f6f99dff5fd1e32e890c3c655362b261d0c81cd6b5839c85",
+    "model.safetensors": "24c5fa474c48f3b754b86efe752d5f189d2bcd88190fa2270fc92b2ef3034189",
+    "pytorch_model.bin": "9edcf393212f3a26684cd68ca8095ec43c2c341ee0fcc3ba7a4d3a47c5dc138f",
+    "vocab.txt": "0b82cc0a7c7cf9e567b1e5892d793285b9fbae822c964ca48696f7db44598e03"
+  },
+  "normalization": "row-wise L2",
+  "pooling": "mean of non-special residue token final hidden states",
+  "python_version": "3.12.3",
+  "row_count": 988,
+  "schema_version": "cab_lys3.sabdab_vhh_embedding_index.v1",
+  "similarity": "exact cosine via normalized NumPy matrix dot product",
+  "source_csv": "external_source_not_bundled",
+  "source_csv_sha256": "141776f6bf311c743e90e7a8aa0db2fc92d67c62bc8c27dd2698d3d9ca9e7148",
+  "torch_version": "2.8.0a0+5228986c39.nv25.06"
+}
